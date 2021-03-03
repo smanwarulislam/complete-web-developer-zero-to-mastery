@@ -1,0 +1,51 @@
+Course Outline
+
+Part One:
+Web Foundations
+HTML5
+Advanced HTML5
+CSS3
+Advanced CSS3
+Bootstrap 4
+Flexbox
+CSS Grid
+Careers (Career Of A Web Developer)
+
+Part Two:
+JavaScript
+DOM Manipulation
+Advanced JavaScript
+Command Line
+Developer Environment
+Git + Github + Open Source Projects
+A Day In The Life Of A Developer
+NPM + NPM Scripts
+React.js + Redux
+
+Part Three:
+HTTP/JSON/AJAX + Asynchronous JavaScript
+Backend Introduction
+APIs
+
+Part Four:
+FINAL PROJECT: SmartBrain Front-End
+
+Part Five:
+Node.js + Express.js
+
+Part Six:
+FINAL PROJECT: SmartBrain Back-End -- Server
+
+Part Seven:
+Databases
+PostgreSQL
+SQL
+
+Part Eight:
+FINAL PROJECT: SmartBrain Back-End – Database
+
+Part Nine:
+Production + Deployment
+
+Part Ten:
+Where To Go From Here?
