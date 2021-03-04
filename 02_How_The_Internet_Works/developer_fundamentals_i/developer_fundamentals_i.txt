@@ -1,0 +1,10 @@
+DEVELOPER FUNDAMENTALS - I
+
+Google Chrome -> 172.217.7.23 (IP address) -> Google Servers
+HTML, CSS, JavaScript -> Google Chrome - A Web Page (https://www.google.com/) - [HTML, CSS, JavaScript]
+
+Note:
+How to improve website performance? (to make the website load faster)
+- Location of Server
+- How Many Trips
+- Size of Files
