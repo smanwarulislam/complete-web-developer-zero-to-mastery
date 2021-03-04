@@ -1,0 +1,5 @@
+Google Chrome -> 172.217.7.23 (IP address) -> Google Servers
+HTML, CSS, JavaScript -> Google Chrome - A Web Page (https://www.google.com/) - [HTML, CSS, JavaScript]
+
+Tools:
+Chrome Developer Tools (Customize and control Google Chrome -> More tools -> Developer tools)
