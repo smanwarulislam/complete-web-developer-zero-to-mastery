@@ -1,0 +1,10 @@
+Sir Tim Berners-Lee invented the World Wide Web in 1989.
+
+Maps that explain the Internet:
+https://www.vox.com/a/internet-maps
+
+First Webpage in the world:
+http://info.cern.ch/hypertext/WWW/TheProject.html
+
+Google Chrome -> 172.217.7.23 (IP address) -> Google Servers
+HTML, CSS, JavaScript -> Google Chrome - A Web Page (https://www.google.com/)
