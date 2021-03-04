@@ -1,0 +1,13 @@
+Full-Stack Developer
+
+Front End Developer:
+HTML
+CSS
+JavaScript + React.js
+
+Back End Developer:
+Server:
+Node.js
+Express.js
+Database:
+PostgreSQL
