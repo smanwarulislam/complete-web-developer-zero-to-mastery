@@ -1,0 +1,15 @@
+WHAT DO THE ARROWS MEAN?!
+
+Google Chrome -> 172.217.7.23 (IP address) -> Google Servers
+HTML, CSS, JavaScript -> Google Chrome - A Web Page (https://www.google.com/) - [HTML, CSS, JavaScript]
+
+Website:
+M3 Wireless Inc.:
+https://www.m3isp.com/
+
+How a wireless internet link works:
+https://www.m3isp.com/wireless.html
+
+Website:
+Submarine Cable Map:
+https://www.submarinecablemap.com/
