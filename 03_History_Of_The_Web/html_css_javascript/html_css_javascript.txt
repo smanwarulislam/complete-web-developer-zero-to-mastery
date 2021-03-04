@@ -1,0 +1,11 @@
+Google Chrome -> 172.217.7.23 (IP address) -> Google Servers
+HTML, CSS, JavaScript -> Google Chrome - A Web Page (https://www.google.com/)
+
+HTML (Hypertext Markup Language):
+HTML (Hypertext Markup Language) is the code that is used to structure a web page and its content. For example, content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables.
+
+CSS (Cascading Style Sheets):
+CSS (Cascading Style Sheets) is the code that styles web content. Like HTML, CSS is not a programming language. It's not a markup language either. CSS is a style sheet language. CSS is what you use to selectively style HTML elements.
+
+JavaScript:
+JavaScript® (often shortened to JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions, and is best known as the scripting language for Web pages, but it's used in many non-browser environments as well. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.
