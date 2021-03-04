@@ -1,0 +1,18 @@
+The web browser:
+Google Chrome
+
+Step 1:
+A Web Page:
+https://www.google.com/
+
+Step 2:
+Who is this google.com fellow?
+-> ISP ($) -> DNS (I don't know him personally, but here is his address: 172.217.7.23)
+DNS -> ISP -> 172.217.7.23 -> https://www.google.com/
+
+Step 3:
+Google Chrome -> 172.217.7.23 (IP address) -> Google Servers
+HTML, CSS, JavaScript -> Google Chrome - A Web Page (https://www.google.com/)
+
+Step 4:
+Google Chrome - A Web Page (https://www.google.com/)
