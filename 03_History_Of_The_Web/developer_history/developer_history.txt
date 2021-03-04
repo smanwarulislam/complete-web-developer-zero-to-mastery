@@ -1,0 +1,32 @@
+Full-Stack Developer
+
+How web applications were built in nearly 2000?
+
+Front End Developer:
+HTML
+CSS
+JavaScript + jQuery
+
+LAMP (Linux, Apache, MySQL, PHP) stack
+Back End Developer:
+Apache Server
+PHP
+Database:
+MySQL
+
+Learning in this course:
+
+Full-Stack Developer
+
+Front End Developer:
+HTML5
+CSS3
+JavaScript + React.js
+
+Back End Developer:
+Node Server
+Node.js
+Express.js
+Database:
+PostgreSQL
+MongoDB
