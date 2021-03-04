@@ -1,0 +1,10 @@
+DEVELOPER FUNDAMENTALS - II
+
+Multiple web browsers:
+Google Chrome
+Mozilla Firefox
+Microsoft Edge
+Safari
+
+Google Chrome, Mozilla Firefox, Microsoft Edge, Safari -> 172.217.7.23 (IP address) -> Google Servers
+HTML, CSS, JavaScript -> Google Chrome, Mozilla Firefox, Microsoft Edge, Safari - A Web Page (https://www.google.com/) - [HTML, CSS, JavaScript]
