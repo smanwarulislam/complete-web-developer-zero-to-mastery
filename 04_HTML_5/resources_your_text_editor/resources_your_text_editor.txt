@@ -1,0 +1,8 @@
+Install a text editor (Select one):
+https://www.sublimetext.com/
+https://atom.io/
+https://code.visualstudio.com/
+
+Zero to Mastery resources:
+https://github.com/zero-to-mastery/complete-web-developer-manual
+https://github.com/zero-to-mastery/zero-to-mastery-captions
