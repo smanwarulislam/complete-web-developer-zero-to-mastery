@@ -1,0 +1,16 @@
+Q&A: index.html
+
+Q:
+Why index.html?
+
+A:
+Google Chrome -> 172.217.7.23 (IP address) -> Google Servers
+index.html, about.html, newpage.html -> Google Chrome - A Web Page (https://www.google.com/) - [index.html]
+
+Most of the time there are more than a few HTML file:
+index.html
+about.html
+newpage.html
+
+When we make the request let's say google.com how does the server know which HTML to return first for the homepage?
+- By default, most servers just say I will return index.html. index.html is usually thought of that the homepage first HTML file that the server return.
