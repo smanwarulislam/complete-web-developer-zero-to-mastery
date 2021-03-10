@@ -1,0 +1,17 @@
+/* Syntax: */
+
+/* Selector {
+  property: value;
+} */
+
+h2 {
+  color: red;
+}
+
+p {
+  color: pink;
+}
+
+p {
+  color: green;
+}
