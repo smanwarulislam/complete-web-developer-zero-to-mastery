@@ -1,0 +1,30 @@
+/* Syntax: */
+
+/* Selector {
+  property: value;
+} */
+
+body {
+  background-image: url(background-image-TswcU9rBUWY.jpg);
+  background-size: cover;
+}
+
+h2 {
+  color: #AA4139;
+  text-align: center;
+  border: 5px solid rgba(255, 176, 170, 0.5);
+  cursor: pointer;
+}
+
+p {
+  color: pink;
+}
+
+p {
+  color: green;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
