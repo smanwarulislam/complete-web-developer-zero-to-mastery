@@ -1,0 +1,98 @@
+/* Syntax: */
+/* Selector {
+  property: value;
+} */
+
+/* (all elements) -> * */
+* {
+  text-align: right;
+}
+
+/* element */
+
+body {
+  background-image: url(background-image-TswcU9rBUWY.jpg);
+  background-size: cover;
+}
+
+/* Source Order */
+h2 {
+  color: red;
+}
+
+/* element, element
+h2, p {
+
+} */
+
+/* element element
+h2 p {
+
+} */
+
+/* element > element
+h2 > p {
+
+} */
+
+/* element + element
+h2 + p {
+
+} */
+
+/* :hover
+h2 + p:hover {
+
+} */
+h2 + p:hover {
+  color: #AA4139;
+  text-align: center;
+  border: 5px solid rgba(255, 176, 170, 0.5);
+  cursor: pointer;
+}
+
+/* p {
+  color: pink;
+} */
+
+/* (not recommended -> !important) */
+p {
+  color: pink !important;
+}
+
+p {
+  color: green;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+/* .class */
+/* .webtext {
+  border: 5px dashed green;
+} */
+
+/* :last-child */
+/* .webtext:last-child {
+  border: 5px dashed green;
+} */
+
+/* :first-child */
+.webtext:first-child {
+  border: 5px dashed green;
+}
+
+.active {
+  color: red;
+}
+
+/* #id */
+#div1 {
+  background: rgba(0, 0, 255, 0.2);
+}
+
+#div2 {
+  background: rgba(255, 0, 0, 0.2);
+}
