@@ -1,0 +1,17 @@
+h2 {
+  color: blue;
+}
+
+p {
+  /* font-size: 20px; */
+  /* font-size: 10px; */
+  font-size: 5px;
+}
+
+span {
+  /* font-size: 5em; */
+  /* font-size: 100px; */
+  /* font-size: 2em; */
+  /* font-size: 2rem; */
+  font-size: 5rem;
+}
