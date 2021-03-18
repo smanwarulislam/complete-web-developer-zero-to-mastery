@@ -1,0 +1,9 @@
+Critical Render Path
+
+https://www.coolwebsite.com (A Web Page) -> Our Server
+HTML, CSS, Google Fonts (Font File) -> https://www.coolwebsite.com (A Web Page)
+
+Reference websites:
+Tools
+CSS Minify
+https://www.cleancss.com/css-minify/
