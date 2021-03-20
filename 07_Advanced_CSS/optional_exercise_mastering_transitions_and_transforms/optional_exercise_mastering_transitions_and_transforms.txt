@@ -1,0 +1,16 @@
+Reference websites:
+
+CSS Transitions and Transforms for Beginners
+https://thoughtbot.com/blog/transitions-and-transforms
+
+CSS Browser Support Reference
+https://www.w3schools.com/cssref/css3_browsersupport.asp
+
+Can I use
+https://caniuse.com/
+
+ShouldIPrefix.com
+http://shouldiprefix.com/
+
+CSS Autoprefixer Tool
+https://autoprefixer.github.io/
