@@ -1,0 +1,2 @@
+Tools
+Chrome Toggle Device (Customize and control Google Chrome -> More tools -> Developer tools -> Toggle device toolbar)
