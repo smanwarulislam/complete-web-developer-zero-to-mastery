@@ -1,0 +1,98 @@
+h1 {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.robots {
+
+}
+
+.head {
+  width: 200px;
+  height: 150px;
+  border-radius: 200px 200px 0 0;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.head, .left_arm, .torso, .right_arm, .left_leg, .right_leg {
+  background-color: #5f93e8;
+}
+
+.eyes {
+  
+}
+
+.left_eye, .right_eye {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.left_eye {
+  top: 100px;
+  left: 40px;
+  position: relative;
+}
+
+.right_eye {
+  top: 100px;
+  left: 120px;
+  position: relative;
+}
+
+.head:hover {
+  width: 300px;
+  transition: 1s ease-in-out;
+}
+
+.upper_body {
+  width: 300px;
+  height: 150px;
+  display: flex;
+}
+
+.left_arm, .right_arm {
+  width: 40px;
+  height: 125px;
+  border-radius: 100px;
+}
+
+.torso {
+  width: 200px;
+  height: 200px;
+  border-radius: 0 0 50px 50px;
+}
+
+.left_arm {
+  margin-right: 10px;
+}
+
+.right_arm {
+  margin-left: 10px;
+}
+
+.lower_body {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.left_leg, .right_leg {
+  width: 40px;
+  height: 120px;
+  border-radius: 0 0 100px 100px;
+}
+
+.left_leg {
+  margin-left: 45px;
+}
+
+.left_leg:hover {
+  transform: rotate(20deg);
+}
+
+.right_leg {
+  margin-left: 30px;
+}
