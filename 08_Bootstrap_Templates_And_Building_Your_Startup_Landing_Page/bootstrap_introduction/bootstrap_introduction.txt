@@ -1,0 +1,23 @@
+Website:
+https://getbootstrap.com/
+
+Bootstrap
+Bootstrap · The most popular HTML, CSS, and JS library in the world.
+
+About
+The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
+
+Bootstrap (Front-end framework)
+Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+
+Bootstrap · The most popular HTML, CSS, and JS library in the world.
+Build fast, responsive sites with Bootstrap
+Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open-source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
+
+What is Bootstrap?
+- Bootstrap is a free front-end framework for faster and easier web development
+- Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels, and many other, as well as optional JavaScript plugins
+- Bootstrap also gives you the ability to easily create responsive designs
+
+What is Responsive Web Design?
+Responsive web design is about creating websites that automatically adjust themselves to look good on all devices, from small phones to large desktops.
