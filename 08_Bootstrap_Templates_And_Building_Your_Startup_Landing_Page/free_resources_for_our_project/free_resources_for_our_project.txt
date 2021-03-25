@@ -1,0 +1,4 @@
+Useful Resources for Developers:
+https://zerotomastery.io/resources/
+https://zero-to-mastery.github.io/resources/
+https://github.com/zero-to-mastery/resources
