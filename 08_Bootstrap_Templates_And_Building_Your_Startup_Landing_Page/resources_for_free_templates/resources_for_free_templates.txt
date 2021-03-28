@@ -1,0 +1,22 @@
+Free Developer Resources:
+https://zerotomastery.io/resources/
+
+Website for patterns:
+
+New:
+https://cruip.com/
+
+New: Bootstrap Templates 0
+https://mdbootstrap.com/freebies/
+
+Bootstrap Templates 1:
+http://www.mashup-template.com/templates.html
+
+Creative Tim Templates:
+https://www.creative-tim.com/bootstrap-themes/ui-kit?direction=asc&sort=price
+
+Bootstrap Templates 2:
+https://startbootstrap.com/themes
+
+A website with animation examples (Generating animated patterns):
+https://animate.style/
