@@ -1,0 +1,33 @@
+CSS Grid Layout
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+CSS Grid Layout excels at dividing a page into major regions or defining the relationship in terms of size, position, and layer, between parts of a control built from HTML primitives.
+
+Like tables, grid layout enables an author to align elements into columns and rows. However, many more layouts are either possible or easier with CSS grid than they were with tables. For example, a grid container's child elements could position themselves so they actually overlap and layer, similar to CSS positioned elements.
+
+Basic Concepts of grid layout
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+CSS Grid Layout introduces a two-dimensional grid system to CSS. Grids can be used to layout major page areas or small user interface elements.
+
+What is a grid?
+A grid is a set of intersecting horizontal and vertical lines defining columns and rows. Elements can be placed onto the grid within these column and row lines.
+
+Grid Layout
+https://www.w3schools.com/css/css_grid.asp
+The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
+
+CSS Grid
+https://cssgrid.io/
+CSS Grid is a brand new layout system in CSS! It's not a framework or library - it's an addition to the language that allows us to quickly create flexible, two-dimensional layouts.
+
+We can use it to place, size, align and architect designs that were previously difficult or even impossible with floats or flexbox.
+
+CSS Grid may seem a bit daunting with new syntax and layout ideas, but it's fairly simple and can be broken down into a handful of powerful concepts that when used together will blow your mind and change the way you create layouts for the web forever.
+
+Reference websites:
+https://www.w3schools.com/css/css_grid.asp
+https://css-tricks.com/snippets/css/complete-guide-grid/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+https://learncssgrid.com/
+https://gridbyexample.com/examples/
+https://cssgrid.io/
