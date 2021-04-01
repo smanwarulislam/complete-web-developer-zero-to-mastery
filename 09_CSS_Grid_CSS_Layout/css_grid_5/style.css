@@ -1,13 +1,53 @@
 .container {
   display: grid;
   gap: 20px;
+  /* grid-template-columns: 300px 300px; */
+  /* grid-template-columns: 300px 300px 300px; */
+  /* grid-template-columns: 25% 25% 25% 25%; */
+  /* grid-template-columns: 1fr; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-columns: 1fr 1fr 2fr; */
+  /* How many times to repeat what */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* grid-template-columns: repeat(6, 1fr); */
+  /* auto = max size of content */
+  /* grid-template-columns: auto; */
+  /* grid-template-columns: auto 1fr 2fr; */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-columns: 1fr 1fr 2fr; */
+  /* grid-template-rows: 1fr 2fr; */
+  /* grid-template-rows: 1fr 2fr 3fr 5fr; */
+  /* grid-template-rows: 1fr; */
+  /* grid-template-rows: 300px; */
+  /* justify-items: stretch; */
+  /* justify-items: start; */
+  /* justify-items: end; */
+  /* align-items: start; */
+  /* align-items: end; */
+  /* Don't care how many columns. Just figure it out for me. Show how you can change the sizing of the page. */
+  /* grid-template-columns: repeat(auto-fill, 300px); */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-template-rows: 1fr;
 }
 
 .green {
+  /* grid-column-start: 1; */
+  /* grid-column-end: 2; */
+  /* grid-column-end: 3; */
+  /* grid-column-end: 4; */
+  /* grid-column: 1/4; */
+  /* Span it to the last track */
+  /* grid-column: 1/-1; */
+  /* A high number will cause it to create extra grids even if we didn't tell it */
+  /* grid-column: span 2; */
+  /* grid-column: span 3; */
+  /* grid-column: span 1; */
   grid-column: span 2;
   grid-row: 1/3;
+  /* justify-self: start; */
+  /* justify-self: end; */
+  /* align-self: start; */
   align-self: end;
 }
 
