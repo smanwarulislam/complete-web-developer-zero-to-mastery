@@ -1,0 +1,13 @@
+Updated Statistics and Surveys 2021:
+
+State of JavaScript
+https://www.jetbrains.com/lp/devecosystem-2020/javascript/
+
+State of Salaries
+https://hired.com/blog/highlights/2020-state-of-salaries-report/
+
+Developer Salaries - Glassdoor
+https://www.glassdoor.ca/Salaries/san-francisco-front-end-developer-salary-SRCH_IL.0,13_IM759_KO14,33.htm
+
+Octoverse Github
+https://octoverse.github.com/
