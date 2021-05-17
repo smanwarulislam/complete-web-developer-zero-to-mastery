@@ -1,0 +1,257 @@
+JavaScript - Wikipedia
+https://en.wikipedia.org/wiki/JavaScript
+
+JavaScript
+JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object orientation, and first-class functions.
+
+What is JavaScript? A Definition of the JS Programming Language
+https://www.freecodecamp.org/news/what-is-javascript-definition-of-js/
+
+JavaScript is a dynamic programming language that's used for web development, web applications, game development, and lots more. It allows you to implement dynamic features on web pages that cannot be done with only HTML and CSS.
+
+Many browsers use JavaScript as a scripting language for doing dynamic things on the web. Any time you see a click-to-show dropdown menu, extra content added to a page and dynamically changing element colors on a page, to name a few features, you're seeing the effects of JavaScript.
+
+What Would the Web Look Like Without JavaScript?
+Without JavaScript, all you would have on the web would be HTML and CSS. These alone limit you to a few web page implementations. 90% (if not more) of your web pages would be static, and you'd only have the dynamic changes like animations that CSS provides.
+
+How JavaScript Makes Things Dynamic
+HTML defines the structure of your web document and the content therein. CSS declares various styles for the contents provided on the web document.
+
+HTML and CSS are often called markup languages rather than programming languages, because they, at their core, provide markups for documents with very little dynamism.
+
+JavaScript, on the other hand, is a dynamic programming language that supports Math calculations, allows you to dynamically add HTML contents to the DOM, creates dynamic style declarations, fetches contents from another website, and lots more.
+
+Before we go into how JavaScript does all of these things, let's look at a quick example.
+
+Check out this codepen: https://codepen.io/Dillion/full/XWjvdMG
+
+In the codepen, you'll see that as you type in the input field, the text shows on the screen. That is made possible by JavaScript. You cannot get this with HTML, CSS, nor both of them together.
+
+JavaScript can do a lot more than what I can cover in this article. But to get you started with JS, we'll look at:
+
+- how to use JavaScript in HTML
+- data types
+- variables
+- comments
+- functions
+
+How to Use JavaScript in HTML
+Just like with CSS, JavaScript can be used in HTML in various ways, such as:
+
+1. Inline JavaScript
+Here, you have the JavaScript code in HTML tags in some special JS-based attributes.
+
+For example, HTML tags have event attributes that allow you to execute some code inline when an event is triggered. Here's what I mean:
+
+<button onclick="alert('You just clicked a button')">Click me!</button>
+
+This is an example of inline JavaScript. The value of onclick can be some Match calculation, a dynamic addition to the DOM – any syntax-valid JavaScript code.
+
+2. Internal JavaScript, with the script tag
+Just like the style tag for style declarations within an HTML page, the script tag exists for JavaScript. Here's how it's used:
+
+<script>
+  function() {
+    alert("I am inside a script tag");
+  }
+</script>
+
+3. External JavaScript
+You may want to have your JavaScript code in a different file. External JavaScript allows this. For such uses-cases, here's how it's done:
+
+<!-- index.html -->
+<script src="./script.js"></script>
+
+// script.js
+alert("I am inside an external file");
+
+The src attribute of the script tag allows you to apply a source for the JavaScript code. That reference is important because it notifies the browser to also fetch the content of script.js.
+
+script.js can be in the same directory with index.html, or it can be gotten from another website. For the latter, you'll need to pass the full URL (https://.../script.js).
+
+Notice the .js extension? That's the extension for JavaScript files, just like HTML has .html.
+
+Now that we've looked at ways to apply JavaScript to our HTML, let's look at some of the features of JavaScript.
+
+Data Types in JavaScript
+In JavaScript, data has to be of one type or another. JavaScript needs to know this so that it knows how to use it with other data or how to operate on such data.
+
+Here are the basic data types that JavaScript supports:
+
+- Number (for example, 6, 7, 8.9): on which you can apply arithmetic operations (like addition) and many more
+
+- String (like "javascript", 'a long sentence', a short paragraph): anything found between single quotes ('...'), double quotes ("..."), and backticks (...). There's no difference between single and double quotes, but backticks have more features, such as:
+
+  - interpolating variables in strings, like so: My name is ${name}. name here is a variable, injected into the string.
+
+  - multiline strings. With normal quotes, you'd need to add escape characters like \n for a newline, but backticks allow you to continue your string on another line, like so:
+
+let str = `I am a
+  multiline string`;
+
+- Boolean (can only be of two values: true or false): more like yes (true) or no (false)
+
+- Array (for example, [1, 2, "hello", false]): a group of data (which can be of any type, including arrays) separated by a comma. Indexing starts from 0. Accessing the content of such a group can be like so: array[0], which for this example will return 1 since it's the first item.
+
+- Object (for example {name: 'javascript', age: 5}): also a group of data but in the form of a key:value pair. The key has to be a string, and the value can be any type including another object. Accessing the content of the group is done with the key, for example, obj.age or obj["age"] will return 5.
+
+- Undefined (the only data this type supports is undefined): This data can be assigned to a variable explicitly, or implicitly (by JavaScript) if a variable has been declared but not assigned a value. Later in this article, we'll look at variable declaration and value assignment.
+
+- Null (the only data this type supports is null): Null means there is no value. It holds a value, but not a real value – rather, null.
+
+- Function (for example, function(){ console.log("function") }): A function is a data type that invokes a block of code when called. More on functions later in this article.
+
+JavaScript data types can be a bit complicated to understand. You may have heard that arrays and functions are also objects, and that's true.
+
+Understanding this involves understanding the nature of JavaScript prototypes. But, at the basic level, these are the data types you need to know first in JavaScript.
+
+Variables in JavaScript
+Variables are containers for values of any data type. They hold values such that when the variables are used, JavaScript uses the value they represent for that operation.
+
+Variables can be declared and can be assigned a value. When you declare a variable, you're doing this:
+
+let name;
+
+For the above, name has been declared, but it doesn't have a value yet.
+
+As you'd expect from the data types section, JavaScript automatically assigns a value of undefined to name. So if you try to use name anywhere, undefined will be used for that operation.
+
+Here's what it means to assign a value to a variable:
+
+let name;
+name = "JavaScript";
+
+Now if you use name, it will represent JavaScript.
+
+Declarations and assignments can be done on one line like so:
+
+let name = "JavaScript";
+
+Why let? you may have asked yourself, and here's why: JavaScript supports three methods of variable declarations, which are:
+
+- the var operator: this has been with JavaScript since its inception. You can declare variables and assign values to them which can be changed later in the code. Here's what I mean:
+
+var name = "JavaScript";
+name = "Language";
+
+- the let operator: this is also very similar to var – it declares and assigns values to variables that can be changed later in the code. The major difference between these operators is that var hoists such variables, while let does not hoist. The concept of hoisting can be explained briefly with the following code:
+
+function print() {
+  console.log(name);
+  console.log(age);
+  var name = "JavaScript";
+  let age = 5;
+}
+
+print();
+
+On calling the print function (print()), the first console.log prints undefined while the second console.log throws an error that it "Cannot access age before initialization".
+
+This is because the name variable's declaration is hoisted (raised) to the top of the function and the assignment for the variable stays at the same line while the age declaration and assignment stay at the same line.
+
+Here's how the above code is compiled:
+
+function print() {
+  var name;
+  console.log(name);
+  console.log(age);
+  name = "JavaScript";
+  let age = 5;
+}
+
+print();
+
+Hoist problems can happen unexpectedly, and that's why you should use let instead of var.
+
+- the const operator: this also does not hoist variables, but it does one more thing: it ensures that a variable cannot be assigned another value other than what it was assigned during initialization.
+
+For example:
+
+let name = "JavaScript";
+name = "Language"; // no errors
+
+const age = 5;
+age = 6; // error, cannot reassign variable
+
+Comments in JavaScript
+Just like HTML, sometimes we may want to put a note beside our code that does not need to be executed.
+
+We can do this in JavaScript in two ways:
+
+- with single-line comments, like this: // a single line comment
+
+- or with multi-line comments, like this:
+
+/*
+a multi
+line comment
+*/
+
+Functions in JavaScript
+With functions, you can store a block of code that can be used in other places in your code. Say you wanted to print "JavaScript" and "Language" at different places in your code. Instead of doing this:
+
+console.log("JavaScript");
+console.log("Language");
+
+// some things here
+
+console.log("JavaScript");
+console.log("Language");
+
+// more things here
+
+console.log("JavaScript");
+console.log("Language");
+
+You can do this:
+
+function print() {
+  console.log("JavaScript");
+  console.log("Language");
+}
+
+print();
+
+// some things here
+
+print();
+
+// more things here
+
+print();
+
+This way, we've stored the repeated code block in a function that can be used wherever we want. But that's not all. Say we wanted to find the average of three numbers. The code for this would be:
+
+let num1 = 5
+let num2 = 6
+let num3 = 8
+let average = (num1 + num2 + num3) / 3
+
+Doing this outside of a function may not hurt, but if we had to do that in many places? Then, we'd have a function like so:
+
+function findAverage(n1, n2, n3) {
+  let aver = (n1 + n2 + n3) / 3;
+  return aver;
+}
+
+let num1 = 5;
+let num2 = 6;
+let num3 = 8;
+let average = findAverage(num1, num2, num3);
+
+// later on, somewhere else
+let average2 = findAverage(...);
+
+// later on, somewhere else
+let average3 = findAverage(...);
+
+As you'll notice in findAverage's declaration, we have n1, n2, n3 in the parentheses. These are parameters, which serve as placeholders for values that would be provided when the function is to be called.
+
+The code block uses those placeholders to find the average, and the return keyword returns the average from the function.
+
+Placeholders make your functions reusable such that different values at different times can be passed to the functions to use the same logic.
+
+Conclusion
+JavaScript has many more features we could discuss, but I hope this article has given you a clear starting point to go further. Now you should know what the language is and how you can use it on the web.
+
+In this article, we've looked at how to add JavaScript code to our HTML files, the different types of data that JavaScript supports, variables that serve as containers for values, how to write comments in JavaScript, and a little bit about how to declare and use functions.
