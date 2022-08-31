@@ -1,0 +1,14 @@
+/* Reference websites */
+/* https://developer.mozilla.org/en-US/docs/web/Events */
+/* https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes */
+
+.done {
+  text-decoration: line-through;
+}
+
+.btn {
+  display: inline;
+  border-color: white;
+  margin-left: 15px;
+  border-radius: 5px;
+}

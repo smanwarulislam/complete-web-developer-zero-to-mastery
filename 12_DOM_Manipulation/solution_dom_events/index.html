@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript + DOM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Shopping List</h1>
+  <!-- <h1 style="background: yellow;">Shopping List</h1> -->
+  <!-- But there is one issue here. The issue is the separation of concerns. -->
+  <!-- As we remember, we wanna have that separation of HTML focuses on the text, CSS focuses on the style, and JavaScript on the action. -->
+  <p id="first">Get it done today</p>
+  <!-- <button>Click me!</button> -->
+  <input id="userinput" type="text" placeholder="enter items">
+  <!-- So we definitely want to grab the button which has a class over enter but I actually like using Id because it'll be really really fast for the Web browser to grab an Id because there's only one of them. Performance wise although it's very very minuscule it does help. -->
+  <!-- <button class="enter">Enter</button> -->
+  <button id="enter">Enter</button>
+  <ul id="list">
+    <li>Notebook <button class="btn">Delete</button></li><br>
+    <li>Jello <button class="btn">Delete</button></li><br>
+    <li>Spinach <button class="btn">Delete</button></li><br>
+    <li>Rice <button class="btn">Delete</button></li><br>
+    <li>Birthday Cake <button class="btn">Delete</button></li><br>
+    <li>Candles <button class="btn">Delete</button></li>
+  </ul>
+  <script src="script.js"></script>
+</body>
+</html>
