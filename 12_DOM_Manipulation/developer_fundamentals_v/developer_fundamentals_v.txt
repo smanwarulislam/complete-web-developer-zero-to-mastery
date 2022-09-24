@@ -1,0 +1,9 @@
+Reference websites:
+https://babeljs.io/
+
+We learned that we want to make performant and fast websites in this day and age by minimizing the number of backend requests we make.
+
+We learned that:
+- Location of the server (i.e., Google Servers) is important
+- How many trips we make to grab all the files (HTML, CSS, JavaScript) is important and
+- The size of the files matter
