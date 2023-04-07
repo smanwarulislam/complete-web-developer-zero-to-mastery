@@ -13,7 +13,7 @@
 // - Well we had an HTML file (index.html)
 // - and the very first-time people used JavaScript they used a script tag and what we called an Inline Script and Inline Script is exactly that.
 // → (from index.html file)
-<script>
+'<script>'
   function a() {
     alert('a')
   }
@@ -26,7 +26,7 @@
   function d() {
     alert('d')
   }
-</script>
+'</script>'
 // - We just inline all of our JavaScript within the HTML file (index.html).
 
 // Now there are problems that I see with this.
@@ -45,22 +45,22 @@
 // The next attempt was Script Tags and this is something we've been familiar with.
 // - Instead of having Inline Script, we had Script Tags, and where we played around with Bootstrap and jQuery. This is what we did.
 // → (from index.html file)
-<script src="./1.js"></script>
-<script src="./2.js"></script>
-<script src="./3.js"></script>
-<script src="./4.js"></script>
+'<script src="./1.js"></script>'
+'<script src="./2.js"></script>'
+'<script src="./3.js"></script>'
+'<script src="./4.js"></script>'
 
 // - We had our jQuery file loaded first
-<script src="./1.js"></script>
+'<script src="./1.js"></script>'
 
 // - then our JavaScript file loaded second
-<script src="./2.js"></script>
+'<script src="./2.js"></script>'
 
 // - and as you can see we can have one script file then the second one then the third one then the fourth one
-<script src="./1.js"></script>
-<script src="./2.js"></script>
-<script src="./3.js"></script>
-<script src="./4.js"></script>
+'<script src="./1.js"></script>'
+'<script src="./2.js"></script>'
+'<script src="./3.js"></script>'
+'<script src="./4.js"></script>'
 
 // - this way you have everything outside of the HTML that solves the problem right.
 
@@ -130,10 +130,10 @@ var myApp = {};
 // - I mean it's not zero but the one that's a lot better right?
 // - But there is still one issue with this
 // - the order of the files is still important.
-<script src="./1.js"></script>
-<script src="./2.js"></script>
-<script src="./3.js"></script>
-<script src="./4.js"></script>
+'<script src="./1.js"></script>'
+'<script src="./2.js"></script>'
+'<script src="./3.js"></script>'
+'<script src="./4.js"></script>'
 
 // - And I've worked on apps before where we're using so many scripts that this was close to 100 Script Tags.
 // - And every time you need to add a file you had to make sure that you added it in the right place
@@ -188,10 +188,10 @@ var add = require('./add'); // require('./add') → we are assuming the js1 file
 // - once you run all the files through browserify
 // - and again is just a simple tool that allowed us to just dump all our script files (all of these) into browserify
 // → (from index.html file)
-<script src="./1.js"></script>
-<script src="./2.js"></script>
-<script src="./3.js"></script>
-<script src="./4.js"></script>
+'<script src="./1.js"></script>'
+'<script src="./2.js"></script>'
+'<script src="./3.js"></script>'
+'<script src="./4.js"></script>'
 
 // - and as long as we use the CommonJS syntax like this
 // js1
@@ -204,7 +204,7 @@ var add = require('./add'); // require('./add') → we are assuming the js1 file
 
 // - it will know what to do and automatically create one file usually called something like bundle.js
 // → (from index.html file)
-<script src="bundle.js"></script>
+'<script src="bundle.js"></script>'
 
 // - So all our scripts will just be on one massive file and yeah that might be bad when we're actually developing.
 // - But when it's out on the Internet in the real world we don't really care how it looks
@@ -349,12 +349,12 @@ module.exports = {
 // - I don't think it's super important for us to tackle right now but again a very very useful tool
 // - and it creates a nice 'bundle.js' file
 // → (from index.html file)
-<script src="bundle.js"></script>
+'<script src="bundle.js"></script>'
 
 // - So now all our HTML (index.html) looks nice and simple
-<body>
-  <script src="bundle.js"></script>
-</body>
+'<body>'
+  '<script src="bundle.js"></script>'
+'</body>'
 
 // and you know what. That's it.
 
