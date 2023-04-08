@@ -1,0 +1,11 @@
+Resources: Modules (More Modules To Come!)
+
+Phew, that was a long ride learning JavaScript, wasn't it?
+
+If you/I want to learn more about modules, I recommend you/me read this article:
+ES modules: A cartoon deep-dive
+https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/
+
+If this article makes sense
+- (be warned there are a few advanced topics that we will cover later in the course like asynchronous javascript, so you/I don't have to "get it" everything)
+- then congratulations! It's time to move on to the next section.
