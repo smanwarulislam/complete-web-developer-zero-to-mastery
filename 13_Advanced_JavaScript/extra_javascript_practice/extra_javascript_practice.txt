@@ -1,0 +1,15 @@
+Extra JavaScript Practice
+
+I get a lot of questions about how you can practice and learn more JavaScript
+- (the core concept that you really want to master if you want to be a Developer).
+- Anyway, I wanted to share with you the 3 free resources that I recommend.
+- In my opinion, they offer incredible insight into JavaScript and are better than most paid options out there.
+- They will really solidify your knowledge if you/I do them along with the course, in your/my spare time, or throughout your/my career:
+
+1. https://github.com/getify/You-Dont-Know-JS
+
+2. https://javascript.info/
+
+3. http://dmitrysoshnikov.com/ecmascript/javascript-the-core-2nd-edition/
+
+or... you can scroll all the way to the bottom of this course to Extras: Bonus Part 2 to see some more Advanced JS that I teach.
