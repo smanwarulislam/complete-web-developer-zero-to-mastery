@@ -1,0 +1,469 @@
+Exercise: Practice Using The Terminal
+
+It's time to get comfortable with the Terminal/Bash!
+Open up the terminal/bash on your computer and give these commands a try like you saw in the previous lecture:
+
+ls
+pwd
+cd
+cd ..
+clear
+cd / **-> root directory**
+cd ~
+cd <folder/folder/folder> **<> means to add your own folder names that exist on your computer.
+mkdir <folder>
+open <folder> **for windows use: start <folder>
+touch index.html **for windows use: echo "" > index.html
+open index.html **for windows use: start index.html
+open -a "Sublime Text" **for windows see the note about this at the bottom of this lecture!!
+open . **for windows use: start .
+mv index.html about.html
+*Try using the Up and Down arrow.
+
+rm <file>
+rm -r <folder>
+say hello **(only on Mac)**
+
+
+
+Cmder | Console Emulator
+Cmder | Lovely console emulator package for Windows
+
+Using the Cmder console emulator
+
+Command and Description:
+
+FOR MAC OR LINUX:
+ls
+- lists files and folders within working directory
+
+bash-3.2$ ls
+
+FOR WINDOWS:
+dir
+- list files
+
+C:\Users\emu
+λ dir
+
+I simply type in and press enter and it lists everything that is in my current directory.
+
+What is my current directory?
+Well, I do 'pwd' for Present Working Directory
+FOR MAC OR LINUX:
+pwd
+- show current working directory
+
+bash-3.2$ pwd
+
+FOR WINDOWS:
+cd {directory name}
+- change directory
+
+C:\Users\emu
+λ cd
+C:\Users\emu
+
+and I see that I'm in the '\Users\{user name}'
+
+If I do 'cd' then I can go into this.
+If I wanted to go to, let's say, desktop,
+I do 'cd Desktop'.
+
+And now if I do 'ls',
+FOR MAC OR LINUX:
+bash-3.2$ cd Desktop
+bash-3.2$
+
+FOR WINDOWS:
+C:\Users\emu
+λ cd Desktop
+
+C:\Users\emu\Desktop
+λ
+
+And now if I do 'ls',
+FOR MAC OR LINUX:
+bash-3.2$ ls
+untitled folder
+
+FOR WINDOWS:
+C:\Users\emu\Desktop
+λ dir
+New folder
+
+I see that I have an 'untitled folder' (FOR WINDOWS: New folder) because that's the only thing on my desktop right now.
+
+I can also do 'cd ..'
+FOR MAC OR LINUX:
+cd ..
+- change working directory to direct parent directory
+
+bash-3.2$ cd ..
+bash-3.2$ ls
+
+and this brings me back to one directory up.
+
+FOR WINDOWS:
+cd ..
+- go up a level
+
+C:\Users\emu\Desktop
+λ cd ..
+
+C:\Users\emu
+λ dir
+
+I can also do 'clear'
+FOR MAC OR LINUX:
+clear
+- clear current terminal screen
+
+bash-3.2$ clear
+
+to clear up my terminal and have a nice fresh slate.
+
+FOR WINDOWS:
+cls
+- clear the terminal screen
+
+C:\Users\emu
+λ cls
+
+There's a short command 'cd /' and this takes me to the root directory.
+FOR MAC OR LINUX:
+cd /
+- change current directory to root directory
+
+bash-3.2$ cd /
+
+If I do 'ls',
+bash-3.2$ ls
+
+I see that I have 'Applications, Library, System, Users..'
+That's the root directory of my Mac, essentially my Macintosh HD.
+
+FOR WINDOWS:
+cd /
+- go to root (top) directory
+
+C:\Users\emu
+λ cd /
+
+C:\
+λ
+
+I can also do 'cd ~'
+FOR MAC OR LINUX:
+cd ~
+- change current directory to user directory
+
+bash-3.2$ cd ~
+bash-3.2$ ls
+
+and this takes me to the user directory.
+
+And if we check where we are.
+FOR MAC OR LINUX:
+bash-3.2$ ls
+
+All right, let's change this 'untitled folder' (FOR WINDOWS: New folder) to something like 'test', okay?
+
+Let's say I'm in the user directory right now, I want to access 'Desktop' and then the 'test' folder.
+I would simply do 'cd Desktop/' and then 'test'.
+FOR MAC OR LINUX:
+bash-3.2$ cd Desktop/test
+
+bash-3.2$ ls
+bash-3.2$
+
+And now I'm in the 'test' folder, but there's nothing in there.
+
+FOR WINDOWS:
+C:\Users\emu
+λ cd Desktop/test
+
+C:\Users\emu\Desktop\test
+λ
+
+C:\Users\emu\Desktop\test
+λ dir
+
+So one thing we can do is I can say 'open .' and it opens a folder that we're currently in.
+FOR MAC OR LINUX:
+bash-3.2$ open .
+
+Okay, we're in the 'test' folder.
+
+FOR WINDOWS:
+start .
+- open current directory
+
+C:\Users\emu\Desktop\test
+λ start .
+
+Now if I just put this to the side over here so you can see, I can say 'mkdir(make directory)', which makes a folder 'name'.
+FOR MAC OR LINUX:
+mkdir name
+- create folder called 'name' within current directory
+
+bash-3.2$ mkdir name
+
+So 'name' here will be whatever I want the folder to be titled.
+
+Let's just say this folder would be called 'webapp'.
+bash-3.2$ mkdir webapp
+
+Now 'webapp' shows up in my folder.
+
+FOR WINDOWS:
+mkdir {file name}
+- make a directory
+
+C:\Users\emu\Desktop\test
+λ mkdir webapp
+
+If I do 'ls' now,
+FOR MAC OR LINUX:
+bash-3.2$ ls
+webapp
+
+I see that we have the 'webapp' folder
+
+FOR WINDOWS:
+C:\Users\emu\Desktop\test
+λ dir
+webapp
+
+and as we know, we can go into it ('webapp').
+FOR MAC OR LINUX:
+bash-3.2$ cd webapp
+
+Let's double-click here to see what we have.
+We have absolutely nothing.
+
+FOR WINDOWS:
+C:\Users\emu\Desktop\test
+λ cd webapp
+
+C:\Users\emu\Desktop\test\webapp
+λ
+
+Well, We can create a file here by saying 'touch' and the name of the file. So let's just do 'index.html'.
+FOR MAC OR LINUX:
+touch index.html
+- creates new file titled index.html within working directory
+
+bash-3.2$ touch index.html
+
+There you go, 'index.html'
+
+FOR WINDOWS:
+echo > {filename}
+- create an empty file
+
+C:\Users\emu\Desktop\test\webapp
+λ echo > index.html
+
+Now what if we wanted to open this 'index.html' again,
+we just do 'open' and the '.(dot)' means we open the folder ('webapp') we're currently in which is here.
+FOR MAC OR LINUX:
+bash-3.2$ open .
+
+But if I do 'open index.html', it opens the file for us. How cool is that?
+bash-3.2$ open index.html
+
+FOR WINDOWS:
+start {filename}
+- open file in default program
+
+C:\Users\emu\Desktop\test\webapp
+λ start index.html
+
+But 'index.html' is pretty empty right now.
+Wouldn't it be nice if we could open Sublime Text from here and add something?
+Again, you can do that with 'open'.
+You put in 'a', so '-a' for application and the name of the application, so "Sublime Text".
+FOR MAC OR LINUX:
+open -a "Sublime Text"
+- opens sublime text program. This syntax can be used to open other programs
+
+bash-3.2$ open -a "Sublime Text"
+
+I have Sublime Text.
+
+Wouldn't it be nice if we could open VS Code from here and add something?
+To open Visual Studio Code from the command line (terminal):
+FOR WINDOWS:
+C:\Users\emu\Desktop\test\webapp
+λ code
+
+To open the entire folder/directory:
+C:\Users\emu\Desktop\test\webapp
+λ code .
+
+But if we wanted to do, '-a (application) Sublime Text' and open the 'index.html' file.
+FOR MAC OR LINUX:
+bash-3.2$ open -a "Sublime Text" index.html
+
+We just do this.
+
+FOR WINDOWS:
+To open the entire folder/directory:
+C:\Users\emu\Desktop\test\webapp
+λ code .
+
+And now I can say 'html', and it will just say 'Hello, world!'
+And if I do 'open index.html',
+FOR MAC OR LINUX:
+bash-3.2$ open index.html
+
+We have our 'index.html' file loaded.
+
+Visual Studio Code:
+Go Live (Live Server)
+Server is Started at port: 5500
+Source: Live Server (Extension)
+
+Wasn't that a lot faster than right-clicking, creating a folder, then dragging everything to Visual Studio Code/Sublime Text?
+And as you can see, you can do things really really faster.
+
+OK, let's change something.
+In the 'webapp', let's say I wanted to change the name of 'index.html' to 'about.html'.
+Well, I'll do the 'mv' command, which stands for 'move',
+FOR MAC OR LINUX:
+mv index.html about.html
+- renames index.html file to about.html
+
+but it just moves the 'index.html' file to 'about.html'.
+
+bash-3.2$ mv index.html about.html
+
+So it's a little trick -
+You're essentially just moving one file to another but, by changing the name, you create a new file and you replace it with the old one.
+
+So now I have 'about.html'.
+
+FOR WINDOWS:
+rename {filename} {new filename}
+- rename a file or folder
+
+C:\Users\emu\Desktop\test\webapp
+λ rename index.html about.html
+
+Now these commands typing them can get pretty tiring.
+I can press the up arrow and it goes through my entire history, which is very cool.
+I can also press the tab key and it will bring up my most recent commands or completes what I'm about to write so you can do it really really fast.
+And when your commands get longer and longer it's a very useful thing to do.
+
+I don't really need the 'about.html' file anymore. Let's remove it.
+We do 'rm', for 'remove', and the name of the file 'about.html'.
+FOR MAC OR LINUX:
+rm filename
+- deletes a file called 'filename' within the current directory
+
+bash-3.2$ rm about.html
+
+It's been removed.
+
+FOR WINDOWS:
+del {filename}
+- remove a file
+
+C:\Users\emu\Desktop\test\webapp
+λ del about.html
+
+Now, what about the 'webapp' folder, we can remove that as well.
+But if I just do 'rm webapp',
+FOR MAC OR LINUX:
+bash-3.2$ rm webapp
+rm: webapp: No such file or directory
+
+well, it's not going to work.
+
+First of all, if I do 'ls',
+bash-3.2$ ls
+
+or 'pwd'(present working directory),
+bash-3.2$ pwd
+/Users/{user name}/Desktop/test/webapp
+
+I'm in the 'webapp' folder.
+
+FOR WINDOWS:
+C:\Users\emu\Desktop\test\webapp
+λ dir
+Directory of C:\Users\{user name}\Desktop\test\webapp
+
+So I need to move back to the 'test' folder.
+FOR MAC OR LINUX:
+bash-3.2$ cd ..
+
+Now, my 'pwd'(present working directory) is -
+bash-3.2$ pwd
+/Users/{user name}/Desktop/test
+
+I'm in the 'test' - so I can remove 'webapp' by doing 'rm webapp'.
+bash-3.2$ rm webapp
+rm: webapp: is a directory
+
+But 'rm' only works for files.
+To remove a directory or folder,
+rm -r foldername
+- used to delete folders. In this case 'foldername' will be deleted
+
+You need to do 'rm' and then use the '-r' option and then the folder name, in our case the 'webapp'.
+bash-3.2$ rm -r webapp
+
+There you go, it's gone.
+
+FOR WINDOWS:
+C:\Users\emu\Desktop\test\webapp
+λ cd ..
+
+C:\Users\emu\Desktop\test
+
+rmdir {directory name}
+- remove a directory and all files within
+
+C:\Users\emu\Desktop\test
+λ rmdir webapp
+
+And with that, you know what, we can remove the 'test' folder as well.
+We can go back to our 'Desktop'
+FOR MAC OR LINUX:
+bash-3.2$ cd ..
+bash-3.2$ pwd
+/Users/{user name}/Desktop
+
+and then do 'rm -r test'.
+bash-3.2$ rm -r test
+
+There you go, it's gone.
+
+FOR WINDOWS:
+C:\Users\emu\Desktop\test
+λ cd ..
+
+C:\Users\emu\Desktop
+λ rmdir test
+
+And one last trick on a Mac.
+You can do this.
+FOR MAC OR LINUX:
+say hello (only on Mac)
+- the mac will speak any text you enter after the 'say' keyword
+
+bash-3.2$ say hello
+
+Windows ONLY: How to open -a "Sublime Text" in Windows?
+
+**Assuming your Sublime Text 3 was located in the "C:\Program Files\Sublime Text 3" directory**
+
+1. In Git Bash copy paste and run:
+echo 'alias subl="/C/Program\ Files/Sublime\ Text\ 3/sublime_text.exe"'>>~/.bashrc
+
+2. Close Git Bash and Open it again.
+
+3. In Git Bash type:
+subl
