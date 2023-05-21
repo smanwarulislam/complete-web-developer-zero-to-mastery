@@ -1,0 +1,202 @@
+Sublime Text
+
+As a developer, a development environment is really important.
+Since you'll be spending a lot of time in front of the computer you want to make sure everything is set up properly.
+
+In this lecture, we are going to go over how to set up your/my developer environment and I'll show you what I use on my laptop.
+Now since I'm using a Mac I will leave notes after this lecture for Windows users as well.
+Finally, this lecture is completely optional and actually, this entire section is optional.
+
+If you are looking to customize your setup or you already have it done then you can skip over this section and move on to the next one.
+
+Now let's get started. In this lecture, we're going to customize Sublime Text.
+
+I mean Sublime Text looks pretty nice and I have a sample project,
+actually our background generator (background_generator_files) here.
+
+You know, it's - it's kind of plain and boring.
+
+I want to show you that if you go from 'Sublime Text' to 'Preferences', you can actually choose some color schemes and themes.
+So 'Select Theme...' for example, you see that we have some themes (UI: Select Theme) right now.
+I can change that.
+I can change the 'Select Color Scheme...' to (UI: Select Color Scheme) this and we get a bit of a change.
+
+But the one that I really really like is the material theme.
+And I'll leave the link to this for you and you can see over here that it makes your Sublime Text look really really nice.
+https://github.com/SublimeText/material-theme
+
+If I go over this, we see that we can just install it with something called package control.
+And the way we do that and it actually gives you pretty nice instructions,
+is we just need to press '⌘/Ctrl + ⇧ + P' (command + shift + P) or in the case of Windows, 'Ctrl + shift + P'.
+So let's do that.
+
+Easy installation
+You can install this awesome theme through the Package Control.
+1. Press ⌘/Ctrl + ⇧ + P to open the command palette.
+2. Type Package Control: Install Package and press enter. Then search for Material Theme.
+
+I'm going to say '⌘ + ⇧ + P' (command + shift + P) or in the case of Windows, 'Ctrl + shift + P'.
+And I see over here 'Install Package' so I can actually start typing and I'll get 'Install Package'.
+Or if you don't have package control you can actually install 'Package Control' through here as well.
+So let's install packages and let's see what it says over here.
+And enter a search for 'Material Theme'.
+So we'll just say 'Material Theme', and there it is.
+And you're just gonna click on it, you'll see that down here it's doing a bit of work to download it.
+And once it's done installing, we should have - there you go!
+We've installed it and it says to activate the theme, well, it actually gives you really nice instructions again.
+
+It's actually a really good idea to close and reopen Sublime Text, just to make sure everything is running smoothly.
+So I'm going to close. And let's just reopen it.
+
+And all you have to do now is just go to 'Preferences', 'Select Theme...' and look at that (UI: Select Theme).
+We have our 'Material Theme'.
+So I like the - you know what, I like the darker ones, so we'll do - let's do the default one.
+There you go.
+
+We're getting there.
+
+Let's check out what else it says over here.
+So we've changed it to Material Theme.
+And if you go to 'Select Color Scheme...' (UI: Select Color Scheme) as well now,
+So we'll make sure that those match - all the same Material theme.
+Look at that.
+That looks pretty nice.
+So we have our script file looking nice.
+And also our CSS looks nice.
+
+Activate the theme
+You can active this theme from:
+· Command palette Tools > Command Palette (⌘/Ctrl + ⇧ + P) by typing Material Theme: Activate theme.
+· Context menu (Right click on the editor) and choose Material Theme > Activate
+· Preferences > Packages Settings and choose Material Theme > Activate
+
+You can also manually activate this theme by adding these lines to your user settings (Preferences > Settings - User):
+"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+"theme": "Material-Theme.sublime-theme",
+
+NOTE: Restart Sublime Text after activating the theme.
+
+Okay, Awesome.
+Let's see what else we can do with this theme.
+
+The other thing is you have a couple of Addons, you can actually add file icons if you want.
+
+Addons
+File icons
+From release 4.0.0 this theme use A File Icon package to display file icons.
+https://github.com/SublimeText/AFileIcon
+
+Please install the package and restart Sublime Text.
+
+You can see over here that you can add these, so let's see how we can install this.
+
+Users
+Installation
+Package Control
+The easiest way to install is using Sublime's Package Control. It's listed as A File Icon.
+1. Open Command Palette using menu item Tools → Command Palette...
+2. Choose Package Control: Install Package
+3. Find A File Icon and hit Enter
+
+Note: Don't forget to restart Sublime Text after installing this package.
+
+We can just do Package Control: Install Package and Find A File Icon. Let's do that.
+And then again do '⌘ + ⇧ + P' (command + shift + P) or in the case of Windows, 'Ctrl + shift + P': 'Install Package' and let's do 'A File Icon'.
+
+And there you go.
+"Please restart Sublime Text for the applied icons to take effect."
+
+But it looks like it already has.
+Look at that.
+You can see over here I have the HTML5 icon, JavaScript icon, and then CSS3 icon.
+That looks pretty cool.
+Awesome.
+
+Let's go back to Material Theme.
+And they have recommended settings for a better experience.
+I'm actually just going to copy this. Where do you want to put this?
+If you go into 'Sublime Text', 'Preferences', and you go into 'Settings'.
+You'll get 'Default Settings' on the left-hand side.
+And on the right-hand side, you have the user settings and you want to make the most of your changes on this side,
+You see that our theme has already been automatically changed to Material.
+So here we can just add our copy and pasted suggested theme options. Let's save that. Some of the themes have changed.
+
+Recommended settings for a better experience:
+"always_show_minimap_viewport" : true,
+"bold_folder_labels"           : true,
+"font_options"                 : ["gray_antialias", "subpixel_antialias"], // On retina Mac & Windows
+"indent_guide_options"         : ["draw_normal", "draw_active"], // Highlight active indent
+"line_padding_bottom"          : 3,
+"line_padding_top"             : 3,
+"overlay_scroll_bars"          : "enabled",
+
+Awesome.
+All right, things are looking a little bit nicer.
+
+What else can we do here?
+
+You can actually also change the fonts.
+
+The font used for the code is "Operator Mono"
+You can also use the official Material Design monospace font "Roboto Mono" or "Fira Code".
+
+If I download something like "Roboto Mono" which is a Google font we'll download it.
+And once we open that, there we go, we have our font.
+And what you do is you actually grab this and drag it into your application which is usually even on Windows you'll have a font app (Fonts).
+On Mac, we have the font book right here and all we do is just drag it in here.
+So I have 'Roboto_Mono' now as my font
+and it's actually very easy to change if I go into my 'Settings' again,
+and we can just say "font_face",
+and we'll do "Roboto Mono", we save that.
+There you go.
+We've changed our font - looks even nicer.
+
+And one last thing that I really like doing is changing the Color Scheme.
+There is something called 'oceanic next', that's really really nice.
+Oceanic Next Color Scheme:
+https://github.com/voronianski/oceanic-next-color-scheme
+
+And as you can see, this is completely up to you. If you want to have your own little color scheme and theme, you can do that yourself.
+But again I just want to show you my setup here.
+
+So 'Package Control', oceanic next.
+Again, we just simply do the '⌘ + ⇧ + P' (command + shift + P) or in the case of Windows, 'Ctrl + shift + P', Install Package,
+'oceanic next' color scheme, and press enter.
+
+And now if I go to 'Sublime Text', 'Preferences', 'Select Color Scheme...', I should have 'Oceanic Next'.
+And there you go.
+I personally like this color style. If you like something else, well, that works too.
+Very cool.
+
+Install
+· use Package Control
+· or manually copy Oceanic Next.tmTheme file into /Packages/User directory (path depends on your OS)
+· select scheme from Sublime Text -> Preferences -> Color Scheme
+
+And the last thing I want to show you is that besides just looking, you can install packages with Sublime
+and if you just go to 'sublime packages', you can do a lot of things.
+https://packagecontrol.io/
+
+You can add a lot of extensions to Sublime Text anything that you need.
+
+For us, I think the most important thing is that again we do 'install package' and the first one is called 'Babel'.
+And as you can see it's a syntax definitions for ES6 JavaScript with React JSX extensions.
+Whoa, what does that mean?
+Well, again as new features of JavaScript come up,
+we want to make sure that Sublime Text recognizes it and adds all the colors and formatting that we need.
+Well by having 'Babel' and we installed this, we now have a 'Babel' file format.
+So if I actually click on this, instead of the JavaScript one you can do some really nice things like 'Arrow functions' and all recognize it.
+I recommend using the JavaScript Babel version to make sure that any new JavaScript features that you'll use will be nicely highlighted.
+
+One other one actually that I'll show you is the 'sidebar'.
+I've got to 'install package' and then 'Sidebar Enhancements'.
+Up until now - if I right-click here,
+I have only a few options; Rename, Delete File, or Reveal in Finder.
+If I add 'Sidebar Enhancements', and now I go right-click I have way more options that I can do with my files which are very very cool.
+
+All right.
+That's it.
+
+Play around with your settings and you can read up a ton on the Internet about everybody's customized way of doing things.
+I think this works really really well.
+It looks pretty and it makes your life a whole lot easier when writing new JavaScript syntax.

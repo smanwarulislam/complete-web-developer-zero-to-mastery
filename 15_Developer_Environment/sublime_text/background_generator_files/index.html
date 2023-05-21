@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Background</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="gradient">
+  <h1>Background Generator</h1>
+  <!-- We want to have two color pickers because the way gradients work goes from one color to the other -->
+  <input class="color1" type="color" name="color1" value="#00ff00">
+  <!-- Note: -->
+  <!-- One thing that is we've been using addEventListener (script.js) which is the recommended way of doing things because we're keeping the JavaScript and the JavaScript file but we could have also done within the input an onclick attribute or oninput attribute. -->
+  <!-- <input oninput="setGradient()" class="color1" type="color" name="color1" value="#00ff00"> -->
+  <!-- So we'll put another color picker -->
+  <input class="color2" type="color" name="color2" value="#ff0000">
+  <!-- <input oninput="setGradient()" class="color2" type="color" name="color2" value="#ff0000"> -->
+  <h2>Current CSS Background</h2>
+  <h3></h3>
+  <!-- 3. BONUS: Add a random button that generates two random numbers for the color inputs. -->
+  <button id="randomBtn" type="button">Random Colors</button>
+  <script src="script.js"></script>
+</body>
+</html>
