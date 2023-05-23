@@ -1,0 +1,13 @@
+Resources: Customizing VS Code
+
+Ever wished there was a list of the greatest plugins and extensions for VS Code in one location
+so that you have all the tools needed to be a full-stack developer?
+Well, somebody made the list and it is pretty good.
+
+Best VSCode Extensions for Web Development
+https://medium.com/nerd-for-tech/my-top-vscode-extensions-37e8ace9a9f
+
+The 30 Best VSCode Extensions You Need to Use in 2023
+https://hackr.io/blog/best-vscode-extensions
+
+Just don't go around installing everything... only install the ones you actually need.
