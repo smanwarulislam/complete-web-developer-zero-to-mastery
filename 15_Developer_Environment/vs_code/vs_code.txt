@@ -1,0 +1,90 @@
+VS Code
+
+I want to show you quickly another option you have for the scenario.
+And I mean there are a ton of options for you to choose from of where you wanna write your code.
+And I prefer Sublime Text.
+But I want to show you Visual Studio Code as well
+because Sublime Text and Visual Studio Code, these two are probably the most used most popular code editors for web developers.
+
+Now the way to get Visual Studio Code is you go to the website and just download whichever operating system your own.
+My case is Windows. So I will just download that.
+
+Now the reason a lot of people like Visual Studio Code is that it's free.
+Unlike Sublime Text which allows you to well still use it for free but everyone once in a while gets an annoying pop-up to purchase the full subscription.
+
+Visual Studio Code actually has really really nice plugins and tools to make developing better.
+Personally, I like Sublime Text just because it is nice, simple, and clean.
+I find Visual Studio Code getting antsy above you can change things around.
+But let me show you how I would set up Visual Studio Code.
+
+First I will just create a new JavaScript file and call it script.js.
+
+const object = {
+  name: 'Sally'
+};
+
+object.name
+
+You see that I get autosuggestion from VS Code.
+I don't have to install any plugins or anything at all.
+But it detects what this object has as a property and it autocompletes for it.
+
+And underneath the hood, it uses something called IntelliSense (e.g. code completions)
+and gives you a ton of suggestions when you type in as you can see here:
+For example,
+if I type in the 'window' object I see all the methods and properties that I can access which is really really nice, and people really like this.
+window.
+
+If I make any mistakes in my code you see that I get underlined in red saying hey this is something wrong:
+window.jsdahkahd(
+
+So that's really really nice!
+
+IntelliSense features are sometimes called by other names such as "code completion", "content assist", and "code hinting."
+
+It has a few more options.
+It has a Debug (Run and Debug) feature that is really nice.
+It also integrates with GitHub and Source Control.
+
+My favorite feature is we can actually open up the Terminal.
+You see (notice) that I have my Terminal right in my code editor which is really really nice.
+I have to switch between the screen like I do when I use Sublime Text and Command Prompt/Cmder (Windows) or iTerm/iTerm2 (Mac) although I actually like that.
+Some people prefer having everything in just one though.
+
+Now if I use using VS Code there are two plugins that I really recommend.
+
+If I go to 'File' over here let's go to File > Preferences > Extensions
+There are a ton of Extensions here just like Sublime Text.
+
+And one of my favorites that I like using VS Code is Quokka (Quokka.js).
+And if installed I can do something to find.
+I can do '⌘+ ⇧ + P' (command + shift + P) or if you using Windows might be, 'Ctrl + shift + P'
+and it's going to display the editor's command line which again works the same as Sublime Text.
+And if I type in Quokka you see the list of commands that I can use.
+And most likely in your case, you wanna start a new JavaScript file:
+Quokka.js: New JavaScript File
+So if I do this, check out what happens now
+So that's a really really fun plugin.
+
+Another one that I really like and probably the only other one that I would add is the Indenticator.
+
+And then finally just like with Sublime Text you can change the theme that you have.
+So if you go to Preferences > Theme > Color Theme
+you have a few default ones and a few others that you can just install.
+You can download different themes and customize them if you like them.
+
+That's enough about VS Code.
+
+Everybody has their own favorite code editor.
+There's no right one for web development.
+You just pick the tool that you find yourself like the most and you find your work the best with.
+Some people like a lot of plugins some people like the simplicity of Sublime Text.
+It's all up to you.
+Just customize it however you want because, at the end of the day, it does not matter what code editor you use.
+But I have to recommend to definitely Sublime Text or VS Code.
+
+VS Code packages and resources
+GitHub:
+https://github.com/viatsko/awesome-vscode
+GitHub Pages:
+https://viatsko.github.io/awesome-vscode/
