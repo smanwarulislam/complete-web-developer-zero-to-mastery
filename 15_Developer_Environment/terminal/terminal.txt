@@ -1,0 +1,132 @@
+Terminal
+
+In this lecture, we're going to set up our terminal to look nice along with our new set of Sublime Text/VS Code.
+
+As you know the terminal is just a text-based way to communicate with the computer instead of the Graphical User Interface that we normally use.
+As developers, you will spend a lot of time with the terminal.
+Especially as you become more and more senior in your role.
+So let's make it better.
+
+If we open up the terminal - I have it open already for myself, you see that we have the word 'bash' here.
+BASH is a type of shell that a terminal can have.
+And what do I mean by that?
+Just as the name suggests, it's just the casing around the terminal that is customizable.
+
+There's actually more than one shell.
+Bash is just one of them.
+
+One of my favorites is 'Oh my ZSH'.
+https://ohmyz.sh/
+
+There's the 'fish shell' and they all have different things that you can do with them, but it's just another way to customize your workstation.
+https://fishshell.com/
+
+Before I get into that, let's just customize our 'bash'.
+The way we do that is we can first start off with getting something other than just having this to the left.
+The way we do that is we type in 'nano' which is a text editor and then we do '~/.bash_profile'.
+$ nano ~/.bash_profile
+
+And here what we open is a file that is the bash profile. So this is what our profile will look like.
+This file gets read every time we open up the terminal.
+In here we can put in a bunch of things that we want our terminal to do.
+
+One of the cool things that I really think is fun is updating your 'PS1' variable.
+And I'll link to this website.
+https://www.maketecheasier.com/8-useful-and-interesting-bash-prompts/
+
+And there are a bunch of examples here that we can use.
+Let's just pick one that - like this one over here.
+5. Show the Full Directory Path
+PS1="[\[\033[32m\]\w]\[\033[0m\]<strong>\n</strong>\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
+
+All we do is copy and paste this.
+And within our bash profile, we can just copy and paste.
+And as you can see our PS1 now equals a whole bunch of gibberish that we don't really need to worry about.
+We see over here that to exit we need to do Ctrl-X then save modified, we just press 'Y' and then press 'Enter'.
+OK, nothing happens but the way we fix that is we now do 'source' and then '~/.bash_profile'.
+$ source ~/.bash_profile
+
+It essentially reloads our profile now.
+And look at that.
+We now have a cool little prompt to the left.
+
+So you can set up your PS1 to display whatever you want.
+If you want your current directory to display, that's great.
+If you want your username to display, that's good as well.
+You can set it up in a ton of ways.
+
+The other thing that the terminal lets you do if you click on something like 'Edit Background Color',
+You'll get a few things that you can change in your shell.
+You can change your color based on what you want.
+And if I bring this (Inspector) over here
+you can also click on the 'Profile' and actually it gives you a bunch of pre-built ones that look really cool.
+This is 'Pro' actually very nice.
+
+Again you can customize this as well.
+And as I mentioned a different operating system, you have your own ways to customize it.
+But every single one usually has a profile and a way to modify what gets displayed based on your needs.
+
+Now the one that I really really like, is a shell that's different than bash
+and I've used this one (Oh my ZSH) before which is really really good it has a ton of themes that you can use.
+They (Oh my ZSH) have a bunch of options and you can play through them.
+The one that I really like is the 'fish shell'.
+It's very simple.
+It has all the operating systems on it and I install it using 'Homebrew' (for macOS or Linux).
+
+Homebrew
+Homebrew — The Missing Package Manager for macOS (or Linux)
+https://brew.sh/
+
+For those on a macOS (or Linux), Homebrew is a way to install anything from the web.
+So instead of me going to a website and installing something, I can use a command line to download things.
+
+If you go to the Homebrew website, brew.sh,
+https://brew.sh/
+You can actually just copy this link into your terminal
+Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+copy and paste it.
+Press enter and it will install homebrew for you.
+
+Note: Homebrew is only supported on macOS and Linux.
+
+The way I install fish -
+you can see over here (Go fish) all I have to do is say (for macOS):
+brew install fish
+
+And while this is happening, I want to show/mention you another option.
+So we have the terminal (Terminal) over here,
+But 'iTerm' (or iTerm2) which again is specific for Mac is really really nice and it's way more customizable than the terminal (Terminal).
+https://iterm2.com/
+
+So I prefer using 'iTerm2'.
+If I open this and double click and look at that. This looks way nicer already.
+
+So let's just compare them side by side.
+I have the bash shell here and I have the fish shell here.
+Although they both are in the desktop right now they're running on different shells.
+The fish shell has - just like we have with the 'bash_profile', has its own profile.
+~/Desktop bash_profile
+
+So you can set it up.
+
+And you can set up which one gets activated when you first open up the Terminal or iTerm.
+What I recommend is to set up your workstation in a way that's nice to you.
+My preferred way is to use iTerm/iTerm2 and the fish shell.
+But if you want to use bash that's great.
+
+For iTerm2 and the fish shell:
+The beauty here is that if I type in 'bash', I get taken to the bash profile.
+~/Desktop bash
+bash-3.2$
+
+And if I type in 'fish', I get back to fish.
+bash-3.2$ fish
+~/Desktop
+
+iTerm2 also lets you just customize everything really nicely.
+If I go to Preferences..., you'll see here that I have Appearance, Profiles, where we can have Colors set up.
+And there's a ton more you can do with your Terminal.
+But I won't get into this lecture because everybody has their own way of doing things.
+I just wanted to show you a basic setup, so that now you have a nice environment that you can work in.
