@@ -1,0 +1,5 @@
+For Windows: Customizing Git Bash
+
+If you are on Windows, you can use this great resource to customize your Bash Profile to your liking:
+Customize git bash
+https://gist.github.com/RalucaNicola/e9a8746ab6c4e696d3f0d4dcfb57dafa
