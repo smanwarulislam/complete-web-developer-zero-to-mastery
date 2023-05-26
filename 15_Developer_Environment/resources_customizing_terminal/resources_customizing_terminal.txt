@@ -1,0 +1,54 @@
+Resources: Customizing Terminal
+
+Here are my recommended resources to get your Terminal personalized:
+
+Option 1: Terminal - Customizing Terminal
+https://osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
+
+Option 2: iTerm2 - Customizing iTerm2
+https://iterm2.com/
+https://sourabhbajaj.com/mac-setup/iTerm/README.html
+
+Option 3: Windows Users: Command Prompt
+
+Customizing Command Prompt
+https://www.howtogeek.com/16815/how-to-personalize-the-windows-command-prompt/
+
+Customizing Command Prompt 2
+https://lifehacker.com/how-can-i-make-the-windows-command-prompt-better-5834755
+
+If you have a MacOS, I recommend you get Homebrew
+https://brew.sh/
+
+Finally, here are two options for Shells:
+
+Oh My Zsh
+https://ohmyz.sh/
+
+fish shell
+https://fishshell.com/
+
+If you are sticking with the bash shell:
+8 Useful and Interesting Bash Prompts (PS1)
+https://www.maketecheasier.com/8-useful-and-interesting-bash-prompts/
+
+Development Environment Stack:
+
+· Homebrew
+https://brew.sh/
+
+· Laragon
+https://laragon.org/
+
+· Laravel Valet
+https://laravel.com/docs/master/valet
+
+· XAMPP
+https://www.apachefriends.org/index.html
+
+· Vagrant
+https://www.vagrantup.com/
+
+Good luck customizing your setup!
+You can always change this, so don't spend too much time here.
+It is fun, but there is more learning to be had, and you will find out what you like the more you spend time with these tools.
