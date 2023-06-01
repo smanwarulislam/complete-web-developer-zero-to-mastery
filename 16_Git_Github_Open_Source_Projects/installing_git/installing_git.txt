@@ -1,0 +1,41 @@
+Installing Git
+
+In this section, you will need to have Git installed. But there is some good news!
+
+If you are a Mac user, you already have git installed!
+
+If you are a Windows user and you installed Git for Windows in the last section, you have git installed!
+
+To confirm that you have git, you can simply run this command in your terminal:
+git --version
+
+If this responds with a version of git, then you are all set!
+
+Install Git:
+
+· https://www.atlassian.com/git/tutorials/install-git#windows
+· https://www.atlassian.com/git/tutorials/install-git
+
+If you are on Linux or you are not getting a git version printed, you can learn how to install it here!
+https://www.atlassian.com/git/tutorials/install-git
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+Wolfgang, one of our fellow students (and master of answering questions in this community and now the official TA of the course)
+created a set of videos for Windows users that you can watch in order to make sure everything that I do on my Mac, also works on Windows.
+Scroll down to the very last section of the course titled:
+For Windows Users,
+and check out the
+Introduction video and the
+Installing Git for Windows video,
+but watch my Git + Github Part 1 and Git + Github Part 2 videos (lectures) first!
+
+*****If you want your command line prompt to show you the git status like in my setup (as you will see in the next video/lecture),
+don't worry I will link to this in My Terminal Setup lecture after!*****
+
+Quick notes in case you encounter any errors over the next 2 videos (lectures):
+
+*****If you are getting permission errors when running git commands, you may have to add "sudo" in front of the command like this:
+sudo git push
+
+*****To read more about sudo click here:
+https://www.techtarget.com/searchsecurity/definition/sudo-superuser-do
