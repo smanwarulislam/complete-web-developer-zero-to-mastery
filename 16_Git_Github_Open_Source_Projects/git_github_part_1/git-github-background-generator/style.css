@@ -1,0 +1,48 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  color: rgba(0, 0, 0, .5);
+  background: -webkit-linear-gradient(left, red, yellow); /* Chrome10+, Safari5.1+ */
+  background: -moz-linear-gradient(left, red, yellow); /* FF3.6+ */
+  background: -o-linear-gradient(left, red, yellow); /* Opera 11.1+ */
+  background: linear-gradient(to right, red, yellow); /* Standard syntax | W3C | Chrome 25+, Firefox 16+, Safari 6.1+, Opera 15+, IE 10+ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  font: 600 3.5em 'Raleway', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  color: rgba(0, 0, 0, .5);
+}
+
+h3 {
+  font: 900 1em 'Raleway', sans-serif;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: .01em;
+  color: rgba(0, 0, 0, .5);
+}
+
+#gradient {
+  margin: auto;
+  position: absolute;
+}
+
+/* ---------- Media Queries for Standard Devices ---------- */
+/* Extra small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 2.5em;
+  }
+}
