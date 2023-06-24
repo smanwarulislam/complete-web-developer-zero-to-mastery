@@ -1,0 +1,45 @@
+Github Update: Master --> Main
+
+This will set “main” as the default branch. Change the default name in your settings.
+https://github.com/settings/repositories
+
+Repository default branch
+
+Choose the default branch for your new personal repositories.
+You might want to change the default name due to different workflows, or because your integrations still require “master” as the default branch name.
+You can always change the default branch name on individual repositories.
+Learn more about default branches.
+https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch
+
+About changing the default branch
+
+You can choose the default branch for a repository.
+The default branch is the base branch for pull requests and code commits.
+For more information about the default branch, see "About branches."
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#about-the-default-branch
+
+About the default branch
+
+When you create a repository with content on GitHub.com, GitHub creates the repository with a single branch.
+This first branch in the repository is the default branch.
+The default branch is the branch that GitHub displays when anyone visits your repository.
+The default branch is also the initial branch that Git checks out locally when someone clones the repository.
+Unless you specify a different branch, the default branch in a repository is the base branch for new pull requests and code commits.
+
+By default, GitHub names the default branch “main” in any new repository.
+
+You can change the default branch for an existing repository. For more information, see "Changing the default branch."
+https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch
+
+You can set the name of the default branch for new repositories. For more information, see
+
+"Managing the default branch name for your repositories,"
+https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-the-default-branch-name-for-your-repositories
+
+"Managing the default branch name for repositories in your organization,"
+https://docs.github.com/en/organizations/managing-organization-settings/managing-the-default-branch-name-for-repositories-in-your-organization
+
+and
+
+"Enforcing repository management policies in your enterprise."
+https://docs.github.com/en/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-on-the-default-branch-name
