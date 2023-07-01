@@ -1,0 +1,596 @@
+Git + Github Part 2
+
+Let's continue from our previous video (section) to talk about a more advanced workflow and Git and GitHub.
+
+Now up to this point, both Marcy and I (smanwarulislam (S. M. Anwarul Islam (Raju))) have just been working on it over here Branch: master (“main”).
+By default, GitHub names the default branch “main” in any new repository.
+What does that mean?
+Well it says Branches but I only see the main (default) here
+and you might have noticed one issue with the way that we were doing things.
+That is if it's my first day on the job and I just changed the title.
+But maybe we didn't even want that change.
+Maybe that breaks our branding or breaks our app.
+But I was able to do it so easily to change it into main.
+Maybe Marcy didn't even know that I'd added that change and that's a big problem right?
+You don't want to put things into what we call production into what the user sees.
+If it's going to break our website if you're a big company like Facebook (Meta) that could mean millions of dollars in lost revenue
+even if you have a bug that lasts a few hours.
+So I'm going to show you a more realistic workflow that you'll have.
+And that is with branching.
+Let me show you what I mean.
+
+I have over here a visual (git_github_part_2.png) of what Git is really really good at.
+Up until now, we've been working on what we call master (main).
+That is the master (main) branch.
+Think of the master (main) branch as the authority.
+This is the right way that our app or our website should look.
+
+And up until now when I added the cool background title Well I went from a Background Generator to Cool Generator
+and then when Marcy changed to capitalized letters (COOL). Then we went here (First to third).
+and we just went in a linear fashion from one end to the other to the other to the other.
+But like I said that is a bit of a problem.
+So a better thing to do is what we call branching.
+If I wanted to change the title I will create a branch and just call that Little Feature for example.
+And I just work on that branch on my own without affecting the master (main) branch what the user sees.
+Only when it's finished when Marcy has reviewed it when we have tested it and everybody on the team is OK. Then we bring it back into master (main).
+and you can see over here with the Big Feature you can keep going for a long time on your own branch
+and only when you're done do what we call merge into master (main).
+I'm going to show you how that works today.
+
+And remember our example
+we have Marcy's computer here with all the files
+and we have my (smanwarulislam (S. M. Anwarul Islam (Raju))) computer here with all the files.
+We both have our workstations set up
+and now you see what master (main -> origin) in my terminal means I'll show you in the notes afterward how you can have this set up so it tells you what branch you're on.
+But we can see that we're both on master (main -> origin).
+That's my (smanwarulislam (S. M. Anwarul Islam (Raju))) computer and Marcy's computer is also in master (main -> origin).
+
+We want to make sure that we're both up to date with the latest GitHub.
+So Marcy's going to do
+git pull
+G:\Marcy\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git pull
+Already up to date.
+
+and I'm (smanwarulislam (S. M. Anwarul Islam (Raju))) also going to do
+git pull
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git pull
+Already up to date.
+
+And let's say that I'm now working on a new feature
+and because it's a better workflow not to work on the master (main).
+And this is a good tip generally don't work on master (main), always branch off.
+
+If I do
+git branch
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git branch
+* main
+
+they'll show me that well I only have one branch and that is the master (main)
+but we can add to it we can say
+git branch new or littlefeature
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git branch littlefeature
+
+and now if I do
+git branch
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git branch
+  littlefeature
+* main
+
+I see that I have littlefeature but the master (main) is highlighted because I'm currently on master (main).
+So the way I would go to the littlefeature branch I'll say
+git checkout littlefeature
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git checkout littlefeature
+Switched to branch 'littlefeature'
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (littlefeature -> origin)
+λ
+
+and there you go.
+Switched to branch 'littlefeature'
+And now I'm on a littlefeature branch so what I've done is I've branched off of master (main) and now created littlefeature.
+
+Let's create a bit of a change.
+I'm going to say in the littlefeature we're going to change the Current CSS Background title to say This is the background
+I'm going to save.
+
+And again I do my simple workflow that we did in the last video (section)
+git status
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (littlefeature -> origin)
+λ git status
+On branch littlefeature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        git_github_part_2.png
+        git_github_part_2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+I see that.
+Yeah.
+We have the index.html changed.
+
+So now that we've made this change let's do
+git add
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (littlefeature -> origin)
+λ git add .
+
+and again just
+git status
+to make sure everything went through.
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (littlefeature -> origin)
+λ git status
+On branch littlefeature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   git_github_part_2.png
+        new file:   git_github_part_2.txt
+        modified:   index.html
+
+Yeah, we're ready to commit index.html.
+So we'll
+git commit
+message will be
+changing text (h2 tag).
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (littlefeature -> origin)
+λ git commit -m "changing text (h2 tag)"
+
+Perfect.
+
+And now again in order to let GitHub know all of the changes we need to do a
+git push
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (littlefeature -> origin)
+λ git push
+
+Let's go to GitHub and see what happened.
+We see that now we have this yellow bar that just showed up and says "Your recently pushed branches".
+So if I click on this green button here "Compare & pull request"
+It shows me what changes I have which is I've changed the text (changing text (h2 tag))
+and here I can let Marcy know by saying
+"Marcy, I've changed the text. What do you think?"
+And I click on Create pull request
+and now I have my PR (pull request)
+and you see here how it says Merge pull request.
+Well if we go back to our diagram (git_github_part_2.png)
+I've created this littlefeature and now I'm saying hey Marcy I've just done this new change.
+What do you think?
+Is it OK for me to merge it into the master (main)?
+And what will happen here most likely as Marcy will come to see this pull request.
+You can see (GitHub) that we're on the Pull requests tabs.
+So she'll (Marcy) be able to see them and see Oh smanwarulislam (S. M. Anwarul Islam (Raju)) just did this change.
+She'll look through the changes
+and she'll say Hmm well if she like says she can be like
+looks good
+she can click on Start a review
+and you know what she really likes it so she's just going to approve
+Now Marcy or I usually don't want to merge your own pull request somebody on the team does it can now just say Merge pull request
+Confirm merge
+and there you go
+some teams like deleting the branch (Delete branch) afterward so you can just click delete here (Delete branch).
+If I go back to the Code (<> Code tab), well, I don't have the branches anymore because I just deleted it.
+But in my master (main), if I go to index.html I see This is the background (h2 tag).
+
+So now Marcy can go to her project and say
+git pull
+G:\Marcy\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git pull
+
+and again she has the latest update.
+
+Now let's talk about some conflicts that can arise.
+
+Now let's say Marcy wants to change something and I also change the same thing and we get our merge conflict.
+Let's see what happens.
+
+So let's say Marcy wants to change and create a new feature saying we'll call this one bigfeature and she'll say
+git branch
+G:\Marcy\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git branch bigfeature
+
+G:\Marcy\GitHub\repositories\git-github-background-generator (main -> origin)
+λ
+
+She'll say
+git checkout bigfeature
+G:\Marcy\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git checkout bigfeature
+Switched to branch 'bigfeature'
+M       git_github_part_2.txt
+
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ
+
+And if I do
+git branch
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ git branch
+* bigfeature
+  main
+
+we see that there's a new branch here.
+
+And she'll say here that she wants to change this back to the Background Generator
+because all the users are complaining that the title changed and they liked the old title.
+So she changed that.
+
+and again just
+git status
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ git status
+On branch bigfeature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_github_part_2.txt
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+She has done the
+git add,
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ git add .
+
+git commit,
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ git commit -m "reverting back to the old title"
+
+Perfect.
+
+and then she's gonna do
+git push
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ git push
+
+Perfect.
+
+Now if I go back to the git-github-background-generator repository
+I see the bigfeature pull request over here ("Compare & pull request")
+and just to show you that you can have multiple commits let's say Marcy decides to add an exclamation point here (Background Generator!).
+She can just say again she saves this.
+
+and again just
+git status
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ git status
+On branch bigfeature
+Your branch is up to date with 'origin/bigfeature'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_github_part_2.txt
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+She'll say,
+git add
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ git add .
+
+git commit
+and she'll say
+git commit -m "added exclamation"
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ git commit -m "added exclamation"
+
+and she'll do
+git push
+again.
+G:\Marcy\GitHub\repositories\git-github-background-generator (bigfeature -> origin)
+λ git push
+
+You do this a lot.
+So you get really really good at Git after working in the company for a while.
+
+And let's go back to GitHub (repository).
+If we look at the pull request ("Compare & pull request")
+they'll actually have both of these
+reverting back to the old title and
+added exclamation
+and we see over here (index.html) both of the changes.
+Create pull request
+Needs changes, smanwarulislam
+
+So while this pull request is out there I decided to start a new branch called let's just call it conflict for now.
+And again I do my simple workflow
+git status
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (littlefeature -> origin)
+λ git status
+On branch littlefeature
+nothing to commit, working tree clean
+
+and now if I do
+git branch
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (littlefeature -> origin)
+λ git branch
+* littlefeature
+  main
+
+I see that I have the main but the littlefeature is highlighted because I'm currently on littlefeature.
+So the way I would go to the main branch I'll say
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (littlefeature -> origin)
+λ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ
+
+And now I'm in the main branch.
+
+and now if I do
+git branch
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git branch
+  littlefeature
+* main
+
+I see that I have littlefeature but the main is highlighted because I'm currently on the main.
+
+So while this pull request is out there I decided to start a new branch called let's just call it conflict for now.
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git branch conflict
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ
+
+And I'll do
+git checkout conflict
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git checkout conflict
+Switched to branch 'conflict'
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ
+
+And now in the conflict branch, I decide to change this to just completely remove the COOL Generator (<h1>COOL Generator</h1>).
+I save that again I check my status
+git status
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git status
+On branch conflict
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+and index.html file has been changed.
+
+So while this is happening I get Marcy to merge the pull request (Merge pull request).
+Confirm merge
+
+Pull request successfully merged and closed
+You’re all set—the bigfeature branch can be safely deleted.
+Delete branch
+smanwarulislam deleted the bigfeature branch now
+
+So she's (Marcy) entered it into master (main), and her pull request is in.
+And now if I go back to my conflict and I do
+git status
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git status
+On branch conflict
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+and we have to add these so
+git add
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git add .
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ
+
+and again just
+git status
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git status
+On branch conflict
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+then git commit
+I'll just do a short message here.
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git commit -m "check"
+
+and again just
+git status
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git status
+On branch conflict
+nothing to commit, working tree clean
+
+and now if I go back to master (main).
+Oh I have to do
+git checkout main
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ
+
+And now I'm in the main branch.
+
+again before I push my changes I want to make sure that I have the latest version of master (main) so I'm not changing anything or I won't have any conflicts.
+So I'll do
+git pull
+to get the latest.
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git pull
+
+And now I go to
+git checkout conflict
+branch
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git checkout conflict
+Switched to branch 'conflict'
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ
+
+and I can do this command
+git merge main
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git merge main
+
+So I'm saying merge whatever is in master (main) into conflict.
+
+From the diagram in git_github_part_2.png:
+Marcy has been working on the bigfeature and she's merged it so now master (main) has the bigfeature branch but...
+I've also created another branch and I've been working on my own on the conflict branch
+and the conflict branch doesn't know anything about the master (main)
+so I'm saying hey whatever is in master (main) right now which includes the bigfeature that Marcy worked on.
+Pull it in and make sure that there's no conflict.
+
+So I do that
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git merge main
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+and oh-oh I get CONFLICT: Merge conflict in the index.html file.
+
+Now if I actually click on Sublime Text or Visual Studio Code (VS Code), oh boy I get this weird little syntax.
+It's overwhelming at first but it's easy to see what happening
+→ <<<<<<< HEAD
+=======
+  <h1>Background Generator!</h1>
+→ >>>>>>> main
+
+HEAD is where my branch is at.
+→ <<<<<<< HEAD
+=======
+And it (=======) shows me that here to the end I don't have the h1 anymore
+
+  <h1>Background Generator!</h1>
+→ >>>>>>> main
+but in the main branch, we have
+<h1>Background Generator!</h1>
+
+Now I can talk to Marcy and say hey Marcy do you want to keep the "Background Generator!" title?
+<h1>Background Generator!</h1>
+And she'll say yes that was the right thing to do. Don't change the "Background Generator!" title.
+
+Well in that case I just remove these lines
+→ <<<<<<< HEAD
+=======
+and remove this
+→ >>>>>>> main
+
+and save now.
+
+If I do
+git status
+now
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git status
+On branch conflict
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+OK. We have the modified status here.
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ
+
+What we do now is we have to do
+git add
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git add .
+
+again because we've made those changes
+and we have to do
+git commit
+fixing merge issue.
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git commit -m "fixing merge issue"
+
+and do
+git status
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git status
+On branch conflict
+nothing to commit, working tree clean
+
+And if I do
+git push
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git push
+fatal: The current branch conflict has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin conflict
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Well again I get this error but I want to show you this time around if I do
+git push origin conflict
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git push origin conflict
+
+It now works.
+
+Let's go back to GitHub, and see what sort of things we have.
+
+We have the conflict branch ("Compare & pull request")
+and if we look at the conflict branch now well there's nothing changed because we just reverted all my changes so it's completely empty.
+There are no changes now so Marcy will be like
+"Hey did you mean to make this PR? It's empty."
+Create pull request
+They all see this message on my PR and I can keep going.
+
+And that's pretty much the workflow that you'll see in Git.
+
+I'll leave the commands for you after this.
+But it's very very nice to work with.
+
+You learn a few commands and as long as you have this (git_github_part_2.png) visual model of every time you're working on something
+you always create a branch you title it with whatever feature you're working on.
+And every once in a while, you want to pull master (main) and merge master (main) into your branch to make sure that
+you're not missing out on any updates that other developers or teammates have done.
+
+Once you're done with your feature you make a pull request by doing git push
+and that pull request you'll add comments
+and people will review your file changes
+and if you want to make a few changes then you can do again git add, git commit finally make your changes
+and then you can Merge pull request
+and once that's done (there's now a new main)
+There's now a new master (main) so everybody else on the team should do git pull as well.
+
+It does take a bit of time to get used to
+but is a really really nice workflow to make sure that
+everybody on the team works on the same files same projects without causing any errors and making sure that everybody collaborates well.
+
+and that's it.
+Hope you found this useful.
