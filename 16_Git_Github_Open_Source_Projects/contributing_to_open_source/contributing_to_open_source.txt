@@ -1,0 +1,410 @@
+Contributing To Open Source
+
+In this video (section), we're going to talk about how to contribute to open source and actually take you through the steps
+but first for those who don't know what is open source
+
+Well a lot of technology that has been created on the Internet that we know today has been built on top of open-source projects
+and open-source projects mean that anybody can view the code. Anybody who can see the code of a program can inspect can modify can enhance it.
+
+Open source software is software with source code that anyone can inspect, modify, and enhance.
+— Linux
+
+In this way, the idea is that by sharing this information with everybody we get everybody's input and we use the collective mind to improve software.
+Not only that but it also benefits everybody. Right?
+For example, the most famous example of an open-source project is Linux.
+Linux is an operating system just like Windows or Mac OS (macOS) except it's built by everyday programmers and it's code that is completely open sourced.
+Anybody can inspect the code and add to it and it's become so successful that most of the cloud that we know of servers usually run Linux.
+Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure all of them use Linux.
+Some of you might be running Linux right now as you watch this video (section).
+So not only do you get to work with other developers from around the world where you can build great projects but just work in teams.
+
+By learning how open source works well you don't have to create something as big as Linux.
+You can create a project with a friend. Something very small and simple it doesn't really matter.
+The idea is to collaborate with openness and sharing code to hopefully improve collective knowledge.
+
+Finally, a lot of employers actually look upon open-source contributions as a plus.
+So if you're able to put in your resumé that you're an open source contributor well that's a good sign.
+Plus it teaches you valuable skills at using Git and GitHub to work in teams.
+If you're looking for job experience but you don't have a job,
+contributing to open source is the perfect way for you to learn how to work in teams and mimic a work-like scenario.
+
+This is a really important video (section) and something I'm really excited about.
+
+So let's show you how to make your first open-source contribution to improve your resume, learn some real-life skills and have fun along the way.
+
+Now we've actually created some open-source projects for you for this course.
+We have the Zero To Mastery (zero-to-mastery).
+https://github.com/zero-to-mastery
+zero-to-mastery repositories here where we can see that
+we have about 115 projects (repositories) open right now with many contributors (People) and about 4.1k People (Organization permissions - Members).
+That's a lot of people in this number bound to increase.
+
+Now this (zero-to-mastery) place was created as a practice ground for you a playground.
+Nobody will yell at you if you break things you can contribute to silly things whatever you want. It's a testing ground.
+The idea is to have as much fun as possible and make it as easy as possible to contribute to open source.
+Now within that organization, we have a great community of administrators or management teams that will help you with these open-source projects.
+By the way, who are these administrators?
+They're right here (Discord).
+Ignore my name (Andrei Neagoie @Andrei Neagoie#6930).
+I (Andrei Neagoie) help out as well but they do a lot of the heavy lifting and they are past students just like you that have had a bit of experience.
+Now most of them are working full time
+but they are now helping out the community by helping with our open source projects, Discord, and generally just helping our community grow.
+So shout out to them if you get a chance.
+Say hi to them on this Discord.
+They definitely do a lot for this community.
+They're very active on Discord and they really help maintain all of our open source projects.
+
+So let's learn how to make our very first open-source contribution.
+I do want to note here that this (zero-to-mastery) isn't the only way for you to contribute to open source.
+This (zero-to-mastery) is just a playground that we've created for you.
+But once you contribute here (zero-to-mastery) you can go off and contribute to all the other open source projects all over GitHub.
+They can find you can contribute to projects like React and Angular.
+The world is your oyster or you can just stick to these (zero-to-mastery) as we actually have a ton of projects here that are fun.
+We have events going on like hacktoberfest.
+Well, we'll get to that shortly.
+We definitely have a great community of developers and we can create some awesome projects together.
+
+Now the way you want to get started is to first go to the start-here-guidelines (repository) and I'll link to this page:
+https://github.com/zero-to-mastery/start-here-guidelines
+
+Now in the start-here-guidelines (repository), you actually have A Guide to Get Started (used to be the 4-step guide).
+So you always have this (repository) as a reference. So after this video (section) definitely check out this document (repository) as a reference:
+https://github.com/zero-to-mastery/start-here-guidelines
+
+The first thing you want to do is to actually follow the steps (I'm referring to the following steps):
+A Guide to Get Started (used to be the 4-step guide):
+
+1. Check out Andrei's videos on github if you haven't watched it already.
+https://www.youtube.com/watch?v=JN63v_czZqI
+
+So if you've already watched might Git and GitHub videos you should be all set. Otherwise, hopefully, you're familiar with Git and GitHub.
+
+Now the first thing we want to do is to actually add our names to the CONTRIBUTORS.md file in this project.
+So if you go up you'll see that we have a CONTRIBUTORS.md which stands for markdown file
+and if I click on here (CONTRIBUTORS.md) you see that all the contributors that we have over 5,000+ contributors
+and if you scroll down these are all their GitHub names.
+So your first task is to actually add your name to this list.
+So how can we do this?
+Well, we can just Clone this repository,
+https://github.com/zero-to-mastery/start-here-guidelines.git
+but a more recommended way of usually contributing to open source is to Fork the project (repository).
+Fork essentially means copying over the entire project (repository) and putting it on your own GitHub profile.
+So if I click Fork here (the button "Fork")
+and we see over here that you can select where you want to put the project (repository) and you want to select your profile.
+
+2. On the GitHub page for this repository, click on the button "Fork."
+https://github.com/zero-to-mastery/start-here-guidelines
+
+So once we Fork this project (repository) we make a copy of it.
+It's like we own this repository now with our own version of the start-here-guidelines.
+
+So once we have this we can Clone this repository using HTTPS or SSH or GitHub CLI whatever you prefer.
+
+3. Clone your forked repository to your computer:
+For example, run this command inside your terminal:
+git clone https://github.com/<your-github-username>/start-here-guidelines.git
+Replace <your-github-username>!
+
+G:\GitHub\repositories
+λ git clone https://github.com/smanwarulislam/start-here-guidelines.git
+
+Learn more about forking and cloning a repo.
+https://help.github.com/en/github/getting-started-with-github/fork-a-repo
+https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository
+
+4. Shift to project directory:
+cd start-here-guidelines
+
+G:\GitHub\repositories
+λ cd start-here-guidelines
+
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ
+
+Now we can see these into start-here-guidelines and we can open this up in our favorite text editor.
+
+5. Before you make any changes, keep your fork in sync to avoid merge conflicts:
+git remote add upstream https://github.com/zero-to-mastery/start-here-guidelines.git
+git pull upstream master
+
+keep your fork in sync
+https://www.freecodecamp.org/news/how-to-sync-your-fork-with-the-original-git-repository/
+
+If you run into a merge conflict, you have to resolve the conflict. There are a lot of guides online, or you can watch this tutorial.
+https://www.youtube.com/watch?v=9ZRb01WhuoE&list=PL2HX_yT71umC0SWrtpzaXt0QzwhWyNI4c&index=4
+
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ git remote add upstream https://github.com/zero-to-mastery/start-here-guidelines.git
+
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ git pull upstream master
+From https://github.com/zero-to-mastery/start-here-guidelines
+  * branch                master     -> FETCH_HEAD
+  * [new branch]          master     -> upstream/master
+Already up to date.
+
+We have the CONTRIBUTORS.md file which we need to add our name to.
+Now I can see here the CONTRIBUTORS.md file is getting quite long because we've had a lot of students who are contributing to open source.
+But at the very end make sure you're at the very end you want to add your own name.
+
+Now here's the thing.
+Right now we're on the master branch but I'm going to show you what a good practice is.
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ
+
+6. After adding the upstream and checking that all files are up to date, we now will create new branch before editing any files. There are two ways to do so:
+
+git checkout -b <branch-name>
+
+git branch <branch-name>
+git switch <branch-name>
+
+We have our forked project and we want to create a new branch to work on instead of the master branch by saying
+git checkout -b <branch-name>
+
+to create a new branch and we want to name this branch in our case let's just name it 'test'.
+If I hit enter you'll see that now I'm on a new branch called test and in this branch,
+I can add my name to this (CONTRIBUTORS.md file) contributor list.
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ git checkout -b test
+Switched to a new branch 'test'
+
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ
+
+7. On your computer, open your text editor, and add your name to the CONTRIBUTORS.md file.
+
+· ⚠️ IMPORTANT NOTE #1: Add your name somewhere in the middle. Not at the top or bottom in order to avoid the chance of you getting a merge conflict!
+merge conflict
+https://www.youtube.com/watch?v=9ZRb01WhuoE&list=PL2HX_yT71umC0SWrtpzaXt0QzwhWyNI4c&index=4
+
+· ⚠️ IMPORTANT NOTE #2: Please do NOT edit or remove other people from the list, even to fix their indentation etc.
+This will likely prevent your PR from being merged.
+
+· ⚠️ IMPORTANT NOTE #3: Please add your name to CONTRIBUTORS.md NOT CONTRIBUTORS_OLD.md.
+
+Now I'm on a new branch called test and in this branch, I can add my name to this (CONTRIBUTORS.md file) contributor list.
+In your case, you'll want to use your own GitHub profile.
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ
+
+So we're using markdown here (CONTRIBUTORS.md) which is a way a syntax to write and has some functionality.
+For example, if we go to the contributors list (CONTRIBUTORS.md) you'll notice that they are all clickable links.
+So we essentially use the same notation
+we do a dash square brackets with your GitHub username and then in the parentheses, we just have the actual U.R.L that you want to link to.
+- [@smanwarulislam](https://github.com/smanwarulislam)
+
+Once we do that we can save this (CONTRIBUTORS.md) file.
+Now go back to our terminal and say
+git status
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git status
+On branch test
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   CONTRIBUTORS.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+and we see here that yeah we just modified our CONTRIBUTORS.md file
+
+and if I do
+git diff
+to see any changes that we've made
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git diff
+diff --git a/CONTRIBUTORS.md b/CONTRIBUTORS.md
+index 78466a849..37376fab2 100755
+--- a/CONTRIBUTORS.md
++++ b/CONTRIBUTORS.md
+@@ -7999,6 +7999,8 @@
+
+ - [@Smallz97](https://github.com/Smallz97)
+
++- [@smanwarulislam](https://github.com/smanwarulislam)
++
+ - [@Smartdev0612](https://github.com/smartdev0612)
+
+ - [@Smcnulty75](https://github.com/smcnulty75)
+
+We see that we've added this new line
++- [@smanwarulislam](https://github.com/smanwarulislam)
+
+8. Add the changes with git add, git commit (write a good commit message, if possible):
+
+git add CONTRIBUTORS.md
+git commit -m "Add <your-github-username>"
+
+Replace <your-github-username>!
+
+(write a good commit message, if possible)
+https://chris.beams.io/posts/git-commit/
+
+We have our name (GitHub username) all setup
+and we can now add this by saying
+git add CONTRIBUTORS.md
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git add CONTRIBUTORS.md
+
+or
+git add .
+dot (.) for everything we'll add everything
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git add .
+
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git status
+On branch test
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   CONTRIBUTORS.md
+
+and then
+git commit
+and we'll write a message that says
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git commit -m "Add my name (smanwarulislam) to the contributor's list"
+[test b98db0bd1] Add my name (smanwarulislam) to the contributor's list
+ 1 file changed, 2 insertions(+)
+
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git status
+On branch test
+nothing to commit, working tree clean
+
+There we go.
+
+So now it's time for us to push these changes.
+
+9. Push your changes to your repository:
+
+git push origin <branch-name>
+
+Now if I do
+git push origin master
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git push origin master
+
+Well right now what that would mean is that we want to push to the origin and the origin is this start-here-guidelines which I forked.
+So the origin is actually my version of the project/repository (smanwarulislam/start-here-guidelines)
+https://github.com/smanwarulislam/start-here-guidelines
+
+and if I want to push to the master branch that is the main branch (zero-to-mastery/start-here-guidelines).
+https://github.com/zero-to-mastery/start-here-guidelines
+
+But we don't want to do that because ideally,
+we want to be able to also change and add our name (username) to the zero-to-mastery/start-here-guidelines because this is the main project (repository).
+So what we can do is instead of the master branch push to our test branch.
+So we say,
+git push origin test
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git push -u origin test
+
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git push -u origin test
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 348 bytes | 6.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'test' on GitHub by visiting:
+remote:      https://github.com/smanwarulislam/start-here-guidelines/pull/new/test
+remote:
+To https://github.com/smanwarulislam/start-here-guidelines.git
+ * [new branch]          test -> test
+branch 'test' set up to track 'origin/test'.
+
+There we go.
+
+Now if I go back here and go to my project/repository (smanwarulislam/start-here-guidelines)
+and I refreshed I now have 2 branches the master branch and also the test branch which I just updated.
+
+10. Go to the GitHub page of your fork, and make a pull request:
+
+Read more about pull requests on the GitHub help pages.
+https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
+
+So one way to do this is to click on the New pull request
+and you can add comments here like
+I've added my name (smanwarulislam) to the contributor list.
+and you can tag some of our maintainers.
+In my case, I'll just tag myself (Andrei Neagoie)
+I've added my name to the contributor list. @aneagoie
+In my case,
+I've added my name (smanwarulislam) to the contributor list. @smanwarulislam
+If I do Create pull request
+I now have my pull request (@smanwarulislam)
+and notice here how my pull request is now at the zero-to-mastery/start-here-guidelines
+So that if I go back (<> Code tab) to our zero-to-mastery/start-here-guidelines
+I see that (Pull requests tabs) I'm part of the pull request now
+https://github.com/zero-to-mastery/start-here-guidelines/pulls
+
+right here
+https://github.com/zero-to-mastery/start-here-guidelines/pull/20149
+
+and because I've tagged one of the management teams so in this case it was myself @aneagoie (Andrei Neagoie).
+Or we can tag any of the management teams that we have.
+
+Now In this case I'm cheating because I also help manage this
+so I can just Merge the pull request most likely in your case you won't be able to merge it yourself.
+
+11. Wait until Zerobot or one of the maintainers merges your pull request.
+If there are any conflicts, you will get a notification and be required to resolve the conflict.
+
+But if I/@aneagoie (Andrei Neagoie) click Merge pull request and Confirm merge
+or one of the maintainers
+https://github.com/zero-to-mastery/start-here-guidelines/pull/20149
+
+There we go.
+Zerobot or one of the maintainers merged my pull request.
+I've deleted the branch (Delete branch) and the Pull request is closed.
+If I want I can even delete my own fork. But for now, let's keep it the way it is.
+
+Let's check the zero-to-mastery/start-here-guidelines
+https://github.com/zero-to-mastery/start-here-guidelines
+
+and see (CONTRIBUTORS.md) if my name (GitHub username) has been added to the list.
+https://github.com/zero-to-mastery/start-here-guidelines/blob/master/CONTRIBUTORS.md
+
+I scroll all the way down. Hey, check that out. There's my name (GitHub username) on the list.
+@smanwarulislam
+https://github.com/smanwarulislam
+
+So I've been added to the contributors list.
+
+It was pretty easy, right?
+
+And the cool part is that now if I go to my profile (GitHub) I actually have Zero To Mastery (zero-to-mastery) as one of my organizations.
+So if you're able to add yourself to the contributors list you can actually join the Zero To Mastery (zero-to-mastery) organization
+and have this (Zero to Mastery Icon) little icon (@zero-to-mastery) appear on your GitHub profile.
+And lots of GitHub profiles have organization.
+So people usually have their workplace icon in here (Organizations).
+So just a nice little thing to have on your profile (Zero to Mastery Icon) to show that you're involved in the programming community.
+
+12. Go join a project and start contributing or create your own group apps.
+Don't be shy and enjoy creating things together (We have over 20 projects for all levels of programmers)!
+Check out this guide for more information on selecting a project.
+https://github.com/zero-to-mastery/start-here-guidelines/blob/master/Get_Started.md
+
+13. To see the Zero to Mastery Icon in your GitHub profile, follow these steps (you must complete steps 1 and 2 for this to work).
+https://help.github.com/articles/publicizing-or-hiding-organization-membership/
+
+So we've just made a pull request which is step 10.
+And that was pretty fast, right?
+
+Finally, the next step (12.) is to go join an actual project and start contributing the way we just learned in our Zero To Mastery (zero-to-mastery) organization.
+Now there's actually a guide that we provide for you to figure out what project you choose and what's going to be good for you.
+Check out this guide for more information on selecting a project.
+https://github.com/zero-to-mastery/start-here-guidelines/blob/master/Get_Started.md
+
+We also have our Discord.
+If you have any issues contributing message/tag @Management Team in the #group-project-chat
+A GROUP PROJECTS section where we can look at some of the #current-projects that are happening
+or you can just go to the Zero To Mastery (zero-to-mastery) organization and pick any of the repositories to contribute to.
+https://github.com/zero-to-mastery
+
+Now in the next video (section), we're going to contribute to one of these projects and show you a real-life scenario.
