@@ -1,0 +1,309 @@
+Contributing To Open Source 2
+
+We've just done our first contribution which wasn't that crazy right?
+We just went to the start-here-guidelines (repository) and added our names to the contributor's list
+but let's actually contribute to an open-source project now.
+
+Now in our community every month we do coding challenges.
+Now you can search for coding challenges here:
+https://github.com/zero-to-mastery
+
+but this month (October 2019) is a special event because we're actually doing a hacktoberfest (hacktoberfest-2019) event
+and this happens once a year in our community in October.
+and you can see that if we click on the hacktoberfest-2019 link:
+https://github.com/zero-to-mastery/coding_challenge-22
+so depending on when you watch this, you might have a different year.
+
+You see that we've provided for you with an opportunity to contribute to an open-source project.
+Hacktoberfest 2019
+https://github.com/zero-to-mastery/coding_challenge-22
+
+We actually have Animation Nation (Animation-Nation):
+https://github.com/zero-to-mastery/Animation-Nation
+
+We have a Santafied project:
+https://github.com/zero-to-mastery/Santafied
+
+and also a Python project (Python-Art):
+https://github.com/zero-to-mastery/python-art
+
+and you can contribute to any one of these.
+
+So if we look at Animation Nation (Animation-Nation):
+https://github.com/zero-to-mastery/Animation-Nation
+
+while people have contributed their CSS animations here:
+A ZTM Challenge for Hacktoberfest 2019
+https://animation-nation.netlify.app/
+
+We also have the Santafied project:
+https://github.com/zero-to-mastery/Santafied
+
+A ZTM Challenge for Hacktoberfest 2019
+https://zero-to-mastery.github.io/Santafied/
+
+So people have created a little Santa website:
+https://zero-to-mastery.github.io/Santafied/
+
+That's kind of nice and very very cool:
+https://zero-to-mastery.github.io/Santafied/pages/gifts.html
+
+And then we also have the Python-Art project that actually does something really cool:
+https://github.com/zero-to-mastery/python-art
+
+If I go to the website (folder) here:
+https://github.com/zero-to-mastery/python-art/tree/master/website
+
+the website here will actually turn an image into ASCII art which is really really cool:
+https://raw.githubusercontent.com/hvijaycse/python-art/master/website/website.PNG
+
+Now there are tons of projects that you can do but let's try and do this Animation Nation (Animation-Nation) project:
+https://github.com/zero-to-mastery/Animation-Nation
+https://animation-nation.netlify.app/
+
+So the first thing I'm going to do is go to the project repository:
+https://github.com/zero-to-mastery/coding_challenge-22
+Project Repo/Instructions:
+https://github.com/zero-to-mastery/Animation-Nation
+
+and follow the steps that we've done before
+that is we Fork the repository (the button "Fork"):
+https://github.com/zero-to-mastery/Animation-Nation
+
+We now Clone this repository:
+~/Desktop
+λ git clone https://github.com/aneagoie/Animation-Nation.git
+
+And while that is being cloned let's look at the instructions.
+Now most open-source projects will have instructions on how you can contribute.
+In our case, we have a nice step-by-step guide (How to contribute).
+
+How to contribute
+Now, once you've forked this repo and got a local version up on your computer, follow these steps:
+
+1. In the Art directory (folder), create a directory named after yourself.
+
+Ok, that's nice and easy to do.
+
+So let's cd into the Animation-Nation project
+Shift to project directory:
+~/Desktop
+λ cd Animation-Nation
+
+~/D/Animation-Nation (master -> origin)
+λ
+
+let's open it up in Sublime Text or Visual Studio Code (VS Code)
+~/D/Animation-Nation (master -> origin)
+λ sublime .
+
+or
+~/D/Animation-Nation (master -> origin)
+λ code .
+
+and we see that there's an Art directory (folder) and in here we have to create our own name or our own folder with our name.
+I've actually already created a folder called animatron that has a little CSS project with HTML and CSS.
+So just to show you this is my little animation using some simple index.html and CSS. Nothing too crazy:
+Source: Live Server (Extension)
+http://127.0.0.1:5500/16_Git_Github_Open_Source_Projects/contributing_to_open_source_2/Animation-Nation/Art/animatron/index.html
+
+Now all we need to do is move this into the Art directory (folder) as the instructions have given us
+and now we've added our project.
+Let's see where is animatron.
+There it is.
+That's my project (animatron) over there.
+
+2. Within this folder you just made, create two files, an HTML file, and a CSS file.
+
+3. Link your CSS file to your HTML file.
+
+4. Using only HTML and CSS (no <script> allowed!!), create a work of art!
+It can be as simple or as complex as you like, as long as it's animated in some way!
+
+So I've actually already done that (create a work of art).
+
+5. Get a screen recording of your finished work, and make a gif! Try to crop it so that it looks good as a smallish (preferably squarish) image.
+Save this in your directory, together with your HTML and CSS files. Static screenshots are also acceptable.
+If you don't add a gif/screenshot, the website won't show your animation.
+
+Again If we go back to the project I have an index.html file very very simple that's linked to a stylesheet:
+index.html
+
+and this is the styles that I've added for my animation:
+style.css
+
+for my animation that these little lines:
+trance.gif
+
+Now the last part here is to add my own card to this section of the include.js file.
+
+6. Go to the root include.js. You will see an array of objects, each one represents a work of art that someone has created.
+Copy an example object and paste it at the end, filling it out with your art information and links:
+
+let cards = [
+  //  Add your card in this section
+  {
+    artName: 'Your art name here',
+    pageLink: './Art/Joy/triangle/triangle.html',
+    imageLink: './Art/Joy/triangle/triangle.gif',
+    author: 'Joy',
+    githubLink: 'https://github.com/royranger'
+  }
+];
+
+So let's just copy this and go to the include.js file.
+and you see this is where everybody enters their information.
+And we can just add while we copy and paste.
+Make sure the indentation is proper.
+
+//  Add your (S. M. Anwarul Islam (Raju)) card in this section
+  {
+    artName: 'Animatron',
+    pageLink: './Art/animatron/index.html',
+    imageLink: './Art/animatron/trance.gif',
+    author: 'S. M. Anwarul Islam (Raju)',
+    githubLink: 'https://github.com/smanwarulislam'
+  },
+
+or
+
+//  Add your (Andrei) card in this section
+  {
+    artName: 'Animatron',
+    pageLink: './Art/animatron/index.html',
+    imageLink: './Art/animatron/trance.gif',
+    author: 'Andrei',
+    githubLink: 'https://github.com/aneagoie'
+  },
+
+All right.
+So that should be good.
+
+Let's now make a pull request.
+Now notice here how I did all these changes on the master branch.
+~/D/Animation-Nation (master -> origin)
+λ
+
+Ideally, we created these changes on a new branch so we can actually just do that now
+git checkout -b animatron
+~/D/Animation-Nation (master -> origin)
+λ git checkout -b animatron
+M       include.js
+Switched to a new branch 'animatron'
+
+~/D/Animation-Nation (animatron -> origin)
+λ
+
+So if I do
+git status
+~/D/Animation-Nation (animatron -> origin)
+λ git status
+On branch animatron
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   include.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Art/animatron/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Now I see that I have two changes.
+That's good.
+
+Let's do
+git add
+~/D/Animation-Nation (animatron -> origin)
+λ git add .
+
+~/D/Animation-Nation (animatron -> origin)
+λ git commit -m "adding my artsiness to the project"
+
+And then finally
+~/D/Animation-Nation (animatron -> origin)
+λ git push origin animatron
+
+All right.
+
+If we go back to the project (repository),
+https://github.com/aneagoie/Animation-Nation
+
+we see that we actually now have a little icon that says "Compare & pull request"
+
+If I go back to the forked repo zero-to-mastery
+https://github.com/zero-to-mastery/Animation-Nation
+
+you see right over here that I also have this yellow banner.
+So if I click on this green button here "Compare & pull request"
+and say
+Please add me to this list. @royranger
+and we'll link to this (@royranger) is Joy who's one of the managers.
+We actually don't even need to tag her (@royranger) because she will check this occasionally.
+So I'm going to Create pull request.
+https://github.com/zero-to-mastery/Animation-Nation/pull/173
+It's now open.
+That's awesome.
+
+Note (Commits):
+https://github.com/zero-to-mastery/Animation-Nation/commits/master?after=cb011b544f5b98e16823598b573a4020ed32ba1b+2729&branch=master&qualified_name=refs%2Fheads%2Fmaster
+
+adding my artsyness to the project
+master (#173)
+aneagoie committed on Oct 12, 2019
+https://github.com/zero-to-mastery/Animation-Nation/commit/04e16d8f50b38a8f8968168c951cc7675b2d8df8
+
+Merge pull request #173 from aneagoie/animatron
+adding my artsyness to the project
+master (#173)
+aneagoie committed on Oct 12, 2019
+https://github.com/zero-to-mastery/Animation-Nation/commit/c18088bd4b6173a4f6b0247cc9f6ea2480d11578
+
+Merge pull request #173 from aneagoie/animatron (#173)
+https://github.com/zero-to-mastery/Animation-Nation/pull/173
+
+If I look at my file changes (Files changed) you can see that these are what I've added to the project.
+So if I now Merge pull request,
+Merging...
+
+Note: Again you won't be able to do this (Merge pull request)
+but some of our management team people who are managing the open-source projects will be able to merge for you.
+
+We can delete the branch since we have merged everything.
+Delete branch
+https://github.com/zero-to-mastery/Animation-Nation/pull/173
+
+And now let's see if the changes have been made.
+https://github.com/zero-to-mastery/Animation-Nation
+
+If I go to the
+https://animation-nation.netlify.app/
+
+So if I now look for my project hey look at that there's my little animatron project that's well here it is:
+https://animation-nation.netlify.app/art/animatron/
+
+That's beautiful.
+The way this project is designed it randomly selects the CSS animation
+so it might not show all of them at the same time so you might have to refresh this a few times.
+
+But just like that I made my open source contribution.
+
+Now there are a ton of projects here that you can join (Zero To Mastery).
+And like I said this is a playground for you to test and make mistakes because this isn't a real workplace:
+https://github.com/zero-to-mastery
+
+We want to practice these skills before we actually go to work and make big dangerous changes.
+
+Open source software is software with source code that anyone can inspect, modify, and enhance.
+— Linux
+
+And that's open source.
+
+I highly highly recommend that you get involved.
+It's a great way to work with others.
+It's a great way to learn how Git and GitHub really work.
+There's no doubt that there's a lot that an individual programmer can do.
+However, the progress and scale that something can be built is really compounded when many people work on something together.
+Go make your first open-source contribution and have fun building things with your fellow programmers.
+And may one day lead you to impress a potential employer.
