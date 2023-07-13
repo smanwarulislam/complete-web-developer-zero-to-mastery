@@ -1,0 +1,22 @@
+Exercise: Contribute To Our Open Source
+
+If you haven't done so already, it is time to contribute to your first open-source project!
+
+The contribution can be as big as a new feature, or as small as fixing a typo in the README.md file. Here is what we are going to do:
+
+1. Join our Discord community (see Lecture 2 of this course) and make sure you are in the #group-project channel.
+
+2. Read this 4-step guide by selecting "Open Source Projects"
+
+Community
+https://zerotomastery.io/community/
+
+Open Source Projects
+https://github.com/zero-to-mastery/start-here-guidelines
+
+3. Share your pull request on the Discord channel #group-project-chat so others can see your awesome contribution!
+
+4. In order to see the Zero To Mastery Icon in your GitHub profile, follow these steps:
+https://help.github.com/articles/publicizing-or-hiding-organization-membership/
+
+If you have any issues with this, you can tag the management team on Discord and let them know by pinging @Management Team
