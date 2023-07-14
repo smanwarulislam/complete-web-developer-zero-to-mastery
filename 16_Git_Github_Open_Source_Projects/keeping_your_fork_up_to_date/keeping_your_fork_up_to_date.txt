@@ -1,0 +1,134 @@
+Keeping Your Fork Up To Date
+
+You may have noticed something while watching the previous videos... (sections...)
+Do you have to always fork the Open Source project every time the master/main get's updated?
+What happens if somebody makes an update to the original project and now your forked project is out of sync and outdated?
+Luckily for you, there is an easy way to always make sure your forked has the most up-to-date version of the original project.
+Here is how:
+
+Once you are in your forked project directory in your command prompt...
+
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ
+
+and now if I do
+git branch
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git branch
+  master
+* test
+
+I see that I have the master but the test is highlighted because I'm currently on test.
+So the way I would go to the master branch I'll say
+G:\GitHub\repositories\start-here-guidelines (test -> origin)
+λ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ
+
+And now I'm in the master branch.
+
+and now if I do
+git branch
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ git branch
+* master
+  test
+
+I see that I have test but the master is highlighted because I'm currently on the master.
+
+Once you are in your forked project directory in your command prompt...
+
+1. Type git remote -v and press Enter. You'll see the current configured remote repository for your fork.
+
+a. git remote -v
+b. origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+c. origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ git remote -v
+origin  https://github.com/smanwarulislam/start-here-guidelines.git (fetch)
+origin  https://github.com/smanwarulislam/start-here-guidelines.git (push)
+upstream        https://github.com/zero-to-mastery/start-here-guidelines.git (fetch)
+upstream        https://github.com/zero-to-mastery/start-here-guidelines.git (push)
+
+2. Type git remote add upstream, and then paste the URL you would copy from the original repository if you were to do a git clone.
+Press Enter. It will look like this:
+
+git remote add upstream https://github.com/zero-to-mastery/PROJECT_NAME.git
+
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ git remote add upstream https://github.com/zero-to-mastery/start-here-guidelines.git
+error: remote upstream already exists.
+
+3. To verify the new upstream repository you've specified for your fork, type git remote -v again.
+You should see the URL for your fork as origin, and the URL for the original repository as upstream.
+
+G:\GitHub\repositories\start-here-guidelines (master -> origin)
+λ git remote -v
+origin  https://github.com/smanwarulislam/start-here-guidelines.git (fetch)
+origin  https://github.com/smanwarulislam/start-here-guidelines.git (push)
+upstream        https://github.com/zero-to-mastery/start-here-guidelines.git (fetch)
+upstream        https://github.com/zero-to-mastery/start-here-guidelines.git (push)
+
+4. Now, you can keep your fork synced with the upstream repository with a few Git commands.
+One simple way is to do the below command from the master of your forked repository:
+git pull upstream master
+
+Or you can follow along with another method here:
+"Syncing a fork"
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork
+
+
+
+Zero To Mastery
+https://github.com/zero-to-mastery/complete-web-developer-manual
+
+17. Git + Github + Open Source Projects
+
+Install Git:
+
+· https://www.atlassian.com/git/tutorials/install-git#windows
+· https://www.atlassian.com/git/tutorials/install-git
+
+Git GUI:
+
+· https://desktop.github.com/
+· https://www.gitkraken.com/git-client
+· https://www.sourcetreeapp.com/
+
+Git in one video
+
+· https://missing.csail.mit.edu/2020/version-control/
+· https://youtu.be/apGV9Kg7ics
+
+Git and version control practice/learning playground
+
+· https://learngitbranching.js.org/
+
+Git Commands:
+
+git clone "https:……"
+git remote -v
+git remote add url "https:……"
+git remote add upstream "https:……"
+git fetch upstream
+git merge upstream/master
+git status
+git add "filename"
+git add .
+git commit -m "message"
+git commit -am "commit message"
+git push
+git push origin "branchName"
+git pull
+git branch
+git branch "name"
+git checkout "name"
+git merge "name"
+git diff
+git diff "fileName"
+git checkout -b "name"
+git stash
