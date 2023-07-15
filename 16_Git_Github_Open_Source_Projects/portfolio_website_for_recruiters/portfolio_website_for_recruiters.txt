@@ -1,0 +1,23 @@
+Portfolio Website for Recruiters
+
+First, we have created a group for students of this course to network on LinkedIn with each other
+and endorse each other's skills so recruiters can find your profile and reach out to you for job opportunities.
+Click on LinkedIn Group:
+
+Community:
+https://zerotomastery.io/community/
+
+LinkedIn Group:
+https://www.linkedin.com/groups/12121940/
+
+Second, I have had a lot of recruiters contacting me for remote work developers lately.
+In order to connect students who are looking for jobs with these recruiters, I have created a simple website where you can list your information and your portfolio.
+This way, I can just forward these requests to this page for recruiters to check you out.
+This is completely optional and I hope some students will be able to get jobs this way.
+
+You can check out the website here:
+https://zero-to-mastery.github.io/ZtM-Job-Board/
+
+By the way, this is a project that is open-sourced and can be improved upon by the community and you can add your own profile to it.
+To learn how to add your name to the list:
+https://github.com/zero-to-mastery/ZtM-Job-Board
