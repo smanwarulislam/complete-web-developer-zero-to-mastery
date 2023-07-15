@@ -1,0 +1,17 @@
+Student Generated Top Resources
+
+Here is a list of the best resources to get you started with learning how to code (mostly related to Web Development).
+Feel free to add your favorite resources as well and help others in their journey of learning.
+One of the open-source projects started by students is:
+
+https://github.com/zero-to-mastery/resources
+
+https://zero-to-mastery.github.io/resources/
+
+It is a list of great resources as you go through the course and also as you progress through your career as a web developer.
+You can visit it if you need extra information, and also contribute your favorite resources to it as well to improve it.
+
+I've also curated my own list of the best resources for developers here:
+https://zerotomastery.io/resources/
+
+Hope this helps you along your journey with a little "extra"!
