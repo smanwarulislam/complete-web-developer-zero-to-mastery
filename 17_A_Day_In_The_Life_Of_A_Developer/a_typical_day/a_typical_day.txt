@@ -1,0 +1,189 @@
+A Typical Day
+
+Today I'm going to walk you through a Typical Developer Day.
+Now I know there are different types of companies.
+But in this video (section), there are going to be some main concepts that most likely you're going to see in all forms of work you do as a developer
+- whether it's for a company or a startup or freelance similar work patterns are going to be seen.
+And I want to take you through that because I'm assuming you're taking this course because you want to become a developer or you want to upgrade your skills.
+And it's important to know what a current workflow is and also what to expect to decide if this is for you or not.
+So let's get started.
+
+It's 9:00 A.M. now and as you can see I've created this great diagram (diagram_1.png) of myself coming into work,
+It's 9:00 A.M. and I have here what I call a Trello board and I can show you right over here (diagram_2.png) what it is.
+Usually, when you work on big projects, in order to stay organized, people have what they call the 'kanban-style'
+where there's a list of things To Do that people are working on.
+And then there's a Done list.
+
+Trello
+https://trello.com/
+
+TRELLO 101
+A productivity powerhouse
+Simple, flexible, and powerful. All it takes are boards, lists, and cards to get a clear view of who’s doing what and what needs to get done.
+
+Lists
+The different stages of a task. Start as simple as To Do, Doing or Done—or build a workflow custom fit to your team’s needs. There’s no wrong way to Trello.
+
+So usually in the morning,
+you come in and the first thing you want to do is you want to make sure that any changes that have been made
+while you were home or a night maybe have teams that are overseas that have worked while you were sleeping.
+Well as you know we want to always go to
+git checkout main
+And you should know how this works by now.
+If not make sure you check out the previous section (16_Git_Github_Open_Source_Projects).
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (conflict -> origin)
+λ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ
+
+I would do something like
+git pull
+to make sure that everything is up to date.
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git pull
+
+All right.
+And now I have everything up to date.
+
+Do you also want to see if there's anything that's maybe you're still working on that hasn't been resolved?
+If you remember from previous videos (sections),
+https://github.com/smanwarulislam/git-github-background-generator
+
+I have a couple of pull requests and one of the ones was the 'conflict' one
+https://github.com/smanwarulislam/git-github-background-generator/pull/3
+
+and we remember that -well,
+this (conflict) branch that I (smanwarulislam (S. M. Anwarul Islam (Raju))) was working on,
+Marcy told me that we don't really need that change so there are no files changed.
+https://github.com/smanwarulislam/git-github-background-generator/pull/3/files
+
+I can clean up what I've been working on by just closing my pull requests (Close pull request)
+I'm going to delete this branch (Delete branch).
+So that now going back to my workflow I'll just have the master (main) that I'm working on.
+Everything is up to date.
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ
+
+All right so pretty good.
+
+Maybe I'll move this conflict branch that I was working on. I'll just move it to Done and say that you know I'm -I'm done with it.
+So the team knows that I am no longer working on this (conflict) branch.
+
+9:00 A.M. is done.
+And 10:00 A.M. rolls around and I have over here (diagram_3.png) usually what happens is something called a stand-up
+where team members and everybody that's involved in a project
+or whatever you're working on meet to get everybody's updates and usually everybody stands around
+and you see over here (diagram_3.png) that
+there is an SM that is usually a scrum master or a manager or a director that usually organizes the meeting and takes the lead.
+And what we all do is just say "Hey this is what we did yesterday."
+"This is what we're going to do today."
+Or maybe if you're blocked on something and you're having an issue maybe you can ask some team members
+and usually in this meeting you also have this scary-looking person who is actually the PO which is the product owner.
+So that is anybody that could be a client that has invested interests that is money on the line for this project to be built.
+It could be your CEO it could be whoever is owning the product
+whoever wants to make sure that their product gets finished and gets finished on time but is also built properly.
+That's the product.
+So you have a quick stand-up meeting and usually around 10:30 A.M. you'll go back to work you'll be working on something like bugs or new features
+and the way you do that is well you go back to a board like this (diagram_4.png) and see what's on the To Do list.
+And usually, they're all small chunks
+and you know let's say I want to Update the ReadMe,
+drag that in here (diagram_5.png) and let everybody know that I am working on Updating the ReadMe.
+You know if I'm Updating the ReadMe I'll do something like
+git branch update-readme
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git branch update-readme
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ
+
+and I'll just
+git checkout that branch
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (main -> origin)
+λ git checkout update-readme
+Switched to branch 'update-readme'
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (update-readme -> origin)
+λ
+
+and I'll start to work on that feature or bug whatever it is (diagram_6.png).
+
+All right and let's say that -you know, I have had my lunch (diagram_6.png).
+I'm feeling very happy I got a lot of work done and I actually finished my ReadMe task (Update the ReadMe),
+well in that case I will actually submit a PR or a pull request which we've seen in previous videos (sections)
+where I'll do the classic 'git add .' command then 'git commit -m' then I'll be 'git push' up to GitHub all my changes
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (update-readme -> origin)
+λ git add .
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (update-readme -> origin)
+λ git commit -m "message"
+
+G:\smanwarulislam\GitHub\repositories\git-github-background-generator (update-readme -> origin)
+λ git push
+
+and then what we usually tend to do is if we go back to GitHub
+https://github.com/smanwarulislam/git-github-background-generator
+
+we'll have people that like yourself or other team members that see that there are a couple of Pull requests.
+https://github.com/smanwarulislam/git-github-background-generator/pulls
+
+Let's review Pull requests so that is code that maybe you or others have done
+and I see over here that I have a nice little person (Rxbsxn) who came and refactored our background-generator:
+https://github.com/aneagoie/background-generator/pull/5
+
+So we would view the file changes (Files changed)
+https://github.com/aneagoie/background-generator/pull/5/files
+
+and we see here that they have fixed a bunch of our background scripts to include the new ES6 syntax which is very very nice.
+We review everything, if we want to comment that's great.
+But you know what, these changes look really good.
+
+Review changes
+Review summary
+So I'm going to say (Approve),
+@Rxbsxn thank you for these changes. It looks great. Merging now.
+
+So I've submitted my review
+
+View reviewed changes
+https://github.com/aneagoie/background-generator/pull/5/files/183e9f671a14cb44f186f1e7790e38cc0f42a295
+
+and everything looks good.
+If there are any issues then I can let them know that we need a couple more things fixed but everything looks good here.
+https://github.com/aneagoie/background-generator/pull/5
+
+(diagram_7.png) Some companies will pass it off to something called QA that does Quality Analysis
+essentially making sure that the changes that we've implemented don't affect our web app.
+It still works on the phone.
+It still works on all browsers and makes sure that our features or bugs are fixed.
+(diagram_8.png) So that usually happens and if everything passes then woohoo, our PR gets approved by our team.
+The QA says Yep everything looks good.
+You're happy with what you've done and your PR and then you can finally merge in to master (main) branch
+and when that's done we go back to the Trello board (diagram_9.png) and we can just say that Update the Readme is done (Done).
+
+The team knows that you're all good to go and it all starts back up the next day (diagram_10.png) when you get in,
+make sure that there's nothing outstanding due (diagram_9.png).
+You go to the meeting (diagram_9.png).
+You look through that To Dos, grab a piece of feature or a bug that needs working on.
+And you start working on it.
+
+And I know it doesn't sound very exciting from the way that I'm describing it right now, but it is a ton of fun.
+Whether you're building a product yourself or you're the only owner you still are using these techniques to just keep yourself accountable
+making sure that tasks are getting done
+because being a web developer is all about breaking up big tasks like building Netflix into small manageable chunks
+and each day you're just working one chunk at a time to write some JavaScript, maybe some CSS, maybe some HTML, to build this one great big product.
+And that's it.
+
+That's a typical day for a web developer.
+
+I know it's always good to know why you're getting yourself into some of the tools that companies use and some of the workflows.
+
+So hopefully this video (section) was useful to you.
