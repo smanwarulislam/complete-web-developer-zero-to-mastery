@@ -1,0 +1,11 @@
+Exercise: Helping A Developer
+
+As a developer, most of the time, you will be working in teams with other developers.
+One of the best ways to advance in your career, and also improve your knowledge is to help others debug their code.
+Although you may not feel like you know everything yet, you are at a stage now where you can actually help other developers.
+
+Before you move on to the next section you should complete this exercise:
+
+Go to the #helpme channel in our Discord community and try and answer/help somebody who is having difficulty understanding a topic, or with their code.
+When you start answering questions and helping debug, you will notice that your skills will exponentially increase as well.
+Plus you will get some good karma out of it!
