@@ -1,0 +1,40 @@
+A Developer's Morning Routine
+
+Here is my morning routine in order to stay up to date with the industry and make sure that I am on top of the game.
+I highly recommend doing something like this throughout your career as well.
+
+P.S. I have a monthly newsletter, Web Developer Monthly,
+to summarize everything for you in order to stay up to date with what is happening in our industry every month,
+and to make sure you never miss a new resource!
+Check it out here!
+https://zerotomastery.io/blog/
+
+1. Read the top articles (over 100 upvotes) that interest you on Hacker News
+Hacker News
+https://news.ycombinator.com/
+
+2. Listen to a daily podcast on Software Engineering Daily
+Software Engineering Daily
+https://softwareengineeringdaily.com/
+
+3. Check out cool products for inspiration and developer tools with over 200 upvotes on Product Hunt from the previous day
+Product Hunt
+https://www.producthunt.com/
+
+4. Sign up for the Web Developer Monthly newsletter and JavaScript Weekly newsletter
+
+Web Developer Monthly
+https://zerotomastery.io/blog/
+
+JavaScript Weekly
+https://javascriptweekly.com/
+
+Remember, you shouldn't feel like you MUST DO all of these.
+Instead, pick and choose, and take breaks.
+Have fun learning and stay up to date with the industry.
+This is your career and lifelong learning should be fun!
+I use the resources above on a daily to make sure I stay current and I don't miss anything important in the industry.
+
+· https://www.weareadam.com/blog/2020/11/a-day-in-the-life-of-a-front-end-developer?source=github.com
+
+· https://nickang.com/2020-01-02-a-day-in-the-life-of-a-software-developer/
