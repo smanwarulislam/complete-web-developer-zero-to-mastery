@@ -1,0 +1,122 @@
+Introduction To NPM
+
+· From diagram_1.png:
+
+What is NPM?
+
+NPM was created for developers to be able to share JavaScript code that they have written.
+This way any developer around the world can grab somebody else's code that may solve his or her problem.
+This creates a great knowledge base of scripts that people can constantly update or improve and build on top of.
+As a matter of fact, it is very rare that an app or a website these days is built purely from scratch.
+By using collective intelligence we can grab pieces of code that are really good and build on top of it to create our product.
+For example, using JavaScript you can write virtual reality (VR) applications but you don't have to figure out everything yourself.
+Someone out there already worked on being able to use JavaScript VR so you use that person's code to start your project.
+
+Let's talk about how NPM works.
+
+NPM looks like this (Website):
+https://www.npmjs.com/
+
+npm (GitHub):
+JavaScript Package Manager, Registry & Website
+https://github.com/npm
+
+NPM looks like this (Website).
+A website with a search bar kind of looks like Google but here you can search for what we call Packages
+and these packages are located in the NPM Registry (diagram_1.png) and this Registry keeps track of files that have been submitted.
+Anybody can submit these files which are called packages or modules and they contain two things;
+A JavaScript file and a package.json file.
+and the package.json file which you've never seen before is a metafile that describes this package.
+
+So you can see here that this NPM registry is just a registry of all these files of JavaScript that other people have written.
+And the idea is to have small JavaScript files that do one thing really really well so that other people can use it.
+You then compose or combine different pieces of code and different packages on your project to add functionality
+and not have to rewrite something that has already been written by another person.
+So as you can see here (image of the single laptop → </>) I have let's say a person that has just written a JavaScript file that is really really useful.
+Well they think that other people might be able to use it so they push it up to the NPM Registry (</>)
+and by using the search bar over here (npm website)
+somebody can find your package maybe they're looking to have a script file that creates a list of arrays for people interested in cats.
+Well, then they are able to find this file (</>) and download it from NPM Registry onto their computer (image of other laptops).
+
+So let's talk about the benefits of this.
+Well, you get expertise from others, maybe you don't know everything, maybe others are better than you at this certain thing
+well you use that collective knowledge to use their code.
+
+But there's also a downside to this.
+Not all packages are good code.
+Anybody can put up their file to NPM, and you're also adding more bytes to your project which makes your project size even bigger.
+If you got all these files down into your project, well, that's a lot of files and each one is going to have to be sent from the server to the browser.
+And as you know from previous sections we want to minimize the size of our project so we built fast web apps
+there is an art to finding good NPM packages and you will get used to it after a bit of experience.
+So don't worry.
+
+Now you also see here (diagram_1.png) that I have something called the yarn (Yarn - Package Manager).
+
+Yarn (Website):
+https://yarnpkg.com/
+
+Yarn (GitHub):
+https://github.com/yarnpkg/berry
+
+yarn still uses the NPM Registry but you might see it every once in a while.
+Just like NPM, it's a tool to grab things from the NPM Registry.
+We won't talk about it (yarn) in this course but just keep in mind that both yarn and NPM are very very similar.
+If you learn one then you know the other so don't be afraid if you hear of a project that uses yarn instead of NPM.
+Now you can browse NPM and find things.
+
+· From diagram_2.png:
+
+But there are usually three types of packages (diagram_2.png).
+
+1. One is packages that you can use on the browser (diagram_2.png: Front End Developer).
+So on the Front End, so that is you can download jQuery from NPM.
+You can download all sorts of scripts that help you with front-end workflow.
+
+2. The second type is ones that give you new commands that you can use on the command line and I'll show you an example later on in this section.
+
+3. And finally, the third type of NPM package is one that you can use on Node.js on the Back End (diagram_2.png: Back End Developer).
+And that might sound scary to you but don't worry when we get to the Node.js section,
+I'll show you some of the Node packages that you can use, but it's pretty much the same thing as JavaScript.
+As a matter of fact, npm stands for Node Package Manager.
+It was initially built for node (Node.js) but it was so good and so popular that you can now use it for the Front End as well.
+The name npm (Node Package Manager) stems from when npm first was created as a package manager for Node.js.
+But it's all the same thing.
+It all works the same.
+Like I said before they're just scripts that you're able to use that other people have written and we're going to be using them a lot in this course.
+
+About npm
+npm is the world's largest software registry.
+npm consists of three distinct components:
+· the website
+· the Command Line Interface (CLI)
+· the registry
+
+npm
+JavaScript Package Manager, Registry & Website
+https://github.com/npm
+
+· From diagram_3.png:
+
+Now you might be asking yourself, why are we learning this (diagram_3.png)?
+and this course?
+I mean, is it really that important?
+
+Yeah, actually there are three must-do things.
+Now when starting a project and you'll see it in every single project.
+
+1. HTML + CSS + JavaScript
+One is that -well, they have an HTML file, CSS file, or JavaScript file.
+They may have -they might have multiple of these but all projects have those especially ones that are web based.
+
+2. GitHub Repo + Git
+You also have to have your project on GitHub and use source control like Git.
+Nobody stores their own project on their computer. They always have it with source control.
+
+3. package.json file
+And finally, you manage dependencies which are packages that other people have written.
+With npm using package.json file.
+
+So in this section, we're going to be working on this and finishing up our setup of how a typical project looks like and we know how to do the first two, right?
+
+Now in the next two videos (sections), I'm going to show you how to start using npm to download files and using package.json to manage those files.
+It is a critical part of a developer's workflow.
