@@ -1,0 +1,225 @@
+Setting Up NPM and package.json
+
+Let's talk about how we can set up npm on our computers so we can start using it.
+
+If we wanted to learn React (also known as React.js or ReactJS), well,
+React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library
+for building user interfaces based on components (actually a package) created by Meta (formerly Facebook)
+that we're going to be using in the next section.
+We need to get it and then how do we do that?
+
+The first thing we need is this (Node.js).
+Node.js® is an open-source, cross-platform JavaScript runtime environment.
+Node.js
+https://nodejs.org/en
+
+We need to download Node.js which comes with npm you can see over here
+Download | Node.js
+https://nodejs.org/en/download
+
+that the Latest LTS Version: 18.17.0 (includes npm 9.6.7),
+which means Long Term Support Version 18.17.0 includes npm 9.6.7 and you have the version numbers here as well.
+
+So for Windows, you can install it here (Windows Installer), Mac here (macOS Installer), and for anything else, you can use the Source Code as well.
+You simply click on your operating system of choice and you'll have your node install.
+You simply click and it will install everything for you and take you through the whole process.
+This should be very quick. You can do it in less than a minute.
+
+Now why do we need Node.js?
+And what is Node.js is probably what's going through your head right now.
+And don't worry we'll get through it.
+The simple version of it is that Node.js allows us to run JavaScript outside of the browser.
+I mean up until this point every time we wanted to use JavaScript we either wrote it here in the Console
+or we attached a script file to HTML and loaded the HTML file in the browser.
+As you know each browser has a JavaScript engine such as the V8 engine that Chrome has.
+But that was the only thing that was able to read JavaScript.
+Outside of a browser, we need something to read it to understand it,
+and Node.js was created actually using the V8 engine that the Google Chrome browser uses to read JavaScript and run JavaScript outside of the browser.
+But as I said, we'll get into that later.
+(you will learn more about Node.js in its own section... and talk about the latest version of Node.js)
+For now, let's download Node.js which automatically installs npm for you.
+And don't worry in the next section
+I have resources for you to go through this step line by line both for Windows and Mac and also some troubleshooting in case you run into errors.
+
+Now after you've installed everything there is a simple way to check that everything is working.
+You just go to your terminal and you type in
+npm -v
+and this should give you a version number.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\setting_up_npm_and_package_json\background-generator (main -> origin)
+λ npm -v
+8.19.2
+
+If that didn't work, well then go through the steps that I've listed for you and you should be able to get it.
+So you want to make sure that if you're watching this video (section) and going on through the rest of the course
+when we're building our projects, you want to make sure that npm our version is higher than 8.19.2. Otherwise, it might not work.
+
+And we also want to make sure that we have Node.js and we simply do
+node -v
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\setting_up_npm_and_package_json\background-generator (main -> origin)
+λ node -v
+v18.12.1
+
+And again we want to make sure that our Node.js version is higher than 18.12.1.
+
+Check node and npm installed on your system by:
+node -v
+npm -v
+
+Now let's say that for some reason these are lower.
+Well, Node.js -you simply go to the website and they'll have the latest version for you which should be fine with this.
+With npm, if for some reason this is lower, you can simply run
+
+Upgrading on *nix (OSX, Linux, etc.)
+(You may need to prefix these commands with sudo, especially on Linux, or OS X if you installed Node using its default installer.)
+You can upgrade to the latest version of npm using:
+npm install -g npm@latest
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\setting_up_npm_and_package_json\background-generator (main -> origin)
+λ npm install -g npm@latest
+
+Reference websites:
+Try the latest stable version of npm
+https://docs.npmjs.com/try-the-latest-stable-version-of-npm
+
+Upgrading on Windows
+By default, npm is installed alongside node in
+C:\Program Files (x86)\nodejs
+
+npm's globally installed packages (including, potentially, npm itself) are stored separately in a user-specific directory (which is currently
+C:\Users\<username>\AppData\Roaming\npm).
+
+Because the installer puts
+C:\Program Files (x86)\nodejs
+
+before
+C:\Users\<username>\AppData\Roaming\npm
+
+on your PATH, it will always use the version of npm installed with node instead of the version of npm you installed using npm -g install npm@<version>.
+
+To get around this, you can do one of the following:
+
+· Option 3: Navigate to %ProgramFiles%\nodejs\node_modules\npm and copy the npmrcfile to another folder or the desktop.
+Then open cmd.exe as an administrator and run the following commands:
+cd %ProgramFiles%\nodejs
+npm install npm@latest
+
+I don't think you'll run into there so you should be good.
+
+Finally, while running through npm commands which is why we'll use them to download things and I'll show you how to do that in the next video (section).
+
+You might run into some permission errors when you're running a command like (for example)
+npm install react
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\setting_up_npm_and_package_json\background-generator (main -> origin)
+λ npm install react
+
+When you press enter you might get some permission errors.
+In that case, that means that your user whatever you're logged into to your computer doesn't have permission rights.
+Maybe they're not the administrator at all the computer
+in which case you'll have to run these commands as the administrator which simply means running
+sudo npm install react
+
+and it'll ask for your username and password.
+
+You're going to have links to this after this video (section).
+If you're on Windows there is a different command and sudo again both found and the resources after this video (section).
+
+Reference websites:
+Try the latest stable version of npm
+· https://docs.npmjs.com/try-the-latest-stable-version-of-npm
+
+All right.
+
+So we have npm and node installed.
+
+Everything looks good.
+
+How can we start using npm and even getting that package.json file that I keep talking about?
+It's very easy all you do is
+npm init
+and any time you start a project you want to do the
+npm init
+And this command creates a package.json file in your directory.
+
+So we have the background-generator here (Andrei Neagoie's directory).
+You'll see that after I run this command, it'll ask me a few questions, and then the package.json file will appear here.
+Let's go through it.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\setting_up_npm_and_package_json\background-generator (main -> origin)
+λ npm init
+
+And you can see over here it's going to walk me through the setup.
+I can name my package if I want.
+In this case, I'm just going to keep pressing Enter unless you are publishing an npm package.
+You don't really need to worry about it, so I'm just going to keep pressing enter.
+But you can see I can add a few things about the author of the license of the project.
+I just keep pressing enter.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\setting_up_npm_and_package_json\background-generator (main -> origin)
+λ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (background-generator)
+version: (1.0.0)
+description:
+entry point: (script.js)
+test command:
+git repository: (https://github.com/smanwarulislam/background-generator-update.git)
+keywords:
+author: S. M. Anwarul Islam (Raju)
+license: (ISC)
+About to write to
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\setting_up_npm_and_package_json\background-generator\package.json:
+
+{
+  "name": "background-generator",
+  "version": "1.0.0",
+  "description": "Git + GitHub Part 1 &amp; Part 2",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/smanwarulislam/background-generator-update.git)"
+  },
+  "author": "S. M. Anwarul Islam (Raju)",
+  "license": "ISC"
+}
+
+Is this OK? (yes)
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\setting_up_npm_and_package_json\background-generator (main -> origin) (background-generator@1.0.0)
+λ
+
+Look at that, we have a package.json file.
+Let's open it up.
+and we have package.json.
+There you go.
+
+We have our name "background-generator"
+It's version 1.0.0
+main is "script.js"
+It actually finds out where our main JavaScript file is (script.js)
+and we have a couple of other things that we'll go through in the rest of the section.
+
+But one question you might be having is 'What is .json?'
+Up until this point, we've had
+.html
+.css
+.js
+Well, .json (JSON) is a file format.
+You can see over here on the right-hand side of the bottom that Sublime Text or Visual Studio Code (VS Code) says this is a JSON file.
+It's just a format and it looks kind of like a JavaScript object except for the fact that it has double quotes for properties.
+
+All right with this comes a lot of power so I'm excited to show you what we can do with this.

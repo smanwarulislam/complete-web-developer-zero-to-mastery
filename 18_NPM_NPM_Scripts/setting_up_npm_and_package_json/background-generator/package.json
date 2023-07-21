@@ -1,0 +1,15 @@
+{
+  "name": "background-generator",
+  "version": "1.0.0",
+  "description": "Git + GitHub Part 1 &amp; Part 2",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/smanwarulislam/background-generator-update.git)"
+  },
+  "author": "S. M. Anwarul Islam (Raju)",
+  "license": "ISC"
+}
