@@ -1,0 +1,99 @@
+Update: Latest Node.js and NPM
+
+Hey there,
+This is S. M. Anwarul Islam Raju (GitHub: smanwarulislam) from the Future.
+
+That's right.
+You just watched a video (section) of me installing node (Node.js)
+
+Node.js
+https://nodejs.org/en
+
+but Oh now we're in the future and the node versions are now higher based on when you watch the video (section).
+This (Node.js) might be even higher where the LTS release is probably while probably this version (see the Node.js website).
+
+For information on using Node.js, see the Node.js website.
+https://nodejs.org/
+
+So what can you do here?
+Well, it doesn't really matter, right?
+I said in the previous video (section) that as long as you have a version higher than this (18.17.0 LTS or lower version) everything in this course will work
+but let's say you're coming back to this video or just in general you want to keep your software up to date
+and you decide that I want to get the latest version of node because this latest version of node has the best most up-to-date features.
+
+Let's say we go back to our terminal and I check my node version.
+
+C:\Users\emu\Desktop
+λ node -v
+v18.12.1
+
+Once again if I do the npm version here
+
+C:\Users\emu\Desktop
+λ npm -v
+8.19.2
+
+If we look at the home page and maybe the download
+
+Download | Node.js
+https://nodejs.org/en/download
+
+here you see that it includes npm 9.6.7
+
+So if I go to the homepage it'll actually automatically detect one machine you're on
+or you can go specifically to downloads and download specific to your operating system.
+
+Now let's go through a process where we update our node version we need to do is click on this (home-downloadbutton):
+
+18.17.0 LTS
+Recommended For Most Users
+
+open up and go through the installer let's continue.
+
+So for Windows, you can install it here (Windows Installer), Mac here (macOS Installer), and for anything else, you can use the Source Code as well.
+You simply click on your operating system of choice and you'll have your node install.
+You simply click and it will install everything for you and take you through the whole process.
+
+OK.
+
+So let's go back to the terminal
+So in my case, I can just open up a new window (terminal).
+If I now do
+
+C:\Users\emu\Desktop
+λ node -v
+v18.12.1
+
+check that out I have the latest version of the node (Update: Latest LTS Version: 18.17.0)
+If once again I do
+
+C:\Users\emu\Desktop
+λ npm -v
+8.19.2
+
+I have the latest version of npm as well (Update: npm 9.6.7).
+
+Very very cool.
+
+Now based on your machine you might encounter some issues.
+So I will leave some resources for you to actually help you along (especially for Windows users, see the next lesson!).
+
+For example, if you're just installing the latest version of npm there is a way to do it.
+
+Getting the latest version of npm:
+https://docs.npmjs.com/try-the-latest-stable-version-of-npm
+
+As I've shown you before with OSX and Linux and then for Windows there is a separate way of updating things.
+
+But I'm only showing you this because in the future in your projects you might want to upgrade some of your tooling.
+If you're watching this video (lesson) right now
+and this is your first time downloading node then most likely you have the latest version anyway so you don't have to do anything.
+
+Install node and npm:
+
+· https://nodejs.org/en (Though with a newer version of node, npm comes pre-installed. So you don't need to do that separately)
+· https://docs.npmjs.com/getting-started
+
+Check node and npm installed on your system by:
+node -v
+npm -v
