@@ -1,0 +1,60 @@
+Troubleshoot: Installing NPM and Node.js
+
+IMPORTANT:
+In this course, we need to be using Node.js version 8.9.1 or higher (Latest LTS Version: 18.17.0), and npm version 5.5.1 or higher (Latest npm 9.6.7)!!!
+Latest LTS Version: 18.17.0 (includes npm 9.6.7)
+
+To check if you have Node.js installed, run this command in your terminal:
+node -v
+
+To confirm that you have npm installed you can run this command in your terminal:
+npm -v
+
+If you get the version number back, everything is working!
+
+If any of these commands result in an error then that (node/npm) doesn't installed on your system.
+
+While using npm or node commands, if you ever get a permission issue, you may need to run the commands with sudo in front of each command.
+For more details, review this.
+https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+
+And for Windows: you may have to use another command.
+https://stackoverflow.com/questions/9652720/how-to-run-sudo-command-in-windows
+
+***For Windows Users:***
+
+Wolfgang, one of our fellow students (and master of answering questions in this community)
+created a set of videos/lessons for Windows users that you can watch in order to make sure everything that I do on my Mac, also works on Windows.
+Scroll down to the very last section of the course titled:
+For Windows Users, and check out the Introduction video and the Installing Node.js for Windows video!
+
+***Optional: Only for Advanced users***
+
+If you want to upgrade to the latest version of Node.js: Follow these steps
+https://stackoverflow.com/questions/10075990/upgrading-node-js-to-latest-version
+
+NVM: You can use a tool like nvm to be able to install multiple versions of node and change between them for each project.
+This is advanced so try it at your own risk: NVM Tutorial
+
+· Installing Multiple Versions of Node.js Using nvm
+https://www.sitepoint.com/quick-tip-multiple-versions-node-nvm/
+
+· Node Version Manager – NVM Install Guide
+https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/
+
+If you want to run multiple versions of the node on the system then we can utilize Node Version Manager (nvm)
+
+Install nvm:
+· https://github.com/coreybutler/nvm-windows#installation--upgrades
+
+Steps to install NVM on the local machine:
+· https://www.freecodecamp.org/news/nvm-for-windows-how-to-download-and-install-node-version-manager-in-windows-10/#followthestepsbelowtodownloadnvmwindows
+
+Check nvm installed on your system by:
+nvm -v
+
+Check the nvm list available on your system by:
+nvm list
+
+Use the nvm version on your system by (nvm use with a specific version of the node):
+nvm use 14.12.0
