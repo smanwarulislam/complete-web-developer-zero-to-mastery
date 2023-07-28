@@ -1,0 +1,602 @@
+Installing And Using Packages
+
+Welcome back, let's start using npm.
+I wanted to go over one more time exactly what's happening underneath it.
+
+So now that we have a package.json file we're able to grab whatever packages we want from npm
+and the next section will be grabbing React (also known as React.js or ReactJS), a JavaScript library that will be used and that file lives on npm.
+So using the package.json file and the newly found npm command, we can grab React (also known as React.js or ReactJS) and have it as part of our project.
+So let's get started.
+
+Because we're using React (also known as React.js or ReactJS) in the next section
+I'm going to show you two other packages that I really really like in npm.
+One is called live-server and the other one is Lodash.
+I'm going to be going through each one of them so you know what they are.
+But I pick these two (live-server and Lodash) because they're actually different in the way that you install them.
+
+· Live Server (Live Server - Visual Studio Marketplace)
+https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+· live-server (live-server - npm)
+https://www.npmjs.com/package/live-server
+
+Reference websites:
+
+· Home Page  | Live Server | VSCode Extension
+https://ritwickdey.github.io/vscode-live-server/
+
+· Live Server Web Extension
+https://chrome.google.com/webstore/detail/live-server-web-extension/fiegdmejfepffgpnejdinekhfieaogmj
+
+· VS Code Live Server – How to Auto-Refresh Your Browser with this Simple Extension
+https://www.freecodecamp.org/news/vscode-live-server-auto-refresh-browser/
+
+· How to Enable Live Server on Visual Studio Code? - GeeksforGeeks
+https://www.geeksforgeeks.org/how-to-enable-live-server-on-visual-studio-code/
+
+· How to Open With Live Server in VS Code
+https://www.alphr.com/vs-code-open-with-live-server/
+
+· Lodash
+https://lodash.com/
+
+I pick these two (live-server and Lodash) because they're actually different in the way that you install them.
+
+For example, with live-server, I have (live-server (live-server - npm)):
+https://www.npmjs.com/package/live-server
+
+Installation
+You need node.js and npm. You should probably install this globally.
+Npm way:
+npm install -g live-server
+
+OK, that seems fairly easy.
+
+And then with lodash, if I go to the npm registry (or Lodash website), I see that it's:
+https://www.npmjs.com/package/lodash
+https://lodash.com/
+
+Installation
+Using npm:
+$ npm i -g npm
+$ npm i --save lodash
+
+Hmm, well, npm allows you to install things two ways.
+1. globally or
+2. locally
+
+What does that mean?
+In our project here our background-generator,
+if we install something locally that means npm will install a package that is only able to run in this folder, in background-generator.
+But if I downloaded it (live-server) globally and that is what '-g' means,
+well I can use live-server outside of this (background-generator) folder anywhere on my computer.
+As the name suggests, globally means you can run it everywhere, and usually globally means you can run it on your terminal.
+So remember that if you install it with '-g', that means it's going to give you a command that you can run in the terminal.
+If you don't install it with '-g', if it's locally then it will give you powers such as new abilities in the JavaScript file (i.e., script.js file).
+Let's actually go through this to demonstrate this point.
+
+· Visual Studio Code (Live Server):
+
+Live Server | VS Code Extension
+Extension for Visual Studio Code - Launch a development local Server with live reload feature for static & dynamic pages.
+https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+· For Sublime Text editor (Live Server):
+
+live-server - npm
+https://www.npmjs.com/package/live-server
+
+I'm going to install live-server by doing
+npm install -g live-server
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ npm install -g live-server
+
+It's going to run through the installation here (terminal).
+and again every time you install an npm, it's the same thing.
+You run 'npm install' and the package name because I want this installed globally. I'll do '-g' and I'll say 'live-server'
+
+Ah and there you go.
+We have what's called:
+Error: EACCES: permission denied.
+
+Remember what I said?
+If you don't have the correct permissions, you might have to run with 'sudo'.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ sudo
+
+This is what it's saying (Error:) -it's saying my user doesn't have access to install. You need to have admin permissions
+and that just means you'll have to enter your username and password.
+You can fix this on your computer after this, but for now, you can run
+sudo npm install -g live-server
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ sudo npm install -g live-server
+
+and you see it asks me for my password
+and there you go, live-server has been added.
+
+OK.
+
+So if I look at my package.json file, well, nothing has changed.
+And nothing should. Because we installed the package globally, it now lives on our computer but not inside our folder as I mentioned.
+We have a cool ability now we can run a command with live server
+You can actually read through the documentation here.
+https://www.npmjs.com/package/live-server
+
+But what it allows us to do is if I type in
+live-server
+while I'm in the background-generator folder,
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ live-server
+Serving "G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator" at http://127.0.0.1:8080
+Ready for changes
+
+Did you catch that? It automatically loaded our background-generator project.
+What is happening here?
+Well, we see over here (terminal) live-server creates a server, a fake server for you, and watches for changes.
+So that if I go now to, let's do CSS (style.css) and I'll do
+text-align: left;
+and I saved it. live-server does detect the change that says 'CSS change detected' and it automatically changes this without me refreshing it.
+Remember how annoying it was every time I changed anything on our project, we had to hit refresh to make sure that the changes work.
+Well, live-server creates a server that keeps watching your files, and every time a change is made it sees it and updates the project
+and you see over here (The project URL of the browser) that
+http://127.0.0.1:8080/
+
+we have 127.0.0.1 and then this is Port 8080.
+And this (127.0.0.1) is the default of what we call localhost.
+That's something that I'll talk about later on in the course.
+But as you can see is just saying you can open this test website at this address:
+http://127.0.0.1:8080/
+
+If I actually type in here (The project URL of the browser) localhost:
+http://localhost:8080/
+
+which is your localhost, your server, it's the exact same thing (127.0.0.1).
+How cool is that?
+I'm going to return this back to the way it (style.css) was
+text-align: center;
+and again changes detected (terminal) as soon as I save everything is restored.
+'CSS change detected'
+
+So live-server is really cool in the next section I'll show you something even nicer than that.
+But again a really really great example of why npm is great.
+I was able to install something really quickly
+and now I have a server which is my computer that is watching (terminal) these files and serving up my project right here (The URL of the browser) on my computer.
+We didn't need to buy a server, we didn't need to put it on GitHub, everything is here already (live-server (live-server - npm)).
+Now that we've done that let me just close this.
+
+So that was a globally installed package.
+The other type of package you can install is local, as I said.
+and with a local package, we can install something like lodash and it's actually one of the more popular libraries.
+Now for those that don't know lodash, you can think of it as an extension of JavaScript.
+With JavaScript, we have all these methods (script.js) that come with it.
+We have -you know,
+querySelector
+We have,
+getElementById
+But would it be nice if we had more functions that we can run?
+Well, lodash has a whole bunch of them they can use.
+And if you go to the website (Lodash),
+
+lodash - npm
+https://www.npmjs.com/package/lodash
+
+Lodash (website)
+https://lodash.com/
+
+if you go to the documentation,
+Lodash Documentation
+https://lodash.com/docs/
+
+https://lodash.com/docs/4.17.15
+
+you'll see that they have all these things you can do with an Array and they have really good examples as well.
+So any time you have an issue, lodash is really really good instead of maybe writing your own.
+I don't want lodash to be on my computer. I just want it just for this (background-generator) project.
+What I'm going to say is,
+
+Repository
+https://github.com/lodash/lodash
+
+Installation
+Using npm:
+$ npm i lodash
+
+I'm going to say
+npm i lodash
+
+and I'm going to open up the package.json file to see if it changes while we do this.
+I'm going to press enter.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ npm i lodash
+
+Now if I go into my Sublime Text or Visual Studio Code (VS Code), we see that package.json just added a new line, it says,
+"dependencies": {
+  "lodash": "^4.17.21"
+}
+
+and this is the version of lodash that we've downloaded.
+4.17.21
+
+And another thing you might notice is that we have something called node_modules folder that was just created.
+What does that mean?
+If we open this (node_modules folder) we see that lodash is installed.
+And oh boy that's a lot of files of lodash that we just installed.
+You see as soon as we do the npm install then the package name,
+npm i lodash
+
+it fits locally and we have a package.json file since we did,
+npm init
+
+It will add it to our dependencies which means packages that our website needs to work.
+And the way it (lodash) finds these is that all these packages live under the node_modules folder
+and you can see that lodash is here and now we can use all of their new methods.
+So let's give it a try.
+
+Let's see if we actually have a lodash working in our JavaScript.
+I'm going to open up the script.js,
+And the way we want to get lodash in here (script.js) there are a few ways.
+One shows you the way to do it in Node.js, but we're not using Node.js,
+So if you remember with modules, we can just do (script.js)
+import { without } from "lodash";
+
+without.js
+- which is a lodash function,
+I think we can see it down here (node_modules → lodash → without.js) without.js,
+and I'll just say,
+from "lodash"
+and just to check that we have lodash working,
+I'll just do (script.js)
+console.log(without);
+I'm going to save, and you know what, let's start up live-server (terminal) because it was working nicely for us.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ live-server
+
+Let's open up the Console,
+Expected output:
+Uncaught SyntaxError: Cannot use import statement outside a module
+
+And if I actually do import here (Console),
+import
+
+Expected output:
+Uncaught SyntaxError: Cannot use import statement outside a module
+
+Yep, the console doesn't recognize the import because as I said before it's a new syntax that browsers haven't gone around to actually implementing.
+So looks like I have to use the 'require' syntax
+
+In Node.js:
+// Load the full build.
+var _ = require('lodash');
+
+and you might remember this syntax from this video (diagram_2.png)
+where we talked about moduling in JavaScript and we discussed that ES6 and this (diagram_2.png) thing called a webpack is what we use now.
+But that's for the React (also known as React.js or ReactJS) section.
+For now, we want to be able to use 'require'.
+var _ = require('lodash');
+
+And the way we're able to do that is Browserify (diagram_2.png).
+https://browserify.org/
+
+Luckily for us, we have something called npm that we can install a global package, so I can do
+npm install -g browserify
+
+Browserify
+https://browserify.org/
+
+Install
+USE BROWSERIFY FROM THE COMMAND LINE
+First install node, which ships with npm. Then do:
+npm install -g browserify
+
+browserify - npm
+https://www.npmjs.com/package/browserify
+
+install
+With npm do:
+npm install -g browserify
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ npm install -g browserify
+
+And again I have the access error, so I have to do
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ sudo npm install -g browserify
+
+Again 'import' syntax which comes from ES6 was able to use that with Webpack, but because that's for the next section
+I want to show you what we did before this.
+We use something called Browserify (diagram_2.png) which allowed us to use this 'require' syntax.
+var _ = require('lodash');
+
+So let's copy this the way they have it in npm
+
+In Node.js:
+// Load the full build.
+var _ = require('lodash');
+
+and now I'm going to say (in script.js file)
+console.log(_);
+
+but this won't actually do anything.
+If you remember this (Browserify) is a module bundler (diagram_2.png), and it's a global package that we installed.
+We give it a script file and it outputs another script file that we can use in the browser.
+The command for that is because we installed it globally we can use browserify now and I can say that my script.js file should be bundle.js.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ browserify script.js > bundle.js
+
+Did you see that?
+We now have a bundle.js file.
+And if I click on this, well, I have a whole bunch of things it looks like a big file and that's because we included lodash.
+It (browserify) has created for us a bundle file (bundle.js) that adds what we wanted so that the browser understands it.
+We simply go to the index.html file and instead of the script.js file, we'll do bundle.js,
+<script src="bundle.js"></script>
+
+I'll save and let's try this one more time I'm going to do live-server (terminal),
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ live-server
+
+open up the Console,
+
+Expected output:
+ƒ lodash(value) {
+      if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
+        if (value instanceof LodashWrapper) {
+          return value;
+        }
+        if (hasO…
+
+There you go.
+It looks like it's working.
+
+If I go back to my script file (script.js)
+
+// Installation
+// In Node.js:
+// Load the full build.
+var _ = require('lodash');
+
+with lodash now in my project if I had an array let's call it
+
+var array = [1, 2, 3, 4, 5, 6, 7, 8];
+
+console.log('answer:', _.without(array, 3));
+
+And I can use a lodash method that is .without().
+And I can do console.log, answer: within here will say lodash which is the underscore we have assigned the underscore variable to lodash as the library suggests
+and we'll give it .without() which again is a method that comes with lodash that you can check on their website.
+Within here, I will put my array, and the second parameter will be what I want it to be without. So let's say I wanted to be without the number 3.
+
+In that case, I save this, change has been detected (terminal).
+I open up the Console and refresh it,
+
+Expected output:
+
+Ah- but you see, we don't see anything here because again we need to put it into 'bundle.js',
+I know it's annoying, but this is good practice for us to understand how all of this works.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ browserify script.js > bundle.js
+
+So again bundle (bundle.js) has been updated and now I can run my live-server (terminal),
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ live-server
+
+open up the Console and look at that-
+
+Expected output:
+answer: -> Array(7)
+            0: 1
+            1: 2
+            2: 4
+            3: 5
+            4: 6
+            5: 7
+            6: 8
+            length: 7
+          ->[[Prototype]]: Array(0)
+
+I have an array with 1, 2, No 3, 4, 5, 6, 7, 8.
+
+So I can use lodash.
+
+So looking at this you might realize why npm is called Node Package Manager.
+
+npm (GitHub):
+JavaScript Package Manager, Registry & Website
+
+npm - Wikipedia:
+npm s a package manager for the JavaScript programming language maintained by npm, Inc.
+npm is the default package manager for the JavaScript runtime environment Node.js.
+
+So looking at this you might realize why npm is called Node Package Manager.
+Because it was initially created for node (Node.js) which accepted this 'require' syntax but not for the browser.
+var _ = require('lodash');
+
+Browserify (diagram_2.png) allowed us to use the syntax that would 'require' syntax that was used in Node.js on the browser.
+All we had to do was input our script file (script.js) into browserify and then it outputs the bundle (bundle.js) for us. (i.e., The command for terminal):
+browserify script.js > bundle.js
+
+Very cool.
+All right.
+
+There has a lot of hoops to go through to show you a few things but you have some really really good contacts of what we're trying to do here.
+
+We've set up a system now where we're able to import all these different things that other people have written to make our code better.
+But you might notice two issues with the current setup.
+
+One is the fact that I'm only using this (in script.js file) .without() method that comes with lodash.
+But if I look in the bundle.js file, well, it's massive because it's included this entire library and that is something that you want to be careful with.
+When you're working with npm,
+a lot of beginners just start installing a ton of packages (node_modules folder) without thinking about how much weight they add to a project.
+It's a good idea to really assess whether you need that package as a team and add it to the project.
+If it saves you time, if it's really well written, it has a big community around it.
+It's something that you always want to consider.
+
+The second thing is that now we have something called "dependencies" (package.json file) that is our project depends on these things.
+We need to make sure that our website or our app always has lodash in a certain version so that it works with our website.
+It also adds that extra layer of complexity that you should consider.
+But the package.json file also offers you a lot of great things.
+Maybe they're not evident right now because our project is fairly small
+but when you are working on big big projects it serves as a great documentation for what packages your project depends on.
+You'll see that most big projects can have close to 100 dependencies and having just one location package.json file
+to see all these packages to see what the project depends on is really really nice for all that are joining the team
+and it also allows you to specify the version here of your dependencies.
+To lodash updates, I can also update my version just from this (package.json file: "dependencies") one line without having to go to the lodash website,
+download the file and add it to my index.html script tag (The <script> tag) file.
+<script src=""></script>
+Again another thing is we're not adding the script files over and over and over. As we've spoken about before.
+We see that the package.json file,
+
+"dependencies": {
+  "lodash": "^4.17.21"
+}
+
+"lodash": "^4.17.21"
+Now these numbers ("^4.17.21") that you've seen before it's called 'semver: Semantic Versioning' and they each have a meaning.
+The rightmost number (21) is the patch release.
+So that is if there are any bug fixes. They will update it here if they find a bug and they need to fix it. This will become 22.
+This one (17) is a minor release. That means there are some new features that were added to lodash but there won't be any changes that are major.
+And then finally, this (4) is a major release which means this is the fourth version of the fifth version of lodash that was released.
+Well, that's a major release. That might be quite different from version 4 and it might break some of the websites that depend on lodash 4.
+
+package.json allows you to really decide what versions you need for each of these packages.
+But probably the biggest benefit that you get with npm, this project is much easier to share with other developers.
+I don't need to add script tags in HTML for these now,
+and for a developer, in order for them to download all the packages or the dependencies that a project requires,
+Well, I will never put the node_modules (folder) into my GitHub repo because all you need is the package.json file.
+Let me show you what I mean.
+If I delete my node packages (node_modules folder) here
+and let's say somebody new started at the company and we want to make sure that they have the latest version of the project so they can start working on it.
+Well even though there are no node_modules (folder) because we have package.json file, npm is spawned enough
+to say -let me clear this up (terminal), or Let me stop this server (terminal),
+as long as the new person does
+npm install
+
+And there is a package.json file.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ npm install
+
+Well, in that case, all of the dependencies get downloaded (node_modules folder).
+So right away they can start the project with the exact same version of all the files that everybody else has.
+And that's why you won't see any node_modules folders which can get really really big on GitHub because we don't need it.
+We have it all described here in package.json.
+
+Now one other thing.
+There's actually another type of "dependencies" that you can have, these dependencies are what background-generator depends on.
+But there's another type of dependency called "dev dependency" and a dev dependency are packages that are only needed for development and testing.
+So it will never be shipped to a website so that an end user can see and you can do many many things
+that again we'll get into the React (also known as React.js or ReactJS) section
+but we'll have a separate section called "dev dependencies" here (package.json file)
+that will have different things that only are used for the developers
+but are taken out automatically when we release the product so that it doesn't add too much weight to our project.
+
+Ok ok.
+I promise this is the last thing.
+
+If I now run
+npm run test
+So the syntax is
+npm run
+then whatever the "scripts" (package.json file) says-
+in this case "test",
+npm run test
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ npm run test
+
+> background-generator@1.0.0 test
+> echo "Error: no test specified" && exit 1
+
+"Error: no test specified"
+
+Now that's actually what is defined here (package.json file).
+
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+
+npm "scripts" allow you to do comments from the package.json file.
+Let me show you.
+
+Remember how annoying it was that we had to do browserify to do the bundle (bundle.js)?
+(i.e., The command for terminal):
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ browserify script.js > bundle.js
+
+well, here I can say (package.json file)
+"build"
+and within this section, I can say
+"browserify script.js > bundle.js"
+
+"scripts": {
+  "build": "browserify script.js > bundle.js"
+}
+
+and I can run the "scripts" a "build" script that automatically runs this ("browserify script.js > bundle.js") in my terminal.
+Let me show you if I save here (package.json file).
+and I'll say
+npm run
+and then whatever the name of the "scripts" is
+build
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ npm run build
+
+> background-generator@1.0.0 build
+> browserify script.js > bundle.js
+
+Look at that. I've just updated browserify and it runs the script (script.js).
+
+Very cool.
+
+Well, what if we also add the live-server too, command to it?
+&& live-server
+
+"scripts": {
+  "build": "browserify script.js > bundle.js && live-server"
+}
+
+I save and run the same command again.
+
+G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator (main -> origin) (background-generator@1.0.0)
+λ npm run build
+
+> background-generator@1.0.0 build
+> browserify script.js > bundle.js && live-server
+
+Serving "G:\GitHub\repositories\complete-web-developer-zero-to-mastery\18_NPM_NPM_Scripts\installing_and_using_packages\background-generator" at http://127.0.0.1:8080
+Ready for changes
+
+Look at that (The project URL of the browser).
+I have my array displayed (Console), my website's running and it does all the commands right away from my terminal.
+How cool is that?
+
+All right.
+
+I think that's enough for npm.
+It (npm) is a very useful tool.
+We're going to use it (npm) a lot and you will use that (npm) a lot in your day-to-day and you will get more comfortable with it (npm) the more use it (npm).
+
+In the next section, we're finally going to get to building a real-life app with React (also known as React.js or ReactJS).
+
+We're going to use some of the knowledge that we've gathered up to this point.
+
+We now have a complete view of Front-End.
+
+Although you may not feel extremely confident you'll see that we've gotten to the point where we can build really really nice apps and websites.
+
+We have all the tools in our arsenal now to create some amazing things.
+
+So I really really look forward to the next session with you.
+I'll see you in that one.

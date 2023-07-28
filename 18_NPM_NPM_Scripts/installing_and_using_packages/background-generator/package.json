@@ -1,0 +1,18 @@
+{
+  "name": "background-generator",
+  "version": "1.0.0",
+  "description": "Git + GitHub Part 1 &amp; Part 2",
+  "main": "script.js",
+  "scripts": {
+    "build": "browserify script.js > bundle.js && live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/smanwarulislam/background-generator-update.git)"
+  },
+  "author": "S. M. Anwarul Islam (Raju)",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
