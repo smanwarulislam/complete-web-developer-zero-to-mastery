@@ -1,0 +1,99 @@
+Why Update Packages?
+
+Welcome back!
+
+Now we're going to get started on React (also known as React.js or ReactJS)
+and learning to React (also known as React.js or ReactJS) in building a project around React (also known as React.js or ReactJS) in the upcoming videos (section).
+
+But I do want to mention one thing that is at the end of the videos (lessons) we're going to build a project robofriends project and we're gonna put it up on GitHub (diagram_1.png | diagram_2.png).
+https://github.com/aneagoie/robofriends
+
+Now you don't need to worry about all the files that are in here (diagram_2.png)
+https://github.com/aneagoie/robofriends
+
+but you will notice that there's a package.json file (diagram_3.png).
+https://github.com/aneagoie/robofriends/blob/master/package.json
+
+This package.json file we've seen before has some "dependencies" with some versions of libraries and tools that we use.
+And we've talked about this before right?
+This is what npm allows us to use in this package.json file.
+But I want you to pay attention
+because when you start doing the project and we install React (also known as React.js or ReactJS) your versions are going to be different.
+For example, the version we're using for React is 16.2.0 (robofriends repository update: 18.2.0) which is actually outdated
+because a library is constantly evolving new fixes are being made new features are being added new security issues are being solved or fixed.
+So this number (16.2.0 | repository update: 18.2.0) is constantly increasing.
+Now when you watch the videos (lessons) and you follow along you'll have the latest version of React and your projects are going to work. No problem.
+But at the end of that section when we built everything
+I'm actually going to go back and upgrade and show you how I would do an upgrade so that we keep our projects as up-to-date as possible.
+
+Now why would we care about that well if I go to my robofriends project which I'll link to when we finish our React project
+https://github.com/aneagoie/robofriends
+
+If we go to Issues (Issues · aneagoie/robofriends) here
+https://github.com/aneagoie/robofriends/issues
+
+If we go to Security here (diagram_4.png)
+you'll see that I have 0 opened alerts but there are 24 Closed ones that actually closed myself
+and if I scroll through it shows me how many security issues (Security) I have in this project (diagram_4.png).
+https://github.com/aneagoie/robofriends/security
+
+You see one of them is high severity.
+One is critical severity.
+That's not good, right?
+And sometimes when you look through GitHub repositories (diagram_5.png) you might see a warning like this hey
+"We found potential security vulnerabilities in your dependencies"
+that is in my package.json file
+I have some libraries that I've downloaded or that I'm using in my project that is now outdated
+and that I should upgrade because there's been some security updates (diagram_4.png | diagram_5.png).
+Now if I click on something like handlebars you'll see (diagram_6.png) that we need to upgrade handlebars to this version or later.
+So essentially updated like this (diagram_6.png) to fix an issue.
+Now GitHub is nice enough to actually do "Automated security fixes" (diagram_7.png).
+So if I click on this ("Automated security fixes") they'll actually make a Pull request to my project to update these things (diagram_7.png).
+But we're going to say that
+until the end of the project so that you can actually see how the project is set up and how we can keep projects up to date and also secure.
+So don't worry if this lesson is a little confusing we're gonna come back to it.
+I just want to prepare you that when we build our project with React
+we're going to be up creating a bunch of the things later on at the end of the project just to show you that process.
+
+Now the last thing I want to mention is the idea of the SemVer (semantic versioning) which we talked about which is the versions of packages.
+
+npm SemVer Calculator
+https://semver.npmjs.com/
+
+You see over here that I have the lodash package and I'll link to this resource (website) that you can play around with.
+https://semver.npmjs.com/
+
+You see over here (website) that I have the lodash package
+Let's say I wanted to download handlebars like we see over here (diagram_4.png).
+So if I wanted to check out handlebars I see the handlebars package and the versions (1.x) that it has now.
+
+Package name
+handlebars
+
+Version range
+1.x
+
+Click the List Versions and see the versions found.
+
+If I go to the handlebars vulnerability (diagram_6.png)
+it tells me that I should Upgrade handlebars to this version or later (>=4.0.14) because there are some security issues with the older version.
+Well, I can just copy this version (>=4.0.14) and if I go over here and enter the range
+it shows me exactly which packages I should be downloading or have handlebars.
+Now you see here that I have different symbols (>=) that we haven't seen before.
+And if I go down it actually tells me that it
+Specify a range of stable versions
+So this (>=) just means hey download anything greater or equal to version 4.0.14
+If I do (^4.0.14) the Caret (^) symbol which we've seen before and I hit enter I get the same thing
+But if I change this to let's say version 1 (^1) I see that with the Caret I get all the versions (13 versions found) that are within version 1.
+But if I change this (>=1) to greater than or equal to you see that I get versions 1 and above (69 versions found).
+
+So when you do the
+npm install
+it will most likely download the latest version available.
+
+So I'll leave this resource for you to explore again it's something we don't have to worry about too much right now.
+
+But I want to prepare you to start thinking about these things because when I first got started nobody told me about this idea of updating packages.
+How do you update them?
+Why do we update them?
+But this is a good practice that we will encounter.
