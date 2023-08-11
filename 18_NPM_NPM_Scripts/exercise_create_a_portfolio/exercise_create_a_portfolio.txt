@@ -1,0 +1,630 @@
+Exercise: Create A Portfolio
+
+All right everybody.
+
+We have a really exciting video (lesson) here because we're gonna build our own portfolio page.
+That's right.
+
+We're going to build this (view the demo) so you/I can showcase your/my projects to your/my future employers.
+To view the demo:
+https://the-simplefolio.netlify.app/
+
+And just have a place to put your/my projects that we're going to work on throughout the course.
+Again to impress that special someone or your/my future employer.
+
+Now this is actually very cool because this page was built by a fellow student.
+This student actually finished the course
+and went on to create this project as a way to say thank you to the developer community that he received so much help from.
+And it's called Simplefolio.
+And we're going to use this project as the base for our portfolio.
+Now I'll link to this repository so you can follow along and you can customize your own portfolio.
+
+Reference GitHub repository:
+· https://github.com/cobiwave/simplefolio
+
+And as we go through the course you can actually add the projects as I'm about to show you.
+Now one thing I do want to say is that this project is MIT License which means that you can use it freely yourself and customize it to your liking.
+I'll show you how to do that
+but I do want to acknowledge the fact that this student (Author) put a lot of effort into this and it's actually quite a nice project.
+
+Authors
+· Jacobo Martinez - https://github.com/cobiwave
+
+So I do recommend that you have just point five seconds to go to his project and click on the star to show some appreciation.
+https://github.com/cobiwave/simplefolio
+
+All right enough talk.
+
+Let's actually build our portfolio.
+
+I'm going to Clone this project (repository).
+https://github.com/cobiwave/simplefolio
+
+I'm going to use HTTPS but you might have to use SSH or GitHub CLI depending on your GitHub setup
+so let's Clone this repository I'll say
+git clone
+
+# Clone this repository to your computer:
+For example, run this command inside your terminal:
+git clone https://github.com/cobiwave/simplefolio.git
+
+G:\GitHub\repositories
+λ git clone https://github.com/cobiwave/simplefolio.git
+
+or we can Fork this project (repository).
+On the GitHub page for this repository, click on the button "Fork."
+https://github.com/cobiwave/simplefolio
+
+So once we have this we can Clone this repository using HTTPS or SSH or GitHub CLI whatever you prefer.
+
+# Clone your forked repository to your computer:
+For example, run this command inside your terminal:
+git clone https://github.com/smanwarulislam/simplefolio.git
+
+G:\GitHub\repositories
+λ git clone https://github.com/smanwarulislam/simplefolio.git
+
+# After Clone the repository:
+git clone https://github.com/cobiwave/simplefolio.git
+
+# Move into the repository:
+cd simplefolio
+
+G:\GitHub\repositories
+λ cd simplefolio
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ
+
+let's open it up in Visual Studio Code (VS Code) or Sublime Text
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ code .
+
+or
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ sublime .
+
+Now don't get intimidated by all these (simplefolio) files.
+There may be things here (simplefolio) that you haven't seen before.
+Again we'll cover most of these throughout the course.
+
+But luckily for you, this project (repository) actually has a really nice "Getting Started" guide.
+So let's go step by step.
+
+From the reference GitHub repository:
+
+How To Use
+
+From your command line, first clone Simplefolio:
+
+# Clone the repository
+$ git clone https://github.com/cobiwave/simplefolio
+
+# Move into the repository
+$ cd simplefolio
+
+# Remove the current origin repository
+$ git remote remove origin
+
+We can run this command if we want to remove the origin repository.
+# Remove the current origin repository
+$ git remote remove origin
+
+That means if we had forked the project which by the way if you want you probably might want to fork this project.
+In my (Andrei Neagoie) case, I just cloned it because while this is just for demonstration purposes
+but you can actually run this command to remove this original project (cobiwave/simplefolio)
+so that you only have your own copy your own forked copy to worry about
+because most likely you won't do any pull requests to this original project (cobiwave/simplefolio).
+You can just have your own version.
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ git remote remove origin
+
+From the reference GitHub repository:
+
+After that, you can install the dependencies either using NPM or Yarn.
+
+Using NPM: Simply run the below commands.
+
+# 2022 Update - Fix Dependencies
+$ npm audit fix
+$ npm i @parcel/transformer-sass
+
+# Install dependencies
+$ npm install
+
+# Start the development server
+$ npm start
+
+Using Yarn: Be aware that you'll need to delete the package-lock.json file before executing the below commands.
+
+# Install dependencies
+$ yarn
+
+# Start the development server
+$ yarn start
+
+NOTE: If your run into issues installing the dependencies with NPM, use the below command:
+
+# Install dependencies with all permissions
+$ sudo npm install --unsafe-perm=true --allow-root
+
+After that, you can install the dependencies either using NPM or Yarn.
+Using NPM:
+
+# 2022 Update - Fix Dependencies
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ npm audit fix
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ npm i @parcel/transformer-sass
+
+# Install dependencies
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ npm install
+
+and it gives us a couple of commands if we have any issues (NOTE:) but hopefully things go well
+
+NOTE: If your run into issues installing the dependencies with NPM, use the below command:
+
+# Install dependencies with all permissions
+$ sudo npm install --unsafe-perm=true --allow-root
+
+# Start the development server
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ npm start
+
+> simplefolio@1.0.1 start
+> parcel
+
+Server running at http://localhost:1234
+🚨 Build failed.
+
+@parcel/package-manager: Could not find module "@parcel/transformer-sass" satisfying 2.8.2.
+
+  G:\GitHub\repositories\simplefolio\package.json:23:5
+    22 |   "devDependencies": {
+  > 23 |     "@parcel/transformer-sass": "^2.9.3",
+  >    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^ Found this conflicting local requirement.
+    24 |     "parcel": "^2.8.2",
+    25 |     "prettier": "^2.8.1"
+
+Parcel is shutting down...
+
+"Error: @parcel/package-manager: Could not find module"
+
+Google Search:
+· @parcel/package-manager could not find module
+
+Error: cannot find module [Node npm Error Solved]
+https://www.freecodecamp.org/news/error-cannot-find-module-node-npm-error-solved/
+
+How do I resolve a "Cannot find module" error using Node.js?
+https://sentry.io/answers/how-do-i-resolve-cannot-find-module-error-using-node-js/
+
+Now here I'm going to show you how to fix the error.
+
+If you install the package but you still get the error, then follow the steps below (If all else fails, you can try the following):
+
+· delete the node_modules folder by running:
+rm -rf node_modules
+
+· delete the package.lock.json file by running:
+rm -f package-lock.json
+
+· clean up the NPM cache by running:
+npm cache clean --force
+
+· install all packages again by running:
+npm install
+
+That should fix the error for you.
+
+If you still have an error, you can try to reinstall Node.js and npm to make sure that you have the latest versions and that any corrupted files are replaced.
+
+So run the above commands inside your terminal:
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ rm -rf node_modules
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ rm -f package-lock.json
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ npm cache clean --force
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ npm install
+
+# 2022 Update - Fix Dependencies
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ npm audit fix
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ npm i @parcel/transformer-sass
+
+# Start the development server
+
+G:\GitHub\repositories\simplefolio (master -> origin)
+λ npm start
+
+> simplefolio@1.0.1 start
+> parcel
+
+Server running at http://localhost:1234
+✨ Built in 19.99s
+
+Once your server has started, go to this URL http://localhost:1234/ to see the portfolio locally.
+
+Hey, look at that.
+There's the portfolio.
+
+Very very cool.
+
+Just like that, we have our template for our portfolio.
+
+Now if we go back we'll see that we have "Template Instructions" here.
+So it actually tells us exactly what to add.
+And we have enough knowledge now to be able to understand this. Right?
+
+So it looks like we can change things in the index.html
+and change the (1) Hero Section which is the main section with our .hero-title and .hero-cta which means call to action.
+
+From the reference GitHub repository:
+
+Template Instructions:
+
+Step 1 - STRUCTURE
+
+Go to /src/index.html and put your information, there are 5 sections:
+
+(1) Hero Section
+
+· On .hero-title, put your custom portfolio title.
+· On .hero-cta, put your custom button label.
+
+So let's do that.
+
+Let's go to the src folder into the index.html and then well we can change the title here to my name
+<!-- Todo: put here your site title -->
+<title>S M Anwarul Islam | Frontend Developer</title>
+<!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
+<meta name="keywords" content="smanwarulislam, S M Anwarul Islam Raju, JavaScript" />
+<!-- Todo: improve your SEO by adding a small description of you -->
+<meta name="description" content="S M Anwarul Islam Raju | Frontend Developer" />
+
+and then in the Hero Section right over here, we'll change
+Hi, my name is Your Own Name.
+Hi, my name is <span class="text-color-main">S M Anwarul Islam</span>
+I'm the Unknown Developer let's call this the I'm the Frontend Developer you need.
+I'm the Frontend Developer you need.
+and On .hero-cta, instead of Know more we'll just say Hire Me.
+<a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">Hire Me</a
+Sounds kind of desperate but it's fine.
+
+All right.
+So just by saving this, it's going to detect the changes (terminal).
+
+Server running at http://localhost:1234
+✨ Built in 17.52s
+
+And if I go to our project.
+http://localhost:1234/
+
+Hey, look at that.
+
+I have my name here (the site title and Hero Section).
+I'm the Frontend Developer you need.
+And it (On .hero-cta) says Hire Me
+
+Awesome!
+
+The next stop is probably the "About me" section ((2) About Section).
+Let's go here ((2) About Section).
+
+From the reference GitHub repository:
+
+(2) About Section
+
+· On the <img> tag, fill the src property with your profile picture path, your picture must be located inside the /src/assets/ folder.
+· On <p> tag with class name .about-wrapper__info-text, include information about you,
+I recommend putting 2 paragraphs in order to work well and a maximum of 3 paragraphs.
+· On the last <a> tag, include your CV (.pdf) path on the href property, your resume CV must be located inside /src/assets/ folder.
+
+In the (2) About Section Once again there's a nice README.md
+So we can just replace our <p> tag with whatever descriptions we want
+and we can also change the image so that we have our image here (portfolio page).
+
+Now in order to do that all we need to do is to change the profile picture in our /src/assets/ folder
+So if I go to the /src/assets/ folder I see that there is a profile.jpg here that we just need to replace.
+Now if I open up the project here (simplefolio)
+If I go to inside /src/assets/ folder
+I actually already have my picture so I'm just going to paste this picture in I'm going to replace it with my own profile.
+So that now if we go back we have my giant face here (profile.jpg)
+and check that out (portfolio page)
+There you go.
+
+I have the "About me" page.
+I can even attach my resumé (View Resume) if I want.
+
+And now let's go to the (3) Projects Section.
+Woohoo! The Projects Section (project image) is quite nice.
+So we can attach Source Code.
+We can See Live so we can maybe attach a GitHub page link here. Our own website.
+So let's say throughout the course we build projects and you want to showcase your projects.
+So we have the background-generator & background-generator-update project that we've created already.
+But let's say in an upcoming section in the React (also known as React.js or ReactJS) section we're building a project called robofriends.
+So let's say we just created the "robofriends" project which is right over here (robofriends repository)
+and this is something that I'll link to when we finish that section and we'll have this exact setup
+https://github.com/aneagoie/robofriends
+
+and let's say we want to showcase this project on our portfolio.
+
+Well if we go to the instructions ((3) Projects Section) once again we have a great step-by-step guide of what to change.
+
+From the reference GitHub repository:
+
+(3) Projects Section
+
+· Each project lives inside a row.
+· On <h3> tag with class name .project-wrapper__text-title, include your project title.
+· On <p> tag with loremp ipsum text, include your project description.
+· On the first <a> tag, put your project URL on the href property.
+· On the second <a> tag, put your project repository URL on the href property.
+
+· Inside <div> tag with class name .project-wrapper__image, put your project image URL on the src of the <img>
+and put again your project URL in the href property of the <a> tag.
+· The recommended size for a project image (1366 x 767), your project image must be located inside the /src/assets/ folder.
+
+So we just need to go to the <h3> tag with class name .project-wrapper__text-title,
+So once again go to our src folder into the index.html
+Scroll down the Projects Section and here
+Notice: each .row is a project
+We have the project title which will replace this with Robofriends.
+<h3 class="project-wrapper__text-title">Robofriends</h3>
+We don't have to change the description right now
+and then we can link to the live version (See Live) which in my case it's right over here.
+https://aneagoie.github.io/robofriends/
+
+Again I'll show you how to do this. During the React (also known as React.js or ReactJS) section of the course.
+But I can just change this to href property like this.
+
+<a
+  rel="noreferrer"
+  target="_blank"
+  class="cta-btn cta-btn--hero"
+  href="https://aneagoie.github.io/robofriends/"
+>
+  See Live
+</a>
+
+And the Source Code will just be this repository so once again copy and paste like that.
+https://github.com/aneagoie/robofriends
+
+<a
+  rel="noreferrer"
+  target="_blank"
+  class="cta-btn text-color-main"
+  href="https://github.com/aneagoie/robofriends"
+>
+  Source Code
+</a>
+
+The last thing we need is to have an image of our project.
+Now I want to show you a really cool resource which is this logo maker and I'll link to this resource.
+
+FREE Logo Maker - Create a Logo in Seconds - Shopify (2023)
+https://www.shopify.com/tools/logo-maker
+
+It's called Hatchful and we can actually create logos for free.
+
+So let's just click CREATE A LOGO NOW
+We'll build a Tech logo but you can pick whatever you want
+and let's say we want an Innovative logo.
+All right. Let's click NEXT
+And I've done this before so we can call our project "robofriends"
+
+Business name (optional)
+robofriends
+
+Let's do a capital R actually no let's leave it like that.
+And the Slogan that I chose is "the only friend you need"
+
+Slogan (optional)
+the only friend you need
+
+So if I click NEXT
+Let's say what the logo before it'll be for an "Online store or website"
+Click NEXT and check this out.
+It's going to generate some logos for us and they all look pretty cool, right?
+Let's see which one I like best we can pick whichever one.
+I like this one so let's do "robofriends" over here (Edit Logo)
+I can include that Slogan (optional) if I want
+but let's just click through the NEXT
+and you can DOWNLOAD the logo.
+Now in order to download and get the logo for different things like Facebook profile image, Instagram profile image, etc you'll have to Create an account.
+But again it's free so you can still use it.
+In my case, I already Create an account and I have this image downloaded.
+So all I'm going to do is replace it again in this same /src/assets/ folder as before.
+Replace the project image (project_1.jpg) with my own project image (project_1.jpg) which is the logo that we downloaded.
+
+<img
+  alt="Project Image 1"
+  class="img-fluid"
+  src="assets/project_1.jpg"
+/>
+
+So again if I go back to the project everything should be working.
+Let's go to our portfolio.
+Hey, look at that.
+That is awesome.
+There is my project (project_1.jpg).
+If I go to See Live there's my "robofriends" project.
+https://aneagoie.github.io/robofriends/
+
+Again something that will build together so I can search all my friends
+and I can even go to the Source Code of my GitHub profile page
+https://github.com/aneagoie/robofriends
+
+and notice here (portfolio) that the projects all have the same image now. That's because in the code all the images point to project.jpg
+src="assets/project.jpg"
+
+But as you can imagine by just changing the name (project.jpg) to different logos (project_1.jpg, etc) you'll be able to have multiple projects on your profile.
+How cool is that?
+
+And you can have different things like "Call to Action".
+Again we've looked at getting an email subscription form.
+
+From the reference GitHub repository:
+
+(4) Contact Section
+
+· On <p> tag with class name .contact-wrapper__text, include some custom call-to-action message.
+· On <a> tag, put your email address on the href property.
+
+If you want it you can link to your Twitter, LinkedIn, or GitHub account ((5) Footer Section).
+
+From the reference GitHub repository:
+
+(5) Footer Section
+
+· Put your Social Media URL on each href attribute of the <a> tags.
+· If you have an additional Social Media account different than Twitter, LinkedIn, or GitHub,
+then go to Font Awesome Icons and search for the icon's class name you are looking for.
+https://fontawesome.com/v4.7.0/icons/
+· You can delete or add as many <a> tags as your want.
+
+and we have a pretty nice project just in a couple of minutes.
+How cool is that?
+
+Now if we go to the documentation you'll have different things like the (4) Contact Section you can update the (5) Footer Section that you can update
+But the last thing I want to do is this STYLES (Step 2 - STYLES) that is you can adjust the styles of this project by going to these
+/src/sass/abstracts/_variables.scss
+
+From the reference GitHub repository:
+
+Step 2 - STYLES
+
+Change the color theme of the website - (choose 2 colors to create a gradient)
+
+Go to /src/sass/abstracts/_variables.scss and only change the values for this variables $main-color and $secondary-color with your preferred HEX color.
+If you want to get some gradients inspiration I highly recommend you to check this website UI Gradient
+https://uigradients.com/#BrightVault
+
+// Default values
+$main-color: #02aab0;
+$secondary-color: #00cdac;
+
+Reference websites:
+
+· Sass: Syntactically Awesome Style Sheets
+https://sass-lang.com/
+
+· Documentation
+https://sass-lang.com/documentation/syntax/
+
+Sass: Syntax
+
+Syntax
+Sass supports two different syntaxes. Each one can load the other, so it’s up to you and your team which one to choose.
+
+SCSS
+The SCSS syntax uses the file extension .scss.
+With a few small exceptions, it’s a superset of CSS, which means essentially all valid CSS is valid SCSS as well.
+Because of its similarity to CSS, it’s the easiest syntax to get used to and the most popular.
+
+The Indented Syntax
+The indented syntax was Sass’s original syntax, and so it uses the file extension .sass.
+Because of this extension, it’s sometimes just called “Sass”.
+The indented syntax supports all the same features as SCSS,
+but it uses indentation instead of curly braces and semicolons to describe the format of the document.
+
+In general, any time you’d write curly braces in CSS or SCSS, you can just indent one level deeper in the indented syntax.
+And any time a line ends, that counts as a semicolon.
+There are also a few additional differences in the indented syntax that are noted throughout the reference.
+
+.scss is actually a file format for what we call Sass.
+It's kind of like CSS but it gives you extra features.
+So let me show you what I mean.
+You see here that I can change the default colors (Default values)
+
+// Default values
+$main-color: #02aab0;
+$secondary-color: #00cdac;
+
+So if I click on this link that this document provides (UI Gradient)
+https://uigradients.com/#BrightVault
+
+It gives us a couple of UI gradients that we can use
+So I can actually just copy this (#00d2ff)
+and you might see that this is quite familiar to what we had before with our background (background-generator) project.
+But if I copy this (#00d2ff) go back to the documentation and change the Default values.
+
+// Default values
+$main-color: #02aab0;
+$secondary-color: #00cdac;
+
+So that is if we go to the /src/sass/abstracts/_variables.scss we can change the $primary-color and $secondary-color of the gradient.
+So let's just copy what we just copied (#00d2ff) from that gradient website
+
+// COLORS
+$primary-color: #00d2ff;
+
+and this is where the .scss files come in handy.
+You see with SCSS files so you can do something called variables like this using the dollar ($) sign notation.
+
+$primary-color: #00d2ff;
+$secondary-color: #00cdac;
+
+And now any time in the SCSS file when you use the word primary-color it's going to be replaced with the actual color (#00d2ff).
+So it's just an extra little boost that you get with CSS.
+Again something that we don't need to worry about.
+All you need to know is that you can change the colors over here (_variables.scss).
+If I now save and go back to my portfolio
+Hey, look at that
+and the colors are all different.
+I get that blue color (#00d2ff) and still get that nice gradient and I've made this portfolio even more personal to me.
+
+Now I'll leave the rest up to you.
+This is just a way for you to get started and keep track of your projects as you go through the course.
+
+And on top of that,
+there is also a step-by-step tutorial for deployment so you can actually deploy this project to production using something called Netlify
+https://netlify.com/
+
+and make it really really easy to share your project outside of just your localhost.
+Again that is something for you to explore and do on your own.
+
+From the reference GitHub repository:
+
+Deployment 📦
+
+Once you finish your setup. You need to put your website online!
+I highly recommend using Netlify because it is super easy.
+https://netlify.com/
+
+But for now, use you have a nice starter template (Simplefolio) for your project.
+Pretty awesome! Right?
+
+Now the last thing you should do is once again thank the student for the work that they've put in with "simplefolio"
+https://github.com/cobiwave/simplefolio
+
+by giving it a "Star", and "Fork" the repository.
+
+And once you're done go to our Discord channel
+and if we go to the #lookwhatimade channel
+you can share your portfolio with others
+or you can thank the student that actually created this (simplefolio) which has this (@cobimr#3435) handle.
+So let's just say,
+@cobimr (@cobimr#3435):
+thanks for the simplefolio! We're recording right now... and using your project. Pretty awesome :)
+
+Here you go.
+
+My/your own little portfolio project to get I/you started.
