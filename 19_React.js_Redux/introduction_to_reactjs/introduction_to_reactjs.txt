@@ -1,0 +1,154 @@
+Introduction To React.js
+
+· From diagram_1.png:
+
+Good job making it this far things are going to get more and more fun starting in this section because
+we're now learning real tools that real companies use and that will get you hired
+and development also becomes a lot faster because we're using these tools to make us build websites faster and better.
+So let's talk about React (also known as React.js or ReactJS).
+What do we have before React (also known as React.js or ReactJS)?
+Well as I've mentioned before we had jQuery.
+jQuery was as you remember very imperative writing code was like mixing ingredients sequentially.
+If this happens then do this and then do that. But also if this happens then do this and it creates a lot of inconsistencies.
+And if you remember the DOM manipulation section
+Well that is really difficult and constantly keeping track of what changed and what to change is a huge mess and it creates a very slow development.
+And as your website gets more and more complex it becomes very very hard to scale which means it becomes very hard for teams of developers to manage it.
+Now React (also known as React.js or ReactJS) was created at Meta Platforms, Inc., (formerly named Facebook, Inc.) 
+as you know Meta Platforms, Inc., (formerly named Facebook, Inc.) is a pretty big app and a lot of things need to happen for it to work well.
+And they had this problem and they created React (also known as React.js or ReactJS) as a way to solve this issue 
+and be able to have a tool that allows them to build websites in a nice predictable way that you can have multiple developers working on it at the same time.
+And I like to use the analogy of a bread machine
+using React (also known as React.js or ReactJS) is kind of like that you just throw in the ingredients and React does all this magic underneath the hood and puts out a website.
+So it's very reliable and very consistent.
+And it does one thing really really well and that is the view
+it manages to make our website's DOM change in predictable ways that are easy to scale and easy to manage.
+And the beauty of React (also known as React.js or ReactJS) is that because it's just the view it doesn't necessarily mean it's only for browsers.
+As a matter of fact, React (also known as React.js or ReactJS) can be used with mobile devices to build native apps.
+It's (React - also known as React.js or ReactJS) used in virtual reality apps.
+You can build desktop apps with React (also known as React.js or ReactJS) anywhere that has a view well React (also known as React.js or ReactJS) can use it.
+And big companies as I mentioned before Meta Platforms, Inc., (formerly named Facebook, Inc.) and Instagram use React (also known as React.js or ReactJS) 
+and Netflix uses React (also known as React.js or ReactJS) whenever you browse through movie choices well that's using React (also known as React.js or ReactJS) underneath the hood.
+It's (React - also known as React.js or ReactJS) a very very useful tool and in very high demand.
+So I'm excited to talk about React (also known as React.js or ReactJS) and teach you this valuable skill in this section.
+
+Now to understand React (also known as React.js or ReactJS) there are a few things that we want to go over
+and these are principles that are very valuable and have been learned over the years by developers.
+
+· From diagram_2.png:
+
+One is the idea of thinking in Components
+up to this point we've just built websites.
+Everything is just one JavaScript file one CSS file one HTML file.
+But wouldn't it be nice if the web was a network of these small components?
+Think of them as Lego blocks where everybody builds a specific Lego block and you just combine these Lego blocks to create your website.
+That is the idea that React (also known as React.js or ReactJS) established let's use this as an example.
+
+You first have atoms which as you can see here are icons and little small indivisible elements on your website such as images.
+There's some text and you divide these into atoms.
+From there you form molecules or combine atoms that have similar functionality such as the navigation bar down here.
+You combine individual atoms to add some functionality
+and then you have organisms again a little bit bigger than molecules that combine to a bigger scale functionality.
+And then finally you have templates.
+The combination of these organisms gives you an idea of how your app or website should look.
+Finally, you have your pages. That is the page of your app.
+And if you think in components as this (diagram_2.png) image demonstrates 
+well you're able to build small little components that you can reuse and put on different parts of the webpage.
+For example, this back-button is here (diagram_2.png → ATOMS) if I build a React component that is the back-button I can now use it on multiple pages.
+And I don't have to rewrite the code
+if I wanted the navigation bar to be used in different areas of the app.
+Well again I don't need to rewrite the code I write it once and I can reuse it as a matter of fact I can even share it with the world.
+This idea of Components makes React (also known as React.js or ReactJS) AMAZING 
+
+· From diagram_3.png & diagram_4.png & diagram_5.png:
+
+because right here (diagram_3.png & diagram_4.png & diagram_5.png) 
+I have a website that has React (also known as React.js or ReactJS) Components built by somebody and we can reuse these.
+And it's not just CSS and HTML (diagram_4.png). But real functionality such as navigation bars and sign-in forms (diagram_5.png).
+I can just download this React component and attach it to my website
+and because of the way React (also known as React.js or ReactJS) is structured (diagram_2.png) 
+it doesn't need to know about the rest of the webpage it's just its Lego block that works by itself by reducing dependencies on other parts of the website.
+I can just plug this anywhere I want.
+
+· From diagram_6.png & diagram_7.png & diagram_8.png & diagram_9.png & diagram_10.png & diagram_11.png:
+
+Another important concept with React (also known as React.js or ReactJS) is the idea of one-way data flow (diagram_6.png).
+The best way to describe it is by looking at this tree-like structure
+here you see that we have a parent with some children and then those children have their children and those children have their children.
+The idea with React (also known as React.js or ReactJS) is that data flows from top to bottom and never the other way around
+that is if these red let's call them components change. Well in that case only their children know about the change.
+The parents don't care about the change because well the direction of the data flow is just always downstream.
+So if we go back to the idea of components if we had a website built on components
+and this was the page (diagram_7.png)
+and these were organisms (diagram_8.png)
+and then molecules (diagram_9.png)
+then atoms (diagram_10.png).
+Well in that case the red components change and then only the ones below it.
+As you can see here (diagram_11.png) in blue know of this change and based on that they will act accordingly and change as well.
+Now without actually having a problem, it's hard to understand this concept 
+but trust me this is a very important concept that React (also known as React.js or ReactJS) brought in.
+It creates a lot of really nice bug-free code and it is an idea that you'll understand more and more as we start to code in React (also known as React.js or ReactJS).
+
+· From diagram_12.png:
+
+The next thing is the idea of Virtual DOM you know what the DOM is the Document Object Model.
+And we also learned that one of the most important things as a developer is to minimize the amount of DOM manipulation that we do
+because web browsers have to work hard to achieve that and it reduces the performance of the webpage plus increases bugs.
+I think this (diagram_12.png) image demonstrates what React (also known as React.js or ReactJS) does really well.
+Beforehand we were the painters we told the DOM exactly what to do.
+Remove this element then put this in and then also add this and color this this way
+with React (also known as React.js or ReactJS) we have this React bot and the React bot creates something called the Virtual DOM,
+Virtual DOM is just a JavaScript object and this JavaScript object just describes our website.
+The current state of the website
+and we just give that object to React (also known as React.js or ReactJS) 
+and the React bot will automatically make changes to the DOM and paint the picture in the most optimum way possible.
+So we just tell it, hey this is the object. This is what we want
+in the DOM and the React (also known as React.js or ReactJS) takes care of DOM manipulation for you.
+Remember how annoying it was to do query selector-all then grab elements by Id and then do all these event handlers
+well, React (also known as React.js or ReactJS) takes care of that.
+So again the virtual DOM is just a copy of the DOM that's in a JavaScript object 
+and then React (also known as React.js or ReactJS) underneath the hood just changes the view 
+and that's why it's able to work outside of browsers and you can use things like VR and mobile devices 
+because React (also known as React.js or ReactJS) is the machine and what the canvas is on well we can change the canvas to whatever we want.
+
+· From diagram_13.png:
+
+Finally, React (also known as React.js or ReactJS) has a great ecosystem.
+It is probably one of the biggest ecosystems in JavaScript right now and there are so many tools that work with React (also known as React.js or ReactJS)
+as a matter of fact, the developer community is so big 
+that any problem you have there is most likely a chance that somebody else has had it and has posted it on the Internet and you can find solutions for it.
+You can find React (also known as React.js or ReactJS) packages in npm you can use it with Node.js there's Webpack and Babel (Babel.js) that you can use with it.
+It's just a really good ecosystem that uses the latest JavaScript technology to build websites in a nice elegant way.
+
+· From diagram_14.png & diagram_15.png:
+
+Now one thing that I want to warn you about
+in this section, we're going to see code like this (diagram_14.png).
+And it's going to look very strange at first.
+It's the same way when you looked at JavaScript the first time.
+It seemed like a whole new different world.
+It will when you first look at this
+but trust me knowing what you know about JavaScript this becomes easy.
+You have classes that extends the React Component and this is how we build components.
+We have constructor again that we've seen in advanced objects
+and then each class has a mandatory render function that you just tell it what this Clock should render (diagram_15.png).
+And as you can see it looks like HTML isn't it? It's not exactly HTML but the syntax is very similar.
+So even by looking at this, you see that this Clock Component
+Again this Lego block just returns a Hello, world!
+h1 tag with an h2 that says It is and then the time
+again just to give you a heads-up you're going to hear words like props and state and React Component but these are just language syntax that you'll learn.
+And it's actually quite easy once you get used to it.
+So don't worry this is all going to make sense by the end of it.
+
+· From diagram_16.png:
+
+And you know what we're going to be building a pretty cool app.
+It's called ROBOFRIENDS and we're going to build this app that well searches through your robot friends and you can find their contact information.
+And as you can see it updates live.
+It's super fast.
+It's responsive.
+It's going to be a lot of fun.
+And we're going to build this pretty fast just to show you how powerful React (also known as React.js or ReactJS) is.
+
+All right.
+I'm really excited to get into this section.
+You're going to have a lot of fun.
