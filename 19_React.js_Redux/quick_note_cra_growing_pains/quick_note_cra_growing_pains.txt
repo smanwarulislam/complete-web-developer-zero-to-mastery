@@ -1,0 +1,8 @@
+Quick Note: CRA Growing Pains
+
+In the next 3 videos, we are going to be talking about a tool called Create React App!
+
+Although only in the 3rd video, we show you how to use the latest version of this tool,
+I want to make sure you watch all 3 videos because it will show some important concepts and also demonstrate how tools get updated as time progresses.
+We will also discover how programmers can update these tools to make sure we are taking advantage of the latest and greatest.
+You won't need to follow along (code-along) until the create-react-app 3 video. Enjoy!
