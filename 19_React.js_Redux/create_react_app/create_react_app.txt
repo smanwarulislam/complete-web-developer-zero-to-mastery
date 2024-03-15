@@ -1,0 +1,12 @@
+create-react-app
+
+Reference websites:
+
+· create-react-app - npm
+https://www.npmjs.com/package/create-react-app
+
+· Overview of create-react-app
+https://github.com/facebook/create-react-app
+
+· React VS Code Extension
+https://marketplace.visualstudio.com/items?itemName=jawandarajbir.react-vscode-extension-pack
