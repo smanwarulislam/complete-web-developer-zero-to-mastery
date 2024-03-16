@@ -1,0 +1,17 @@
+create-react-app 3
+
+· Create React App
+
+Reference websites:
+
+· Create a New React App – React
+https://legacy.reactjs.org/docs/create-a-new-react-app.html
+
+· Create React App
+https://create-react-app.dev/
+
+· Create React App Documentation
+https://create-react-app.dev/docs/getting-started/
+
+· What is NPX?
+https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
