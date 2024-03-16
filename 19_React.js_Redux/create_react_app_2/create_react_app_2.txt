@@ -1,0 +1,11 @@
+create-react-app 2
+
+· Create React App
+
+· React + Vite
+
+Reference websites:
+
+Create React App
+· Is Create React App Really Dead? What Are Other Options? - Kaushaljoshi Blog
+https://blog.kaushaljoshi.dev/cra-problems-n-alternatives/
