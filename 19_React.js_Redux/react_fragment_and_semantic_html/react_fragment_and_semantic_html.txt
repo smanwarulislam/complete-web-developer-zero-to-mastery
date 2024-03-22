@@ -1,0 +1,14 @@
+React.Fragment and Semantic HTML
+
+One thing you will notice with React (also known as React.js or ReactJS) is that 
+because we always have to return just one element from a component, 
+we end up wrapping a lot of our components in <div></div>.
+
+BUT WHAT ABOUT THE SEMANTIC HTML YOU TAUGHT US ABOUT IN THE HTML SECTION ANDREI!??!!
+
+You are right!
+React (also known as React.js or ReactJS) realized this was an issue, 
+and with the newer version of React 16.2 (Latest → Stable release: 18.2.0 / 14 June 2022), they introduced something called Fragment to fix this issue.
+You can read about it here (optional):
+Rendering child elements in React using Fragments
+https://blog.logrocket.com/rendering-child-elements-react-fragments/
