@@ -1,0 +1,15 @@
+Building A React App 3
+
+Reference websites:
+
+· this - binding in React
+https://legacy.reactjs.org/docs/handling-events.html
+https://react.dev/learn/responding-to-events
+
+· toLowerCase()
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+https://www.w3schools.com/jsref/jsref_tolowercase.asp
+
+· includes()
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+https://www.w3schools.com/jsref/jsref_includes.asp
