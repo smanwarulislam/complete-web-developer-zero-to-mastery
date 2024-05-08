@@ -1,0 +1,9 @@
+Styling Your React App
+
+Reference websites:
+
+· Website for fonts download:
+https://www.cufonfonts.com/
+
+· Sega Logo Font
+https://www.cufonfonts.com/font/sega-logo-font
