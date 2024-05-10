@@ -1,0 +1,18 @@
+Building A React App 4
+
+Reference websites:
+
+· React.Component – React
+https://legacy.reactjs.org/docs/react-component.html
+
+· React Lifecycle Hooks
+https://legacy.reactjs.org/docs/state-and-lifecycle.html
+
+· React Lifecycle Methods and Hooks – a Beginner's Guide
+https://www.freecodecamp.org/news/react-lifecycle-methods-and-hooks-for-beginners/
+
+· Using the Fetch API - Web APIs | MDN
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+· JSONPlaceholder - Free Fake REST API
+https://jsonplaceholder.typicode.com/
