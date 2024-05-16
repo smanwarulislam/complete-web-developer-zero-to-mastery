@@ -1,0 +1,7 @@
+Project Files
+
+Here is the GitHub repo with the complete project files for the RoboFriends app which we built together.
+Go ahead and clone it and do what you will with it.
+It's all yours to put into your portfolio, or make it even better!
+
+https://github.com/smanwarulislam/robofriends
