@@ -1,0 +1,60 @@
+React Review
+
+Welcome back!
+
+· From diagram_1.png:
+
+At the beginning of this React (also known as React.js or ReactJS) section, I told you that things are going to get a little bit overwhelming.
+But in the end, I'm/you're going to understand everything and things are going to make sense.
+I want to show me/you exactly how much I've/you've learned.
+
+· From diagram_2.png:
+
+I've/You've learned that Components.
+Well, now this makes sense, right?
+I'm/You were building components during this section to combine things into containers and then finally have a page or an app.
+
+· From diagram_3.png:
+
+I/You also learn that there is a one-way data flow 
+that is everything flows from state to props and you can have multiple children but the only people that can change state is a container component.
+In our case, we only have one container component but I/you can have multiple.
+And data just flows down one way and any time a child component changes, they just trigger an event on the parent.
+And I/you saw how awesome that was.
+We didn't think about how we should render things, we were doing things deterministically.
+That is: here's the state of the app, render it accordingly and React (also known as React.js or ReactJS) takes care of it for us.
+
+· From diagram_4.png:
+
+We also learned that - well, exactly what I said -
+React (also known as React.js or ReactJS) worries about painting and making the website look good.
+We just give it the data and the components.
+
+· From diagram_5.png & diagram_6.png:
+
+We learned that React (also known as React.js or ReactJS) has an awesome ecosystem (diagram_5.png).
+We had great tools where we were able to start and build and it gives us great errors (diagram_6.png).
+So all these pain points that we had when we were first building our websites.
+Well, they're gone.
+Everything is built for you.
+So there I'm/you're ready to just focus on coding without having to worry about configuration.
+When we get to our final project, 
+we're going to be using React (also known as React.js or ReactJS) components to build something really fast and just plug and play these components (diagram_5.png).
+
+· From diagram_7.png:
+
+And finally, well, this shouldn't look confusing to me/you anymore.
+This makes sense.
+This whole thing looked intimidating at first,
+well, this is just React (also known as React.js or ReactJS) in this one image you have the majority of why React (also known as React.js or ReactJS) is.
+And once I/you get used to the syntax it's an elegant solution to building beautiful web apps that are simple, scalable, and easy to manage.
+
+Good job getting this far in the course, it takes a lot of dedication to get through this.
+But I/you did it, I'm/you're almost there.
+
+I'll see you in the next one.
+
+Reference websites:
+
+· Atomic Design by Brad Frost
+https://atomicdesign.bradfrost.com/
