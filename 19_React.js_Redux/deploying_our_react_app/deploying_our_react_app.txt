@@ -1,0 +1,9 @@
+Deploying Our React App
+
+Reference websites:
+
+· GitHub Pages with CRA (create-react-app)
+https://create-react-app.dev/docs/deployment/#github-pages
+
+· Robofriends Project Files
+https://github.com/smanwarulislam/robofriends
