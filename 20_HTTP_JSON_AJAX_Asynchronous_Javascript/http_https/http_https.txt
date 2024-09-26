@@ -1,0 +1,292 @@
+HTTP/HTTPS
+
+· From diagram_1.png:
+
+In 1989 Tim Berners-Lee invented the HTML that changed the world.
+But HTML wouldn't do much if we couldn't fetch documents from worldwide and different computers.
+For that to happen Tim built the 'Hypertext Transfer Protocol' or HTTP for short.
+
+· From diagram_2.png & diagram_3.png:
+
+Now remember these arrows from the diagrams (diagram_2.png) that we've had.
+We told you that these arrows (diagram_2.png) were simply the connected wires and cables that connected the worldwide web.
+"This, (diagram_3.png) right? You remembered the diagram."
+But you see these are just wires.
+There are no instructions on how to do things for that you need something called a protocol.
+Think of it as a standard that everyone follows.
+If everyone agrees then the protocol works and can be used by everyone.
+HTTP that I have here (diagram_2.png) is a protocol that allows the fetching of resources such as HTML documents.
+I mean it's in the name right Hypertext Transfer Protocol.
+Now with the use of HTML and HTTP, we have the World Wide Web.
+We can grab HTML files and receive them
+if we go to the 'google.com/about' we go to the about HTML page grab it and receive it.
+So HTTP is the protocol or rules that we use over the wires.
+It is the foundation of any data exchange on the web
+and it paves the way for a client-server protocol, which means requests are initiated by the recipient, which is the web browser.
+So they (the web browser) send out a request using HTTP.
+The server now understands what the web browser is saying because it's speaking in HTTP
+and the server can now respond with HTML and the browser understands it because it's speaking through HTTP once again.
+So you should think of HTTP as a common language that a client (the web browser) and a server can use to communicate.
+They're simply saying Hey can you (the server) give me (the web browser) this document.
+And the server can say yep no problem. Here it is.
+And up until this point, we haven't spoken to a server in our app have we?
+We build front-end applications or client-facing applications using HTML, CSS, JavaScript, and React (also known as React.js or ReactJS)
+but we lived in our world.
+No communications with another computer.
+HTTP allows us now to communicate with servers, and with the outside world.
+
+So let's go over the terminology one more time (diagram_2.png).
+Clients (the web browser) and servers can communicate by exchanging individual messages.
+The messages sent by the client usually a web browser are called requests and the messages sent by the server are usually called responses.
+So if HTTP is the language that allows us to communicate between these two (the web browser and the server) teach me some of the words right.
+I mean that's a good question.
+Luckily for you, HTTP is quite easy to learn because you only have a few words and I'm going to show you what they are right now (diagram_4.png).
+You have 'GET'
+you have 'POST'
+you have 'PUT'
+And finally, you have 'DELETE'.
+and now you're thinking "Umm that's it?"
+And yeah HTTP is beautiful because it's just simple. You don't need to overcomplicate things.
+You learn these four words and these languages and you can build the app of your dreams.
+So let's go through it one by one.
+'GET' means well, I want to get an HTML file.
+So you ask to get something and the server responds with that request.
+A 'POST' says I want to post something.
+So I'm going to send over some data to Google servers and I want you to 'POST' -I want you to add it to your servers or your database.
+'PUT' is I'm going to send you some data.
+And I want you to update some data that already exists in Google servers and just update it with this new information
+and then 'DELETE' means well, delete a piece of data on the backend- on the servers or the database.
+So if we use Twitter (Twitter, officially known since July 2023 as X) as an example
+'GET' will be to receive the Twitter feed with all the tweets from today.
+'POST' would be if you created a new user and you want to add that user to the Twitter servers.
+'PUT' would be if you made a tweet but you want to make a change or an edit so you edit that tweet
+and 'DELETE' will mean well you either delete your user account or delete a tweet.
+And don't worry we're going to use these when we get to the backend section and we build our final project.
+
+Now over the years, HTTP was extended to not only worry about text.
+Not only fetch hypertext documents like HTML, but also images and videos and post content to servers with HTML form results.
+and HTTP can also be used to fetch part of documents to update web pages on demand which is called AJAX
+and we have a video (lecture/lesson) coming up talking about this.
+But the main idea still stands using these four verbs we just learned, we can now communicate with servers.
+All right.
+
+So we know that this arrow over here (diagram_4.png) at the top uses HTTP to make requests using one of these four verbs.
+Okay, so I think you get the request part.
+Now, what does the server respond with? What about the response here?
+The server sends you two main things.
+One is an HTTP message.
+That is something that you've definitely seen before and I'll link to this W3Schools resources
+
+Reference websites:
+· W3Schools Online Web Tutorials
+https://www.w3schools.com/
+
+HTTP Messages
+https://www.w3schools.com/tags/ref_httpmessages.asp
+
+HTTP Status Messages
+
+2xx: Successful
+
+Message:
+200 OK
+Description:
+The request is OK (this is the standard response for successful HTTP requests)
+
+a 200 message means successful.
+You probably have seen 200 OK before
+
+4xx: Client Error
+
+Message:
+404 Not Found
+Description:
+The requested page could not be found but may be available again in the future
+
+you might have seen 404 messages which means not found.
+If you enter a URL that doesn't exist you'll get a 404
+
+5xx: Server Error
+
+Message:
+500 Internal Server Error
+Description:
+A generic error message, given when no more specific message is suitable
+
+and maybe sometimes you'll get a 500 error message that is
+Well, there's something wrong with the server.
+
+So this is just a number code that comes with every response that tells you the response of the server.
+So that's the first one. (The server sends you two main things. One is an HTTP message.)
+
+The second one usually involves some sort of data like HTML. And so far that's what we've been doing HTML.
+But in the next video (lecture/lesson), I'll show you that it can send other things other than just simple HTML.
+
+So let's add to this diagram (diagram_9.png) now.
+We want to say that this also has a status code and we'll say 200 for now that everything was fine
+and in the response would give the status code plus the new HTML file.
+All right.
+Let's demonstrate this online to see how you can watch this action take place.
+I have over here (diagram_10.png) a great website called 'example.com' and it's a simple website you can go visit right now.
+
+Reference websites:
+· Example Domain
+https://example.com/
+
+But the cool part about it is if you open up your Developer Console,
+up to this point,
+we've looked (diagram_11.png) at the Elements tab and then the Console tab I want to show you the Network tab that we have here (diagram_12.png).
+Now the Network tab (diagram_12.png) -
+You might have to click on some of these icons and see that different things will pop up (diagram_12.png).
+Make sure that the filter is gone (diagram_13.png).
+Everything is un-clicked and now at 'example.com' while this (diagram_14.png) is open just simply refresh (Reload this page)
+and look at that (diagram_15.png).
+I'm going to click on this icon which makes it a little bit bigger (diagram_16.png).
+These are plugins (diagram_15.png) so don't worry about this JavaScript
+but the top thing it says (diagram_15.png & diagram_16.png)
+"example.com"  "Status: 200 OK" (diagram_16.png)
+diagram_15.png, diagram_16.png, diagram_17.png, diagram_18.png, diagram_19.png & diagram_20.png:
+And "Type: document" and it even tells me the Size - the Time that it took to get this which is 53 milliseconds.../2.60 seconds... That's pretty fast.
+So that means the server responded with 200.
+If I click (diagram_21.png) on this ('example.com') I get a whole bunch of things that we don't need to worry about but a few things
+'Request URL'
+Request URL: https://example.com/
+this is what we requested.
+We get a Status Code of 200 from the server.
+Status Code: 200
+And if we click (diagram_22.png) on the Response there's a Response message we received the HTML document from the server.
+If we go back to Headers we also see that our Request Method was a 'GET' (diagram_23.png).
+Request Method: GET
+We did a 'GET' request.
+Let's close this (diagram_24.png) and refresh (Reload this page) again.
+I now get a 200 Status (diagram_26.png).
+refresh (Reload this page) again
+I now get a 304 Status (diagram_25.png).
+A 304
+If we look over here (diagram_27.png)
+means Not Modified indicates the request page has not been modified since the last requested.
+
+3xx: Redirection
+
+Message:
+304 Not Modified
+Description:
+Indicates the requested page has not been modified since last requested
+
+Because I've already requested this
+now Google is smart enough to say oh, I'm not going to worry about the server and request the same thing over and over.
+I already have it memorized so here it is (diagram_25.png).
+Very cool.
+So the Network tab (diagram_25.png & diagram_26.png) is really really useful for that.
+All right.
+So you can go ahead and play with 'example.com' (diagram_10.png) and see for yourself how HTTP works.
+And by the way yes this HTTP that you see here (diagram_28.png) is what it means when you do an HTTP request (diagram_29.png) it says
+hey do HTTP (diagram_28.png) -we're using the World Wide Web (diagram_30.png).
+And request this (diagram_31.png) from the server.
+Very cool.
+And if you're wondering about the 's' (diagram_32.png).
+Don't worry I'll let you know at the end of this video (lecture/lesson) what that means as well.
+All right.
+
+Now what if I want to send data?
+If we return to our diagram (diagram_33.png) I'm just doing a 'GET' request.
+But what if I want actually to send some information to the server? Other than some URLs saying I want this information.
+Well, there are two ways that you can do it.
+One is something called query string.
+And then the second one is through the body of the request.
+So I'm going to show you how both of those work
+I have over here (diagram_34.png) the form that we created in our first advanced HTML section when we only knew HTML.
+Let's open this file up.
+I have it over here (diagram_35.png).
+If I double click (diagram_35.png) -ahh you remember this don't you? (diagram_36.png)
+We've come a long long way.
+In this form (diagram_34.png)
+if you remember we had a form method 'GET' (diagram_37.png) and now you might understand what this 'GET' means (diagram_38.png).
+It's saying with this form I want you to do a 'GET' request (diagram_38.png).
+Let's see what happens when I click Register while opening the Network tab (diagram_40.png & diagram_41.png & diagram_42.png & diagram_43.png).
+I'm going to click 'Register!' (diagram_39.png/diagram_44.png).
+All right.
+So we have this request (diagram_44.png).
+We see (diagram_46.png) that we have made a request (diagram_46.png) 
+and it has created these things (diagram_45.png or diagram_47.png, diagram_48.png) called query strings.
+The first way of sending data to the server (One is something called query string).
+With a 'GET' request if you want to send information through a form (diagram_37.png & diagram_43.png)
+it adds it to the URL using this question mark (diagram_47.png, diagram_48.png/diagram_49.png) 
+which says hey I'm about to send you some query strings and it's going to have a key and a value.
+In this case, firstname, lastname everything's empty so there's no information (diagram_47.png, diagram_48.png/diagram_49.png).
+But otherwise, I'll say the firstname equals Andrei/Anwarul.
+If I click on this (diagram_50.png/diagram_51.png, diagram_52.png) 
+we see (Payload) that there are Query String Parameters (diagram_53.png) that we've sent.
+We have the firstname, lastname, pwd, and blank birthday (diagram_53.png).
+But we have email: email@gmail.com and if we scroll down in Cars, the default is Volvo, so we have cars: volvo (diagram_54.png).
+So this information (diagram_53.png, diagram_54.png) now is sent to the server.
+That's (diagram_55.png) Query String Parameters using 'GET'.
+
+And we did mention one thing though.
+We see that we have the pwd (Password) in here (diagram_56.png) that's not very secure, is it?
+If I went back to the form typed Password in 'secret' (diagram_57.png/diagram_62.png) and clicked 'Register!' ('Register') (diagram_58.png/diagram_63.png)
+again well now I have my password/pwd out in the open and sent over the wire (diagram_59.png/diagram_65.png)
+and I even have it up here in my URL bar (diagram_60.png/diagram_65.png).
+All right.
+We'll get back to that (diagram_61.png).
+So that is one way (The first way of sending data to the server → One is something called query string).
+
+The second way is through the body of the request.
+Let me show you how that works
+the way we send information to the body is we use a 'POST' request (diagram_66.png/diagram_67.png)
+and this is something that you'll more often see than a 'GET' request we want to add some form data to the server so we want to post something
+if I change this over here I'm going to save this (diagram_66.png/diagram_67.png).
+And let's open up a new tab (diagram_68.png/diagram_69.png).
+With new saved data this one is a 'POST' form (diagram_66.png/diagram_67.png).
+If I open it up here, type in Password 'secret' (diagram_70.png/diagram_72.png) and click 'Register!'/'Register' (diagram_71.png/diagram_73.png)
+I get 'register.html' but no query strings (diagram_74.png/diagram_75.png).
+If I click on this (diagram_75.png, diagram_81.png),
+I see that now instead of query strings, it's Form Data (diagram_76.png/diagram_82.png).
+And it even says 'Content-Type: application/x-www-form-urlencoded' (diagram_77.png/diagram_83.png).
+And this is just an HTML way of saying that
+this is a form (diagram_78.png/diagram_84.png) and this is the body (diagram_79.png/diagram_85.png) but not displaying here (diagram_80.png/diagram_86.png).
+So now the server can access it not from the query params (diagram_80.png/diagram_87.png)
+and don't worry I'll show you how servers do that when we get to the backend section.
+Instead of accessing it through the query params, I can now access it through the Form Data (diagram_80.png/diagram_86.png).
+
+So let's go back to the diagram (diagram_9.png).
+We now understand that we can make HTTP requests using 'GET', 'POST', 'PUT', and 'DELETE' (diagram_9.png).
+I can use query strings which are at the top of the URL (diagram_88.png) to send the data or the body (diagram_89.png) of the request
+and then the server responds with a status code based on how my request (query strings or the body) was and it returns that with a response (diagram_90.png).
+But the one issue we saw was that well, the password was visible in both cases, wasn't it?
+And what if we had a -have a scary-looking person over here (diagram_91.png)? There you go.
+What if we had a person watching and monitoring the communication of our HTTP requests (diagram_91.png)?
+If I used query strings to put my Password in there (diagram_92.png)
+well, he can just look over my shoulders and see oh Andrea's/Anwarul's password/pwd is 'secret'. I can now log into his Google account
+or if I use the body way of sending data well he can find a way to get this request to come over to him first (diagram_93.png).
+And just looked at the Form Data (Payload) and saw that my password/pwd is 'secret' (diagram_94.png/diagram_95.png). "That's not very good is it?"
+Well, one solution to this was the idea of HTTPS (diagram_96.png).
+Now HTTPS means Hypertext Transfer Protocol Secure
+and you can see over here (diagram_97.png) that "W3Schools" (https://www.w3schools.com/) uses the secure version of HTTPS.
+The communication between the browser and the websites is now encrypted. And what does that mean?
+Encrypted just means that it's jumbled up so only the client and the server know the secret pass or secret key to read the message.
+This 's' part (diagram_98.png) of the secret uses a technology 
+called transport layer security or its predecessor secure sockets layer or TLS and SSL for short.
+So now even with HTTPS the attacker or what we call a man in the middle the person who is just monitoring our requests (diagram_99.png).
+Even if they get our password it's going to be just complete gibberish that's going to have something similar to this (diagram_100.png)
+and well that's not our password (diagram_100.png) so it's going to be meaningless it avoids that attack.
+This is just the tip.
+As a developer, you should tell all your friends if you're ever sending sensitive information maybe logging into a bank account.
+Make sure that there's HTTPS out there
+if there's no HTTPS when you're sending - maybe you log in with your password. Well, that's not secure.
+All right.
+
+Let's review (diagram_101.png).
+Your web browser is an HTTP client sending requests to the server machines.
+When the browser user enters follow requests by either opening a file typing a URL or clicking on a hypertext link an anchor tag.
+The browser builds an HTTP request and sends it to communicate with the server.
+Now the server can get information back to us.
+In the earliest version we could use URL parameters such as 'www.google.com/about' and just specifically get HTML.
+That was it.
+Then came the form (diagram_102.png/diagram_103.png) 
+so we can now actually send more data other than just the URL saying we want to go to this HTML file.
+Now we could use 'GET' (diagram_104.png/diagram_106.png) or 'POST' (diagram_105.png/diagram_107.png) to send data.
+Either through a body or a query string, a server can take action based on that data and return a new page (diagram_101.png).
+And this is the foundation of the web and how the World Wide Web we have now was made possible. Through client-server communication.
+In the next few videos (lectures/lessons), we're going to learn even more to really understand this power.
+I'll see you in the next one. Bye-bye.
