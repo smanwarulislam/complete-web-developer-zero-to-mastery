@@ -1,0 +1,176 @@
+JSON
+
+Welcome back there is one missing piece with the diagram (diagram_1.png) we created in the previous video (lecture/lesson) on HTTP.
+
+· From diagram_1.png:
+
+We talked about URL parameters such as the "google.com/about" and query string parameters we can do with 'GET'
+but what about the data when we 'POST' something? Can we 'POST' anything?
+Well not really. When exchanging data between a browser and a server the data can only be text.
+So we can't just send a JavaScript object such as a user (const user) with firstName: "John" and lastName: "Doe"
+
+const user = {
+  firstName: "John",
+  lastName: "Doe"
+};
+
+One is because HTTP won't understand it.
+
+· From diagram_2.png:
+
+But also if we were sending this (const user = {};) data (diagram_2.png) to Google servers -
+Well unlike the Front-End (the web browser) where HTML, CSS, and JavaScript are standard
+when I send a 'user' object to the server (diagram_2.png).
+A server can use any type of language like Python, Go, or PHP.
+If we send them a JavaScript type, like an object (diagram_3.png) they will really be confused because they would have no idea what it is.
+That's not really their language.
+Text, on the other hand, can be understood by all.
+So we need a way, to have a standard way to send data over the wires and receive it.
+
+· From diagram_4.png:
+
+That is what JSON is and what we're going to talk about in this video (lecture/lesson).
+
+1. JSON: JavaScript Object Notation.
+- JSON stands for JavaScript Object Notation.
+
+2. JSON is a syntax for storing and exchanging data.
+
+3. JSON is text, written with JavaScript object notation.
+
+Let's look at the second point here (diagram_4.png).
+JSON is a syntax for storing and exchanging data.
+It's used to send data between machines.
+Is it the only way? No, there's also XML (Extensible Markup Language). Both XML and JSON can be used to receive data from a web server.
+
+· From diagram_5.png:
+
+And you can see (diagram_5.png) the differences between the two.
+These are the same data.
+
+JSON:
+{
+  "employees"
+  [
+    {"firstName": "John", "lastName": "Doe"},
+    {"firstName": "Anna", "lastName": "Smith"},
+    {"firstName": "Peter", "lastName": "Jones"}
+  ]
+}
+
+XML:
+<employees>
+  <employee>
+    <firstName>John</firstName> <lastName>Doe</lastName>
+  </employee>
+  <employee>
+    <firstName>Anna</firstName> <lastName>Smith</lastName>
+  </employee>
+  <employee>
+    <firstName>Peter</firstName> <lastName>Jones</lastName>
+  </employee>
+</employees>
+
+Just firstName and lastName of employees
+and XML uses this HTML-like syntax while JSON uses an object - JavaScript object-like syntax (diagram_5.png).
+But the standard is now more toward JSON
+because when you're writing front-end code in JavaScript getting JSON data back makes it easier to load that data into an object tree
+because it's so similar to a JavaScript object than an XML.
+And JSON format is a more succinct way
+which save bandwidth and improve response times when sending messages back and forth between client and server.
+And XML is just not very efficient.
+So JSON is now more of a standard you'll still see XML but it is outdated so we won't be talking about it in this video (lecture/lesson).
+But they both are used to transfer data between two machines that might not speak the same language.
+JSON however although it looks similar to JavaScript it is a little bit different.
+It has these (diagram_5.png) double quotes for even properties ("firstName", "lastName").
+Everything has to be a string wrapped around double quotes.
+And well it looks like it's an object syntax (diagram_6.png).
+
+· From diagram_7.png:
+
+But JSON can be read in any language.
+If Google servers were running a different language
+they'd understand JSON they'd be able to modify that JSON which is just text into their own version.
+
+· From diagram_8.png:
+
+So now we can convert this into a JSON object, and send it over HTTP.
+
+· From diagram_9.png:
+
+And then the Google servers or whatever it is will change it to their own language, understand it, and then send a response.
+Again let's say for example it was returning - the user has money 345 dollars.
+Well it will then modify this (diagram_9.png) to JSON
+
+const money = $345;
+
+· From diagram_10.png:
+
+send it over the wire and then the web browser will change it from JSON to JavaScript.
+But how can we do that?
+
+· From diagram_11.png:
+
+Luckily for us, JavaScript comes with its own JSON function.
+We have JSON.parse() and JSON.stringify()
+
+JSON.parse()
+var obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
+
+JSON.stringify()
+var myJSON = JSON.stringify(obj);
+
+with JSON.parse()
+var obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
+
+if we had JSON again in this form (diagram_11.png), we simply wrap it as the parameter of parse and it will return an object.
+
+In the opposite way with JSON.stringify()
+var myJSON = JSON.stringify(obj);
+
+we can give it an object such as the one (var obj) we just created and it will return JSON.
+
+So this myJSON variable can now be put into the HTTP request to send it over the wire or the server can respond with myJSON.
+
+· From diagram_12.png:
+
+So let's review,
+JSON is text and we can convert any JavaScript object into JSON and send JSON to the server.
+We can also convert any JSON received from the server into JavaScript objects.
+This way we can work with data as JavaScript objects with no complicated translation
+and this text can be used as a data format for any programming language.
+
+· From diagram_12.png, diagram_13.png, diagram_14.png, diagram_15.png, diagram_16.png, diagram_17.png, diagram_18.png, diagram_19.png, diagram_20.png & diagram_21.png:
+
+So let's go through the flow one more time now with this complete (diagram_12.png).
+'user' object before I send it with HTTP I will do (diagram_13.png)
+
+const user = {
+  firstName: "John",
+  lastName: "Doe"
+};
+
+"JSON.stringify(user);"
+So now it's converted into a JSON string (diagram_13.png) and this JSON string will be sent over HTTP (diagram_14.png) to the Google servers (diagram_15.png).
+It is then going to say JSON.parse() to this user (diagram_16.png) so it understands it.
+"JSON.parse(user);"
+Let's say it (Google Servers) was running JavaScript or Node.js.
+Now it'll understand the 'user'. They'll say - he (const user = {};) wants the 'money' amount for this 'user'.
+So now it gets 'money' 345 from the account (diagram_17.png).
+const money = $345;
+
+It (diagram_18.png) stringify's the JavaScript object (user).
+"JSON.stringify(user);"
+
+Sends it with a status code of 200 (diagram_19.png)
+And now the web browser can parse (JSON.parse()) this string that it received (diagram_20.png)
+and see that oh yeah I have a variable 'money' of $345 (diagram_21.png).
+
+And don't worry—when we get to the backend section, we will show you exactly how to do this in code in a few videos (lectures/lessons).
+How to make HTTP requests, use JSON, use GET, POST, PUT, and DELETE methods and I'm going to show you how to do that in our final project as well.
+
+· From diagram_22.png:
+
+But now this diagram although a little bit messy should make a little bit more sense and you should understand now how things are working.
+In the next video (lecture/lesson), I'm going to introduce you to something that changed web browsing in 2006.
+I'll see you in that one. Bye-bye.
