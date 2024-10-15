@@ -1,0 +1,9 @@
+JSON vs Form Data
+
+Originally, the only way to submit some form data to a server was through the <form> tag in HTML.
+We have learned that it can do a POST or a GET request.
+With JSON you can now grab the contents of the <input> in a form and submit those with JSON instead of as a form data.
+You can now submit to the server whenever you want without it necessarily being a <form>, through AJAX...
+What is AJAX you might say?
+
+It's coming up in the next video (lecture/lesson)!
