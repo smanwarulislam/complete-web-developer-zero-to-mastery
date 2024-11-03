@@ -1,0 +1,466 @@
+AJAX
+
+· From diagram_1.png:
+
+Welcome back in the previous videos (lectures/lessons) we learned about HTTP and JSON.
+We learned that we can send requests and get responses.
+
+· From diagram_2.png:
+
+But there's one issue.
+Up until now, every time we needed to communicate with the server, we made that request, and then the browser, when it received the response, refreshed the page.
+Originally page loading on the web was simple
+You'd send a request for a website to a server.
+If nothing went wrong, the assets (HTML, CSS, JavaScript) would be downloaded by the webpage and displayed on your computer.
+The trouble with this model is that whenever you want to update any parts of the page for example display a new set of products like on Amazon.
+Well, you'll have to load the entire program again, even the outline, even the navigation bar at the top.
+Everything has to get reloaded- a complete page refresh.
+This is extremely wasteful and results in a poor user experience especially as pages get larger and more complex.
+
+· From diagram_3.png, diagram_4.png:
+
+You can think of it on the Udemy website.
+https://www.udemy.com/
+
+· From diagram_5.png, diagram_6.png, diagram_7.png/diagram_8.png, diagram_9.png, diagram_10.png:
+
+If we go to Udemy, well if I click on let's say Marketing, the top bar will remain. Did you see that?
+It's a nice user experience.
+
+· From diagram_11.png, diagram_12.png, diagram_13.png/diagram_14.png:
+
+I can click on tabs and I won't get a complete page refresh.
+It's -well it loads data automatically on the page.
+Now this issue that we had here (diagram_1.png) led to the creation of technologies that allow web pages to request small chunks of data, 
+such as HTML, XML, plain text, and JSON, and display them only when needed.
+Helping to solve this (diagram_2.png) refresh problem.
+
+· From diagram_15.png:
+
+And the technology was called AJAX (Asynchronous JavaScript And XML).
+AJAX = Asynchronous JavaScript And XML.
+
+Reference websites:
+
+· Ajax (programming) - Wikipedia
+https://en.wikipedia.org/wiki/Ajax_(programming)
+
+Ajax (programming)
+From Wikipedia, the free encyclopedia
+
+Ajax (also AJAX; short for "asynchronous JavaScript and XML") 
+is a set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications.
+With Ajax, web applications can send and retrieve data from a server asynchronously (in the background) 
+without interfering with the display and behavior of the existing page.
+By decoupling the data interchange layer from the presentation layer, 
+Ajax allows web pages and, by extension, web applications, to change content dynamically without the need to reload the entire page.
+In practice, modern implementations commonly utilize JSON instead of XML.
+
+Ajax is not a technology, but rather a programming concept.
+HTML and CSS can be used in combination to mark up and style information.
+The webpage can be modified by JavaScript to dynamically display—and allow the user to interact with the new information.
+The built-in XMLHttpRequest (XHR) object is used to execute Ajax on webpages, 
+allowing websites to load content onto the screen without refreshing the page.
+Ajax is not a new technology, nor is it a new language. Instead, it is existing technologies used in a new way.
+
+· AJAX Introduction - W3Schools
+https://www.w3schools.com/xml/ajax_intro.asp
+
+AJAX Introduction
+
+AJAX is a developer's dream because you can:
+Update a web page without reloading the page
+Request data from a server - after the page has loaded
+Receive data from a server - after the page has loaded
+Send data to a server - in the background
+
+What is AJAX?
+
+AJAX = Asynchronous JavaScript And XML.
+
+AJAX is not a programming language.
+
+AJAX just uses a combination of:
+A browser built-in XMLHttpRequest object (to request data from a web server)
+JavaScript and HTML DOM (to display or use the data)
+
+AJAX is a misleading name.
+AJAX applications might use XML to transport data, but it is equally common to transport data as plain text or JSON text.
+
+AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes.
+This means that it is possible to update parts of a web page, without reloading the whole page.
+
+· freeCodeCamp
+AJAX Tutorial: What AJAX Is and How to Use it
+https://www.freecodecamp.org/news/ajax-tutorial/
+
+It allows you to read from a web server after the page has loaded and update a web page without reloading the page (diagram_15.png).
+Finally, data will be sent in the background while the user interacts with the Website.
+It was actually pioneered by Google in 2006 and now is what we expect of websites and any web app you see online uses AJAX now.
+
+· From diagram_16.png, diagram_17.png, diagram_18.png, diagram_19.png, diagram_20.png, diagram_21.png, diagram_22.png, diagram_23.png:
+
+You see (diagram_16.png) Google has this big problem when we're searching for something, 
+well, you would initially type in 'apple' (diagram_17.png) and it would do a complete page refresh (diagram_18.png, diagram_19.png).
+But now with this (diagram_20.png), I can maintain the top bar and have this loaded.
+I can even have suggestions (diagram_21.png, diagram_22.png) brought up from the server.
+And this (diagram_23.png) is all a response from the server saying these are some of the suggestions based on the Apple store.
+So it was a big problem for Google and they were able to solve it with AJAX but now we all have this ability.
+So how are we able to do this?
+
+· From diagram_24.png:
+
+"What is AJAX?" AJAX is just a technology—a method of combining pieces to achieve this.
+
+· From diagram_25.png:
+
+It was achieved using a tool that browsers built and it was called XMLHttpRequest (XHR).
+It looked something like this (diagram_25.png).
+
+Reference websites:
+
+· XMLHttpRequest - Wikipedia
+https://en.wikipedia.org/wiki/XMLHttpRequest
+
+· XMLHttpRequest - Web APIs | MDN
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+
+· XML HttpRequest
+https://www.w3schools.com/xml/xml_http.asp
+
+· AJAX The XMLHttpRequest Object
+https://www.w3schools.com/js/js_ajax_http.asp
+
+The Old Way: XMLHttpRequest (XHR)
+
+var request = new XMLHttpRequest();
+request.open('GET', '/my/url', true);
+
+request.onload = function() {
+  if (request.status >= 200 && request.status < 400) {
+    // Success!
+    var data = JSON.parse(request.responseText);
+  } else {
+    // We reached our target server, but it returned an error
+  }
+};
+
+request.onerror = function() {
+  // There was a connection error of some sort
+};
+
+request.send();
+
+Usage (The Old Way: XMLHttpRequest (XHR))
+Generally, sending a request with XMLHttpRequest has several programming steps.
+
+1. You created a "new" ("new" keyword) XMLHttpRequest object:
+var request = new XMLHttpRequest();
+
+As you can see (diagram_25.png) it looks a little bit tough.
+
+2. You make a request -you make a 'GET' request at this URL:
+request.open('GET', '/my/url', true);
+
+3. You say "onload" ("onload" property) when it loads:
+request.onload = function() {};
+
+If the response status is greater than 200 and less than 400.
+It's a success.
+We will parse the "responseText" remember because we're receiving a string from the server:
+
+if (request.status >= 200 && request.status < 400) {
+  // Success!
+  var data = JSON.parse(request.responseText);
+}
+
+If it's not a success well we can return an error:
+
+  else {
+    // We reached our target server, but it returned an error
+}
+
+4. and we then "send" ("send" method) our request:
+request.send();
+
+and also listen for any errors:
+request.onerror = function() {
+  // There was a connection error of some sort
+};
+
+It looks pretty tough but it is things that we've gone over (diagram_25.png).
+But don't worry we actually don't do this anymore. This was the old way of doing it when AJAX was first introduced (diagram_25.png).
+
+· From diagram_26.png:
+
+jQuery (diagram_26.png) came along and said well this (diagram_25.png) is kind of tough to do every time.
+We'll make it easy for you by just doing this (diagram_26.png).
+And that was another part of the reason that jQuery was popular.
+We can just do AJAX requests using this method.
+
+The New Old Way: jQuery
+
+$.getJSON( '/my/url', function( data ) {
+  
+});
+
+· From diagram_27.png:
+
+But now there's actually an even nicer newer way that we've used when we build our React (also known as React.js or ReactJS) app
+and it's supported by the browsers and that is called fetch().
+
+The New Way: Fetch API
+
+fetch('/my/url').then(response => {
+  console.log(response);
+});
+
+As you remember it was fetch() at the URL and then we did this '.then(response)' and we received a response.
+
+· From diagram_28.png:
+
+Now this is a really good thing because page updates are a lot quicker and you don't have to wait for the page to refresh.
+Meaning that the site feels faster and more responsive. Also, less data is downloaded on each update, meaning less wasted bandwidth.
+And this is a major, major issue, especially on mobile devices where internet connection might not be as good.
+
+· From diagram_29.png:
+
+AJAX allows web pages and by extension web applications to change content dynamically and it is everywhere.
+It is something that is just very nice.
+
+· From diagram_30.png:
+
+It looks intimidating but it's just a matter of doing this (diagram_30.png) fetch() that does HTTP for you
+and all you do is say if you want to do a 'GET' or a 'POST', and add some JSON data to that request.
+
+So let's review again what happens with AJAX (diagram_29.png).
+An event occurs on a web page such as logging in and I click sign in.
+XMLHttpRequest object- Again something that web browsers have implemented is created and that's created using JavaScript.
+XMLHttpRequest object sends a request to the web server the server processes the request and then sends a response back to the web page.
+The response is read by JavaScript and the user can log in.
+At the same time only updating a small portion of the window.
+A single-page application is a word you've probably heard before, and it's a trend in web app development.
+Where you load a base an almost empty page and build the content on the fly based on the data fetched from the server.
+
+· From diagram_3.png, diagram_4.png:
+
+Let's go back to Udemy.
+
+· From diagram_31.png, diagram_32.png, diagram_33.png, diagram_34.png, diagram_35.png, diagram_36.png, diagram_37.png, diagram_38.png, diagram_39.png:
+
+When I click on a course, let's do 'Public Relations' (diagram_31.png, diagram_32.png), you see it loads one at a time (diagram_33.png).
+I had the top bar loaded.
+Then I had a pause and then the rest loaded.
+If I click 'Explore Course' (diagram_34.png), you'll see again that the top bar (diagram_35.png) is loaded.
+Other parts of the web slowly and dynamically load (diagram_36.png).
+And again if I go back to 'Photography' (diagram_37.png) for example parts of the web page load dynamically (diagram_38.png, diagram_39.png)
+and that's the beauty.
+These applications nearly never do a full reload. They destroy the previous content, all or part of it, and we build it based on new data—a new page.
+And this might sound familiar to you.
+
+· From diagram_40.png/diagram_43.png:
+
+Do you remember how we built our 'robofriends' app?
+https://github.com/smanwarulislam/robofriends
+
+· From diagram_41.png/diagram_84.png, diagram_42.png/diagram_85.png:
+
+https://github.com/smanwarulislam/robofriends/blob/main/src/containers/App.js
+
+componentDidMount() {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => {this.setState({ robots: users })});
+}
+
+So now that we understand these concepts let's go line by line and see what happens.
+
+We fetched (fetch()) this URL (diagram_42.png/diagram_85.png) that gave us users.
+I used 'fetch' (fetch()). Based on what I said, 'fetch' should be part of the 'window' object, right?
+
+fetch('https://jsonplaceholder.typicode.com/users')
+
+· From diagram_44.png/diagram_86.png:
+
+Let's check.
+If I open up the browser Console and I do:
+'window.fetch'
+
+> window.fetch
+<· ƒ fetch() { [native code] }
+
+yeah 'fetch' is a function that we can use
+
+· From diagram_45.png, diagram_46.png/diagram_85.png, diagram_47.png/diagram_87.png, diagram_46.png/diagram_88.png, 
+diagram_48.png/diagram_89.png, diagram_49.png/diagram_90.png:
+
+and this URL (diagram_45.png, diagram_46.png/diagram_85.png) if you remember returns for us-
+What is that?
+Yeah, a JSON object (diagram_47.png/diagram_87.png).
+This JSON object (diagram_46.png/diagram_88.png), 'fetch,' allows us to do something called (diagram_48.png/diagram_89.png, diagram_49.png/diagram_90.png) -
+
+response => response.json()
+
+· From diagram_50.png/diagram_91.png, diagram_51.png/diagram_92.png, diagram_52.png/diagram_93.png:
+
+Well, let's do this for now and see what happens.
+I'm going to copy and paste this (diagram_50.png/diagram_91.png).
+
+fetch('https://jsonplaceholder.typicode.com/users')
+
+I will open the Console, and you will know I will open a new tab to show you that you can do this from anywhere.
+If I copy and paste this 'fetch' (fetch()) (diagram_51.png/diagram_92.png)
+
+> fetch('https://jsonplaceholder.typicode.com/users')
+<· -> Promise {<pending>}
+
+I get something called a Promise (diagram_52.png/diagram_93.png), which you'll get used to in JavaScript.
+Promise is saying, "Hey, I'm making a request somewhere over the Internet, and I Promise to let you know when I have this value returned."
+
+· From diagram_52.png/diagram_93.png, diagram_53.png/diagram_94.png:
+
+So, the way you access Promise is: 'Once this (diagram_52.png/diagram_93.png) is returned, give me the value'.
+
+> fetch('https://jsonplaceholder.typicode.com/users')
+<· -> Promise {<pending>}
+
+You do '.then' and it gives you the response (diagram_53.png/diagram_94.png).
+
+.then(response => response.json())
+
+· From diagram_54.png/diagram_95.png, diagram_55.png/diagram_96.png, diagram_56.png, diagram_57.png/diagram_97.png, diagram_98.png:
+
+If I add to my previous request '.then()' and I do
+
+> fetch('https://jsonplaceholder.typicode.com/users').then(response => console.log(response));
+<· -> Promise {<pending>}
+   -> Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …}
+       -> body: ReadableStream
+          bodyUsed: false
+       -> headers: Headers {}
+          ok: true
+          redirected: false
+          status: 200
+          statusText: ""
+          type: "cors"
+          url: "https://jsonplaceholder.typicode.com/users"
+       -> [[Prototype]]: Response
+
+Look at that I get a response (diagram_55.png/diagram_96.png).
+status: 200 (diagram_56.png/diagram_97.png) we'll remember this.
+OK, that's good.
+And we also get this 'body' but it says 'ReadableStream' (diagram_57.png/diagram_98.png).
+
+· From diagram_58.png/diagram_99.png:
+
+And 'fetch'
+I mean we learned about JSON.parse to parse JSON.
+
+> JSON.parse
+<· ƒ parse() { [native code] }
+
+· From diagram_59.png/diagram_100.png, diagram_60.png, diagram_61.png, diagram_62.png/diagram_101.png, diagram_63.png/diagram_102.png:
+
+But 'fetch' (fetch()) comes with a method called well "json" (json()).
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+
+So on this 'response', if we do "json" (response.json()) it will convert it for us (diagram_59.png/diagram_100.png).
+Let's see.
+If I go back to that request again I get a 'response'. If instead of console logging (console.log()), I say (diagram_60.png, diagram_61.png)
+(diagram_62.png/diagram_101.png)
+'response.json()'
+
+> fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json());
+<· -> Promise {<pending>}
+
+In that case, I get a Promise again (diagram_63.png/diagram_102.png).
+That means we need to do '.then' to receive the Promise whenever this returns the value.
+
+· From diagram_64.png, diagram_65.png/diagram_103.png, diagram_66.png, diagram_67.png/diagram_104.png, diagram_105.png, diagram_68.png/diagram_106.png:
+
+So again I go up and do '.then'
+In this case, let's see what 'data' we receive. We get 'data', and we'll console.log 'data' (diagram_65.png/diagram_103.png).
+.then(data => console.log(data))
+If I press enter (diagram_66.png, diagram_67.png/diagram_104.png, diagram_105.png).
+
+> fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json()).then(data => console.log(data));
+<· -> Promise {<pending>}
+   -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+      -> 0: {id: 1, name: 'Leanne Graham', username: 'Bret', email: 'Sincere@april.biz', address: {…}, …}
+      -> 1: {id: 2, name: 'Ervin Howell', username: 'Antonette', email: 'Shanna@melissa.tv', address: {…}, …}
+      -> 2: {id: 3, name: 'Clementine Bauch', username: 'Samantha', email: 'Nathan@yesenia.net', address: {…}, …}
+      -> 3: {id: 4, name: 'Patricia Lebsack', username: 'Karianne', email: 'Julianne.OConner@kory.org', address: {…}, …}
+      -> 4: {id: 5, name: 'Chelsey Dietrich', username: 'Kamren', email: 'Lucio_Hettinger@annie.ca', address: {…}, …}
+      -> 5: {id: 6, name: 'Mrs. Dennis Schulist', username: 'Leopoldo_Corkery', email: 'Karley_Dach@jasper.info', address: {…}, …}
+      -> 6: {id: 7, name: 'Kurtis Weissnat', username: 'Elwyn.Skiles', email: 'Telly.Hoeger@billy.biz', address: {…}, …}
+      -> 7: {id: 8, name: 'Nicholas Runolfsdottir V', username: 'Maxime_Nienow', email: 'Sherwood@rosamond.me', address: {…}, …}
+      -> 8: {id: 9, name: 'Glenna Reichert', username: 'Delphine', email: 'Chaim_McDermott@dana.io', address: {…}, …}
+      -> 9: {id: 10, name: 'Clementina DuBuque', username: 'Moriah.Stanton', email: 'Rey.Padberg@karina.biz', address: {…}, …}
+         length: 10
+      -> [[Prototype]]: Array(0)
+
+Look at that we receive our users (diagram_66.png, diagram_67.png/diagram_104.png, diagram_105.png)- 
+the same users that were here (diagram_68.png/diagram_106.png).
+https://jsonplaceholder.typicode.com/users
+
+· From diagram_69.png/diagram_107.png, diagram_70.png/diagram_108.png, diagram_71.png/diagram_109.png, diagram_72.png/diagram_110.png, 
+diagram_73.png, diagram_74.png/diagram_111.png, diagram_75.png/diagram_112.png, diagram_76.png/diagram_113.png, 
+diagram_77.png/diagram_114.png, diagram_78.png/diagram_115.png, diagram_79.png, diagram_80.png/diagram_116.png, diagram_117.png:
+
+componentDidMount() {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => {this.setState({ robots: users })});
+}
+
+So you see now that we simply use the fetch API (diagram_69.png/diagram_107.png) which allows us to do an AJAX call 
+after the component is mounted (componentDidMount()) (diagram_70.png/diagram_108.png).
+So once our 'robofriends' app was loaded we made an AJAX request using the fetch API (diagram_71.png/diagram_109.png).
+We got a response (diagram_72.png/diagram_110.png) which was a Promise (diagram_73.png). So we had to do '.then'
+and this 'response' (diagram_74.png/diagram_111.png) is just standard 
+that anytime you do 'fetch' (fetch()) you'll remember (diagram_75.png/diagram_112.png) doing .json()
+
+.then(response => response.json())
+
+I converted this (diagram_76.png/diagram_113.png) into something that well we can use in JavaScript
+Because this (diagram_77.png/diagram_114.png) returned a Promise, we did '.then' (diagram_78.png/diagram_115.png).
+
+.then(response => response.json())
+.then(users => {this.setState({ robots: users })});
+
+We got the users (diagram_79.png/diagram_116.png), and now we have the users object (diagram_80.png/diagram_117.png), 
+and we never had to refresh the page.
+
+.then(users => {this.setState({ robots: users })});
+
+· From diagram_81.png, diagram_82.png/diagram_87.png, diagram_83.png/diagram_118.png:
+
+And by the way, if you want this JSON (diagram_81.png) whenever you're accessing it 
+to look prettier (diagram_82.png/diagram_87.png) and be a little bit more readable
+I am using a Chrome extension called 'JSONView'/'JSONVue' (diagram_83.png/diagram_118.png).
+It's free. You add it to Chrome, and it automatically does it for you. I highly recommend it.
+Okay.
+
+· From diagram_119.png:
+
+let's go back to this (diagram_119.png)
+-this (diagram_119.png) should make sense now.
+We now can dynamically load our web pages and make single-page applications using AJAX
+and AJAX is a combination of tools using the fetch API, using HTTP, using JSON to communicate with servers.
+Now, we have a complete picture of our front end, which can have HTML, CSS, Javascript, and React (also known as React.js or ReactJS).
+We can use AJAX to communicate with servers and JSON data to send data over the wire.
+
+Really excited for the next couple of videos (lectures/lessons).
+So I'll see in that one. Bye-Bye.
+
+// Note:
+/* To make you feel a little bit more comfortable 
+because I'm using fetch() and there is nothing attached to it does this mean that it's part of the 'window' object? */
+/* Let's check:
+if I open up the browser console and I do */
+// > window.fetch;
+// <· ƒ fetch() { [native code] }
+/* fetch() is a method on the 'window' object
+It comes with all browsers now. It is a tool for us to make requests to servers. */
