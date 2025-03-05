@@ -1,0 +1,1004 @@
+Promises
+
+· From diagram_1.png:
+
+Promises are a new feature in JavaScript as of ES6.
+But that means they are really useful to have them introduce as part of the language. Right?
+Well you're absolutely right.
+Promises are everywhere.
+And in this video (lecture/lesson) I'm going to show you what they are, how they work and hopefully we'll understand 
+why we should all be jumping for joy that we have them instead of callbacks (Callback function - JavaScript Callbacks).
+
+· From diagram_2.png, diagram_3.png, diagram_4.png, diagram_5.png, diagram_6.png:
+
+Now to understand promises let's define it.
+A promise is an object that may produce a single value some time in the future (diagram_2.png).
+Either a resolved value or a reason that it's not resolved or rejected (diagram_3.png).
+A promise may be fulfilled (diagram_4.png), rejected (diagram_5.png), or pending (diagram_6.png) in three possible states.
+Huh.
+Let's figure out what that means in this video (lecture/lesson) so that by the end, it will all make sense to you.
+
+· From diagram_7.png/diagram_8.png, diagram_9.png, diagram_10.png, diagram_11.png, diagram_12.png, 
+diagram_13.png, diagram_14.png, diagram_15.png, diagram_16.png, diagram_17.png, diagram_18.png, diagram_19.png:
+
+To fully grasp the concept, we must first discuss what we had before promises, which are callbacks (Callback function - JavaScript Callbacks).
+Something like this (diagram_7.png/diagram_8.png):
+
+From the callbacks.js file:
+
+// callbacks (Callback function - JavaScript Callbacks)
+
+Examples:
+
+// An example: addEventListener() Code Example
+el.addEventListener("click", submitForm);
+
+// An example: Callback function - JavaScript Callbacks
+// callback pyramid of doom
+movePlayer(100, 'Left', function() {
+  movePlayer(400, 'Left', function() {
+    movePlayer(10, 'Right', function() {
+      movePlayer(330, 'Left', function() {
+      });
+    });
+  });
+});
+
+When something is done execute this piece of code (diagram_7.png/diagram_8.png). Callbacks in JavaScript are exactly that.
+
+I text my friend Bob and say Hey Bob what's that really good song by the Backstreet Boys (diagram_9.png).
+When Bob has time he calls me back and says oh yea-yea that song-
+It's
+I want it that way.
+
+And that's exactly what's happening here too (diagram_7.png/diagram_8.png).
+
+// An example: addEventListener() Code Example
+el.addEventListener("click", submitForm);
+
+We have an element (el) to which we're adding an event listener (addEventListener() method) (diagram_10.png).
+And when a user clicks ("click") (diagram_11.png), we will have the callback submitForm (diagram_12.png).
+That is, once the user clicks ("click") (diagram_11.png), we will answer with the submitForm (diagram_12.png).
+
+Let's think of another example.
+
+// An example: Callback function - JavaScript Callbacks
+// callback pyramid of doom
+movePlayer(100, 'Left', function() {
+  movePlayer(400, 'Left', function() {
+    movePlayer(10, 'Right', function() {
+      movePlayer(330, 'Left', function() {
+      });
+    });
+  });
+});
+
+Let's say we're creating a game 
+and we have this (diagram_13.png) movePlayer() function that has the distance to move the player and the direction (diagram_14.png).
+If I wanted to move player (movePlayer() function) 100 to the left ('Left'), I'd run that. Once that is done (diagram_14.png)
+I want it to run a callback function (diagram_15.png) 
+which is to move player (movePlayer() function) (diagram_16.png) 400 to the left ('Left') again (diagram_17.png)
+and then another callback function (diagram_18.png) right after that is done
+to move player (movePlayer() function) 10 to the right ('Right') and another callback function (diagram_19.png) 
+to move player (movePlayer() function) 330 to the left ('Left').
+And we have something called the pyramid of doom.
+This (An example: Callback function - JavaScript Callbacks) is obviously a simple example.
+But with callbacks, you'll get this (diagram_19.png) nested- nested function 
+and you create this (diagram_19.png) pyramid of really complicated code of this happens, then this happens and this happens and this happens
+and it's really hard to read.
+
+· From diagram_20.png/diagram_37.png, diagram_21.png, diagram_22.png, diagram_23.png, diagram_24.png, diagram_25.png, 
+diagram_26.png, diagram_27.png, diagram_28.png, diagram_29.png, 
+diagram_30.png, diagram_31.png, diagram_32.png, diagram_33.png,
+diagram_34.png,
+diagram_35.png, diagram_36.png:
+
+Let me show you a more realistic example (diagram_20.png/diagram_37.png).
+Let's say we had some sort of an app that uses Twitter, officially known as X (formerly Twitter) since July 2023.
+
+// An example
+// Let's say we had some sort of an app that uses Twitter, officially known as X (formerly Twitter) since July 2023.
+grabTweets('twitter/andreineagoie', (error, andreiTweets) => {
+  if (error) {
+    throw Error;
+  }
+  displayTweets(andreiTweets);
+  grabTweets('twitter/elonmusk', (error, elonTweets) => {
+    if (error) {
+      throw Error;
+    }
+    displayTweets(elonTweets);
+    grabTweets('twitter/vitalikbuterin', (error, vitalikTweets) => {
+      if (error) {
+        throw Error;
+      }
+      displayTweets(vitalikTweets);
+    });
+  });
+});
+
+We have a grabTweets function (diagram_21.png) that the first parameter has the URL (diagram_22.png)
+For now, I just simplified it. We just passed Twitter (X) and the Twitter (X) handle (diagram_22.png).
+And then the callback function (diagram_23.png)
+after you grab the tweets with an error (error) (diagram_24.png) and the tweets (andreiTweets) (diagram_25.png).
+
+(error, andreiTweets) => {}
+
+And if there's an error (diagram_26.png) we throw an Error (diagram_27.png).
+
+if (error) {
+  throw Error;
+}
+
+So that creates an Error in JavaScript (diagram_28.png).
+Otherwise, we're going to display the tweets (diagram_29.png).
+
+displayTweets(andreiTweets);
+
+But then if andrei's tweets (andreiTweets) were successful (diagram_30.png), 
+then we also want to grab the tweets (grabTweets()) again (diagram_31.png).
+Let's do 'elonmusk' (diagram_32.png) this time and again if there is an error we're going to throw an Error.
+Otherwise, we're going to display his (elonTweets) tweets (diagram_33.png).
+
+grabTweets('twitter/elonmusk', (error, elonTweets) => {
+  if (error) {
+    throw Error;
+  }
+  displayTweets(elonTweets);
+});
+
+And if that's (elonTweets) successful then we're also going to grab 'vitalikbuterin' tweets (grabTweets()).
+And again if there is an error, throw Error otherwise display tweets (vitalikTweets) (diagram_34.png).
+
+grabTweets('twitter/vitalikbuterin', (error, vitalikTweets) => {
+  if (error) {
+    throw Error;
+  }
+  displayTweets(vitalikTweets);
+});
+
+And that doesn't look very pretty, does it?
+I mean we have to do the same thing we have to check for error (diagram_35.png) and each time we have it nested (diagram_36.png).
+and just overall we have a lot of repetition of code.
+
+· From diagram_38.png, diagram_39.png/diagram_40.png:
+
+Now promises serve the same purpose as callbacks.
+So why do we have two things?
+Well, promises are new in ES6 and a little bit more powerful.
+Let me show you what a promise looks like.
+You remember this movePlayer (movePlayer() function) code (diagram_38.png).
+
+// An example: Callback function - JavaScript Callbacks
+// callback pyramid of doom
+movePlayer(100, 'Left', function() {
+  movePlayer(400, 'Left', function() {
+    movePlayer(10, 'Right', function() {
+      movePlayer(330, 'Left', function() {
+      });
+    });
+  });
+});
+
+Well, this with a promise will look something like this (diagram_39.png/diagram_40.png).
+
+// Using promises - JavaScript
+movePlayer(100, 'Left')
+  .then(() => movePlayer(400, 'Left'))
+  .then(() => movePlayer(10, 'Right'))
+  .then(() => movePlayer(330, 'Left'));
+
+Doesn't that look much much better (Using promises) (diagram_39.png/diagram_40.png)
+but it's tough to grasp what's happening here without really knowing how to create a promise.
+So let's start with that.
+
+· From diagram_41.png/diagram_42.png:
+
+// I'm going to create our very first promise.
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve('Stuff Worked');
+  } else {
+    reject('Error, it broke');
+  }
+});
+
+We'll say const promise equals-
+and this is a new syntax that you'll just have to get used to.
+'new Promise()'
+So we're creating a new promise
+
+const promise = new Promise()
+
+and this promise has a parameter that either resolves or rejects.
+
+const promise = new Promise((resolve, reject))
+
+And in here- in this function, we have the option to let's say either resolve.
+Let's do 'Stuff Worked' or reject and in this case, we have an 'Error, it broke'.
+Now, we obviously want to have a conditional statement here. We'll say if condition, but in our case, we'll just let it be true for now.
+if true-
+So this is if the promise returned we're going to resolve it.
+Otherwise, we're going to reject it.
+
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve('Stuff Worked');
+  } else {
+    reject('Error, it broke');
+  }
+});
+
+And here's the thing.
+This (diagram_41.png/diagram_42.png) looks confusing without actually knowing the application.
+But I want you to just have this over here so you can take a look at it. 
+As we progress through this video (lecture/lesson), this is going to make more and more sense.
+
+· From diagram_43.png, diagram_44.png/diagram_60.png, diagram_45.png/diagram_61.png, diagram_46.png/diagram_62.png, 
+diagram_47.png/diagram_63.png, diagram_48.png/diagram_64.png, diagram_65.png,
+diagram_49.png, diagram_50.png, diagram_51.png, diagram_52.png, diagram_53.png, diagram_54.png, diagram_55.png,
+diagram_56.png/diagram_64.png, diagram_57.png/diagram_66.png, diagram_58.png/diagram_67.png, diagram_59.png,
+diagram_68.png:
+
+So now that we have a promise if I put this into my Console, my Chrome browser Console (diagram_43.png).
+All right
+I have the promise now (diagram_44.png/diagram_60.png).
+But how can we get this promise (diagram_44.png/diagram_60.png) to run now?
+
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve('Stuff Worked');
+  } else {
+    reject('Error, it broke');
+  }
+});
+
+Well, I can just do promise.then (diagram_45.png/diagram_61.png)
+So again once the promise is resolved or rejected .then I want to get the results and then we want to console.log() the 'result'.
+
+promise.then(result => console.log(result));
+
+That's it.
+So let's see what happens here (diagram_47.png/diagram_63.png).
+I'm going to copy this (diagram_46.png/diagram_62.png) and paste it here (diagram_47.png/diagram_63.png).
+
+// expected output:
+// Stuff Worked
+// -> Promise {<fulfilled>: undefined}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+
+"Stuff Worked". (diagram_48.png/diagram_64.png, diagram_65.png)
+
+All right.
+So we ran the promise (diagram_49.png):
+
+promise.then(result => console.log(result));
+
+it ran this part (diagram_50.png):
+
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve('Stuff Worked');
+  } else {
+    reject('Error, it broke');
+  }
+});
+
+and because we've just made 'if ()' equal to 'true' (diagram_51.png) it will run the resolve() (diagram_52.png).
+And the resolve() is going to send "Stuff Worked" (diagram_53.png) into the 'result' (diagram_54.png)
+and we're going to console.log() "Stuff Worked." (diagram_55.png):
+
+promise.then(result => console.log(result));
+
+// expected output:
+// Stuff Worked
+// -> Promise {<fulfilled>: undefined}
+
+And you also see here (diagram_56.png/diagram_64.png) that the Promise is 'resolved' ('fulfilled').
+Again if I log 'promise' here (diagram_57.png/diagram_66.png):
+
+promise;
+
+// expected output:
+// -> Promise {<fulfilled>: 'Stuff Worked'}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: "Stuff Worked"
+
+I see that we have the Promise (diagram_58.png/diagram_67.png) with 'Stuff Worked' awesome (diagram_59.png, diagram_68.png).
+Okay
+
+· From diagram_69.png, diagram_70.png/diagram_80.png, diagram_71.png/diagram_81.png, diagram_72.png, 
+diagram_73.png/diagram_82.png, diagram_74.png, diagram_75.png,
+diagram_76.png & diagram_77.png, diagram_78.png/diagram_83.png & diagram_79.png/diagram_84.png, diagram_85.png:
+
+So based on what we know now, let's look at what we can do with promises.
+Let's say that with 'Stuff Worked' (diagram_69.png) I want to grab the 'result'.
+And add an exclamation mark to it (diagram_70.png/diagram_80.png)
+
+promise.then(result => result + '!');
+
+and '.then()' and this is called chaining in promises (diagram_71.png/diagram_81.png):
+
+promise
+  .then(result => result + '!')
+  .then()
+
+'.then()' after I do that it will return the 'result' with the exclamation mark (diagram_72.png) 
+and in our case I want to get the 'result2'. And we will console.log() 'result2' (diagram_73.png/diagram_82.png).:
+
+promise
+  .then(result => result + '!')
+  .then(result2 => {
+    console.log(result2);
+  });
+
+All right.
+Well, let's see what happens now.
+So I have my promise (diagram_74.png) to make sure that we have it (diagram_75.png) here (Chrome browser Console).
+Perfect (diagram_76.png & diagram_77.png).
+And we're going to run the promise (diagram_78.png/diagram_83.png & diagram_79.png/diagram_84.png, diagram_85.png):
+
+promise
+  .then(result => result + '!')
+  .then(result2 => {
+    console.log(result2);
+  });
+
+// expected output:
+// Stuff Worked!
+// -> Promise {<fulfilled>: undefined}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+
+'Stuff Worked!'
+'Stuff Worked!' with the exclamation mark very cool (diagram_79.png).
+
+· From diagram_86.png/diagram_136.png, diagram_87.png/diagram_137.png, diagram_88.png, diagram_89.png/diagram_138.png, 
+diagram_90.png/diagram_139.png & diagram_140.png & diagram_141.png, diagram_91.png:
+
+But what happens if something happens in between here (diagram_86.png/diagram_136.png) we have a console.log(),
+but let's say we have an error and that error causes us to throw an Error (diagram_87.png/diagram_137.png).
+Well, what happens now? With promises you can do something called '.catch()' (diagram_88.png)
+And this will catch any error that the promise may have.
+In our case, we just want a console.log() (diagram_89.png/diagram_138.png)
+And now if I run this (diagram_90.png/diagram_139.png & diagram_140.png & diagram_141.png)
+
+promise
+  .then(result => result + '!')
+  .then(result2 => {
+    throw Error;
+    console.log(result2);
+  })
+  .catch(console.log);
+
+// expected output:
+// ƒ Error() { [native code] }
+// -> Promise {<fulfilled>: undefined}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+
+we console log the error (diagram_91.png/diagram_140.png).
+
+· From diagram_92.png/diagram_142.png, diagram_93.png/diagram_143.png & diagram_144.png & diagram_145.png:
+
+Let's just make this a little bit cleaner (diagram_92.png/diagram_142.png).
+So that you can see exactly what is happening.
+So again copy and paste (diagram_93.png/diagram_143.png & diagram_144.png & diagram_145.png).
+
+promise
+  .then(result => result + '!')
+  .then(result2 => {
+    throw Error;
+    console.log(result2);
+  })
+  .catch(() => console.log('error!'));
+
+// expected output:
+// error!
+// -> Promise {<fulfilled>: undefined}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+
+There you go we get the error (diagram_93.png/diagram_144.png & diagram_145.png).
+
+· From diagram_94.png & diagram_95.png & diagram_96.png & diagram_97.png/diagram_146.png & diagram_147.png, 
+diagram_98.png/diagram_148.png, diagram_99.png, diagram_100.png/diagram_149.png & diagram_150.png, 
+diagram_101.png & diagram_102.png/diagram_151.png:
+
+If the 'throw Error' (diagram_94.png/diagram_146.png) happens before, 
+let's say it (diagram_96.png/diagram_146.png) happens above (diagram_97.png/diagram_147.png)
+and we want to return this (diagram_95.png)
+Well if I move the 'throw Error' (diagram_96.png/diagram_146.png) at the top over here (diagram_97.png/diagram_147.png).
+Save and again copy and paste (diagram_98.png/diagram_148.png).
+Let's clean this up a bit (diagram_99.png)
+
+promise
+  .then(result => {
+    throw Error;
+    return result + '!';
+  })
+  .then(result2 => {
+    console.log(result2);
+  })
+  .catch(() => console.log('error!'));
+
+// expected output:
+// error!
+// -> Promise {<fulfilled>: undefined}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+
+and see that we still get the error (diagram_100.png/diagram_149.png & diagram_150.png).
+
+So '.catch()' catches any errors that may happen between the chains '.then()' 
+which is very very cool (diagram_101.png & diagram_102.png/diagram_151.png).
+
+· From diagram_103.png, diagram_104.png, diagram_105.png, diagram_106.png, diagram_107.png, 
+diagram_108.png/diagram_152.png, diagram_109.png/diagram_153.png, diagram_154.png & diagram_155.png:
+
+All right so I have a little question for you.
+What happens if we do something along this line? Let me just go back to what we had before (diagram_103.png).
+We don't have an Error (throw Error) anymore (diagram_104.png).
+But this time we have the 'result2' plus (+) the question mark ('?') (diagram_105.png).
+So we're going to add a question mark ('?') to that. We're going to return that (diagram_105.png).
+We're going to '.catch()' with the console.log() error (diagram_106.png).
+After that, 
+we're going to have a '.then()' 'result3' and then 'result3' will have a 'result3' plus (+) let's do another exclamation mark ('!') (diagram_107.png).
+And we want to console.log() this (diagram_108.png/diagram_152.png) so again.
+all right.
+What do you think is going to happen?
+Let's see.
+We save, copy and paste, (diagram_109.png/diagram_153.png) and look at that (diagram_109.png/diagram_154.png & diagram_155.png).
+
+promise
+  .then(result => result + '!')
+  .then(result2 => result2 + '?')
+  .catch(() => console.log('error!'))
+  .then(result3 => {
+    console.log(result3 + '!');
+  });
+
+// expected output:
+// Stuff Worked!?!
+// -> Promise {<fulfilled>: undefined}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+
+We have (diagram_109.png/diagram_154.png & diagram_155.png) -
+'Stuff Worked!?!'
+
+exclamation (!) question mark (?) exclamation (!) (Stuff Worked!?!).
+
+· From diagram_110.png/diagram_156.png, diagram_111.png, diagram_112.png, diagram_113.png/diagram_157.png, 
+diagram_114.png/diagram_159.png & diagram_160.png & diagram_161.png, diagram_158.png, 
+diagram_115.png/diagram_162.png, diagram_116.png/diagram_163.png, diagram_117.png/diagram_164.png, 
+diagram_118.png, diagram_119.png, diagram_120.png:
+
+So '.catch()' (diagram_110.png/diagram_156.png) only runs if something fails in between here (diagram_111.png).
+
+But because I placed it (diagram_112.png) before this (diagram_113.png/diagram_157.png) if this fails 
+(diagram_114.png/diagram_159.png & diagram_160.png & diagram_161.png, diagram_158.png)
+
+promise
+  .then(result => result + '!')
+  .then(result2 => result2 + '?')
+  .catch(() => console.log('error!'))
+  .then(result3 => {
+    throw Error;
+    console.log(result3 + '!');
+  });
+
+// expected output:
+// -> Promise {<rejected>: ƒ}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "rejected"
+//    -> [[PromiseResult]]: ƒ Error()
+// -> Uncaught (in promise) ƒ Error() { [native code] }
+// Promise.then (async)		
+// (anonymous)	@	VM723:5
+
+- well I don't get the 'error!' console (diagram_115.png/diagram_162.png).
+I get an Error within our console because we did throw an Error (throw Error) (diagram_116.png/diagram_163.png), 
+but the 'catch()' statement never runs (diagram_117.png/diagram_164.png).
+So where you put the 'catch()' statement is- it's (diagram_118.png) going to check and run if anything before (diagram_119.png) it fails.
+All right (diagram_120.png).
+Awesome.
+
+· From diagram_121.png/diagram_165.png, diagram_122.png/diagram_166.png, diagram_123.png/diagram_167.png, 
+diagram_124.png, diagram_125.png/diagram_168.png, diagram_126.png/diagram_169.png, 
+diagram_127.png/diagram_170.png, diagram_128.png/diagram_171.png, 
+diagram_129.png/diagram_173.png, diagram_172.png, diagram_130.png/diagram_174.png, diagram_131.png, 
+diagram_132.png/diagram_175.png:
+
+So that's how we create a promise (diagram_121.png/diagram_165.png).
+A promise has a 'resolve' (diagram_122.png/diagram_166.png) and a 'reject' (diagram_123.png/diagram_167.png).
+And so far it's only been resolved (diagram_124.png). It's just worked out (diagram_125.png/diagram_168.png).
+We've never run the reject (diagram_126.png/diagram_169.png). We'll do that later on.
+
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve('Stuff Worked');
+  } else {
+    reject('Error, it broke');
+  }
+});
+
+But we see that with a promise we can give it to a variable (diagram_127.png/diagram_170.png)
+
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve('Stuff Worked');
+  } else {
+    reject('Error, it broke');
+  }
+});
+
+and run this (diagram_128.png/diagram_171.png) and do something with it asynchronously (diagram_172.png).
+
+promise
+  .then(result => result + '!')
+  .then(result2 => result2 + '?')
+  .catch(() => console.log('error!'))
+  .then(result3 => {
+    console.log(result3 + '!');
+  });
+
+// expected output:
+// Stuff Worked!?!
+// -> Promise {<fulfilled>: undefined}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+
+When we run '.then()' (diagram_129.png/diagram_173.png) and get the 'result' (diagram_130.png/diagram_174.png) 
+and do whatever you want with it 
+we can keep chaining it (diagram_131.png) and we can also catch ('.catch()') our errors (diagram_132.png/diagram_175.png).
+
+· From diagram_176.png, diagram_133.png/diagram_177.png, diagram_134.png/diagram_178.png, diagram_135.png:
+
+A promise (diagram_176.png) is something that you have now that you can use around your code even though you don't have the value just yet.
+You can assign it to a variable as we did here to a 'const promise' (diagram_133.png/diagram_177.png).
+
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve('Stuff Worked');
+  } else {
+    reject('Error, it broke');
+  }
+});
+
+"Now, when would this be a good thing?"
+Well, promises are great for asynchronous programming. If you don't remember what that is
+Make sure you check out my video (lecture/lesson) on 'how JavaScript works' to grasp the concept.
+When you don't want JavaScript to block the execution of your code 
+like making API calls, grabbing data from a database, or maybe optimizing an image you use a promise so that the task happens in the background
+when the promise gets resolved or rejected ((resolve, reject)) 
+then ('.then()') (diagram_134.png/diagram_178.png) you'll get that response (diagram_135.png).
+
+· From diagram_179.png/diagram_216.png, diagram_180.png/diagram_217.png, diagram_181.png/diagram_218.png, 
+diagram_182.png/diagram_219.png, 
+diagram_183.png/diagram_220.png, 
+diagram_184.png/diagram_221.png, 
+diagram_185.png/diagram_222.png, 
+diagram_186.png/diagram_223.png, diagram_187.png/diagram_224.png, diagram_188.png/diagram_225.png, diagram_189.png/diagram_226.png:
+
+Now let's show you something else that promises can do. That makes them really really powerful.
+
+Let's say that within here we had another promise, 
+a const 'promise2', and this promise again has a 'resolve, reject' (diagram_179.png/diagram_216.png).
+and this 'resolve, reject' is going to have a 'setTimeout()' (diagram_180.png/diagram_217.png).
+So 'setTimeout()' is a web API that allows us to time out and run something after a few seconds.
+So 'setTimeout()', we're going to say "resolve in 100 milliseconds" the 'HIII' text (diagram_181.png/diagram_218.png)
+Okay.
+Don't worry too much about the syntax (diagram_182.png/diagram_219.png).
+Essentially this (diagram_182.png/diagram_219.png) is saying, "Run this and return resolve 'HIII' in 100 milliseconds."
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'HIII');
+});
+
+Let's also have another promise (diagram_183.png/diagram_220.png).
+Let's say 'promise3'
+and this one resolves in one second (1000).
+And this one's going to say 'POOKIE'.
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1000, 'POOKIE');
+});
+
+And then finally a fourth promise (promise4) 
+and this fourth promise (promise4) will resolve in five seconds (5000) (diagram_184.png/diagram_221.png).
+And it will say 'Is it me you are looking for?'.
+
+const promise4 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 5000, 'Is it me you are looking for?');
+});
+
+All right.
+So we have these promises (diagram_185.png/diagram_222.png).
+
+Well, again a feature that we have is something called 'Promise.all()' (diagram_186.png/diagram_223.png) 
+and 'Promise.all()' takes an array of promises (diagram_187.png/diagram_224.png).
+In our case 'promise' (one), 'promise2', 'promise3', and then let's do 'promise4', that's a lot of promises (diagram_187.png/diagram_224.png)
+and in here we can do a '.then()' (diagram_188.png/diagram_225.png)
+And the 'values' will be returned as an array in the order that they were just written down (diagram_188.png/diagram_225.png).
+And here we can just console.log() 'values' (diagram_189.png/diagram_226.png).
+
+Promise.all([promise, promise2, promise3, promise4])
+  .then((values) => {
+    console.log(values);
+  });
+
+let's save.
+
+· From diagram_190.png/diagram_227.png, diagram_191.png, diagram_192.png/diagram_228.png, 
+diagram_193.png, diagram_194.png, diagram_195.png & diagram_229.png, diagram_196.png/diagram_230.png, diagram_197.png/diagram_231.png, 
+diagram_198.png/diagram_232.png, diagram_199.png/diagram_233.png, diagram_200.png/diagram_234.png, 
+diagram_201.png/diagram_235.png, diagram_236.png, diagram_202.png/diagram_237.png, 
+diagram_203.png/diagram_238.png & diagram_204.png/diagram_239.png, 
+diagram_205.png/diagram_240.png, diagram_206.png/diagram_241.png, 
+diagram_207.png, diagram_208.png/diagram_242.png, 
+diagram_209.png, diagram_210.png/diagram_243.png, diagram_211.png/diagram_244.png, diagram_212.png, diagram_213.png:
+
+And I'm going to copy this (diagram_190.png/diagram_227.png) into our Console (Chrome browser Console).
+Actually, let's just copy and paste all of these (diagram_190.png/diagram_227.png),
+watch the bottom of the screen (diagram_191.png) (Console) here (Chrome browser Console) as I press enter (diagram_192.png/diagram_228.png):
+
+// I'm going to create our very first promise.
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve('Stuff Worked');
+  } else {
+    reject('Error, it broke');
+  }
+});
+
+// Now let's show you something else that promises can do. That makes them really really powerful.
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'HIII');
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1000, 'POOKIE');
+});
+
+const promise4 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 5000, 'Is it me you are looking for?');
+});
+
+Promise.all([promise, promise2, promise3, promise4])
+  .then((values) => {
+    console.log(values);
+  });
+
+as I press enter (diagram_192.png/diagram_228.png).
+One, two, three, four, (diagram_193.png, diagram_194.png, diagram_195.png & diagram_229.png) 
+five and we have our result (diagram_196.png/diagram_230.png) Five seconds (5000) later (diagram_197.png/diagram_231.png).
+
+// Expected output:
+// -> Promise {<pending>}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+// -> (4) ['Stuff Worked', 'HIII', 'POOKIE', 'Is it me you are looking for?']
+//       0: "Stuff Worked"
+//       1: "HIII"
+//       2: "POOKIE"
+//       3: "Is it me you are looking for?"
+//       length: 4
+//    -> [[Prototype]]: Array(0)
+
+You see here (diagram_198.png/diagram_232.png, diagram_199.png/diagram_233.png, diagram_200.png/diagram_234.png) that 
+even though these took a lot less, well because we did 'Promise.all()' (diagram_201.png/diagram_235.png)
+it waited until all the promises were resolved (diagram_236.png) and then logged out of the 'values' (diagram_202.png/diagram_237.png)
+very cool.
+
+And by the way, the reason that if I do this (diagram_203.png/diagram_238.png & diagram_204.png/diagram_239.png): 
+where I assign the variables first:
+
+// I'm going to create our very first promise.
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve('Stuff Worked');
+  } else {
+    reject('Error, it broke');
+  }
+});
+
+// Now let's show you something else that promises can do. That makes them really really powerful.
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'HIII');
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1000, 'POOKIE');
+});
+
+const promise4 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 5000, 'Is it me you are looking for?');
+});
+
+and then run 'Promise.all()' (diagram_205.png/diagram_240.png) the result is instant (diagram_206.png/diagram_241.png):
+
+Promise.all([promise, promise2, promise3, promise4])
+  .then((values) => {
+    console.log(values);
+  });
+
+// Expected output:
+// -> (4) ['Stuff Worked', 'HIII', 'POOKIE', 'Is it me you are looking for?']
+//       0: "Stuff Worked"
+//       1: "HIII"
+//       2: "POOKIE"
+//       3: "Is it me you are looking for?"
+//       length: 4
+//    -> [[Prototype]]: Array(0)
+// -> Promise {<fulfilled>: undefined}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+
+And that is because we've already run these promises (diagram_207.png) right.
+We've assigned it to a variable (diagram_208.png/diagram_242.png)
+and between the time (diagram_209.png) that 
+we copied (diagram_210.png/diagram_243.png) and pasted this in here (diagram_211.png/diagram_244.png)
+these promises (diagram_212.png) in the background (diagram_213.png) have been resolved.
+All right.
+
+· From diagram_214.png, diagram_215.png:
+
+Let's finish up with the final example that has some real-world applications so that you have an idea of when we want to use promises
+
+I'm going to delete this (diagram_214.png) and refresh (diagram_215.png).
+
+· From diagram_245.png/diagram_322.png, diagram_246.png/diagram_323.png, 
+diagram_247.png/diagram_324.png & diagram_325.png, diagram_248.png/diagram_326.png & diagram_327.png, 
+diagram_249.png & diagram_250.png/diagram_328.png, diagram_329.png & diagram_330.png:
+
+Now, I have a list of URLs here (diagram_245.png/diagram_322.png), and these URLs are from a simple API (diagram_246.png/diagram_323.png).
+
+const urls = [
+  'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+Let me show you.
+
+// JSONPlaceholder - Free Fake REST API
+// https://jsonplaceholder.typicode.com/
+
+It's called a JSONPlaceholder (diagram_247.png/diagram_324.png & diagram_325.png), 
+and it just gives us some endpoints (diagram_248.png/diagram_326.png & diagram_327.png) that we could use, 
+such as 'users' (/users) who return us some JSON data (diagram_249.png & diagram_250.png/diagram_328.png, diagram_329.png & diagram_330.png).
+
+https://jsonplaceholder.typicode.com/users
+
+· From diagram_251.png & diagram_252.png, diagram_253.png, diagram_254.png, diagram_255.png/diagram_331.png:
+
+So I have users (/users), posts (/posts), and albums (/albums) here (diagram_251.png & diagram_252.png).
+
+const urls = [
+  'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+This is very similar to something you do on a Website where you want to grab some information, 
+maybe from your server from the database with users, posts, and albums (diagram_253.png, diagram_254.png)
+and let's say that they're all important to us for the page for the profile page of the user (diagram_255.png/diagram_331.png).
+
+· From diagram_256.png/diagram_332.png, 
+diagram_257.png/diagram_333.png, 
+diagram_258.png/diagram_334.png, 
+diagram_259.png/diagram_335.png, 
+diagram_260.png/diagram_336.png, 
+diagram_261.png/diagram_337.png, 
+diagram_262.png/diagram_338.png, diagram_263.png/diagram_339.png, diagram_264.png/diagram_340.png, 
+diagram_265.png/diagram_341.png, 
+diagram_266.png/diagram_342.png, 
+diagram_267.png, diagram_268.png & diagram_269.png, 
+diagram_270.png/diagram_343.png, diagram_271.png/diagram_344.png, diagram_272.png/diagram_345.png, diagram_273.png/diagram_346.png, 
+diagram_274.png & diagram_275.png/diagram_347.png & diagram_348.png, 
+diagram_276.png/diagram_349.png, 
+diagram_277.png/diagram_350.png:
+
+"How can we grab them all?"
+Well, again, using promises, we can just to 'Promise.all()' (diagram_256.png/diagram_332.png)
+and we can just grab the urls (diagram_257.png/diagram_333.png).
+And in this case, we can just map() over this (diagram_258.png/diagram_334.png), so it's an array.
+And with each url that we grab (diagram_259.png/diagram_335.png).
+We want to fetch() again (diagram_260.png/diagram_336.png) a web API to grab URLs (urls)
+make an AJAX call to the URL (url) (diagram_261.png/diagram_337.png)
+'.then()' (diagram_262.png/diagram_338.png) we want to run the response through the response.json() 
+again that just comes with fetch() (diagram_263.png/diagram_339.png) that you need to do (diagram_264.png/diagram_340.png)
+and then from here (diagram_265.png/diagram_341.png), we can do a '.then()' (diagram_266.png/diagram_342.png)
+And this (diagram_267.png) is going to return us remember an array 
+because we're getting a promise (diagram_268.png) all these (diagram_269.png) fetches (fetch()).
+it's going to return 'results' (diagram_270.png/diagram_343.png), 
+these 'results' well for now let's just console.log() them (diagram_271.png/diagram_344.png) 
+and we'll do 'results' (diagram_272.png/diagram_345.png, diagram_273.png/diagram_346.png).
+The first one (diagram_274.png & diagram_275.png/diagram_347.png & diagram_348.png), 
+the second one (diagram_276.png/diagram_349.png), 
+and the third one (diagram_277.png/diagram_350.png).
+
+Promise.all(urls.map(url => {
+  return fetch(url).then(response => response.json())
+})).then(results => {
+  console.log(results[0]);
+  console.log(results[1]);
+  console.log(results[2]);
+});
+
+· From diagram_351.png, diagram_278.png/diagram_352.png, diagram_279.png/diagram_353.png, diagram_280.png/diagram_354.png, 
+diagram_281.png/diagram_355.png, diagram_282.png/diagram_356.png, diagram_283.png/diagram_357.png, diagram_284.png/diagram_358.png, 
+diagram_285.png/diagram_359.png, diagram_286.png, diagram_287.png/diagram_360.png, diagram_361, 
+diagram_288.png/diagram_362.png & diagram_363.png, 
+diagram_289.png/diagram_364.png, diagram_290.png/diagram_365.png, diagram_291.png/diagram_366.png, 
+diagram_292.png/diagram_367.png:
+
+Let's see if that works (diagram_351.png).
+I'm going to copy all of these (diagram_278.png/diagram_352.png).
+Let's go back to our page (Console: Chrome browser Console).
+Copy and paste our code (diagram_279.png/diagram_353.png)
+
+const urls = [
+  'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+Promise.all(urls.map(url => {
+  return fetch(url).then(response => response.json())
+})).then(results => {
+  console.log(results[0]);
+  console.log(results[1]);
+  console.log(results[3]);
+});
+
+waiting a bit (diagram_280.png/diagram_354.png).
+And there you go (diagram_281.png/diagram_355.png). Here's our response.
+
+// Expected output:
+// -> Promise {<pending>}
+// -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// undefined
+
+We see that we've got 'undefined' here (diagram_282.png/diagram_356.png) 
+because I put three here (diagram_283.png/diagram_357.png) instead of two. Let's do that (diagram_284.png/diagram_358.png).
+We copy and paste this again (diagram_285.png/diagram_359.png)
+going to refresh the page (diagram_286.png, diagram_287.png/diagram_360.png, diagram_361)
+and there you go (diagram_288.png/diagram_362.png & diagram_363.png).
+
+const urls = [
+  'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+Promise.all(urls.map(url => {
+  return fetch(url).then(response => response.json())
+})).then(results => {
+  console.log(results[0]);
+  console.log(results[1]);
+  console.log(results[2]);
+});
+
+// Expected output:
+// -> Promise {<pending>}
+// -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+We have our users (diagram_289.png/diagram_364.png), 
+we have our posts (diagram_290.png/diagram_365.png), 
+and then we also have our albums (diagram_291.png/diagram_366.png).
+Very cool (diagram_292.png/diagram_367.png).
+
+· From diagram_293.png/diagram_368.png, 
+diagram_294.png & diagram_295.png/diagram_369.png & diagram_370.png, 
+diagram_296.png/diagram_371.png, diagram_297.png/diagram_372.png, 
+diagram_298.png/diagram_373.png, diagram_299.png/diagram_374.png, diagram_300.png/diagram_375.png, 
+diagram_301.png/diagram_376.png & diagram_377.png, diagram_302.png & diagram_303/diagram_378.png, 
+diagram_304.png/diagram_379.png, diagram_305.png, diagram_306.png/diagram_380.png, diagram_307.png/diagram_381.png, 
+diagram_308.png/diagram_382.png:
+
+Let's say that something fails here (diagram_293.png/diagram_368.png); 
+maybe we misspelled one of the URLs (urls) (diagram_294.png & diagram_295.png/diagram_369.png & diagram_370.png).
+So the 'users' API won't work (diagram_295.png).
+
+const urls = [
+  'https://jsonplaceholde.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+Let's add a '.catch()' (diagram_296.png/diagram_371.png) and console.log() 'error' (diagram_297.png/diagram_372.png).
+If I copy and paste this (diagram_298.png/diagram_373.png), refresh (diagram_299.png/diagram_374.png) 
+and again run this through the Console (diagram_300.png/diagram_375.png):
+
+const urls = [
+  'https://jsonplaceholde.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+Promise.all(urls.map(url => {
+  return fetch(url).then(response => response.json())
+})).then(results => {
+  console.log(results[0]);
+  console.log(results[1]);
+  console.log(results[2]);
+}).catch(() => console.log('error'));
+
+// Expected output:
+// -> Promise {<pending>}
+// -> GET https://jsonplaceholde.typicode.com/users net::ERR_NAME_NOT_RESOLVED
+// error
+
+Look at that (diagram_301.png/diagram_376.png & diagram_377.png); we get an error (diagram_302.png & diagram_303/diagram_378.png).
+With 'Promise.all()' (diagram_304.png/diagram_379.png) if everything fails 
+because we need users, posts, and albums for our entire page on our website.
+We get a 'reject' from the promise (diagram_305.png), 
+and we can catch ('.catch()') (diagram_306.png/diagram_380.png) it and do whatever we want with this 'error' (diagram_307.png/diagram_381.png).
+Very cool.
+
+All right, so let's fix that. So it's working again (diagram_308.png/diagram_382.png).
+And there you go.
+
+· From diagram_309.png, diagram_310.png/diagram_383.png, 
+diagram_311.png & diagram_312.png/diagram_384.png & diagram_385.png, 
+diagram_313.png/diagram_386.png, diagram_314.png/diagram_387.png & diagram_388.png, diagram_389.png, 
+diagram_315.png, diagram_316.png:
+
+That's why promises are so beneficial.
+We're able to do something like this (diagram_309.png) in a very clean way.
+
+Remember, the fetch() (diagram_310.png/diagram_383.png) simply returns a Promise.
+If I just (diagram_311.png & diagram_312.png/diagram_384.png & diagram_385.png) run fetch() here (diagram_313.png/diagram_386.png):
+
+fetch('https://jsonplaceholder.typicode.com/users');
+
+// Expected output:
+// -> Promise {<pending>}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//    -> [[PromiseResult]]: Response
+
+You see (diagram_314.png/diagram_387.png & diagram_388.png) that I get a Promise that's pending (Promise {<pending>}) (diagram_389.png).
+
+// -> Promise {<pending>}
+
+And by adding a '.then()' (diagram_315.png), 
+we are answering to whatever the promise returns with whether it's resolved or rejected ((resolve, reject)).
+And get to manipulate the data (diagram_316.png).
+
+· From diagram_316.png, diagram_317.png, diagram_318.png, diagram_319.png, diagram_320.png, diagram_321:
+
+So, at their most basic, promises are a bit like event listeners, except a promise can only succeed or fail once; it cannot succeed or fail twice.
+And this is extremely useful for things that are asynchronous Success and failure such as API calls 
+because we're less interested in the exact time something became available and more interested in reacting to the outcome.
+So we're reacting to something that happens asynchronously (diagram_316.png).
+
+So, again, let's remember what we started with
+A promise is an object that may produce a single value sometime in the future (diagram_317.png), 
+either resolved or rejected with a reason why it was rejected (diagram_318.png)
+and a promise maybe in one of three possible states 
+it can be 'fulfilled' (diagram_319.png), 'rejected' (diagram_320.png) or 'pending' (diagram_321.png).
+
+See, that wasn't so bad, was it
+
+Now go off and practice some promises and see all their power.
+
+I'll see you in the next one. Bye-bye.
