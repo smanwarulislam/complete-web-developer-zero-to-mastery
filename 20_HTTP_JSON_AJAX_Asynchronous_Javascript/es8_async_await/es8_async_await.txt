@@ -1,0 +1,761 @@
+ES8 - Async Await
+
+ASYNC/AWAIT (async/await)
+
+Ah, the new feature in JavaScript that everyone is talking about lately 'Async Await' (“async/await”).
+In this video (lecture/lesson) we're going to learn what all the hype is about.
+
+· From diagram_1.png, diagram_2.png:
+
+To get started you must first know that 'Async Await' (“async/await”) is part of ES8 and is built on top of Promises.
+If you aren't sure what Promises are. Make sure you check out that video/GitHub repository link (lecture/lesson) first.
+
+Promises (GitHub):
+https://github.com/smanwarulislam/complete-web-developer-zero-to-mastery/tree/main/20_HTTP_JSON_AJAX_Asynchronous_Javascript/promises
+
+Now underneath the hood, an async function is a function that returns a promise.
+But the benefit of 'Async Await' (“async/await”) is that it makes code easier to read.
+Let me show you what I mean.
+
+· From diagram_3.png/diagram_4.png, 
+diagram_5.png/diagram_6.png, diagram_7.png/diagram_8.png, diagram_9.png/diagram_10.png, diagram_11.png/diagram_12.png, 
+diagram_13.png/diagram_14.png, diagram_15.png/diagram_16.png, diagram_17.png/diagram_18.png, diagram_19.png/diagram_20.png, 
+diagram_21.png/diagram_22.png:
+
+// Using promises - JavaScript
+movePlayer(100, 'Left')
+  .then(() => movePlayer(400, 'Left'))
+  .then(() => movePlayer(10, 'Right'))
+  .then(() => movePlayer(330, 'Left'));
+
+This (diagram_3.png/diagram_4.png) is a promise that we just made up.
+It's (diagram_5.png/diagram_6.png) a movePlayer() function.
+Imagine we're designing a game 
+and it has the distance (diagram_7.png/diagram_8.png) plus the direction (diagram_9.png/diagram_10.png) that the player moves
+and if we want to chain these (diagram_11.png/diagram_12.png) 
+we have 'movePlayer()' '.then()', 'movePlayer()' again, 'movePlayer()' again, and 'movePlayer()' again.
+Now this (diagram_3.png/diagram_4.png) is asynchronous code.
+We know that movePlayer() (diagram_13.png/diagram_14.png) is going to happen, 
+then this (diagram_15.png/diagram_16.png) is going to happen, then this (diagram_17.png/diagram_18.png), then this (diagram_19.png/diagram_20.png).
+If we want any action within here (diagram_3.png/diagram_4.png), 
+we can wrap it (diagram_21.png/diagram_22.png) in brackets and console log, and add extra action.
+All things that you can do with promises.
+
+· From diagram_23.png/diagram_24.png, diagram_25.png/diagram_26.png, 
+diagram_27.png/diagram_28.png, diagram_29.png/diagram_30.png, diagram_31.png/diagram_32.png, diagram_33.png/diagram_34.png, 
+diagram_35.png/diagram_36.png, diagram_37.png/diagram_38.png, diagram_39.png/diagram_40.png:
+
+With “async/await”, it would look something like this (diagram_23.png/diagram_24.png):
+
+async function playerStart() {
+  const firstMove = await movePlayer(100, 'Left'); // pause
+  await movePlayer(400, 'Left'); // pause
+  await movePlayer(10, 'Right'); // pause
+  await movePlayer(330, 'Left'); // pause
+}
+
+What's going on here? (diagram_23.png/diagram_24.png)
+The big benefit of “async/await” is that it makes code easier to read.
+I know you're probably not thinking that right now because this is new syntax, but just give it a chance.
+The goal with “async/await” is to make code look synchronous - a code that's asynchronous looks synchronous.
+If you remember, a promise in JavaScript is like an 'I owe you.'
+I promise to return something to you in the future.
+Something like an AJAX call resizing an image getting some information from a database. These are all things that take time.
+Instead of waiting around on them, we want to continue with our lives and just have it. Let us know when it's done.
+But we're going to keep working on our stuff while it's doing that in the background.
+We do it this way because that is how JavaScript works.
+If you remember, in our "How JavaScript Works" video (lecture/lesson), we talked about JavaScript being single-threaded.
+For our programs to be efficient, we can use asynchronous programming to do these things.
+So promises help us solve this, and it looked like this (diagram_23.png/diagram_24.png).
+Now remember what I said at the beginning: “async/await” code are just Promises (Promises, async/await) underneath the hood.
+We call this syntactic sugar, something that still does the same thing but is just different syntax to make it look prettier (diagram_25.png/diagram_26.png).
+Syntactic sugar.
+
+// with “async/await” it would look something like this:
+async function playerStart() {
+  const firstMove = await movePlayer(100, 'Left'); // pause
+  await movePlayer(400, 'Left'); // pause
+  await movePlayer(10, 'Right'); // pause
+  await movePlayer(330, 'Left'); // pause
+}
+
+And promises have this '.then()' (diagram_27.png/diagram_28.png) 
+that you keep having to chain (diagram_29.png/diagram_30.png, diagram_31.png/diagram_32.png, diagram_33.png/diagram_34.png)
+
+// Using promises - JavaScript
+movePlayer(100, 'Left')
+  .then(() => movePlayer(400, 'Left'))
+  .then(() => movePlayer(10, 'Right'))
+  .then(() => movePlayer(330, 'Left'));
+
+“async”, on the other hand, has this “async” word in front of it (diagram_35.png/diagram_36.png) 
+and some “await” keywords (diagram_37.png/diagram_38.png, diagram_39.png/diagram_40.png).
+
+// with “async/await” it would look something like this:
+async function playerStart() {
+  const firstMove = await movePlayer(100, 'Left'); // pause
+  await movePlayer(400, 'Left'); // pause
+  await movePlayer(10, 'Right'); // pause
+  await movePlayer(330, 'Left'); // pause
+}
+
+· From diagram_41.png/diagram_42.png, 
+diagram_43.png/diagram_44.png, diagram_45.png/diagram_46.png, diagram_47.png/diagram_48.png, 
+diagram_49.png/diagram_50.png, diagram_51.png/diagram_52.png, diagram_53.png/diagram_54.png, diagram_55.png/diagram_56.png, 
+diagram_57.png/diagram_58.png, diagram_59.png/diagram_60.png:
+
+So, let's go through what all this means.
+
+Although these (diagram_41.png/diagram_42.png) two things do the same:
+
+// Using promises - JavaScript
+movePlayer(100, 'Left')
+  .then(() => movePlayer(400, 'Left'))
+  .then(() => movePlayer(10, 'Right'))
+  .then(() => movePlayer(330, 'Left'));
+
+// with “async/await” it would look something like this:
+async function playerStart() {
+  const firstMove = await movePlayer(100, 'Left'); // pause
+  await movePlayer(400, 'Left'); // pause
+  await movePlayer(10, 'Right'); // pause
+  await movePlayer(330, 'Left'); // pause
+}
+
+With the playerStart() function (diagram_43.png/diagram_44.png), 
+we first declare a function (diagram_45.png/diagram_46.png) as “async” (diagram_47.png/diagram_48.png).
+We lead Javascript to know, "Hey, this is an async function (diagram_49.png/diagram_50.png)." 
+We declare it (diagram_51.png/diagram_52.png) with the word "function" (diagram_53.png/diagram_54.png) 
+and then a function name (playerStart()) (diagram_55.png/diagram_56.png).
+We now can do anything we want inside of this (playerStart() {}) function (diagram_55.png/diagram_56.png), 
+but we have access to a new word (“await”) (diagram_57.png/diagram_58.png) 
+because we used the “async” word (diagram_59.png/diagram_60.png) to define this (playerStart()) function (diagram_55.png/diagram_56.png).
+
+// with “async/await” it would look something like this:
+async function playerStart() {
+  const firstMove = await movePlayer(100, 'Left'); // pause
+  await movePlayer(400, 'Left'); // pause
+  await movePlayer(10, 'Right'); // pause
+  await movePlayer(330, 'Left'); // pause
+}
+
+· From (diagram_27.png/diagram_28.png), (diagram_29.png/diagram_30.png, diagram_31.png/diagram_32.png, diagram_33.png/diagram_34.png), 
+diagram_57.png/diagram_58.png, diagram_61.png/diagram_62.png & diagram_63.png/diagram_64.png, 
+diagram_65.png/diagram_66.png, diagram_67.png/diagram_68.png, 
+diagram_69.png/diagram_70.png, diagram_71.png/diagram_72.png, diagram_73.png/diagram_74.png, 
+diagram_75.png/diagram_76.png, diagram_77.png/diagram_78.png, diagram_79.png/diagram_80.png, diagram_81.png/diagram_82.png, diagram_83.png/diagram_84.png, 
+diagram_85.png, diagram_86.png, 
+diagram_87.png/diagram_88.png, diagram_89.png/diagram_90.png, diagram_91.png/diagram_92.png, 
+diagram_93.png/diagram_94.png, diagram_95.png/diagram_96.png, 
+(diagram_97.png/diagram_98.png, diagram_99.png/diagram_100.png), diagram_101.png/diagram_102.png, diagram_103.png/diagram_104.png:
+
+We have the “await” keyword (diagram_57.png/diagram_58.png), and this (“await”) keyword says- 
+and we can remove this (const firstMove =) (diagram_61.png/diagram_62.png & diagram_63.png/diagram_64.png) for now.
+The “await” keyword says (diagram_65.png/diagram_66.png), "Hey, pause this (diagram_67.png/diagram_68.png) function until I have something for you."
+So we're awaiting the response.
+You can use this (diagram_69.png/diagram_70.png) “await” keyword in front of any function (diagram_71.png/diagram_72.png) that returns a promise, 
+which we know that 'movePlayer()' does (diagram_73.png/diagram_74.png).
+Once the promise is resolved (diagram_75.png/diagram_76.png), then the function moves to the next line (diagram_77.png/diagram_78.png), 
+and it awaits the next move (diagram_79.png/diagram_80.png)
+and awaits the next move (diagram_81.png/diagram_82.png) 
+and awaits the next move (diagram_83.png/diagram_84.png).
+Now, the cool thing about this is that instead of chaining it like this (diagram_86.png), 
+I can now assign it (diagram_85.png) just like a synchronous programming,
+Variable 'first' (diagram_87.png/diagram_88.png) to “await” this (diagram_89.png/diagram_90.png), 
+and I can assign 'second' to “await” this (diagram_91.png/diagram_92.png)
+and 'first' (diagram_93.png/diagram_94.png) and 'second' (diagram_95.png/diagram_96.png) 
+will have the result of each function (diagram_97.png/diagram_98.png, diagram_99.png/diagram_100.png) but in a variable.
+So it looks very synchronous (diagram_97.png/diagram_98.png, diagram_99.png/diagram_100.png).
+You're not using '.then()' (diagram_27.png/diagram_28.png); 
+you're not chaining (diagram_29.png/diagram_30.png, diagram_31.png/diagram_32.png, diagram_33.png/diagram_34.png).
+You just have simple synchronous programming
+You're waiting for this to happen (diagram_101.png/diagram_102.png), then waiting for this to happen (diagram_103.png/diagram_104.png).
+
+// with “async/await” it would look something like this:
+async function playerStart() {
+  const first = await movePlayer(100, 'Left'); // pause
+  const second = await movePlayer(400, 'Left'); // pause
+  await movePlayer(10, 'Right'); // pause
+  await movePlayer(330, 'Left'); // pause
+}
+
+· From diagram_105.png/diagram_106.png, 
+diagram_107.png/diagram_108.png, diagram_109.png/diagram_110.png, (diagram_111.png/diagram_112.png & diagram_113.png):
+
+But let's use a more realistic example so we really understand this (diagram_105.png/diagram_106.png).
+
+If we use our fetch() function (diagram_107.png/diagram_108.png), 
+and again, if you remember the fetch() function (diagram_109.png/diagram_110.png). That's a Promise.
+
+// Fetch API
+// The fetch() function
+fetch();
+
+// Expected output:
+// -> Promise {<rejected>: TypeError: Failed to execute 'fetch' on 'Window': 1 argument required, but only 0 present.
+//     at <…}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "rejected"
+//    -> [[PromiseResult]]: TypeError: Failed to execute 'fetch' on 'Window': 1 argument required, but only 0 present. at <anonymous>:1:1
+// -> Uncaught (in promise) TypeError: Failed to execute 'fetch' on 'Window': 1 argument required, but only 0 present.
+// at <anonymous>:1:1
+
+You see that we get a Promise (diagram_111.png/diagram_112.png & diagram_113.png).
+
+· From diagram_114.png/diagram_115.png, diagram_116.png/diagram_117.png, 
+diagram_118.png/diagram_119.png, diagram_120.png/diagram_121.png, diagram_122.png/diagram_123.png, 
+diagram_124.png/diagram_125.png, diagram_126.png/diagram_127.png, diagram_128.png/diagram_129.png, diagram_130.png/diagram_131.png, 
+diagram_132.png/diagram_133.png, diagram_134.png/diagram_135.png, 
+diagram_136.png/diagram_137.png, 
+diagram_138.png/diagram_139.png, diagram_140.png/diagram_141.png, diagram_142.png/diagram_143.png, diagram_144.png/diagram_145.png:
+
+So with the fetch() function, if we use our favorite API resource (diagram_114.png/diagram_115.png), JSONPlaceholder (diagram_116.png/diagram_117.png).
+Let's grab (diagram_118.png/diagram_119.png) the 'users' (/users) here (diagram_120.png/diagram_121.png) 
+so this 'users' (/users) end point (diagram_122.png/diagram_123.png):
+https://jsonplaceholder.typicode.com/users
+
+If we want to fetch() something (diagram_124.png/diagram_125.png), we return a Promise, so we would do a '.then()' (diagram_126.png/diagram_127.png)
+'response' we would have to run it through json() (diagram_128.png/diagram_129.png)
+And then finally '.then()' console.log() the 'response' or the 'data' that we get (diagram_130.png/diagram_131.png).
+
+// JSONPlaceholder - Free Fake REST API
+// https://jsonplaceholder.typicode.com/
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(console.log)
+
+So again, if I copy (diagram_132.png/diagram_133.png) and paste this (diagram_134.png/diagram_135.png) into our Console,
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(console.log)
+
+// Expected output:
+// -> Promise {<pending>}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+// -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+we get (diagram_136.png/diagram_137.png) a Promise (diagram_138.png/diagram_139.png) that's 'pending' ({<pending>}) initially (diagram_140.png/diagram_141.png), 
+then it gets "fulfilled"/"resolved" (diagram_142.png/diagram_143.png) and I get my 'users' (/users) (diagram_144.png/diagram_145.png).
+
+· From diagram_146.png/diagram_147.png, 
+diagram_148.png/diagram_149.png, diagram_150.png/diagram_151.png, diagram_152.png/diagram_153.png, 
+diagram_154.png/diagram_155.png, diagram_156.png/diagram_157.png, (diagram_158.png/diagram_159.png & diagram_160.png/diagram_161.png), 
+diagram_162.png/diagram_163.png, diagram_164.png/diagram_165.png, diagram_166.png/diagram_167.png, diagram_168.png/diagram_169.png, 
+diagram_170.png/diagram_171.png, diagram_172.png/diagram_173.png, diagram_174.png/diagram_175.png, diagram_176.png/diagram_177.png, 
+diagram_178.png/diagram_179.png, 
+diagram_180.png, diagram_181.png, diagram_182.png, 
+diagram_183.png, diagram_184.png, diagram_185.png, diagram_186.png, diagram_187.png, diagram_188.png/diagram_189.png, 
+diagram_190.png/diagram_191.png, 
+diagram_192.png/diagram_193.png, (diagram_194.png/diagram_195.png & diagram_196.png/diagram_197.png), 
+diagram_198.png/diagram_199.png, diagram_200.png/diagram_201.png, 
+diagram_202.png/diagram_203.png, diagram_204.png/diagram_205.png:
+
+Now, how can we turn this (diagram_146.png/diagram_147.png) into an async function?
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(console.log)
+
+Again, the same feature will work the same (diagram_146.png/diagram_147.png), but it will look a little bit cleaner. It will be syntactic sugar.
+Well, if you remember, we have to declare a function with the async keyword (diagram_148.png/diagram_149.png), 
+and this (diagram_150.png/diagram_151.png) function will say fetchUsers() (diagram_152.png/diagram_153.png) 
+and 'fetchUsers() {}' (diagram_154.png/diagram_155.png) 
+will have this (diagram_156.png/diagram_157.png) inside of it (diagram_158.png/diagram_159.png & diagram_160.png/diagram_161.png):
+
+async function fetchUsers() {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(console.log)
+}
+
+But we can now use it (diagram_162.png/diagram_163.png) in front of anything that returns a Promise the “await” keyword (diagram_164.png/diagram_165.png).
+
+await fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+
+So now this function is going to pause until we get a response from fetch() (diagram_166.png/diagram_167.png).
+So I can say const 'response' equals (=) “await” the fetch() call (diagram_168.png/diagram_169.png):
+
+const response = await fetch('https://jsonplaceholder.typicode.com/users');
+
+And now, instead of using the '.then()' (diagram_170.png/diagram_171.png), 
+I can say const 'data' equals (=) “await” 'response.json()' (diagram_172.png/diagram_173.png)
+because again, 'response.json()' returns a Promise (diagram_174.png/diagram_175.png), so I can put the “await” keyword (diagram_176.png/diagram_177.png).
+And then, finally, I can just 'console.log(data)' (diagram_178.png/diagram_179.png):
+
+const data = await response.json();
+console.log(data);
+
+// using async/await:
+async function fetchUsers() {
+  const resp = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await response.json();
+  console.log(data);
+}
+
+All right let's copy (diagram_180.png) and paste this (Console) (diagram_181.png) and see if it works:
+
+// using async/await:
+async function fetchUsers() {
+  const resp = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await response.json();
+  console.log(data);
+}
+
+All right (diagram_182.png).
+Now, I call the fetchUsers() function (diagram_183.png), which is the async function:
+
+fetchUsers();
+
+// Expected output:
+// -> Promise {<pending>}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "rejected"
+//    -> [[PromiseResult]]: ReferenceError: response is not defined at fetchUsers (<anonymous>:4:16)
+// -> Uncaught (in promise) ReferenceError: response is not defined
+// at fetchUsers (<anonymous>:4:16)
+
+And I made a bit of an error (diagram_184.png) here (diagram_185.png).
+There's no 'response' (diagram_186.png); it's 'resp' (diagram_187.png) short form 'response' (diagram_188.png/diagram_189.png).
+There you go, let's try that again (diagram_190.png/diagram_191.png).
+So let's refresh that (diagram_192.png/diagram_193.png).
+Copy and paste (Console) (diagram_194.png/diagram_195.png & diagram_196.png/diagram_197.png),
+
+// using async/await:
+async function fetchUsers() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await response.json();
+  console.log(data);
+}
+
+Run the fetchUsers() function (diagram_198.png/diagram_199.png) and look at that (diagram_200.png/diagram_201.png):
+
+fetchUsers();
+
+// Expected output:
+// -> Promise {<pending>}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+// -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+We have our Promise that got "fulfilled"/"resolved" (diagram_202.png/diagram_203.png).
+And we have our 'users' (/users) (diagram_204.png/diagram_205.png)
+
+· From diagram_206.png/diagram_207.png, 
+(diagram_208.png/diagram_209.png, diagram_210.png/diagram_211.png, diagram_212.png/diagram_213.png), diagram_214.png/diagram_215.png, 
+diagram_216.png/diagram_217.png, diagram_218.png/diagram_219.png, diagram_220.png/diagram_221.png, diagram_222.png/diagram_223.png, 
+diagram_224.png/diagram_225.png, diagram_226.png/diagram_227.png, diagram_228.png/diagram_229.png, 
+diagram_230.png/diagram_227.png, diagram_231.png/diagram_229.png:
+
+// using async/await:
+async function fetchUsers() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await response.json();
+  console.log(data);
+}
+
+Nothing different from the Promise, but now (diagram_206.png/diagram_207.png) 
+we have a nice step-by-step (diagram_208.png/diagram_209.png, diagram_210.png/diagram_211.png, diagram_212.png/diagram_213.png) 
+synchronous looking code (diagram_214.png/diagram_215.png)
+that says fetch() this (diagram_216.png/diagram_217.png):
+
+fetch('https://jsonplaceholder.typicode.com/users')
+
+Get a 'response'/'resp' (diagram_218.png/diagram_219.png),:
+
+const response = await fetch('https://jsonplaceholder.typicode.com/users');
+
+then run it ('response'/'resp') through the json() method (diagram_220.png/diagram_221.png):
+
+const data = await response.json();
+
+and then console.log() 'data' (diagram_222.png/diagram_223.png):
+
+console.log(data);
+
+And you might be thinking to yourself, is this (diagram_224.png/diagram_225.png) actually prettier than what we had before?
+Let's remember what we had before.
+This is what we had before (diagram_226.png/diagram_227.png):
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(console.log)
+
+This is what we have now (diagram_228.png/diagram_229.png):
+
+// using async/await:
+async function fetchUsers() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await response.json();
+  console.log(data);
+}
+
+And some of you might argue that the first Promise way looks better (diagram_230.png/diagram_227.png).
+And you know what?
+It's a personal preference, and this is a simple example.
+So there are times when this (diagram_231.png/diagram_229.png) actually looks a lot cleaner.
+But I'm a big believer in doing what's easiest to read and understand for you and your teammates.
+
+· From diagram_232.png/diagram_233.png, 
+diagram_234.png/diagram_235.png, diagram_236.png/diagram_237.png, diagram_238.png/diagram_239.png, diagram_240.png/diagram_241.png, 
+diagram_242.png/diagram_243.png, diagram_244.png/diagram_245.png, 
+diagram_246.png/diagram_247.png, 
+diagram_248.png/diagram_249.png, 
+diagram_250.png/diagram_251.png, (diagram_252.png/diagram_253.png & diagram_254.png/diagram_255.png), 
+diagram_256.png/diagram_257.png, diagram_258.png/diagram_259.png, diagram_260.png/diagram_261.png, 
+diagram_262.png/diagram_263.png, diagram_264.png/diagram_265.png, diagram_266.png/diagram_267.png, diagram_268.png/diagram_269.png, 
+diagram_270.png/diagram_271.png, 
+diagram_272.png/diagram_273.png, diagram_274.png/diagram_275.png, (diagram_276.png/diagram_277.png & diagram_278.png):
+
+Let's do one last example. Let's do something even more realistic. (diagram_232.png/diagram_233.png)
+
+Let's say we have a list of URLs (diagram_234.png/diagram_235.png), and this time, 
+we have the users (/users) (diagram_236.png/diagram_237.png), 
+posts (/posts) (diagram_238.png/diagram_239.png), 
+and albums (/albums) (diagram_240.png/diagram_241.png) from the JSONPlaceholder API (diagram_242.png/diagram_243.png):
+
+const urls = [
+  'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+And we want to run through them all (diagram_244.png/diagram_245.png).
+If you remember, in our Promises video (lecture/lesson), we had something like this (diagram_246.png/diagram_247.png):
+
+Promise.all(urls.map(url => 
+  fetch(url).then(response => response.json())
+)).then(array => {
+  console.log('users', array[0]);
+  console.log('posts', array[1]);
+  console.log('albums', array[2]);
+}).catch('oops');
+
+We did Promise.all() (diagram_248.png/diagram_249.png) -
+We mapped (map()) (diagram_250.png/diagram_251.png) through the URLs (urls) (diagram_252.png/diagram_253.png & diagram_254.png/diagram_255.png).
+We fetch() the url (diagram_256.png/diagram_257.png)
+and 'response'/'resp' (response.json()) (diagram_258.png/diagram_259.png) it with the json() (diagram_260.png/diagram_261.png)
+and '.then()' we return the array (diagram_262.png/diagram_263.png), 
+and the array had users (diagram_264.png/diagram_265.png), posts (diagram_266.png/diagram_267.png), albums (diagram_268.png/diagram_269.png)
+and we also did a '.catch()' (diagram_270.png/diagram_271.png).
+So again, just to make sure that this (diagram_272.png/diagram_273.png) works going to copy this and put it into our Console (diagram_274.png/diagram_275.png):
+
+const urls = [
+  'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+Promise.all(urls.map(url => 
+  fetch(url).then(response => response.json())
+)).then(array => {
+  console.log('users', array[0]);
+  console.log('posts', array[1]);
+  console.log('albums', array[2]);
+}).catch('oops');
+
+// Expected output:
+// -> Promise {<pending>}
+// users -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// posts
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// albums
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+and we see that we get our users, posts, and albums data (diagram_276.png/diagram_277.png & diagram_278.png).
+So that's working.
+
+· From diagram_273.png/diagram_279.png, 
+diagram_280.png/diagram_281.png, diagram_282.png/diagram_283.png, diagram_284.png/diagram_285.png, diagram_286.png/diagram_287.png, 
+diagram_288.png, diagram_289.png, diagram_290.png, 
+diagram_291.png, diagram_292.png, (diagram_291.png & diagram_292.png), 
+diagram_293.png, diagram_294.png/diagram_295.png, diagram_296.png/diagram_297.png, diagram_298.png/diagram_299.png, 
+diagram_300.png/diagram_301.png, diagram_302.png, diagram_303.png, diagram_304.png/diagram_305.png, diagram_306.png & diagram_307.png/diagram_308.png, 
+diagram_309.png/diagram_310.png, 
+diagram_311.png/diagram_312.png, diagram_313.png/diagram_314.png, diagram_315.png/diagram_316.png, diagram_317.png/diagram_318.png, 
+diagram_319.png/diagram_320.png, diagram_321.png/diagram_322.png, diagram_323.png/diagram_324.png, 
+(diagram_325.png/diagram_326.png & diagram_327.png/diagram_328.png), 
+(diagram_329.png/diagram_330.png & diagram_331.png/diagram_332.png), 
+(diagram_333.png/diagram_334.png & diagram_335.png/diagram_336.png), 
+diagram_337.png/diagram_338.png, 
+diagram_339.png/diagram_340.png, (diagram_341.png/diagram_342.png & diagram_343.png/diagram_344.png), 
+diagram_345.png/diagram_346.png, (diagram_347.png/diagram_348.png & diagram_349.png), diagram_350.png/diagram_351.png:
+
+Let's convert this (diagram_273.png/diagram_279.png) into an async function:
+
+const urls = [
+  'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+Promise.all(urls.map(url => 
+  fetch(url).then(response => response.json())
+)).then(array => {
+  console.log('users', array[0]);
+  console.log('posts', array[1]);
+  console.log('albums', array[2]);
+}).catch('oops');
+
+Well, let's start by doing a 'const getData' (diagram_280.png/diagram_281.png), 
+and this (diagram_282.png/diagram_283.png) will be (equal) an async (diagram_284.png/diagram_285.png) function (diagram_286.png/diagram_287.png):
+
+const getData = async function() {
+  
+};
+
+And I want to just point out that 
+I did it this time with the 'function expression' (diagram_288.png) instead of the way that we did it last time (diagram_289.png), 
+
+const getData = async function() {
+  
+};
+
+which was an 'async function' and then the 'function name' (getData/fetchUsers) (diagram_290.png):
+
+async function fetchUsers() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await response.json();
+  console.log(data);
+}
+
+But I just want to show you both ways.
+So, how can we do a 'Promise.all()'? (diagram_291.png)
+Well, if you remember, we can now put the “await” keyword in front of any Promise (diagram_292.png).
+So we can put the “await” keyword in front of 'Promise.all()' (diagram_291.png & diagram_292.png)
+So I can say that (diagram_293.png) 'const'- and this (const []) (diagram_294.png/diagram_295.png) is a little ES6 magic of destructuring-
+I can say users, posts, and albums that we're going to receive (const [ users, posts, albums ]) (diagram_296.png/diagram_297.png) 
+are going to equal (=) (diagram_298.png/diagram_299.png) “await” (diagram_300.png/diagram_301.png) 
+and then (diagram_302.png) the 'Promise.all()' (diagram_303.png), which we already have (diagram_304.png/diagram_305.png).
+So let's just copy that (diagram_303.png).
+We're going to copy the 'Promise.all()' (diagram_304.png/diagram_305.png) and place it here (diagram_306.png & diagram_307.png/diagram_308.png):
+
+const getData = async function() {
+  const [ users, posts, albums ] = await Promise.all(urls.map(url => 
+    fetch(url).then(response => response.json())
+  ))
+};
+
+All right (diagram_309.png/diagram_310.png).
+And now we can just 'console.log()' what we had (diagram_311.png/diagram_312.png).
+We can copy and paste (diagram_313.png/diagram_314.png) 
+right after “await” (diagram_315.png/diagram_316.png) & all the Promises (Promise.all()) (diagram_317.png/diagram_318.png)
+We'll have 'users', 'posts', and then 'albums' (diagram_319.png/diagram_320.png).
+and instead of 'array' (diagram_321.png/diagram_322.png) because we've done it with destructuring (const [ users, posts, albums ]) (diagram_323.png/diagram_324.png)
+We can just say 'users' (diagram_325.png/diagram_326.png & diagram_327.png/diagram_328.png), 
+'posts' (diagram_329.png/diagram_330.png & diagram_331.png/diagram_332.png), 
+and 'albums' (diagram_333.png/diagram_334.png & diagram_335.png/diagram_336.png).
+All right, so let's see if this works (diagram_337.png/diagram_338.png).
+Copy (diagram_339.png/diagram_340.png) and paste (Console) this (diagram_341.png/diagram_342.png & diagram_343.png/diagram_344.png):
+
+// Let's convert this (diagram_273.png/diagram_279.png) into an async function:
+const getData = async function() {
+  const [ users, posts, albums ] = await Promise.all(urls.map(url => 
+    fetch(url).then(response => response.json())
+  ))
+  console.log('users', users);
+  console.log('posts', posts);
+  console.log('albums', albums);
+};
+
+and run getData() (diagram_345.png/diagram_346.png):
+
+getData();
+
+// Expected output:
+// -> Promise {<pending>}
+// users -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// posts
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// albums
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+And look at that (diagram_347.png/diagram_348.png & diagram_349.png). We got the exact same results.
+Very cool (diagram_350.png/diagram_351.png).
+
+· From diagram_352.png/diagram_353.png, diagram_354.png/diagram_355.png, diagram_356.png, diagram_357.png/diagram_358.png, 
+diagram_359.png/diagram_360.png, diagram_361.png/diagram_362.png, 
+diagram_363.png/diagram_364.png, diagram_365.png/diagram_366.png, (diagram_367.png/diagram_368.png & diagram_369.png/diagram_370.png), diagram_371.png/diagram_372.png, 
+(diagram_373.png & diagram_374.png/diagram_375.png), diagram_376.png/diagram_377.png, diagram_378.png/diagram_379.png, diagram_380.png/diagram_381.png, 
+(diagram_382.png/diagram_383.png & diagram_384.png/diagram_385.png), diagram_384.png/diagram_385.png, diagram_386.png/diagram_387.png, 
+diagram_388.png/diagram_389.png, diagram_390.png/diagram_391.png, diagram_392.png/diagram_393.png, 
+(diagram_394.png/diagram_395.png & diagram_396.png/diagram_397.png), diagram_398.png/diagram_399.png, diagram_400.png/diagram_401.png, 
+diagram_402.png/diagram_403.png, diagram_404.png/diagram_405.png, 
+diagram_406.png/diagram_407.png, diagram_408.png/diagram_409.png, 
+diagram_410.png/diagram_411.png, diagram_412.png/diagram_413.png, 
+diagram_414.png/diagram_415.png, diagram_416.png/diagram_417.png, diagram_418.png/diagram_419.png, diagram_420.png/diagram_421.png, 
+diagram_422.png/diagram_423.png, diagram_424.png, diagram_425.png/diagram_426.png, diagram_427.png/diagram_428.png, 
+(diagram_429.png & diagram_430.png), 
+diagram_431.png/diagram_432.png, diagram_433.png/diagram_434.png, diagram_435.png/diagram_436.png, 
+diagram_437.png/diagram_438.png, diagram_439.png/diagram_440.png, diagram_441.png/diagram_442.png, diagram_443.png/diagram_444.png:
+
+Promise.all(urls.map(url => 
+  fetch(url).then(response => response.json())
+)).then(array => {
+  console.log('users', array[0]);
+  console.log('posts', array[1]);
+  console.log('albums', array[2]);
+}).catch('oops');
+
+But there might be one thing that you noticed here that is in the Promise way (Promise.all()) (diagram_352.png/diagram_353.png), 
+we have the '.catch()' (diagram_354.png/diagram_355.png).
+If any of these fail (diagram_356.png), we want to '.catch()' these errors (diagram_357.png/diagram_358.png). 
+How can we do that with “async/await”? (diagram_359.png/diagram_360.png)
+Right now, we're not catching (.catch()) (diagram_361.png/diagram_362.png) any of these errors:
+
+// Let's convert this (diagram_273.png/diagram_279.png) into an async function:
+const getData = async function() {
+  const [ users, posts, albums ] = await Promise.all(urls.map(url => 
+    fetch(url).then(response => response.json())
+  ))
+  console.log('users', users);
+  console.log('posts', posts);
+  console.log('albums', albums);
+};
+
+This is the part that not a lot of people are big fans of. But it is something that once we get used to, it's not too bad.
+
+JavaScript has something called 'try...catch' blocks (try...catch statement):
+
+try {
+  
+} catch (error) {
+  
+}
+
+and that is (diagram_363.png/diagram_364.png) when it sees the 'try' word (diagram_365.png/diagram_366.png) 
+it's (diagram_367.png/diagram_368.png & diagram_369.png/diagram_370.png) just going to automatically run whatever's inside of it (diagram_371.png/diagram_372.png).
+In our case, all of this block (diagram_373.png & diagram_374.png/diagram_375.png) we want it to run in a 'try' block (diagram_376.png/diagram_377.png), 
+and then 'try' (diagram_378.png/diagram_379.png) comes with a 'catch' block as well (diagram_380.png/diagram_381.png).
+So a 'try...catch' block (diagram_382.png/diagram_383.png & diagram_384.png/diagram_385.png)
+and within the 'catch' (diagram_384.png/diagram_385.png), if anything fails within here (diagram_386.png/diagram_387.png)
+Well, we can 'catch' it in here (diagram_388.png/diagram_389.png) 
+so we can just console.log() (diagram_390.png/diagram_391.png) 'oops' (diagram_392.png/diagram_393.png):
+
+// try...catch
+// try...catch statement/try...catch block
+const getData2 = async function() {
+  try {
+    const [ users, posts, albums ] = await Promise.all(urls.map(url => 
+      fetch(url).then(response => response.json())
+    ))
+    console.log('users', users);
+    console.log('posts', posts);
+    console.log('albums', albums);
+  } catch () {
+    console.log('oops');
+  }
+};
+
+So now let's say I misspelled one of the URLs (urls) (diagram_394.png/diagram_395.png & diagram_396.png/diagram_397.png),: 
+
+const urls = [
+  // 'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholde.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+and let's copy this (diagram_398.png/diagram_399.png). Let's try it out (diagram_400.png/diagram_401.png):
+
+const urls = [
+  // 'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholde.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+];
+
+We'll have the new URLs (urls) (diagram_402.png/diagram_403.png). New URLs (urls) with the misspelled URL (url) for one of them (diagram_404.png/diagram_405.png).
+
+We're going to copy (diagram_406.png/diagram_407.png) and paste (diagram_408.png/diagram_409.png) the getData/getData2,:
+
+// try...catch
+// try...catch statement/try...catch block
+const getData2 = async function() {
+  try {
+    const [ users, posts, albums ] = await Promise.all(urls.map(url => 
+      fetch(url).then(response => response.json())
+    ))
+    console.log('users', users);
+    console.log('posts', posts);
+    console.log('albums', albums);
+  } catch () {
+    console.log('oops');
+  }
+};
+
+// Expected output:
+// Uncaught SyntaxError: Unexpected token ')'
+
+and you'll see over here (diagram_410.png/diagram_411.png) that we get a syntax error (SyntaxError) (diagram_412.png/diagram_413.png).
+And that is because one thing you have to remember with 'catch' (diagram_414.png/diagram_415.png) is that 
+the 'catch' receives an 'error' (diagram_416.png/diagram_417.png), 
+and this 'error' you can 'console.log()' it if you want (diagram_418.png/diagram_419.png).
+So let's just 'console.log()' (diagram_420.png/diagram_421.png) and then try this (diagram_422.png/diagram_423.png) again.
+This time we'll just call this (getData) (diagram_424.png) one getData1/getData3 (diagram_425.png/diagram_426.png) -perfect (diagram_427.png/diagram_428.png):
+
+const getData3 = async function() {
+  try {
+    const [ users, posts, albums ] = await Promise.all(urls.map(url => 
+      fetch(url).then(response => response.json())
+    ))
+    console.log('users', users);
+    console.log('posts', posts);
+    console.log('albums', albums);
+  } catch (error) {
+    console.log('oops', error);
+  }
+};
+
+Now, if I clean this (diagram_429.png & diagram_430.png) up a bit 
+and do getData1/getData3 (diagram_431.png/diagram_432.png) with the 'try...catch' block, (diagram_433.png/diagram_434.png):
+
+getData3();
+
+// Expected output:
+// -> Promise {<pending>}
+//    -> [[Prototype]]: Promise
+//       [[PromiseState]]: "fulfilled"
+//       [[PromiseResult]]: undefined
+// -> GET https://jsonplaceholde.typicode.com/users net::ERR_NAME_NOT_RESOLVED
+// oops TypeError: Failed to fetch
+//     at <anonymous>:4:7
+//     at Array.map (<anonymous>)
+//     at getData3 (<anonymous>:3:61)
+//     at <anonymous>:1:1
+
+I get (diagram_435.png/diagram_436.png):
+oops TypeError: Failed to fetch
+
+So I get the 'catch' block (diagram_437.png/diagram_438.png) with the 'error' (diagram_439.png/diagram_440.png) 
+just like we did with 'Promise.all()' (diagram_441.png/diagram_442.png) just using Promises (diagram_443.png/diagram_444.png).
+
+And there you have it.
+That's it.
+
+· From (diagram_445.png/diagram_446.png & diagram_447.png/diagram_448.png), 
+diagram_449.png/diagram_450.png, diagram_451.png/diagram_452.png, diagram_453.png/diagram_454.png, 
+diagram_455.png/diagram_456.png, diagram_457.png/diagram_458.png, diagram_459.png/diagram_460.png, 
+(diagram_461.png/diagram_462.png & diagram_463.png/diagram_464.png), 
+diagram_465.png/diagram_466.png, diagram_467.png/diagram_468.png, diagram_469.png/diagram_470.png, diagram_471.png/diagram_472.png:
+
+“async/await” (diagram_445.png/diagram_446.png & diagram_447.png/diagram_448.png), although intimidating at first because there is a bit of new syntax, 
+actually makes things quite nice and synchronous-looking.
+We simply have a variable (diagram_449.png/diagram_450.png) that we assign the “await” (diagram_451.png/diagram_452.png) Promise to (diagram_453.png/diagram_454.png), 
+and then the function (diagram_455.png/diagram_456.png) pauses there until the Promise (diagram_457.png/diagram_458.png) returns, 
+and then it continues with console logging (diagram_459.png/diagram_460.png).
+And you just have to remember the 'try...catch' blocks here (diagram_461.png/diagram_462.png & diagram_463.png/diagram_464.png) to 'catch' your errors, 
+and that's it.
+
+You're now an “async/await” Master.
+You can use whichever one you prefer (diagram_465.png/diagram_466.png).
+Like I said at the end of the day, 
+use Promises (diagram_467.png/diagram_468.png) or “async/await” functions (diagram_469.png/diagram_470.png) based on whichever one is simpler for you and your team, 
+but hopefully, when you encounter both of these (diagram_471.png/diagram_472.png), you're now a lot more comfortable.
+
+I'll see you in the next one. Bye-bye.
