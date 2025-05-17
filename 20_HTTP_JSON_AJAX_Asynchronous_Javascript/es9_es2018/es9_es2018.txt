@@ -1,0 +1,10 @@
+ES9 (ES2018)
+
+ES9 or ES2018
+
+There are three main new features that you should be aware of for this (ES9 or ES2018) version of ECMAScript.
+
+The first one is the Object spread operator (...), and it looks something like this (the es9_es2018.js file)
+
+Wait... what about the other 2 new features?
+See the next video (lecture/lesson)!
