@@ -1,0 +1,660 @@
+ES9 (ES2018) - Async
+
+Welcome back.
+
+I want to talk to you about two other new ES2018 features and to show you how they work.
+
+· From diagram_1.png/diagram_2.png, diagram_3.png/diagram_4.png, diagram_5.png, diagram_6.png/diagram_7.png, diagram_8.png/diagram_9.png, 
+diagram_10.png/diagram_11.png, diagram_12.png/diagram_26.png, (diagram_13.png, diagram_14.png/diagram_27.png, diagram_28.png):
+
+We're going to use the example that we had before in the video (lecture/lesson) about Promises (Exercise: Promises) (diagram_1.png/diagram_2.png), 
+
+const urls = [
+  'https://swapi.dev/api/people/1/',
+  'https://swapi.dev/api/people/2/',
+  'https://swapi.dev/api/people/3/',
+  'https://swapi.dev/api/people/4/'
+];
+
+Promise.all(urls.map(url => {
+  return fetch(url).then(people => people.json())
+}))
+  .then(array => {
+    console.log('1', array[0]);
+    console.log('2', array[1]);
+    console.log('3', array[2]);
+    console.log('4', array[3]);
+  })
+  .catch(err => console.log('Ughhhh, fix it!', err));
+
+where we loop through all these URLs (urls) (diagram_3.png/diagram_4.png) are Star Wars API URL (url) (diagram_5.png).
+We fetched (fetch()) the data (diagram_6.png/diagram_7.png), and then we just console logged whatever we received (diagram_8.png/diagram_9.png).
+so that if I copy this (diagram_10.png/diagram_11.png) and paste it (diagram_12.png/diagram_26.png) into our Console
+
+// Expected output:
+// -> Promise {<pending>}
+// 1 -> {name: 'Luke Skywalker', height: '172', mass: '77', hair_color: 'blond', skin_color: 'fair', …}
+// 2 -> {name: 'C-3PO', height: '167', mass: '75', hair_color: 'n/a', skin_color: 'gold', …}
+// 3 -> {name: 'R2-D2', height: '96', mass: '32', hair_color: 'n/a', skin_color: 'white, blue', …}
+// 4 -> {name: 'Darth Vader', height: '202', mass: '136', hair_color: 'none', skin_color: 'white', …}
+
+We get our users (diagram_13.png, diagram_14.png/diagram_27.png, diagram_28.png).
+We have 'Luke Skywalker', 'C-3PO', 'R2-D2', and 'Darth Vader' (diagram_14.png/diagram_28.png).
+And if this (diagram_10.png/diagram_11.png) doesn't look familiar to you, 
+make sure you check out the Promises videos (lectures/lessons) first before tackling this one.
+
+· From diagram_29.png/diagram_30.png, 
+diagram_31.png, diagram_32.png, diagram_33.png/diagram_34.png, diagram_35.png/diagram_36.png, 
+diagram_37.png/diagram_38.png, diagram_39.png, diagram_40.png/diagram_41.png, 
+diagram_42.png, diagram_43.png/diagram_44.png, diagram_45.png, diagram_46.png, diagram_47.png, 
+diagram_48.png/diagram_49.png, diagram_50.png/diagram_51.png, 
+diagram_52.png/diagram_53.png, diagram_54.png/diagram_55.png & diagram_56.png, 
+diagram_57.png/diagram_58.png, 
+diagram_59.png & diagram_60.png/diagram_61.png & diagram_62.png, 
+diagram_63.png/diagram_65.png, diagram_64.png/diagram_66.png, 
+diagram_67.png;diagram_68.png, diagram_69.png/diagram_71.png, diagram_70.png/diagram_72.png, diagram_73.png, 
+(diagram_74.png/diagram_75.png, diagram_76.png/diagram_77.png) & (diagram_84.png, diagram_85.png & diagram_86.png), 
+diagram_78.png/diagram_79.png, diagram_80.png/diagram_81.png, diagram_82.png/diagram_83.png:
+
+Now, the first feature I'm going to talk (to show you) about that's new in JavaScript is called finally() (The finally() method) (diagram_29.png/diagram_30.png)
+
+finally()
+The finally() method
+
+and as the name suggests, it (finally()) allows us to do something 'finally()' (diagram_31.png) after a Promise has finished (diagram_32.png), 
+and the way it works is that we add 'finally()' usually at the end (diagram_33.png/diagram_34.png).
+And this 'finally()' block (diagram_35.png/diagram_36.png) will be called regardless of whether '.then()' works (diagram_37.png/diagram_38.png) 
+or the Promise errors (diagram_39.png) and catches (.catch()) into an error (diagram_40.png/diagram_41.png).
+So no matter what.
+After everything is done inside of a Promise (diagram_42.png), 
+'finally()' will be called (diagram_43.png/diagram_44.png) whether it resolves (diagram_45.png) or rejects (diagram_46.png), 
+and does something that we tell it to (diagram_47.png)
+In our case (diagram_48.png/diagram_49.png), let's say I can have
+'data' here and this 'data' will just 'console.log()' to see what we get, and we'll just say 'extra' (diagram_50.png/diagram_51.png)
+
+So that when we run this one more time, I'm going to copy (diagram_52.png/diagram_53.png), 
+let's refresh here (diagram_54.png/diagram_55.png & diagram_56.png).
+Copy and paste (diagram_57.png/diagram_58.png), I hit enter (diagram_59.png & diagram_60.png/diagram_61.png & diagram_62.png),
+
+// finally()
+// The finally() method
+const urls2 = [
+  'https://swapi.dev/api/people/1/',
+  'https://swapi.dev/api/people/2/',
+  'https://swapi.dev/api/people/3/',
+  'https://swapi.dev/api/people/4/'
+];
+
+Promise.all(urls2.map(url => {
+  return fetch(url).then(people => people.json())
+}))
+  .then(array => {
+    console.log('1', array[0]);
+    console.log('2', array[1]);
+    console.log('3', array[2]);
+    console.log('4', array[3]);
+  })
+  .catch(err => console.log('Ughhhh, fix it!', err))
+  // .finally(data => console.log('extra', data));
+  .finally(() => console.log('extra'));
+
+// Expected output (.finally(data => console.log('extra', data));):
+// -> Promise {<pending>}
+// 1 -> {name: 'Luke Skywalker', height: '172', mass: '77', hair_color: 'blond', skin_color: 'fair', …}
+// 2 -> {name: 'C-3PO', height: '167', mass: '75', hair_color: 'n/a', skin_color: 'gold', …}
+// 3 -> {name: 'R2-D2', height: '96', mass: '32', hair_color: 'n/a', skin_color: 'white, blue', …}
+// 4 -> {name: 'Darth Vader', height: '202', mass: '136', hair_color: 'none', skin_color: 'white', …}
+// extra undefined
+
+we get 'extra' over here (diagram_63.png/diagram_65.png), but 'undefined' (diagram_64.png/diagram_66.png).
+
+And that is because 'finally()' doesn't really receive a parameter (diagram_67.png;diagram_68.png).
+So this (diagram_69.png/diagram_71.png) is usually empty (diagram_70.png/diagram_72.png), doesn't receive anything from the Promise (diagram_73.png).
+So we can just leave this out (diagram_74.png/diagram_75.png, diagram_76.png/diagram_77.png) & (diagram_84.png, diagram_85.png & diagram_86.png).
+
+// Expected output (.finally(() => console.log('extra'));):
+// -> Promise {<pending>}
+// 1 -> {name: 'Luke Skywalker', height: '172', mass: '77', hair_color: 'blond', skin_color: 'fair', …}
+// 2 -> {name: 'C-3PO', height: '167', mass: '75', hair_color: 'n/a', skin_color: 'gold', …}
+// 3 -> {name: 'R2-D2', height: '96', mass: '32', hair_color: 'n/a', skin_color: 'white, blue', …}
+// 4 -> {name: 'Darth Vader', height: '202', mass: '136', hair_color: 'none', skin_color: 'white', …}
+// extra
+
+But you see here (diagram_78.png/diagram_79.png) that 
+I was able to call 'extra' (diagram_80.png/diagram_81.png) even though the '.then()' finished (diagram_82.png/diagram_83.png).
+
+· From diagram_87.png/diagram_88.png, diagram_89.png/diagram_90.png, diagram_91.png/diagram_92.png, 
+diagram_93.png/diagram_94.png, diagram_95.png, diagram_96.png/diagram_97.png, diagram_98.png, diagram_99.png/diagram_100.png, 
+diagram_101.png/diagram_102.png, diagram_103.png, diagram_104.png/diagram_105.png, 
+diagram_106.png/diagram_108.png, 
+diagram_107.png/diagram_109.png, diagram_110.png/diagram_111.png, diagram_112.png/diagram_113.png, 
+(diagram_114.png/diagram_115.png, diagram_116.png), diagram_117.png/diagram_118.png, 
+diagram_119.png/diagram_120.png, diagram_121.png/diagram_122.png, diagram_123.png, diagram_124.png, diagram_125.png:
+
+But what happens if we throw an error (diagram_87.png/diagram_88.png) and a 'catch' block (.catch()) gets called? (diagram_89.png/diagram_90.png) 
+We can simulate that fairly easily.
+We can just do inside of '.then()' in JavaScript backend throw an error by saying 'throw Error' (diagram_91.png/diagram_92.png)
+And what's going to happen here is as soon as this line (diagram_93.png/diagram_94.png) reaches it, 
+it's going to throw an Error (diagram_95.png), skip over all these console logs (diagram_96.png/diagram_97.png), 
+and hit the 'cache' block (.catch()) (diagram_98.png) with this (diagram_99.png/diagram_100.png) 'err' parameter
+So if I save this or let's copy (diagram_101.png/diagram_102.png) this going to refresh the page (diagram_103.png) copy and paste (diagram_104.png/diagram_105.png)
+and let's see what happens down here (diagram_104.png/diagram_105.png). I'm going to hit enter (diagram_106.png/diagram_108.png)
+
+const urls3 = [
+  'https://swapi.dev/api/people/1/',
+  'https://swapi.dev/api/people/2/',
+  'https://swapi.dev/api/people/3/',
+  'https://swapi.dev/api/people/4/'
+];
+
+Promise.all(urls3.map(url => {
+  return fetch(url).then(people => people.json())
+}))
+  .then(array => {
+    throw Error;
+    console.log('1', array[0]);
+    console.log('2', array[1]);
+    console.log('3', array[2]);
+    console.log('4', array[3]);
+  })
+  .catch(err => console.log('Ughhhh, fix it!', err))
+  .finally(() => console.log('extra'));
+
+// Expected output:
+// Ughhhh, fix it! ƒ Error() { [native code] }
+// extra
+
+and we see that (diagram_107.png/diagram_109.png), 
+oh, we get the error, the 'catch' block (.catch()) has run (diagram_110.png/diagram_111.png) with our 'err' (diagram_112.png/diagram_113.png), 
+but we also have the 'extra' being called (diagram_114.png/diagram_115.png, diagram_116.png), which is '.finally()' (diagram_117.png/diagram_118.png).
+
+So 'finally()' (diagram_119.png/diagram_120.png) is great for those times 
+that you need to run a piece of code (diagram_121.png/diagram_122.png) no matter what after a Promise
+Perhaps you want to send an email to a user regardless of whether their request was successful or failed.
+Maybe you want to have a little notification icon.
+There are many ways to use 'finally()' (diagram_123.png), 
+and now (diagram_124.png) there is a way to make sure that something happens after a Promise (diagram_125.png), whatever we tell it to
+
+· From (diagram_126.png/diagram_127.png & diagram_128.png), diagram_129.png/diagram_130.png, 
+diagram_131.png/diagram_132.png, diagram_133.png/diagram_134.png, diagram_135.png/diagram_136.png, diagram_137.png, diagram_138.png, diagram_139.png, 
+diagram_140.png/diagram_141.png, diagram_142.png, diagram_143.png, diagram_144.png, 
+(diagram_145.png/diagram_146.png, diagram_147.png/diagram_148.png), diagram_149.png/diagram_150.png:
+
+Now, the next one I want to talk about is a little bit more advanced
+To explain it, let's clean this up (diagram_126.png/diagram_127.png & diagram_128.png)
+and talk about the 'for await...of' (for await...of statement/for await...of loop) feature (diagram_129.png/diagram_130.png)
+
+// for await...of
+// for await...of statement
+// for await...of loop
+
+Now, if you remember, we had this (diagram_131.png/diagram_132.png) piece of code in our 'Async Await' (“async/await”) video (lecture/lesson)
+
+// for await...of
+// for await...of statement
+// for await...of loop
+
+const urls4 = [
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholdeTYPO.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums"
+];
+
+const getData = async function () {
+  try {
+    const [ users, posts, albums ] = await Promise.all(
+      urls4.map(async function (url) {
+        const response = await fetch(url);
+        return response.json();
+      }),
+    );
+    console.log("users", users);
+    console.log("posts", posts);
+    console.log("albums", albums);
+  } catch (error) {
+    console.log('oooooops', error);
+  }
+};
+
+and there I showed you how we're able to use the “async” (diagram_133.png/diagram_134.png) “await” (diagram_135.png/diagram_136.png) feature of ES8 
+to make our Promises (diagram_137.png) more synchronous-looking (diagram_138.png) 
+instead of having those Promise chain of '.then()', '.then()', '.then()', '.catch()' (diagram_139.png); 
+we can use “async” (diagram_133.png/diagram_134.png) “await” (diagram_135.png/diagram_136.png)
+
+Now, the cool thing about this (diagram_129.png/diagram_130.png) new feature is that
+it (diagram_140.png/diagram_141.png) allows us 
+to loop through our “async” (diagram_142.png) “await” (diagram_143.png) calls if we have multiple of them (diagram_144.png)
+just like we can use the 'for...of' (for...of loop) (diagram_145.png/diagram_146.png, diagram_147.png/diagram_148.png)
+So using the 'for...of' loop (diagram_145.png/diagram_146.png, diagram_147.png/diagram_148.png) that allowed us to iterate over iterable, 
+we're now able to iterate over the “await” (for await...of) Promises (diagram_149.png/diagram_150.png) that we're going to have
+
+· From diagram_151.png/diagram_152.png, diagram_153.png, diagram_154.png/diagram_155.png, 
+diagram_156.png/diagram_157.png, diagram_158.png/diagram_159.png, 
+diagram_160.png/diagram_161.png, diagram_162.png/diagram_163.png, 
+diagram_164.png/diagram_165.png, diagram_166.png/diagram_167.png, 
+diagram_168.png/diagram_169.png, diagram_170.png/diagram_171.png, diagram_172.png/diagram_173.png, 
+diagram_174.png/diagram_175.png, diagram_176.png/diagram_177.png, diagram_178.png/diagram_179.png, 
+diagram_180.png/diagram_181.png, diagram_182.png, diagram_183.png/diagram_184.png, diagram_185.png/diagram_186.png, 
+diagram_187.png/diagram_188.png, diagram_189.png/diagram_190.png, 
+diagram_191.png/diagram_192.png, diagram_193.png/diagram_194.png, 
+diagram_195.png/diagram_196.png:
+
+But instead of talking, let me show you in code
+Now, let's say we'll use this (diagram_151.png/diagram_152.png) as an example
+
+const urls4 = [
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholdeTYPO.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums"
+];
+
+const getData = async function () {
+  try {
+    const [ users, posts, albums ] = await Promise.all(
+      urls4.map(async function (url) {
+        const response = await fetch(url);
+        return response.json();
+      }),
+    );
+    console.log("users", users);
+    console.log("posts", posts);
+    console.log("albums", albums);
+  } catch (error) {
+    console.log('oooooops', error);
+  }
+};
+
+We're gonna create a new function (diagram_153.png), and this is going to be called 'getData2' (diagram_154.png/diagram_155.png)
+
+Let's remember (diagram_156.png/diagram_157.png) what the 'for...of' loop (diagram_158.png/diagram_159.png) looks like
+
+If I had a function, let's call it 'loopThroughUrls' (diagram_160.png/diagram_161.png) that receives the 'url' parameter (diagram_162.png/diagram_163.png), 
+and (diagram_164.png/diagram_165.png) it will loop using the 'for...of' loop (diagram_166.png/diagram_167.png), 
+will say 'url of urls4' (url of urls4) (diagram_168.png/diagram_169.png), 
+and the 'urls4' is this (diagram_170.png/diagram_171.png) array over here with 3 urls (diagram_172.png/diagram_173.png)
+and this (diagram_174.png/diagram_175.png) 'for...of' loop is simply going to a loop through everything, 
+and we can just log out (diagram_176.png/diagram_177.png) the 'url' (diagram_178.png/diagram_179.png)
+
+// for...of (for...of loop)
+const loopThroughUrls = url => {
+  for (url of urls4) {
+    console.log(url);
+  }
+};
+
+If I copy (diagram_180.png/diagram_181.png) and paste this (diagram_183.png/diagram_184.png), let's refresh here (diagram_182.png)
+
+const urls4 = [
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholdeTYPO.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums"
+];
+
+const getData = async function () {
+  try {
+    const [ users, posts, albums ] = await Promise.all(
+      urls4.map(async function (url) {
+        const response = await fetch(url);
+        return response.json();
+      }),
+    );
+    console.log("users", users);
+    console.log("posts", posts);
+    console.log("albums", albums);
+  } catch (error) {
+    console.log('oooooops', error);
+  }
+};
+
+// for...of (for...of loop)
+const loopThroughUrls = url => {
+  for (url of urls4) {
+    console.log(url);
+  }
+};
+
+hit enter (diagram_185.png/diagram_186.png)
+and just do 'loopThroughUrls' now (diagram_187.png/diagram_188.png) and pass in the 'urls4' parameter (diagram_189.png/diagram_190.png)
+
+loopThroughUrls(urls4);
+
+// Expected output:
+// https://jsonplaceholder.typicode.com/users
+// https://jsonplaceholdeTYPO.typicode.com/posts
+// https://jsonplaceholder.typicode.com/albums
+
+I see that (diagram_191.png/diagram_192.png) I'm just looping through these (diagram_193.png/diagram_194.png)
+So that's what 'for...of' (for...of loop) was (diagram_195.png/diagram_196.png).
+
+· From diagram_197.png/diagram_198.png, 
+diagram_199.png/diagram_200.png, diagram_201.png/diagram_202.png, diagram_203.png/diagram_204.png, diagram_205.png/diagram_206.png, 
+diagram_207.png/diagram_208.png, 
+diagram_209.png/diagram_210.png, diagram_211.png, 
+diagram_212.png/diagram_213.png, diagram_214.png/diagram_215.png, diagram_216.png/diagram_217.png, diagram_218.png/diagram_219.png, 
+diagram_220.png/diagram_221.png, diagram_222.png/diagram_223.png, diagram_224.png, diagram_225.png, 
+diagram_226.png/diagram_227.png, diagram_228.png/diagram_229.png, 
+diagram_230.png/diagram_231.png, diagram_232.png/diagram_233.png, diagram_234.png/diagram_235.png, 
+(diagram_236.png/diagram_237.png, diagram_238.png/diagram_239.png, diagram_240.png/diagram_241.png), 
+diagram_242.png/diagram_243.png, 
+diagram_244.png/diagram_245.png, diagram_246.png/diagram_247.png, diagram_248.png/diagram_249.png, diagram_250.png/diagram_251.png, 
+diagram_252.png/diagram_253.png, diagram_254.png/diagram_255.png, diagram_256.png/diagram_257.png, 
+diagram_258.png/diagram_259.png, diagram_260.png/diagram_261.png, (diagram_262.png/diagram_263.png, diagram_264.png/diagram_265.png), 
+diagram_266.png/diagram_267.png, diagram_268.png, 
+diagram_269.png/diagram_270.png, diagram_271.png/diagram_272.png, (diagram_273.png/diagram_274.png, diagram_275.png/diagram_276.png), 
+diagram_277.png/diagram_278.png, diagram_279.png/diagram_280.png, 
+diagram_281.png/diagram_282.png, diagram_283.png/diagram_284.png:
+
+const urls4 = [
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums"
+];
+
+const getData = async function () {
+  try {
+    const [ users, posts, albums ] = await Promise.all(
+      urls4.map(async function (url) {
+        const response = await fetch(url);
+        return response.json();
+      }),
+    );
+    console.log("users", users);
+    console.log("posts", posts);
+    console.log("albums", albums);
+  } catch (error) {
+    console.log('oooooops', error);
+  }
+};
+
+So, using that knowledge (diagram_197.png/diagram_198.png), 
+we can now create a new function called 'getData2', (diagram_199.png/diagram_200.png) 
+and this new function (diagram_201.png/diagram_202.png) will do exactly what this one does above (diagram_203.png/diagram_204.png) 
+by using the 'for await...of' feature (diagram_205.png/diagram_206.png).
+Let's see how that would look. (diagram_207.png/diagram_208.png)
+
+We will have an 'async function () {}' (diagram_209.png/diagram_210.png) so that we can use the “await” keyword (diagram_211.png)
+
+const getData2 = async function () {
+  
+};
+
+and here (diagram_212.png/diagram_213.png) we can have an 'arrayOfPromises' (diagram_214.png/diagram_215.png) 
+because an 'arrayOfPromises' (diagram_216.png/diagram_217.png) is iterable and able to be looped by the 'for await...of' keywords (diagram_218.png/diagram_219.png)
+So this 'arrayOfPromises' (diagram_220.png/diagram_221.png) will simply be are 'urls4.map()' (diagram_222.png/diagram_223.png) that will loop 
+and let's make this a little bit bigger (diagram_224.png) so we can see that's better (diagram_225.png), 
+we're going to loop over the 'url' (diagram_226.png/diagram_227.png) and it's going to return the 'fetch(url)' (diagram_228.png/diagram_229.png)
+
+const arrayOfPromises = urls4.map(url => fetch(url));
+
+So, in here, in the first line, (diagram_230.png/diagram_231.png) 
+all we're doing is creating an array (const arrayOfPromises) (diagram_232.png/diagram_233.png) 
+of these fetch Promises (fetch(url)) (diagram_234.png/diagram_235.png) 
+of each one of these requests (const urls4 = []) (diagram_236.png/diagram_237.png, diagram_238.png/diagram_239.png, diagram_240.png/diagram_241.png)
+
+Next, we can use the 'for await...of' to loop through these Promises (diagram_242.png/diagram_243.png)
+So all we would say is say 'for await ()' (diagram_244.png/diagram_245.png) and in here (diagram_246.png/diagram_247.png) we'll say,
+
+(let request of arrayOfPromises)
+
+(diagram_248.png/diagram_249.png)
+
+which (arrayOfPromises) is an iterable (diagram_250.png/diagram_251.png):
+
+for await (let request of arrayOfPromises) {
+  
+}
+
+which (arrayOfPromises) is an iterable (diagram_250.png/diagram_251.png), 
+is going to (diagram_252.png/diagram_253.png) 
+loop through each of these Promises (arrayOfPromises) (diagram_254.png/diagram_255.png), each of the requests (request) (diagram_256.png/diagram_257.png)
+and (diagram_258.png/diagram_259.png) we're going to extract that 'data' (diagram_260.png/diagram_261.png) from each of the requests (request) by saying,
+
+await request.json()
+
+(diagram_262.png/diagram_263.png, diagram_264.png/diagram_265.png)
+
+const data = await request.json();
+
+because we remember that we used the “await” keyword (diagram_266.png/diagram_267.png) in front of a Promise (diagram_268.png).
+
+And as we know, we're using the “await” keyword here (diagram_269.png/diagram_270.png) 
+because we're looping over Promises (arrayOfPromises) (diagram_271.png/diagram_272.png) 
+and we need to 'await request.json()', (diagram_273.png/diagram_274.png, diagram_275.png/diagram_276.png) 
+which again is a Promise (request.json()) (diagram_277.png/diagram_278.png) that receives our 'data' (const data) (diagram_279.png/diagram_280.png).
+Remember, similar to how we did here before (diagram_281.png/diagram_282.png):
+
+const getData = async function () {
+  
+};
+
+and then we simply 'console.log()' let's say 'data' (diagram_283.png/diagram_284.png) to see while we get:
+
+for await (let request of arrayOfPromises) {
+  const data = await request.json();
+  console.log(data);
+}
+
+// for await...of
+const getData2 = async function () {
+  const arrayOfPromises = urls4.map(url => fetch(url));
+  for await (let request of arrayOfPromises) {
+    const data = await request.json();
+    console.log(data);
+  }
+};
+
+getData2();
+
+· From diagram_285.png/diagram_286.png, diagram_287.png, diagram_288/diagram_289.png, diagram_290.png/diagram_291.png, diagram_292.png/diagram_293.png, 
+diagram_294.png/diagram_295.png, diagram_296.png, diagram_297.png, 
+diagram_298.png/diagram_300.png, diagram_299.png/diagram_301.png, 
+diagram_302.png/diagram_303.png, 
+diagram_304.png/diagram_305.png, diagram_306.png/diagram_307.png, 
+diagram_308.png/diagram_309.png, diagram_310.png/diagram_311.png, 
+diagram_312.png/diagram_313.png:
+
+const urls4 = [
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums"
+];
+
+// for await...of
+const getData2 = async function () {
+  const arrayOfPromises = urls4.map(url => fetch(url));
+  for await (let request of arrayOfPromises) {
+    const data = await request.json();
+    console.log(data);
+  }
+};
+
+So let's copy the 'urls4' (diagram_285.png/diagram_286.png) and refresh the page (diagram_287.png).
+paste that 'urls4' (diagram_288/diagram_289.png):
+
+const urls4 = [
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums"
+];
+
+and then we'll also copy the function/our new code (const getData2) (diagram_290.png/diagram_291.png), 
+paste it in here (Console) (diagram_292.png/diagram_293.png):
+
+// for await...of
+const getData2 = async function () {
+  const arrayOfPromises = urls4.map(url => fetch(url));
+  for await (let request of arrayOfPromises) {
+    const data = await request.json();
+    console.log(data);
+  }
+};
+
+Hit enter (diagram_294.png/diagram_295.png)
+and let's just clear this (diagram_296.png, diagram_297.png)
+and if I do 'getData2()' now (diagram_298.png/diagram_300.png),
+
+getData2();
+
+when I run this (getData2()) (diagram_299.png/diagram_301.png),
+we see that look at that (diagram_302.png/diagram_303.png)
+
+// Expected output:
+// -> Promise {<pending>}
+// -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+We've received first the 'users', (diagram_304.png/diagram_305.png) which are right here (diagram_304.png), 
+let's make this a little bit bigger so we can see we have the 'users' (diagram_306.png/diagram_307.png)
+and the next up, we have what do we have next? 
+We have the 'posts' (diagram_310.png/diagram_311.png), so a hundred (100) 'posts' (diagram_308.png/diagram_309.png)
+and then the next up is the 'albums' (diagram_312.png/diagram_313.png), just like that
+
+· From diagram_314.png/diagram_315.png, diagram_316.png/diagram_317.png, 
+diagram_318.png/diagram_319.png, diagram_320.png/diagram_322.png, diagram_321.png/diagram_323.png, 
+diagram_324.png/diagram_325.png, diagram_326/diagram_327.png, diagram_328.png/diagram_329.png, diagram_330.png/diagram_331.png:
+
+const urls4 = [
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums"
+];
+
+// for await...of
+const getData2 = async function () {
+  const arrayOfPromises = urls4.map(url => fetch(url));
+  for await (let request of arrayOfPromises) {
+    const data = await request.json();
+    console.log(data);
+  }
+};
+
+getData2();
+
+// Expected output:
+// -> Promise {<pending>}
+// -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+and this (const getData2) is the new ES2018 feature (for await...of) (diagram_314.png/diagram_315.png)
+
+As you see here, it's (const getData2) (diagram_314.png/diagram_315.png) the exact same thing as we did above (const getData) (diagram_316.png/diagram_317.png).
+
+If I run (diagram_318.png/diagram_319.png) our original function 'getData()' (diagram_320.png/diagram_322.png)
+
+const urls4 = [
+  "https://jsonplaceholder.typicode.com/users",
+  // "https://jsonplaceholdeTYPO.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums"
+];
+
+const getData = async function () {
+  try {
+    const [ users, posts, albums ] = await Promise.all(
+      urls4.map(async function (url) {
+        const response = await fetch(url);
+        return response.json();
+      }),
+    );
+    console.log("users", users);
+    console.log("posts", posts);
+    console.log("albums", albums);
+  } catch (error) {
+    console.log('oooooops', error);
+  }
+};
+
+getData();
+
+// Expected output:
+// -> Promise {<pending>}
+// users -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// posts -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// albums -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+We see that we get the exact same results (diagram_321.png/diagram_323.png): we have 'albums', we have 'posts', we have 'users'.
+
+// for await...of
+const getData2 = async function () {
+  const arrayOfPromises = urls4.map(url => fetch(url));
+  for await (let request of arrayOfPromises) {
+    const data = await request.json();
+    console.log(data);
+  }
+};
+
+The only thing that the 'for await...of' feature does (diagram_324.png/diagram_325.png) 
+it allows us to loop through (diagram_326/diagram_327.png) these multiple Promises (diagram_328.png/diagram_329.png) 
+almost as if we're writing synchronous code (diagram_330.png/diagram_331.png) right
+
+· From diagram_332.png/diagram_333.png, diagram_334.png, diagram_335.png:
+
+So to review:
+
+We have the 'finally()' function (The finally() method) (diagram_332.png/diagram_333.png) that we can run at the end of a Promise:
+
+// finally()
+// The finally() method
+
+const urls3 = [
+  'https://swapi.dev/api/people/1/',
+  'https://swapi.dev/api/people/2/',
+  'https://swapi.dev/api/people/3/',
+  'https://swapi.dev/api/people/4/'
+];
+
+Promise.all(urls3.map(url => {
+  return fetch(url).then(people => people.json())
+}))
+  .then(array => {
+    throw Error;
+    console.log('1', array[0]);
+    console.log('2', array[1]);
+    console.log('3', array[2]);
+    console.log('4', array[3]);
+  })
+  .catch(err => console.log('Ughhhh, fix it!', err))
+  .finally(() => console.log('extra'));
+
+// Expected output:
+// Ughhhh, fix it! ƒ Error() { [native code] }
+// extra
+
+and we have the 'for await...of' (for await...of statement/for await...of loop) (diagram_334.png) 
+that takes each item from an 'arrayOfPromises' (diagram_335.png) that returns to us in the correct order all the responses:
+
+// for await...of
+// for await...of statement
+// for await...of loop
+
+const urls4 = [
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums"
+];
+
+// for await...of
+const getData2 = async function () {
+  const arrayOfPromises = urls4.map(url => fetch(url));
+  for await (let request of arrayOfPromises) {
+    const data = await request.json();
+    console.log(data);
+  }
+};
+
+getData2();
+
+// Expected output:
+// -> Promise {<pending>}
+// -> (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// -> (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+All right.
+
+I think that's enough.
+It's time for you to play around with this.
+
+I'll see you in the next video (lecture/lesson).
