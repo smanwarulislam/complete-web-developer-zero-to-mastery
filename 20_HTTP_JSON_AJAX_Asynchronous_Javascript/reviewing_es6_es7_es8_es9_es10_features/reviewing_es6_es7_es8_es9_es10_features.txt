@@ -1,0 +1,7 @@
+Reviewing ES6, ES7, ES8, ES9, ES10 Features
+
+JavaScript has really grown over the past couple of years!
+We have learned a lot of new syntax, so here is a great resource for you to review all of the new features so you don't forget them:
+
+Reference websites:
+https://github.com/daumann/ECMAScript-new-features-list
