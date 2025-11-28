@@ -1,0 +1,237 @@
+Backend Basics
+
+It's time to learn another exciting topic, and we're going to get into Backend basics.
+
+But I wanted to show you what we've covered so far on the Front-End.
+
+· From diagram_1.png, diagram_2.png, diagram_3.png, diagram_4.png, diagram_5.png:
+
+We've started with this (diagram_1.png) diagram of asking for "Who is google.com?" (diagram_2.png) 
+and going through the ISP (Internet Service Provider) (diagram_3.png) 
+asking the domain name server (DNS) (diagram_4.png) for the IP (Internet Protocol) address (diagram_5.png).
+
+· From diagram_6.png, diagram_7.png, diagram_8.png, diagram_9.png, diagram_10.png, diagram_11.png, diagram_12.png, diagram_13.png, 
+diagram_14.png, diagram_15.png, diagram_16.png, diagram_17.png:
+
+We then ask the IP address (diagram_6.png) to find the Google servers (diagram_7.png), 
+and then the Google servers gives us our HTML (diagram_8.png), CSS (diagram_9.png), and JavaScript file (diagram_10.png), 
+which we're able to get one through HTML (diagram_11.png) 
+and then the link tags (diagram_12.png) and the script tags (diagram_13.png) to get the CSS (diagram_9.png) and JavaScript (diagram_10.png).
+
+The browser (diagram_14.png) reads the file for us, the HTML (diagram_8.png), CSS (diagram_9.png), 
+and the V8 engine or the JavaScript engine (diagram_15.png) of the browser uses it to read the JavaScript (diagram_16.png), 
+and we manipulate the DOM (Document Object Model) (diagram_17.png) using JavaScript.
+
+· From diagram_18.png, diagram_19.png, diagram_20.png, diagram_21.png, diagram_22.png, diagram_23.png:
+
+We also learned that-
+
+-Location of Server
+The location of the server (diagram_18.png) is important,
+
+-How Many Trips (how many HTTP requests)
+How many trips we make, how many HTTP requests we make (diagram_19.png), is important.
+
+-Size of Files
+The size of the files (diagram_20.png) is important.
+
+And we learned some of those solutions, such as
+
+CDN (Content Delivery Network)
+Content delivery networks (CDNs) (diagram_21.png),
+
+<script src="bundle.js">
+Having the script in just a "bundle.js" file (diagram_22.png)
+
+style.min.css
+refers to a minified Cascading Style Sheet (CSS) file.
+and also minimizing our files (diagram_23.png).
+
+· From diagram_24.png, diagram_25.png, diagram_26.png, diagram_27.png, diagram_28.png:
+
+And then we also learned about this (diagram_24.png) new technology called AJAX (Asynchronous JavaScript And XML), 
+where we can just fetch users (diagram_25.png), 
+fetch('/users')
+talk to the server (Google Servers) (diagram_26.png) while the user is still browsing the website (diagram_27.png), 
+and receive a JSON (JavaScript Object Notation) (diagram_28.png) response to update the website in real time.
+
+· From diagram_29.png, diagram_30.png, diagram_31.png, diagram_32.png, diagram_33.png, diagram_34.png:
+
+And this picture (diagram_29.png) that we started with looks a lot clearer than in the first video (lecture/lesson), doesn't it?
+We understand what a Front-End developer does (diagram_30.png).
+We see the power of React (also known as React.js or ReactJS) (diagram_31.png)
+and we also know that these arrows (diagram_32.png) simply mean HTTP requests; a language that both Front-End and Back-End can speak
+and using AJAX (Asynchronous JavaScript And XML) (diagram_33.png) and JSON (JavaScript Object Notation) (diagram_34.png), we're able to do it dynamically.
+
+· From diagram_35.png, diagram_36.png, diagram_37.png, diagram_38.png, diagram_39.png, diagram_40.png, diagram_41.png, diagram_42.png:
+
+Now, the Back-End and the role of a Back-End developer (diagram_35.png).
+They are the ones who are in charge of working with servers (diagram_36.png) and databases (diagram_37.png).
+And a server (diagram_38.png) is responsible for whatever you receive in the browser (diagram_39.png).
+I can ask the browser (diagram_39.png) anything, such as "Go to google.com".
+But at the end of the day, the web server (diagram_40.png) can just give me whatever it wants.
+If it's going to just send me to x.com (Twitter, officially known as X since 2023) instead of google.com, well, that's up to the server.
+Whatever we need, we just make the request and we hope that the server provides us with what we asked for.
+And if you remember, a server (diagram_38.png) is just a computer; 
+a computer that's somewhere in the world just listening to this (diagram_41.png) HTTP (Hypertext Transfer Protocol) connection, 
+asking to see if we have any files (diagram_42.png).
+
+· From diagram_43.png, diagram_44.png, diagram_45.png, diagram_46.png, 
+diagram_47.png, diagram_48.png, diagram_49.png, 
+diagram_50.png, diagram_51.png, diagram_52.png, diagram_53.png, 
+diagram_54.png, diagram_55.png, 
+diagram_56.png, 
+diagram_57.png, diagram_58.png, diagram_59.png, 
+diagram_60.png, diagram_61.png, diagram_62.png, diagram_63.png, diagram_64.png, diagram_65.png, diagram_66.png:
+
+The most basic of servers (diagram_43.png), and you might have used this before, 
+maybe using HostGator (HostGator.com) (diagram_44.png), a hosting site, or even WordPress sites, and hosting (putting) them on HostGator (HostGator.com).
+
+HostGator
+https://www.hostgator.com/
+
+It uses something called a 'LAMP STACK' (diagram_45.png).
+
+Overview of LAMP stack:
+A LAMP stack is a popular, open-source web development stack consisting of four key components: 
+Linux (operating system), Apache (web server), MySQL (database management system), and PHP (programming language).
+This stack provides the foundation for creating and running dynamic websites and web applications.
+
+This was what was useful for the most basic of websites, that is, if you just want a simple information website (diagram_46.png)
+Maybe a simple WordPress website where nothing complex is happening. Nothing professional, really.
+What they used was a Linux (diagram_47.png) server (diagram_48.png), which is an operating system.
+Just like I have a Mac, Linux will be the operating system of the server (diagram_49.png).
+We have the Apache (diagram_50.png) server.
+Apache (diagram_51.png) is a server (diagram_52.png), 
+again a program written by somebody that is really, really good at just accepting requests and sending out responses of files (diagram_53.png).
+We had MySQL (diagram_54.png), which is a database (diagram_55.png).
+Maybe you had a comment section in your blog, and you need to store that data; that would be the database.
+And then we had the PHP ("PHP: Hypertext Preprocessor") (diagram_56.png), 
+which was just a language that you can use to have a bit of logic in your servers.
+And the server (diagram_57.png), just like your computer, had a file system (diagram_58.png) where all the files of your website are stored (diagram_59.png).
+And Apache just did that. Just listen to see if anybody entered "funfunwebsite.com" (diagram_60.png) into the URL.
+If it got that request, it'll just default to give you "index.html" (diagram_61.png).
+If somebody entered "funfunwebsite.com/about", it would just give you "about.html" (diagram_62.png).
+It was a very simple, very easy server (diagram_63.png).
+That's what most hosting websites like HostGator (diagram_64.png) use.
+And you might be asking, "Could I just download the Apache server (diagram_65.png) and just run my own server from your computer?"
+Yes, you absolutely can.
+But without having a server software, well, our computer is unreachable.
+Nobody over the Internet can access our computer because our computer is not a server; 
+it has no code that tells it, "Hey, if I get a request, send this out."
+But as we saw in our previous videos (lectures/lessons), we can create fake servers to test our websites.
+Now this (diagram_66.png) was the old way of doing things.
+There wasn't much logic to it; you couldn't really expand on it.
+You can't have websites like Meta Platforms, Inc. (formerly named Facebook, Inc.) or Amazon using this type of system.
+Like I said, this (diagram_66.png) was for very basic websites.
+
+· From diagram_67.png, diagram_68.png, diagram_69.png, diagram_70.png, diagram_71.png, 
+diagram_72.png, diagram_73.png, diagram_74.png, diagram_75.png, diagram_76.png, 
+diagram_77.png, diagram_78.png, diagram_79.png, diagram_80.png, 
+diagram_81.png, diagram_82.png, 
+diagram_83.png, diagram_84.png, diagram_85.png, diagram_86.png, (diagram_87.png, diagram_88.png), diagram_89.png, diagram_90.png, 
+diagram_91.png, diagram_92.png, 
+diagram_93.png, diagram_94.png, diagram_95.png, diagram_96.png, diagram_97.png:
+
+Now, a new stack (diagram_67.png), something we call an application server, looks something more like this (diagram_68.png).
+Now an application server (diagram_68.png) is different than our previous example because, 
+unlike using an Apache server (diagram_69.png), which is very simple and just does request and response, it just gives files there and back.
+With something like a Node server (diagram_70.png) where you have Node.js (diagram_71.png) running, 
+well, you can write a script and say, 
+"If I receive a request for a login (diagram_72.png), then check the user's username in the database (diagram_73.png).
+If it matches, then let me know (diagram_74.png), and then send a response through JSON to the Front-End application (diagram_75.png).
+And we can customize what these (diagram_76.png) scripts say.
+So far, we've only been able to use JavaScript on the web (diagram_77.png).
+But now, with Node.js (diagram_78.png), we can use it on a server (diagram_79.png), on a computer (diagram_80.png) that isn't running a web browser.
+With Node.js (diagram_81.png), we can write JavaScript (diagram_82.png) where, 
+if I posted something on Facebook (diagram_83.png), that post on Facebook, 
+when I clicked 'post', it will get sent to the Node Server (diagram_84.png) that's listening for requests.
+It (diagram_85.png) will say, "Andrei/Raju just posted this message that is in JSON format (diagram_86.png)."
+The Node.js and Express.js files (diagram_87.png, diagram_88.png) on the server (diagram_89.png) will read it, 
+and it'll say, "Ah, we want to store this post in our database (diagram_90.png)."
+And this database is going to store that post, so that when I come back next time, it's still there.
+And then once that's done (diagram_91.png), 
+it's going to respond with a success saying that "My post is a success" and now displays in my timeline (diagram_92.png).
+I can edit the post, I can delete the post, and again, Node Server (diagram_84.png) can delete that post from the database (diagram_90.png) 
+and then send a response and remove it from the timeline (diagram_92.png).
+You just have the power to constantly be interacting with the Front-End (diagram_93.png).
+
+Over the next couple of videos (lectures/lessons), we're going to be building a project that incorporates all of this (diagram_94.png).
+
+We're going to create a Node Server using Express (Express.js).
+We're going to create our own database (diagram_95.png) where we store user information (diagram_96.png).
+And we're going to be using AJAX and JSON to constantly create, sign in, and update user information (diagram_97.png).
+So we have an understanding of this full system.
+
+· From diagram_98.png, diagram_99.png, diagram_100.png, diagram_101.png:
+
+If you're building websites and web apps, well, you're not really building these (diagram_98.png).
+As a web developer, you're building something more similar to this (diagram_99.png):
+but you might be asking yourself, "Is this (diagram_100.png) it?"
+"Is this the ultimate end to what a Back-End server (diagram_101.png) infrastructure can do?"
+
+· From diagram_102.png, 
+diagram_103.png, diagram_104.png, 
+diagram_105.png, diagram_106.png, diagram_107.png, diagram_108.png, diagram_109.png, diagram_110.png, diagram_111.png, 
+diagram_112.png, diagram_113.png, diagram_114.png, 
+diagram_115.png, diagram_116.png, diagram_117.png, diagram_118.png, diagram_119.png, diagram_120.png, diagram_121.png, 
+diagram_122.png, diagram_123.png, diagram_124.png, diagram_125.png, diagram_126.png, diagram_127.png, diagram_128.png, diagram_129.png, 
+diagram_130.png, diagram_131.png, diagram_132.png, 
+diagram_133.png, diagram_134.png, diagram_135.png, diagram_136.png, diagram_137.png, 
+diagram_138.png, diagram_139.png, diagram_140.png, diagram_141.png, diagram_142.png:
+
+Well, no, if you're Meta Platforms, Inc. (formerly named Facebook, Inc.), or x.com (Twitter, officially known as X since 2023), or Amazon, 
+you would do something like this (diagram_102.png), and don't get too worried here (diagram_102.png), we can explain what's going on.
+
+You are just making copies of your computer (diagram_103.png).
+So think of each of these (diagram_104.png) rectangles as a computer.
+And because Facebook gets a lot of people, 
+it makes a copy (diagram_105.png) of their server and puts it maybe in Asia (diagram_106.png), and one in Africa (diagram_107.png), 
+so that everybody from Asia (diagram_108.png) can access this one (diagram_106.png) 
+and everybody from Africa (diagram_109.png) can access this one (diagram_107.png), 
+instead of having everybody access one server (diagram_110.png) and overload the system (diagram_111.png).
+Because they have the same server (diagram_112.png), 
+it's just copying these files (diagram_113.png) and putting them on a server somewhere else (diagram_114.png).
+That's it.
+And that's what we call scaling.
+But they also still use the same database (diagram_115.png), 
+so that if from this server (diagram_116.png) somebody updates the information (diagram_117.png), 
+well, this person over here who uses this server (diagram_118.png), this user (diagram_119.png) will still have access to the information (diagram_120.png) 
+that person using this server (diagram_121.png) updated.
+And then finally, we have something called a 'Load Balancer' (diagram_122.png). And this is similar to what Apache or Nginx would do.
+Where it (diagram_123.png) listens for an HTTP request, 
+and it notices that "Hmm, this one over here (diagram_124.png) in North America is really, really busy right now."
+"I'm (diagram_125.png) going to transfer this person to this server over here (diagram_126.png)," 
+and it (diagram_127.png) just balances the load (diagram_128.png) of the servers (diagram_129.png).
+and it (diagram_130.png) can keep growing this (diagram_131.png), having more and more servers as you have more and more users (diagram_132.png).
+
+And finally, you can even have multiple databases (diagram_133.png).
+Again, these squares (diagram_134.png) each represent a computer; 
+a computer that's running a database (diagram_135.png), 
+a computer that's running a server (diagram_136.png), 
+a computer that's running a load balancer (diagram_137.png).
+
+And you can have multiple databases (diagram_138.png), again, so that they don't get overwhelmed with all these requests (diagram_139.png).
+And each one maintains a copy of the other (diagram_140.png).
+And this is something that we'll talk (about) more when we get to the Node (Node.js) section (diagram_141.png) and Database section (diagram_142.png).
+
+· From diagram_143.png, diagram_144.png, diagram_145.png, 
+diagram_146.png, diagram_147.png, diagram_148.png, 
+diagram_149.png, diagram_150.png, diagram_151.png, diagram_152.png:
+
+But I want to show you the idea behind servers (diagram_143.png).
+To work with the Back-End, 
+the main goal is to make sure that when we make an HTTP request from the Front-End, we get a response back as fast as possible with correct data.
+And that is what Back-End development is.
+
+Making sure that we return those resources (diagram_144.png) 
+so that our Front-End team can be confident that we are going to receive exactly what we need (diagram_145.png).
+
+So I want you to get excited because over the next sections (diagram_146.png), 
+we're going to be focusing on the Back-End (diagram_147.png) as well as the Front-End (diagram_148.png).
+
+We're going to build an App that uses all of these technologies in one place (diagram_149.png).
+So you know exactly how everything is connected (diagram_150.png), 
+and you have an idea of how to go from something like this (diagram_151.png) to one day having something like this (diagram_152.png).
+
+I'll see you in the next one, bye-bye.
