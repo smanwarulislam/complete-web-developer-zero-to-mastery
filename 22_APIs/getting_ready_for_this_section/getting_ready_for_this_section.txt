@@ -1,0 +1,11 @@
+Getting Ready For This Section
+
+We are about to dive into the wonderful world of APIs!
+
+But heads up!
+In the next video (lecture/lesson), I am going to introduce you to one such API called the Star Wars API.
+It gives you access to some fun Star Wars data.
+However, this website goes down once in a while, and you may not be able to access it.
+Don't worry, in the exercise part after the lecture, I will offer you different free options you can use :)
+
+Let's get started!
