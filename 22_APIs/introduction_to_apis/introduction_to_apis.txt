@@ -1,0 +1,393 @@
+Introduction to APIs
+
+API, or Application Programming Interface, is a messenger that takes the request and tells the system what to do.
+Huh?
+That doesn't mean much, does it?
+
+In this video (lecture/lesson), I'm going to explain to you exactly what an API is, without all this confusing wording.
+
+· From diagram_1.png, diagram_2.png,
+(diagram_3.png & diagram_4.png), diagram_5.png, diagram_6.png, diagram_7.png,
+(diagram_8.png, diagram_9.png, diagram_10.png), diagram_11.png, diagram_12.png, diagram_13.png,
+diagram_14.png, diagram_15.png, diagram_16.png, diagram_17.png, diagram_18.png, diagram_19.png, diagram_20.png, diagram_21.png:
+
+I have over here (diagram_1.png) "Skyscanner" (diagram_2.png).
+https://www.skyscanner.net/
+
+If you've never used it, it's an Aggregator Website.
+
+I look for a flight from Los Angeles (LA) to New York, 
+and it searches (diagram_3.png & diagram_4.png) all the websites (diagram_5.png) of all the airlines (diagram_6.png) for the best deals for me (diagram_7.png).
+
+Now, how is it able to do that (diagram_7.png)?
+
+It found all these flights (diagram_8.png, diagram_9.png, diagram_10.png) from different websites.
+But Skyscanner (diagram_11.png) doesn't really have this information (diagram_12.png).
+I mean, this information is somewhere in the database of each individual airline (diagram_13.png).
+But as an airline, you're interested in having this data on Skyscanner (diagram_14.png) 
+because people like myself that want to book a flight, might not know to go to AmericanAirlines.com (American Airlines) (diagram_15.png)
+So by having their information listed (diagram_16.png) on a website like this (diagram_17.png). Well, now they can increase their revenue.
+So, how is Skyscanner (diagram_18.png) able to do this without having this information (diagram_19.png) itself (diagram_20.png)?
+Well, that's where API is coming.
+
+If you remember, APIs are what allow strangers to communicate with each other, so that we aren't in a closed system.
+We can share data and work with each other and APIs' what allows machines, computers to communicate.
+This might sound familiar; it's kind of like how we have web browsers speaking with servers, right?
+Well, yeah, because API is a broad topic.
+It applies to the way machines communicate (diagram_21.png).
+
+· From diagram_22.png/diagram_23.png, diagram_24.png/diagram_25.png, (diagram_26.png/diagram_27.png & diagram_28.png/diagram_29.png), diagram_30.png,
+diagram_31.png, diagram_32.png, diagram_33.png, diagram_34.png, diagram_35.png:
+
+If I open up my browser Console here (diagram_22.png/diagram_23.png),
+Well, I always mentioned that there is a 'window' object (diagram_24.png/diagram_25.png). 
+And the 'window' object has 'fetch' (diagram_26.png/diagram_27.png & diagram_28.png/diagram_29.png). And 'fetch' is an API (diagram_30.png).
+
+> window.fetch;
+<· ƒ fetch() { [native code] }
+
+It (Console) is given by the browser to use, so that I can communicate with this machine, which the Console can communicate with the browser.
+
+In the same way, 
+although Skyscanner (diagram_31.png) doesn't have access to the databases of American Airlines (diagram_32.png) and Alaska Airlines (diagram_33.png), 
+all the other airlines (diagram_34.png) use APIs or give access to this information through APIs.
+So that websites (diagram_35.png) like Skyscanner (diagram_31.png) can have the information as well and listed on their websites (diagram_34.png).
+
+The best way to think about it is kind of like a waiter.
+You're sitting at a table about to order, and the waiter is the messenger who tells the kitchen what to do.
+The kitchen is providing the waiter at the restaurant, right?
+The restaurant is saying, "Hey, waiter, these are the menu items. Please go ask the customer what he or she wants and let us know so that we can prepare."
+
+· From diagram_36.png, diagram_37.png, diagram_38.png, diagram_39.png, diagram_40.png, diagram_41.png, diagram_42.png, diagram_43.png:
+
+And this might sound similar to this (diagram_36.png), right?
+We're (diagram_37.png) asking another machine (diagram_38.png) for something, 
+using, let's say, a waiter- (diagram_37.png) and this machine (diagram_38.png) gives us a response 
+if we (diagram_39.png) talk to it (diagram_38.png) in a certain way that it expects.
+And yeah, a server (diagram_40.png) has APIs that they (diagram_41.png) can communicate with it (diagram_42.png).
+such as doing "users/about" (fetch('/users')) (diagram_43.png).
+
+· From diagram_44.png, diagram_45.png/diagram_46.png, 
+diagram_47.png/diagram_48.png, 
+diagram_49.png/diagram_50.png, diagram_51.png/diagram_52.png, diagram_53.png/diagram_54.png, diagram_55.png/diagram_56.png:
+
+In the same way, we also have our code (diagram_44.png) from when we built Robofriends (diagram_45.png/diagram_46.png).
+
+React (also known as React.js or ReactJS) (diagram_47.png/diagram_48.png), which is a library built by Meta Platforms, Inc. (formerly named Facebook, Inc.), 
+exposes an API a way to communicate with the "react" package (diagram_49.png/diagram_50.png) 
+by doing 'React' (diagram_51.png/diagram_52.png) 'Component' (diagram_53.png/diagram_54.png) 
+and using JSX (JavaScript Syntax Extension, occasionally referred to as JavaScript XML) (diagram_55.png/diagram_56.png).
+
+They tell us how to communicate with it, and we're able to communicate with it.
+
+· From diagram_57.png, diagram_58.png:
+
+Hmm- let's, let's work on this a little bit more.
+
+What about- what about this (diagram_57.png)?
+Is this an API?
+It's the back of a TV.
+Yeah, it's (diagram_57.png) an API.
+A TV works in its own way, 
+but it gives you access to a couple of things, such as the HDMI cable (diagram_58.png), so you can plug into it and communicate with it.
+Such as displaying your laptop on the TV.
+
+· From diagram_45.png/diagram_46.png, diagram_47.png/diagram_48.png, 
+diagram_59.png/diagram_60.png, diagram_61.png/diagram_62.png, 
+diagram_63.png/diagram_64.png, diagram_65.png/diagram_66.png, diagram_67.png/diagram_68.png, 
+diagram_69.png/diagram_70.png, diagram_71.png/diagram_72.png, diagram_73.png/diagram_74.png, 
+diagram_75.png, diagram_76.png/diagram_77.png, diagram_78.png/diagram_79.png:
+
+And we've been using APIs in the Robofriends (diagram_45.png/diagram_46.png) demonstration as well.
+
+We already talked about React (also known as React.js or ReactJS), (diagram_47.png/diagram_48.png) 
+but do you remember the JSONPlaceholder (diagram_59.png/diagram_60.png)? The "/users" (diagram_61.png/diagram_62.png) that we got?
+
+https://jsonplaceholder.typicode.com/users
+
+JSONPlaceholder
+JSONPlaceholder - Free Fake REST API
+https://jsonplaceholder.typicode.com/
+
+Well, if I go to their website (diagram_63.png/diagram_64.png), 
+we see that (diagram_65.png/diagram_66.png) it's a "Free fake and reliable API (REST API) for testing and prototyping".
+It's an API (diagram_67.png/diagram_68.png), so it must be giving us information about something that it has.
+
+If we go down, we see that it has 'Resources' (diagram_69.png/diagram_70.png), 
+and the API (diagram_71.png/diagram_72.png) tells us we can access them using these methods (diagram_73.png/diagram_74.png).
+
+Resources
+JSONPlaceholder comes with a set of 6 common resources:
+
+So by just writing (diagram_75.png) "comments" (/comments) here (diagram_76.png/diagram_77.png), I should be able to get 500 comments, 
+and there you go (diagram_78.png/diagram_79.png).
+I get a response in JSON (diagram_78.png/diagram_79.png),
+
+· From diagram_80.png, diagram_81.png, diagram_82.png, 
+diagram_83.png, diagram_84.png, diagram_85.png, diagram_86.png, diagram_87.png:
+
+And even with RoboHash,
+Remember how we were able to get images of robots (diagram_80.png) from this (diagram_81.png) robohash.org (diagram_82.png)? That's an API.
+
+RoboHash
+https://robohash.org/
+
+We can say robohash (diagram_83.png) whatever (diagram_84.png).
+And because they've (diagram_85.png) said that the way to access this API is just to type in random numbers after robohash.org (diagram_86.png)
+
+https://robohash.org/272
+
+We're able to access it (diagram_87.png).
+
+· From diagram_49.png/diagram_50.png, diagram_88.png, diagram_89.png/diagram_90.png, 
+diagram_91.png, diagram_92.png/diagram_93.png, 
+(diagram_94.png/diagram_95.png & diagram_96.png/diagram_97.png), diagram_98.png/diagram_99.png, 
+diagram_100.png/diagram_101.png, 
+diagram_102.png, diagram_103.png/diagram_104.png, diagram_105.png/diagram_106.png, 
+(diagram_107.png/diagram_108.png, diagram_109.png), diagram_110.png/diagram_111.png, diagram_112.png/diagram_113.png:
+
+And people usually build these APIs for business reasons, such as airline companies (diagram_88.png), right?
+And they have the incentive to comply with industry standards, such as having JSON responses (diagram_89.png/diagram_90.png).
+And that way, it makes it easier for a developer like me to grab bits and pieces from different places.
+
+For example, here (diagram_91.png), I have the GitHub API (diagram_92.png/diagram_93.png).
+You can read up on it, but I can access information from GitHub.
+So I'm accessing the GitHub repo for Facebook/Meta Platforms, Inc. (formerly Facebook, Inc.), and it shows how many followers it has and what its bio is.
+
+https://api.github.com/users/facebook
+
+If I go to Apple (Apple Inc.) (diagram_94.png/diagram_95.png & diagram_96.png/diagram_97.png), 
+I can get the Apple (Apple Inc.) username as well (diagram_98.png/diagram_99.png).
+
+https://api.github.com/users/apple
+
+And you can see that it's in JSON format (diagram_100.png/diagram_101.png) because that is the standard.
+
+If we want to build something with GitHub (diagram_102.png), 
+well, we can just send a request (diagram_103.png/diagram_104.png) to get this data (diagram_105.png/diagram_106.png) 
+and create our website based on this data (diagram_105.png/diagram_106.png).
+
+But it's not only JSON (JavaScript Object Notation). 
+If you remember, there's XML (eXtensible Markup Language) as Well (diagram_107.png/diagram_108.png, diagram_109.png).
+This is a sample API that shows us a breakfast menu (diagram_110.png/diagram_111.png), 
+and here we can request this data through HTTP (diagram_112.png/diagram_113.png), and we get the breakfast menu.
+
+https://www.w3schools.com/xml/simple.xml
+
+So as you can see, APIs are not just websites.
+A TV's inputs and outputs, that's an API.
+An NPM package (diagram_49.png/diagram_50.png) can be an API.
+Like I've said before, it's (API) a way that people communicate or machines communicate and share information.
+Without it (API), we wouldn't have the World Wide Web we have now.
+
+· From diagram_114.png, diagram_115.png, diagram_116.png, diagram_117.png, diagram_118.png, 
+diagram_119.png/diagram_120.png, diagram_121.png/diagram_122.png, diagram_123.png, diagram_124.png:
+
+But how is this (API) useful to us?
+
+Well, first off, we can build something like this (diagram_114.png) quite easily.
+We can actually search the API for jetBlue (diagram_115.png) and American Airlines (diagram_116.png).
+And they'll (diagram_117.png) have information on how we can access this data (diagram_118.png) so we can build our own thing.
+This website (diagram_118.png) is all it's doing is making an HTTP request to something like here (/posts) (diagram_119.png/diagram_120.png).
+
+https://jsonplaceholder.typicode.com/posts
+
+And then grabbing this data (diagram_121.png/diagram_122.png) and just added some CSS to it to make it (diagram_123.png) look nice.
+
+And there are tons of APIs online (diagram_124.png) that you can search for, and you can read up on them.
+Big companies like Facebook/Meta Platforms, Inc. (formerly Facebook, Inc.) have APIs, and Google has APIs.
+You might know that Google Maps anytime you see Google Maps on a website, it's using the Google API.
+
+· From diagram_125.png/diagram_126.png, diagram_127.png/diagram_128.png, 
+diagram_129.png/diagram_130.png, 
+diagram_131.png/diagram_132.png, diagram_133.png/diagram_134.png, 
+diagram_135.png/diagram_136.png, diagram_137.png/diagram_138.png, 
+diagram_139.png/diagram_140.png, diagram_141.png/diagram_142.png, 
+diagram_143.png/diagram_144.png, diagram_145.png/diagram_146.png, diagram_147.png/diagram_148.png:
+
+We also have a silly API like this one (diagram_125.png/diagram_126.png), 
+one of my favorites, it's the Star Wars API (SWAPI - The Star Wars API) (diagram_127.png/diagram_128.png).
+
+SWAPI - The Star Wars API
+https://swapi.dev/
+
+It shows you over here (diagram_129.png/diagram_130.png),
+If I do "people/2/", (diagram_131.png/diagram_132.png)
+https://swapi.dev/api/people/2/
+
+I get "C-3PO". (diagram_133.png/diagram_134.png)
+
+If I do "people/3/", (diagram_135.png/diagram_136.png)
+https://swapi.dev/api/people/3/
+
+I get "R2-D2". (diagram_137.png/diagram_138.png)
+
+I can also do "planets" (planets/3/). (diagram_139.png/diagram_140.png)
+https://swapi.dev/api/planets/3/
+
+I get "Yavin IV". (diagram_141.png/diagram_142.png)
+
+This (SWAPI - The Star Wars API) is a free, nice-to-use API, so you can build a sample app using the Star Wars API (diagram_127.png/diagram_128.png)
+
+and all you need to do is just 'fetch()' this resource (diagram_143.png/diagram_144.png), 
+fetch('https://jsonplaceholder.typicode.com/users')
+
+get the 'json()' (diagram_145.png/diagram_146.png), 
+.then(response => response.json())
+
+converted to a JavaScript object ('users') (diagram_147.png/diagram_148.png), 
+.then(users => {this.setState({ robots: users })});
+
+and then style it and use it in your app whichever way you want.
+
+componentDidMount() {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => {this.setState({ robots: users })});
+
+  // Note:
+  /* To make you feel a little bit more comfortable 
+  because I'm using fetch() and there is nothing attached to it does this mean that it's part of the 'window' object? */
+  /* Let's check:
+  if I open up the browser console and I do */
+  // > window.fetch;
+  // <· ƒ fetch() { [native code] }
+  /* fetch() is a method on the 'window' object
+  It comes with all browsers now. It is a tool for us to make requests to servers. */
+}
+
+· From (diagram_149.png, diagram_150.png/diagram_151.png), 
+diagram_152.png/diagram_153.png, diagram_154.png, diagram_149.png/diagram_155.png, diagram_149.png/diagram_156.png:
+
+There are also some really important API is that are useful if you're building serious websites.
+
+This is the "stripe API" (diagram_149.png, diagram_150.png/diagram_151.png).
+
+Reference websites:
+
+Stripe
+Stripe | Financial Infrastructure to Grow Your Revenue
+https://stripe.com/
+
+Stripe API Reference
+https://docs.stripe.com/api
+
+The Balance object | Stripe API Reference
+https://docs.stripe.com/api/balance/balance_object
+
+If you want to incorporate payments into your website, well, this (diagram_152.png/diagram_153.png) shows you exactly what to do.
+And you can add to your server in whichever language (diagram_154.png) you want.
+In our case, we're interested in Node.js (Node) (diagram_149.png/diagram_155.png), 
+and it tells you how you can add "Stripe" as a payment method on your server.
+It sounds scary, but it's all documented in here (diagram_149.png/diagram_156.png).
+It's (diagram_149.png/diagram_156.png) a step-by-step instruction on how to do it.
+
+· From diagram_82.png, diagram_127.png/diagram_128.png, 
+(diagram_149.png, diagram_150.png/diagram_151.png), 
+(diagram_157.png, diagram_158.png/diagram_159.png, diagram_160.png), diagram_159.png/diagram_161.png, 
+(diagram_162.png, diagram_163.png, diagram_164.png), 
+(diagram_165.png, diagram_166.png), diagram_167.png, diagram_168.png, diagram_169.png, diagram_170.png, 
+diagram_171.png, diagram_172.png, diagram_173.png, 
+diagram_174.png, diagram_175.png, 
+diagram_176.png/diagram_177.png, diagram_178.png/diagram_179.png, diagram_180.png, diagram_181.png, 
+diagram_182.png:
+
+Another one that I really like is the "Twilio API" (diagram_157.png, diagram_158.png/diagram_159.png, diagram_160.png).
+
+Reference websites:
+
+Twilio
+Communications APIs with AI and data for SMS, Voice, Email | Twilio
+https://www.twilio.com/en-us
+
+Messaging API Overview | Twilio
+https://www.twilio.com/docs/messaging/api
+
+Send messages
+https://www.twilio.com/docs/messaging/api#send-messages
+
+And Twilio (diagram_159.png) allows sending of messages on phones (diagram_159.png/diagram_161.png).
+
+So, using something simple like this (diagram_162.png, diagram_163.png, diagram_164.png), 
+you can see there's not much to it other than using this 'client.messages.create({})' that they provide (diagram_165.png, diagram_166.png).
+And we just say what we want the 'body' of the text (diagram_167.png) to be, 
+'to' which number (diagram_168.png), 
+'from' which number (diagram_169.png); 
+if we want to include maybe a heart (hearts.png) (diagram_170.png), then we can add that as well.
+
+And let's say when a user signs up for a service (diagram_171.png).
+Well, we can send them a message (diagram_172.png) by saying, "Hey, we've created a new user.
+They've provided us with their phone number.
+Send them a text message (diagram_173.png)."
+
+Reference websites:
+
+Programmable Messaging API | Twilio (diagram_163.png)
+https://www.twilio.com/en-us/messaging/apis/programmable-messaging-api
+
+Send an SMS message
+
+// Download the helper library from https://www.twilio.com/docs/node/install
+// Find your Account SID and Auth Token at twilio.com/console
+// and set the environment variables. See http://twil.io/secure
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
+client.messages
+      .create({body: 'Hi there', from: '+15017122661', to: '+15558675310'})
+      .then(message => console.log(message.sid));
+
+Business Text Messaging | Twilio (diagram_164.png)
+https://www.twilio.com/en-us/messaging
+
+Create a message
+
+// Download the helper library from https://www.twilio.com/docs/node/install
+// Find your Account SID and Auth Token at twilio.com/console
+// and set the environment variables. See http://twil.io/secure
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
+client.messages
+      .create({from: '+15017122661', body: 'Hi there', to: '+15558675310'})
+      .then(message => console.log(message.sid));
+
+Now you might be thinking this is almost too good to be true.
+You have so much power now that you can just research APIs (diagram_174.png).
+And all the major websites have APIs (data) (diagram_175.png) that provide data to you.
+Well, things like RoboHash (diagram_82.png) and Star Wars API (diagram_127.png/diagram_128.png). 
+They're silly, and they're fun, and there's no real cost to them.
+
+But when you start building real applications and companies like Stripe (diagram_149.png, diagram_150.png/diagram_151.png) 
+and Twilio (diagram_157.png, diagram_158.png/diagram_159.png, diagram_160.png), where there's some real engineering effort behind creating these.
+Well, they charge. They charge a service, and that's when you use something like an API key (diagram_176.png/diagram_177.png).
+And an API key looks like gibberish (diagram_178.png/diagram_179.png).
+It is a key, a private key (diagram_180.png), so that every time you access their API, they know that it's you.
+And because let's say you have a plan for making a thousand requests.
+They charge you because they can recognize you, saying that "oh, this is Andrei's/S M Anwarul Islam Raju's key (diagram_181.png).
+He's the one making the request from a server and we're going to charge him for it".
+
+And don't worry.
+In our final project, we're going to be using a really, really cool machine learning API, 
+and we're going to generate our API key (diagram_182.png) and actually use it.
+Luckily for us, though, it's free.
+So it's going to be a lot of fun.
+
+· From diagram_87.png, 
+(diagram_149.png, diagram_150.png/diagram_151.png, diagram_159.png/diagram_160.png), 
+diagram_183.png, 
+diagram_184.png/diagram_185.png, diagram_186.png, diagram_187.png/diagram_188.png:
+
+But from this video (lecture/lesson), I want you to remember this (diagram_183.png).
+A server somewhere in the world for a company provides an API. For other people to use it, they usually tell you how to use it.
+And they have documentation (diagram_149.png, diagram_150.png/diagram_151.png, diagram_159.png/diagram_160.png) on how to use it.
+But most of them comply with the standard, like JSON (diagram_150.png/diagram_151.png), to make it easier for developers like us to use.
+And at the end of the day, an API is a tool used for data communication.
+It's how a program, software, or anything running code allows others to communicate with it.
+It opens up a strong possibility of making websites that do more than just list robots (diagram_87.png).
+You can now, with the same principles, build websites (diagram_184.png/diagram_185.png) 
+that incorporate different APIs (diagram_186.png) to have the functionality of something like Skyscanner (diagram_187.png/diagram_188.png).
+
+I'll see you in the next one, bye-bye.
