@@ -1,0 +1,42 @@
+Exercise: Web App API
+
+Now that you know what APIs are, you have the power to combine functionality provided by other computers in your app.
+
+Your challenge is to use the APIs below (pick your favorite) and build something fun:
+
+SWAPI - The Star Wars API
+https://swapi.dev/
+
+Numbers API
+http://number-trivia.com/#42
+
+Chuck Norris Jokes Api
+https://api.chucknorris.io/
+
+PokéAPI (Pokémon API)
+https://pokeapi.co/
+
+International Space Station API (gives you the coordinates of the International Space Station is!)
+Open Notify -- API Doc | ISS Current Location
+http://open-notify.org/Open-Notify-API/ISS-Location-Now/
+
+Using one of the above APIs, build a single-page application that uses fetch() to retrieve information and display it on your website.
+
+Fetch API - Web APIs | MDN
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+Once done, share your project on GitHub Pages and share it with the community on Discord.
+I will be featuring my favorite ones in an upcoming video (lecture/lesson)!
+
+By the way, this is my favorite resource for finding an API when I have an idea for a project:
+
+A Collaborative List Of 1400+ Public APIs For Developers
+https://publicapis.dev/
+
+Every API is different, but once you read through the documentation, its underlying principles are the same.
+It will unlock a lot of power when working with websites. Use the power wisely :)
+
+If you have any questions, reach out to our student community in the #helpme or #js channel on Discord 
+(Lecture 2 provides the link if you have not yet joined!)
+
+· Lecture 2 (Join Our Online Classroom!)
