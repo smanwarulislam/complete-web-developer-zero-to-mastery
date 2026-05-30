@@ -1,0 +1,11 @@
+Optional Exercise: Speech Recognition
+
+There is another fun API that I think you will really like: IBM Watson
+
+IBM Watson Speech to Text
+https://www.ibm.com/products/speech-to-text
+
+In this optional exercise, which was part of a Coding Challenge we ran in the past, you will build a web app that allows your speech to be turned into text!
+You can see the rules, steps, and student submissions here for inspiration:
+Coding_Challenge-3
+https://github.com/zero-to-mastery/Coding_Challenge-3
