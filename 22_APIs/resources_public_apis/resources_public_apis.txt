@@ -1,0 +1,30 @@
+Resources: Public APIs
+
+Once you learn about APIs, as you have just done, you realize that there is a world of possibilities for what you can build.
+Your own startup? Your own app? The possibilities are endless.
+Here is my favorite resource listing some of the Public APIs you can use to build anything you want. Enjoy exploring it!
+
+A Collaborative List Of 1400+ Public APIs For Developers
+https://publicapis.dev/
+
+public-apis/public-apis: A collective list of free APIs
+https://github.com/public-apis/public-apis
+
+Finally, an important skill to develop is the ability to read the documentation of an API and learn how to use it.
+Try playing this game, read the documentation, and use the developer tools to "debug".
+It will be good practice and a lot of fun!
+
+Elevator Saga - the elevator programming game
+https://play.elevatorsaga.com/
+
+Reference websites (Resources):
+
+https://www.postman.com/explore
+https://docs.stripe.com/api
+https://www.twilio.com/docs/messaging/quickstart
+https://apilist.fun/
+https://www.pexels.com/api/documentation/
+https://apihouse.vercel.app/
+https://play.elevatorsaga.com/
+https://publicapis.dev/
+https://github.com/public-apis/public-apis
