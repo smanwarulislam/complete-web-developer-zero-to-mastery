@@ -1,0 +1,46 @@
+What We Are Building
+
+· From diagram_1.png:
+
+This (diagram_1.png) is the most exciting part of the course.
+And I'm really, really excited to work on this (diagram_1.png) project with you.
+
+We're going to create our final app (diagram_1.png), something we can include in our portfolios and use to impress our future employers.
+
+We're going to use everything we've learned up to this point.
+
+And then, later on, to create a full app with a front end using React (also known as React.js or ReactJS).
+It uses an Image Recognition API.
+It has its own server, using Node (Node.js) and Express (Express.js).
+And then finally, it has a database as well.
+
+· From diagram_2.png, diagram_3.png, diagram_4.png:
+
+We're going to be creating something where you can sign in (diagram_2.png, diagram_3.png).
+We will have a fully responsive website, as you can see (diagram_4.png), it looks pretty nice.
+
+· From diagram_5.png, diagram_6.png, 
+diagram_7.png, diagram_8.png, diagram_9.png, diagram_10.png, diagram_11.png:
+
+But the cool part is, other than all these fancy animations (diagram_5.png) and the sign-out (diagram_6.png) ability that we have,
+when we enter (diagram_7.png) an image (diagram_8.png) and press Detect (diagram_9.png), 
+they'll actually detect faces (diagram_10.png) and then images (diagram_11.png), and put a box (diagram_10.png) around them.
+
+· From diagram_12.png, diagram_13.png, diagram_14.png, diagram_15.png, diagram_16.png, diagram_17.png:
+
+Let's try another one (diagram_12.png, diagram_13.png).
+If I select this (diagram_13.png, diagram_14.png) face,
+all we need is a URL (diagram_15.png, diagram_16.png) to an image,
+and look at that, it detects the face for us (diagram_17.png).
+
+· From diagram_18.png, diagram_19.png, diagram_20.png, diagram_21.png, diagram_22.png:
+
+So yes, you're going to build this (diagram_18.png). I'm going to help you out.
+And by the end of this, we'll have a fully finished project (diagram_19.png).
+
+And don't worry for those who just love watching, I'll provide the project files for you at the end of this course (diagram_20.png).
+
+Are you excited? (diagram_21.png)
+Well, let's get started (diagram_22.png).
+
+· From diagram_23.png, diagram_24.png, diagram_25.png, diagram_26.png.
